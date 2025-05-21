@@ -1,0 +1,154 @@
+{
+
+    "item.succsmod.atherium": "Atherium",
+    "item.succsmod.dirty_atherium": "Dirty Atherium",
+
+    "block.succsmod.atherium_ore": "Atherium Ore",
+    "block.succsmod.deepslate_atherium_ore": "Deepslate Atherium Ore",
+    "block.succsmod.nether_atherium_ore": "Nether Atherium Ore",
+    "block.succsmod.end_atherium_ore": "End Atherium Ore",
+    "block.succsmod.atherium_block": "Block Of Atherium",
+
+    "item.succsmod.atherium_pickaxe": "Atherium Pickaxe",
+    "item.succsmod.atherium_axe": "Atherium Axe",
+    "item.succsmod.atherium_shovel": "Atherium Shovel",
+    "item.succsmod.atherium_hoe": "Atherium Hoe",
+    "item.succsmod.atherium_sword": "Atherium Sword",
+    "item.succsmod.atherium_hammer": "Atherium Hammer",
+    "item.succsmod.atherium_paxel": "Atherium Paxel",
+
+    "item.succsmod.atherium_helmet": "Atherium Crown",
+    "item.succsmod.atherium_chestplate": "Atherium Chestplate",
+    "item.succsmod.atherium_leggings": "Atherium Leggings",
+    "item.succsmod.atherium_boots": "Atherium Boots",
+
+    "item.succsmod.ruby": "Ruby",
+    "item.succsmod.dirty_ruby": "Dirty Ruby",
+
+    "block.succsmod.ruby_block": "Block Of Ruby",
+    "block.succsmod.ruby_ore": "Ruby Ore",
+    "block.succsmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+    "block.succsmod.nether_ruby_ore": "Nether Ruby Ore",
+    "block.succsmod.end_ruby_ore": "End Ruby Ore",
+
+    "item.succsmod.ruby_pickaxe": "Ruby Pickaxe",
+    "item.succsmod.ruby_axe": "Ruby Axe",
+    "item.succsmod.ruby_shovel": "Ruby Shovel",
+    "item.succsmod.ruby_hoe": "Ruby Hoe",
+    "item.succsmod.ruby_sword": "Ruby Sword",
+    "item.succsmod.ruby_hammer": "Ruby Hammer",
+    "item.succsmod.ruby_paxel": "Ruby Paxel",
+
+    "item.succsmod.ruby_helmet": "Ruby Helmet",
+    "item.succsmod.ruby_chestplate": "Ruby Chestplate",
+    "item.succsmod.ruby_leggings": "Ruby Leggings",
+    "item.succsmod.ruby_boots": "Ruby Boots",
+
+    "item.succsmod.sapphire": "Sapphire",
+    "item.succsmod.dirty_sapphire": "Dirty Sapphire",
+
+    "block.succsmod.sapphire_block": "Block Of Sapphire",
+    "block.succsmod.sapphire_ore": "Sapphire Ore",
+    "block.succsmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+    "block.succsmod.nether_sapphire_ore": "Nether Sapphire Ore",
+    "block.succsmod.end_sapphire_ore": "End Sapphire Ore",
+
+    "item.succsmod.sapphire_pickaxe": "Sapphire Pickaxe",
+    "item.succsmod.sapphire_axe": "Sapphire Axe",
+    "item.succsmod.sapphire_shovel": "Sapphire Shovel",
+    "item.succsmod.sapphire_hoe": "Sapphire Hoe",
+    "item.succsmod.sapphire_sword": "Sapphire Sword",
+    "item.succsmod.sapphire_hammer": "Sapphire Hammer",
+    "item.succsmod.sapphire_paxel": "Sapphire Paxel",
+
+    "item.succsmod.sapphire_helmet": "Sapphire Helmet",
+    "item.succsmod.sapphire_chestplate": "Sapphire Chestplate",
+    "item.succsmod.sapphire_leggings": "Sapphire Leggings",
+    "item.succsmod.sapphire_boots": "Sapphire Boots",
+
+    "item.succsmod.sunstone": "Sunstone",
+    "item.succsmod.dirty_sunstone": "Dirty Sunstone",
+
+    "block.succsmod.sunstone_block": "Block Of Sunstone",
+    "block.succsmod.sunstone_ore": "Sunstone Ore",
+    "block.succsmod.deepslate_sunstone_ore": "Deepslate Sunstone Ore",
+    "block.succsmod.nether_sunstone_ore": "Nether Sunstone Ore",
+    "block.succsmod.end_sunstone_ore": "End Sunstone Ore",
+
+    "item.succsmod.sunstone_pickaxe": "Sunstone Pickaxe",
+    "item.succsmod.sunstone_axe": "Sunstone Axe",
+    "item.succsmod.sunstone_shovel": "Sunstone Shovel",
+    "item.succsmod.sunstone_hoe": "Sunstone Hoe",
+    "item.succsmod.sunstone_sword": "Sunstone Sword",
+    "item.succsmod.sunstone_hammer": "Sunstone Hammer",
+    "item.succsmod.sunstone_paxel": "Sunstone Paxel",
+
+    "item.succsmod.sunstone_helmet": "Sunstone Helmet",
+    "item.succsmod.sunstone_chestplate": "Sunstone Chestplate",
+    "item.succsmod.sunstone_leggings": "Sunstone Leggings",
+    "item.succsmod.sunstone_boots": "Sunstone Boots",
+
+    "item.succsmod.malachite": "Malachite",
+    "item.succsmod.dirty_malachite": "Dirty Malachite",
+
+    "block.succsmod.malachite_block": "Block Of Malachite",
+    "block.succsmod.malachite_ore": "Malachite Ore",
+    "block.succsmod.deepslate_malachite_ore": "Deepslate Malachite Ore",
+    "block.succsmod.nether_malachite_ore": "Nether Malachite Ore",
+    "block.succsmod.end_malachite_ore": "End Malachite Ore",
+
+    "item.succsmod.malachite_pickaxe": "Malachite Pickaxe",
+    "item.succsmod.malachite_axe": "Malachite Axe",
+    "item.succsmod.malachite_shovel": "Malachite Shovel",
+    "item.succsmod.malachite_hoe": "Malachite Hoe",
+    "item.succsmod.malachite_sword": "Malachite Sword",
+    "item.succsmod.malachite_hammer": "Malachite Hammer",
+    "item.succsmod.malachite_paxel": "Malachite Paxel",
+
+    "item.succsmod.malachite_helmet": "Malachite Helmet",
+    "item.succsmod.malachite_chestplate": "Malachite Chestplate",
+    "item.succsmod.malachite_leggings": "Malachite Leggings",
+    "item.succsmod.malachite_boots": "Malachite Boots",
+
+    "item.succsmod.ring_of_ruby": "Ring Of Ruby",
+    "item.succsmod.ring_of_sapphire": "Ring Of Sapphire",
+    "item.succsmod.ring_of_sunstone": "Ring Of Sunstone",
+    "item.succsmod.ring_of_atherium": "Ring Of Atherium",
+    "item.succsmod.bracelet_of_malachite": "Bracelet Of Malachite",
+    "item.succsmod.necklace_of_amethyst": "Necklace Of Amethyst",
+
+    "item.succsmod.gold_handle": "Gold Handle",
+
+    "creativetab.succs_mod_tab": "Succ's Essentials",
+
+    "block.succsmod.gem_polishing_table": "Gem Polishing Table",
+
+    "item.succsmod.rock_candy": "'Rock Candy'",
+    "item.succsmod.rock": "Rock",
+    "item.succsmod.garlic": "Garlic",
+    "item.succsmod.garlic_bread": "Garlic Bread",
+
+    "succsmod.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+    "succsmod.tooltip.liquid.amount": "%s mB",
+
+    "painting.succsmod.theomonty.title": "Theomonty",
+    "painting.succsmod.theomonty.author": "IsuckAtEverything",
+    "painting.succsmod.kurgerbing.title": "Kurger Bing",
+    "painting.succsmod.kurgerbing.author": "IsuckAtEverything",
+    "painting.succsmod.theomonty_scream.title": "Theomonty Scream",
+    "painting.succsmod.theomonty_scream.author": "IsuckAtEverything",
+
+    "tooltip.succsmod.fire_sword.tooltip.shift": "Sets hit mobs on fire",
+    "tooltip.succsmod.fire_sword.tooltip": "Press §eShift§r for more information",
+    "tooltip.succsmod.fortune_pickaxe.tooltip.shift": "Has a chance to drop more items when mining ores",
+    "tooltip.succsmod.fortune_pickaxe.tooltip": "Press §eShift§r for more information",
+    "tooltip.succsmod.looting_sword.tooltip.shift": "Mobs have a chance to drop more items when killed",
+    "tooltip.succsmod.looting_sword.tooltip": "Press §eShift§r for more information",
+    "tooltip.succsmod.atherium_armor.tooltip.shift": "Gives the player 10+ hearts when wearing a full set",
+    "tooltip.succsmod.atherium_armor.tooltip": "Press §eShift§r for more information",
+    "tooltip.succsmod.poison_sword.tooltip.shift": "Inflicts Poison on hit mobs",
+    "tooltip.succsmod.poison_sword.tooltip": "Press §eShift§r for more information",
+
+    "entity.minecraft.villager.succsmod.gem_cutter": "'Gem' Cutter"
+
+}
