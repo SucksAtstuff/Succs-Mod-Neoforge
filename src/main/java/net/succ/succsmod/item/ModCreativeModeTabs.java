@@ -9,7 +9,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
-// test
 import java.awt.*;
 import java.util.function.Supplier;
 
