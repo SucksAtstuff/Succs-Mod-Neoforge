@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "atherium",
+    "ingredient": {
+        "item": "succsessentials:dirty_atherium"
+    },
+    "result": {
+        "id": "succsessentials:atherium",
+        "count": 1
+    }
+}
