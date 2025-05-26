@@ -1,0 +1,18 @@
+{
+  "remove": [
+    "#succsessentials:needs_sunstone_tool",
+    "#succsessentials:mineable_with_sunstone_or_sapphire"
+  ],
+  "values": [
+    "succsessentials:malachite_block",
+    "succsessentials:malachite_ore",
+    "succsessentials:deepslate_malachite_ore",
+    "succsessentials:nether_malachite_ore",
+    "succsessentials:end_malachite_ore",
+    "succsessentials:atherium_block",
+    "succsessentials:atherium_ore",
+    "succsessentials:deepslate_atherium_ore",
+    "succsessentials:nether_atherium_ore",
+    "succsessentials:end_atherium_ore"
+  ]
+}

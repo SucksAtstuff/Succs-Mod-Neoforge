@@ -1,6 +1,10 @@
-// 1.21.1	2025-05-26T15:35:35.7079751	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-05-26T18:38:58.8174818	Tags for minecraft:block mod id succsessentials
+5ff019d96703c991c79e5e18beb498bd9b845d56 data/minecraft/tags/block/incorrect_for_netherite_tool.json
 398da8e81618c184c898658144cc312786f0d9ad data/minecraft/tags/block/mineable/pickaxe.json
 6844e2aee21f2103c906585f258c9879cb01c448 data/neoforge/tags/block/needs_netherite_tool.json
+7ca23539a1d0f420886657bc14e604ae0ebcb017 data/succsessentials/tags/block/incorrect_for_ruby_tool.json
+e5cf47622861b2e45e357da573b91eea7fbcb350 data/succsessentials/tags/block/incorrect_for_sapphire_tool.json
+ce9e6e6a324f6213838d54e9c1c71ae364af1105 data/succsessentials/tags/block/incorrect_for_sunstone_tool.json
 12f75337603a825aeed0e69a3578d305d6815aa4 data/succsessentials/tags/block/mineable_with_sunstone_or_sapphire.json
 2bfb1e1215847bcdd16b21b53a3a5b0fcf6d617a data/succsessentials/tags/block/needs_malachite_tool.json
 1b2f31431192fdd564651e716e4bae2454dcfc0c data/succsessentials/tags/block/needs_ruby_tool.json
