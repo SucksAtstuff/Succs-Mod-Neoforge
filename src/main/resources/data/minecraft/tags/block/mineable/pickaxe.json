@@ -1,6 +1,5 @@
 {
-
-  "replace": false,
+  "replace": "false",
   "values": [
     "succsessentials:gem_polishing_table",
     "succsessentials:atherium_block",

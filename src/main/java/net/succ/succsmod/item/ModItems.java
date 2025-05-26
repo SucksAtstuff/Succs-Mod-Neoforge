@@ -1,10 +1,15 @@
 package net.succ.succsmod.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.item.custom.GarlicItem;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -48,6 +53,12 @@ public class ModItems {
     public static final DeferredItem<Item> GOLD_HANDLE = ITEMS.register("gold_handle",
             () -> new Item(new Item.Properties()));
 
+    // Register the Garlic item
+    public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
+            () -> new GarlicItem(ModBlocks.GARLIC_CROP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> GARLIC_BREAD = ITEMS.register("garlic_bread",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.GARLIC_BREAD)));
 
     // Method to register the DeferredRegister to the event bus
     public static void register(IEventBus eventBus) {

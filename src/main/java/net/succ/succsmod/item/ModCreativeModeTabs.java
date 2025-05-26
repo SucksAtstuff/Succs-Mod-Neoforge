@@ -17,10 +17,10 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SuccsMod.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_ITEMS = CREATIVE_MODE_TAB.register("succs_essentials_tab_items",
+    public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_GEMS = CREATIVE_MODE_TAB.register("succs_essentials_tab_gems",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.ATHERIUM.get()))
-                    .title(Component.translatable("creativetab.succsessentials.items.tab"))
+                    .title(Component.translatable("creativetab.succsessentials.gems.tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ATHERIUM.get());
                         output.accept(ModItems.DIRTY_ATHERIUM.get());
@@ -30,9 +30,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIRTY_SAPPHIRE.get());
                         output.accept(ModItems.MALACHITE.get());
                         output.accept(ModItems.DIRTY_MALACHITE.get());
-                        output.accept(ModItems.GOLD_HANDLE.get());
                         output.accept(ModItems.SUNSTONE.get());
                         output.accept(ModItems.DIRTY_SUNSTONE.get());
+                    })
+                    .build());
+
+    public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_ITEMS = CREATIVE_MODE_TAB.register("succs_essentials_tab_items",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModItems.ATHERIUM.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succs_essentials_tab_gems"))
+                    .title(Component.translatable("creativetab.succsessentials.items.tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.GOLD_HANDLE.get());
+                        output.accept(ModItems.GARLIC.get());
+                        output.accept(ModItems.GARLIC_BREAD.get());
                     })
                     .build());
 
