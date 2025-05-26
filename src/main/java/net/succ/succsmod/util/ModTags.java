@@ -1,0 +1,45 @@
+package net.succ.succsmod.util;
+
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.succ.succsmod.SuccsMod;
+
+public class ModTags {
+    public static class Items {
+        public static final TagKey<Item> POLISHABLE_GEMS = createTag("polishable_gems");
+        public static final TagKey<Item> POLISHED_GEMS = createTag("polished_gems");
+        public static final TagKey<Item> SUNSTONE_SAPPHIRE_TOOLS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "sunstone_sapphire_tools"));
+
+        private static TagKey<Item> createTag (String name) {
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
+        }
+    }
+
+    public static class Blocks {
+        public static final TagKey<Block> NEEDS_ATHERIUM_TOOL = createTag("needs_atherium_tool");
+        public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
+        public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = createTag("needs_sapphire_tool");
+        public static final TagKey<Block> NEEDS_SUNSTONE_TOOL = createTag("needs_sunstone_tool");
+        public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
+        public static final TagKey<Block> NEEDS_MALACHITE_TOOL = createTag("needs_malachite_tool");
+
+        // Define the custom tag for blocks mineable with Sunstone or Sapphire pickaxes
+        public static final TagKey<Block> MINEABLE_WITH_SUNSTONE_OR_SAPPHIRE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "mineable_with_sunstone_or_sapphire"));
+
+
+        private static TagKey<Block> createTag (String name) {
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
+        }
+
+
+    }
+
+
+
+
+}
