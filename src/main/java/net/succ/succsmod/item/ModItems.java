@@ -1,6 +1,6 @@
 package net.succ.succsmod.item;
 
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -68,6 +68,114 @@ public class ModItems {
     // Register the Rock Candy item
     public static final DeferredItem<Item> ROCK_CANDY = ITEMS.register("rock_candy",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK_CANDY)));
+
+    // Atherium Tools
+    public static final DeferredItem<SwordItem> ATHERIUM_SWORD = ITEMS.register("atherium_sword",
+            () -> new SwordItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.ATHERIUM, 4, -2.4F))));
+
+    public static final DeferredItem<Item> ATHERIUM_PICKAXE = ITEMS.register("atherium_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ATHERIUM, 2, -2.8F))));
+
+    public static final DeferredItem<Item> ATHERIUM_AXE = ITEMS.register("atherium_axe",
+            () -> new AxeItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.ATHERIUM, 7, -3F))));
+
+    public static final DeferredItem<Item> ATHERIUM_SHOVEL = ITEMS.register("atherium_shovel",
+            () -> new ShovelItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.ATHERIUM, 2, -3F))));
+
+    public static final DeferredItem<Item> ATHERIUM_HOE = ITEMS.register("atherium_hoe",
+            () -> new HoeItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.ATHERIUM, -4, 1F))));
+
+    // Ruby Tools
+    public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
+            () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.RUBY, 3, -2.4F))));
+
+    public static final DeferredItem<Item> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.RUBY, 2, -2.8F))));
+
+    public static final DeferredItem<Item> RUBY_AXE = ITEMS.register("ruby_axe",
+            () -> new AxeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.RUBY, 6, -3F))));
+
+    public static final DeferredItem<Item> RUBY_SHOVEL = ITEMS.register("ruby_shovel",
+            () -> new ShovelItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.RUBY, 2, -3F))));
+
+    public static final DeferredItem<Item> RUBY_HOE = ITEMS.register("ruby_hoe",
+            () -> new HoeItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.RUBY, -4, 1F))));
+
+    // Sapphire Tools
+    public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
+            () -> new SwordItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.SAPPHIRE, 3, -2.4F))));
+
+    public static final DeferredItem<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.SAPPHIRE, 2, -2.8F))));
+
+    public static final DeferredItem<Item> SAPPHIRE_AXE = ITEMS.register("sapphire_axe",
+            () -> new AxeItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.SAPPHIRE, 6, -3F))));
+
+    public static final DeferredItem<Item> SAPPHIRE_SHOVEL = ITEMS.register("sapphire_shovel",
+            () -> new ShovelItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.SAPPHIRE, 2, -3F))));
+
+    public static final DeferredItem<Item> SAPPHIRE_HOE = ITEMS.register("sapphire_hoe",
+            () -> new HoeItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.SAPPHIRE, -3, 1F))));
+
+    // Sunstone Tools
+    public static final DeferredItem<SwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
+            () -> new SwordItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.SUNSTONE, 3, -2.4F))));
+
+    public static final DeferredItem<Item> SUNSTONE_PICKAXE = ITEMS.register("sunstone_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.SUNSTONE, 2, -2.8F))));
+
+    public static final DeferredItem<Item> SUNSTONE_AXE = ITEMS.register("sunstone_axe",
+            () -> new AxeItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.SUNSTONE, 6, -3F))));
+
+    public static final DeferredItem<Item> SUNSTONE_SHOVEL = ITEMS.register("sunstone_shovel",
+            () -> new ShovelItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.SUNSTONE, 2, -3F))));
+
+    public static final DeferredItem<Item> SUNSTONE_HOE = ITEMS.register("sunstone_hoe",
+            () -> new HoeItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.SUNSTONE, -3, 1F))));
+
+    // Malachite Tools
+    public static final DeferredItem<SwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
+            () -> new SwordItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.MALACHITE, 3, -2.4F))));
+
+    public static final DeferredItem<Item> MALACHITE_PICKAXE = ITEMS.register("malachite_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.MALACHITE, 2, -2.8F))));
+
+    public static final DeferredItem<Item> MALACHITE_AXE = ITEMS.register("malachite_axe",
+            () -> new AxeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.MALACHITE, 6, -3F))));
+
+    public static final DeferredItem<Item> MALACHITE_SHOVEL = ITEMS.register("malachite_shovel",
+            () -> new ShovelItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.MALACHITE, 2, -3F))));
+
+    public static final DeferredItem<Item> MALACHITE_HOE = ITEMS.register("malachite_hoe",
+            () -> new HoeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.MALACHITE, -5, 1F))));
+
+
+
 
 
 

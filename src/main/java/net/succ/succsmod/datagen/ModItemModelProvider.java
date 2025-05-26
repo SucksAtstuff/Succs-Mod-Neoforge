@@ -32,5 +32,41 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.GARLIC.get());
         basicItem(ModItems.GARLIC_BREAD.get());
 
+        // Register models for atherium tools
+        handheldItem(ModItems.ATHERIUM_SWORD.get());
+        handheldItem(ModItems.ATHERIUM_PICKAXE.get());
+        handheldItem(ModItems.ATHERIUM_AXE.get());
+        handheldItem(ModItems.ATHERIUM_SHOVEL.get());
+        handheldItem(ModItems.ATHERIUM_HOE.get());
+
+        // Register models for ruby tools
+        handheldItem(ModItems.RUBY_SWORD.get());
+        handheldItem(ModItems.RUBY_PICKAXE.get());
+        handheldItem(ModItems.RUBY_AXE.get());
+        handheldItem(ModItems.RUBY_SHOVEL.get());
+        handheldItem(ModItems.RUBY_HOE.get());
+
+        // Register models for sapphire tools
+        handheldItem(ModItems.SAPPHIRE_SWORD.get());
+        handheldItem(ModItems.SAPPHIRE_PICKAXE.get());
+        handheldItem(ModItems.SAPPHIRE_AXE.get());
+        handheldItem(ModItems.SAPPHIRE_SHOVEL.get());
+        handheldItem(ModItems.SAPPHIRE_HOE.get());
+
+        // Register models for sunstone tools
+        handheldItem(ModItems.SUNSTONE_SWORD.get());
+        handheldItem(ModItems.SUNSTONE_PICKAXE.get());
+        handheldItem(ModItems.SUNSTONE_AXE.get());
+        handheldItem(ModItems.SUNSTONE_SHOVEL.get());
+        handheldItem(ModItems.SUNSTONE_HOE.get());
+
+        // Register models for malachite tools
+        handheldItem(ModItems.MALACHITE_SWORD.get());
+        handheldItem(ModItems.MALACHITE_PICKAXE.get());
+        handheldItem(ModItems.MALACHITE_AXE.get());
+        handheldItem(ModItems.MALACHITE_SHOVEL.get());
+        handheldItem(ModItems.MALACHITE_HOE.get());
+
+
     }
 }
