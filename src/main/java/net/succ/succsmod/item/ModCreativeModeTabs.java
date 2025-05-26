@@ -37,7 +37,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_ITEMS = CREATIVE_MODE_TAB.register("succs_essentials_tab_items",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.ATHERIUM.get()))
+                    .icon(() -> new ItemStack(ModItems.GOLD_HANDLE.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succs_essentials_tab_gems"))
                     .title(Component.translatable("creativetab.succsessentials.items.tab"))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -49,7 +49,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.ATHERIUM_BLOCK.get()))
+                    .icon(() -> new ItemStack(ModBlocks.MALACHITE_ORE.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succs_essentials_tab_items"))
                     .title(Component.translatable("creativetab.succsessentials.blocks.tab"))
                     .displayItems((itemDisplayParameters, output) -> {

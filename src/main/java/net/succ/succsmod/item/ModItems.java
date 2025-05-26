@@ -57,8 +57,19 @@ public class ModItems {
     public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
             () -> new GarlicItem(ModBlocks.GARLIC_CROP.get(), new Item.Properties()));
 
+    // Register the Garlic Bread item
     public static final DeferredItem<Item> GARLIC_BREAD = ITEMS.register("garlic_bread",
             () -> new Item(new Item.Properties().food(ModFoodProperties.GARLIC_BREAD)));
+
+    // Register the Rock item
+    public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK)));
+
+    // Register the Rock Candy item
+    public static final DeferredItem<Item> ROCK_CANDY = ITEMS.register("rock_candy",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK_CANDY)));
+
+
 
     // Method to register the DeferredRegister to the event bus
     public static void register(IEventBus eventBus) {
