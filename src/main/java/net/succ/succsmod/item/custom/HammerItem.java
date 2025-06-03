@@ -54,6 +54,4 @@ public class HammerItem extends DiggerItem {
 
         return positions;
     }
-
-
 }

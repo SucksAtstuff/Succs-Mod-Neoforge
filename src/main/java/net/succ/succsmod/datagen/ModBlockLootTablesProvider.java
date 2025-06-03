@@ -18,8 +18,10 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.block.custom.GarlicCropBlock;
 import net.succ.succsmod.item.ModItems;
 
 import java.util.Set;
@@ -38,15 +40,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.SUNSTONE_BLOCK.get());
 
-        add(ModBlocks.GARLIC_CROP.get(),
-                block -> createCropDrops(
-                        ModBlocks.GARLIC_CROP.get(),
-                        ModItems.GARLIC.get(),
-                        ModItems.GARLIC.get(),
-                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 3))
-                )
-        );
+        LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));
+        this.add(ModBlocks.GARLIC_CROP.get(), this.createCropDrops(ModBlocks.GARLIC_CROP.get(),
+                ModItems.GARLIC.get(), ModItems.GARLIC.get(), lootItemConditionBuilder));
 
 
         // Define loot tables for ores that drop items similar to diamond ores
