@@ -22,17 +22,7 @@ public class ModEnchantments {
         var enchantments = context.lookup(Registries.ENCHANTMENT);
         var items = context.lookup(Registries.ITEM);
 
-        register(context, EXCAVATION, Enchantment.enchantment(Enchantment.definition(
-                        items.getOrThrow(ModTags.Items.HAMMER_ENCHANTABLE),
-                        items.getOrThrow(ModTags.Items.HAMMER_ENCHANTABLE),
-                        10, // Min cost
-                        3,  // Max level
-                        Enchantment.dynamicCost(10, 8),
-                        Enchantment.dynamicCost(25, 8),
-                        2,  // Weight
-                        EquipmentSlotGroup.MAINHAND))
-                .withEffect(EnchantmentEffectComponents.POST_HIT, EnchantmentTarget.ATTACKER,
-                        EnchantmentTarget.VICTIM, new Excavation()));
+
     }
 
 

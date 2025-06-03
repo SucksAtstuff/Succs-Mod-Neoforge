@@ -152,5 +152,7 @@
     "tooltip.succsessentials.poison_sword.tooltip.shift": "Inflicts Poison on hit mobs",
     "tooltip.succsessentials.poison_sword.tooltip": "Press §eShift§r for more information",
 
-    "entity.minecraft.villager.succsessentials.gem_cutter": "'Gem' Cutter"
+    "entity.minecraft.villager.succsessentials.gem_cutter": "'Gem' Cutter",
+
+    "enchantment.succsessentials.excavation": "Excavation"
 }

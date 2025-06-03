@@ -2,6 +2,7 @@ package net.succ.succsmod;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.datagen.ModDatapackProvider;
 import net.succ.succsmod.enchantment.ModEnchantmentEffects;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
@@ -49,8 +50,6 @@ public class SuccsMod
         ModBlocks.register(modEventBus);
 
         ModEnchantmentEffects.register(modEventBus);
-
-
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
