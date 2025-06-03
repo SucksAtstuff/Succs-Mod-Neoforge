@@ -64,5 +64,30 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MALACHITE_HOE.get())
                 .add(ModItems.SUNSTONE_HOE.get())
                 .add(ModItems.SAPPHIRE_HOE.get());
+
+        tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.GARLIC.get());
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ATHERIUM_HELMET.get())
+                .add(ModItems.ATHERIUM_CHESTPLATE.get())
+                .add(ModItems.ATHERIUM_LEGGINGS.get())
+                .add(ModItems.ATHERIUM_BOOTS.get())
+                .add(ModItems.RUBY_HELMET.get())
+                .add(ModItems.RUBY_CHESTPLATE.get())
+                .add(ModItems.RUBY_LEGGINGS.get())
+                .add(ModItems.RUBY_BOOTS.get())
+                .add(ModItems.MALACHITE_HELMET.get())
+                .add(ModItems.MALACHITE_CHESTPLATE.get())
+                .add(ModItems.MALACHITE_LEGGINGS.get())
+                .add(ModItems.MALACHITE_BOOTS.get())
+                .add(ModItems.SAPPHIRE_HELMET.get())
+                .add(ModItems.SAPPHIRE_CHESTPLATE.get())
+                .add(ModItems.SAPPHIRE_LEGGINGS.get())
+                .add(ModItems.SAPPHIRE_BOOTS.get())
+                .add(ModItems.SUNSTONE_HELMET.get())
+                .add(ModItems.SUNSTONE_CHESTPLATE.get())
+                .add(ModItems.SUNSTONE_LEGGINGS.get())
+                .add(ModItems.SUNSTONE_BOOTS.get());
     }
 }

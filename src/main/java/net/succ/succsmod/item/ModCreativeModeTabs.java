@@ -44,6 +44,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GOLD_HANDLE.get());
                         output.accept(ModItems.GARLIC.get());
                         output.accept(ModItems.GARLIC_BREAD.get());
+                        output.accept(ModItems.ROCK.get());
+                        output.accept(ModItems.ROCK_CANDY.get());
                     })
                     .build());
 
@@ -138,7 +140,30 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succs_essentials_tab_tools"))
                     .title(Component.translatable("creativetab.succsessentials.armor.tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.ATHERIUM_HELMET.get());
+                        output.accept(ModItems.ATHERIUM_CHESTPLATE.get());
+                        output.accept(ModItems.ATHERIUM_LEGGINGS.get());
+                        output.accept(ModItems.ATHERIUM_BOOTS.get());
 
+                        output.accept(ModItems.RUBY_HELMET.get());
+                        output.accept(ModItems.RUBY_CHESTPLATE.get());
+                        output.accept(ModItems.RUBY_LEGGINGS.get());
+                        output.accept(ModItems.RUBY_BOOTS.get());
+
+                        output.accept(ModItems.SAPPHIRE_HELMET.get());
+                        output.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
+                        output.accept(ModItems.SAPPHIRE_LEGGINGS.get());
+                        output.accept(ModItems.SAPPHIRE_BOOTS.get());
+
+                        output.accept(ModItems.SUNSTONE_HELMET.get());
+                        output.accept(ModItems.SUNSTONE_CHESTPLATE.get());
+                        output.accept(ModItems.SUNSTONE_LEGGINGS.get());
+                        output.accept(ModItems.SUNSTONE_BOOTS.get());
+
+                        output.accept(ModItems.MALACHITE_HELMET.get());
+                        output.accept(ModItems.MALACHITE_CHESTPLATE.get());
+                        output.accept(ModItems.MALACHITE_LEGGINGS.get());
+                        output.accept(ModItems.MALACHITE_BOOTS.get());
                     })
                     .build());
 

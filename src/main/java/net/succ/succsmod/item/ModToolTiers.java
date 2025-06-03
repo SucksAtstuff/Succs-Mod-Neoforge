@@ -16,11 +16,11 @@ public class ModToolTiers {
 
     // Register a new custom tool tier for Ruby
     public static final Tier RUBY = new SimpleTier(ModTags.Blocks.NEEDS_RUBY_TOOL,
-            1561,10.0F,4.0F,10, () -> Ingredient.of(ModItems.RUBY));
+            1561,10.0F,4.0F,14, () -> Ingredient.of(ModItems.RUBY));
 
     // Register a new custom tool tier for Malachite
     public static final Tier MALACHITE = new SimpleTier(ModTags.Blocks.NEEDS_MALACHITE_TOOL,
-            1854,10.5F,5.0F,12, () -> Ingredient.of(ModItems.MALACHITE));
+            1854,10.5F,5.0F,16, () -> Ingredient.of(ModItems.MALACHITE));
 
     // Register a new custom tool tier for Atherium
     public static final Tier ATHERIUM = new SimpleTier(ModTags.Blocks.INCORRECT_FOR_ATHERIUM_TOOL,
