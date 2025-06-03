@@ -2,8 +2,8 @@
   "type": "succsessentials:add_item",
   "conditions": [
     {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+      "block": "minecraft:stone",
+      "condition": "minecraft:block_state_property"
     },
     {
       "chance": 0.05,
