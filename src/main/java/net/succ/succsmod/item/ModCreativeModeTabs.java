@@ -136,7 +136,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_ARMOR = CREATIVE_MODE_TAB.register("succs_essentials_tab_armor",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.ATHERIUM_BLOCK.get()))
+                    .icon(() -> new ItemStack(ModItems.ATHERIUM_HELMET.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succs_essentials_tab_tools"))
                     .title(Component.translatable("creativetab.succsessentials.armor.tab"))
                     .displayItems((itemDisplayParameters, output) -> {
