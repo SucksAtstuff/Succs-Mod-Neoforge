@@ -8,6 +8,7 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.custom.GarlicItem;
 import net.succ.succsmod.item.custom.HammerItem;
+import net.succ.succsmod.item.custom.ModArmorItem;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -183,9 +184,9 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.MALACHITE, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE, 8, -3.5F))));
 
-    // Atherium Armour (durability factor 42)
+    // Atherium Armour (durability factor 42) (Full set grants Health Boost)
     public static final DeferredItem<ArmorItem> ATHERIUM_HELMET = ITEMS.register("atherium_helmet",
-            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_CHESTPLATE = ITEMS.register("atherium_chestplate",
             () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_LEGGINGS = ITEMS.register("atherium_leggings",
@@ -223,9 +224,9 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots",
             () -> new ArmorItem(ModArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(38))));
 
-    // Sunstone Armour (durability factor 38)
+    // Sunstone Armour (durability factor 38) (Full set grants Fire Resistance)
     public static final DeferredItem<ArmorItem> SUNSTONE_HELMET = ITEMS.register("sunstone_helmet",
-            () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(38))));
+            () -> new ModArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(38))));
     public static final DeferredItem<ArmorItem> SUNSTONE_CHESTPLATE = ITEMS.register("sunstone_chestplate",
             () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(38))));
     public static final DeferredItem<ArmorItem> SUNSTONE_LEGGINGS = ITEMS.register("sunstone_leggings",
