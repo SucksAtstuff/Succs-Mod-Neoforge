@@ -54,4 +54,21 @@ public class HammerItem extends DiggerItem {
 
         return positions;
     }
+
+    public static void performExcavation(ServerPlayer player, BlockPos origin, int enchantLevel) {
+        var level = player.serverLevel();
+
+        for (int layer = 0; layer < enchantLevel; layer++) {
+            BlockPos targetLayer = origin.above(layer); // Could also be below or based on player look
+            List<BlockPos> blocks = getBlocksToBeDestroyed(1, targetLayer, player);
+
+            for (BlockPos pos : blocks) {
+                if (!level.isLoaded(pos)) continue;
+                if (!level.getBlockState(pos).isAir()) {
+                    level.destroyBlock(pos, true, player);
+                }
+            }
+        }
+    }
+
 }

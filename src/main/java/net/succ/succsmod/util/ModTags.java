@@ -14,6 +14,7 @@ public class ModTags {
         public static final TagKey<Item> POLISHABLE_GEMS = createTag("polishable_gems");
         public static final TagKey<Item> POLISHED_GEMS = createTag("polished_gems");
         public static final TagKey<Item> SUNSTONE_SAPPHIRE_TOOLS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "sunstone_sapphire_tools"));
+        public static final TagKey<Item> HAMMER_ENCHANTABLE = createTag("hammer_enchantable");
 
         private static TagKey<Item> createTag (String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
@@ -31,6 +32,7 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_SUNSTONE_TOOL = createTag("incorrect_for_sunstone_tool");
         public static final TagKey<Block> NEEDS_MALACHITE_TOOL = createTag("needs_malachite_tool");
         public static final TagKey<Block> INCORRECT_FOR_MALACHITE_TOOL = createTag("incorrect_for_malachite_tool");
+
 
         public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
 

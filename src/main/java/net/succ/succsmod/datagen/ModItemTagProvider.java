@@ -89,5 +89,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SUNSTONE_CHESTPLATE.get())
                 .add(ModItems.SUNSTONE_LEGGINGS.get())
                 .add(ModItems.SUNSTONE_BOOTS.get());
+
+        tag(ModTags.Items.HAMMER_ENCHANTABLE)
+                .add(ModItems.SUNSTONE_HAMMER.get())
+                .add(ModItems.SAPPHIRE_HAMMER.get())
+                .add(ModItems.ATHERIUM_HAMMER.get())
+                .add(ModItems.RUBY_HAMMER.get())
+                .add(ModItems.MALACHITE_HAMMER.get());
     }
+
+
 }
