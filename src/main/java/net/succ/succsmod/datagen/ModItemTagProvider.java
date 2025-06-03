@@ -29,7 +29,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ModTags.Items.SUNSTONE_SAPPHIRE_TOOLS)
                 .add(ModItems.SUNSTONE_PICKAXE.get())
-                .add(ModItems.SAPPHIRE_PICKAXE.get());
+                .add(ModItems.SAPPHIRE_PICKAXE.get())
+                .add(ModItems.SUNSTONE_HAMMER.get())
+                .add(ModItems.SAPPHIRE_HAMMER.get());
 
         // Add the tools to the regular tool tags
         tag(ItemTags.SWORDS)

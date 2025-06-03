@@ -96,6 +96,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ATHERIUM_AXE.get());
                         output.accept(ModItems.ATHERIUM_SHOVEL.get());
                         output.accept(ModItems.ATHERIUM_HOE.get());
+                        output.accept(ModItems.ATHERIUM_HAMMER.get());
 
 
                         output.accept(ModItems.RUBY_SWORD.get());
@@ -103,6 +104,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RUBY_AXE.get());
                         output.accept(ModItems.RUBY_SHOVEL.get());
                         output.accept(ModItems.RUBY_HOE.get());
+                        output.accept(ModItems.RUBY_HAMMER.get());
 
 
                         output.accept(ModItems.SAPPHIRE_SWORD.get());
@@ -110,6 +112,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAPPHIRE_AXE.get());
                         output.accept(ModItems.SAPPHIRE_SHOVEL.get());
                         output.accept(ModItems.SAPPHIRE_HOE.get());
+                        output.accept(ModItems.SAPPHIRE_HAMMER.get());
 
 
                         output.accept(ModItems.SUNSTONE_SWORD.get());
@@ -117,6 +120,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_AXE.get());
                         output.accept(ModItems.SUNSTONE_SHOVEL.get());
                         output.accept(ModItems.SUNSTONE_HOE.get());
+                        output.accept(ModItems.SUNSTONE_HAMMER.get());
 
 
                         output.accept(ModItems.MALACHITE_SWORD.get());
@@ -124,9 +128,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MALACHITE_AXE.get());
                         output.accept(ModItems.MALACHITE_SHOVEL.get());
                         output.accept(ModItems.MALACHITE_HOE.get());
-
-
-
+                        output.accept(ModItems.MALACHITE_HAMMER.get());
                     })
                     .build());
 

@@ -1,15 +1,13 @@
 package net.succ.succsmod.item;
 
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.custom.GarlicItem;
+import net.succ.succsmod.item.custom.HammerItem;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -21,51 +19,42 @@ public class ModItems {
     public static final DeferredItem<Item> ATHERIUM = ITEMS.register("atherium",
             () -> new Item(new Item.Properties()));
 
-    // Register the Sunstone items
     public static final DeferredItem<Item> DIRTY_SUNSTONE = ITEMS.register("dirty_sunstone",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SUNSTONE = ITEMS.register("sunstone",
             () -> new Item(new Item.Properties()));
 
-    // Register the Ruby items
     public static final DeferredItem<Item> DIRTY_RUBY = ITEMS.register("dirty_ruby",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
 
-    // Register the Sapphire items
     public static final DeferredItem<Item> DIRTY_SAPPHIRE = ITEMS.register("dirty_sapphire",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
 
-    // Register the Malachite items
     public static final DeferredItem<Item> MALACHITE = ITEMS.register("malachite",
-            () ->new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> DIRTY_MALACHITE = ITEMS.register("dirty_malachite",
             () -> new Item(new Item.Properties()));
 
-    // Register the Gold Handle item
     public static final DeferredItem<Item> GOLD_HANDLE = ITEMS.register("gold_handle",
             () -> new Item(new Item.Properties()));
 
-    // Register the Garlic item
     public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
             () -> new GarlicItem(ModBlocks.GARLIC_CROP.get(), new Item.Properties()));
 
-    // Register the Garlic Bread item
     public static final DeferredItem<Item> GARLIC_BREAD = ITEMS.register("garlic_bread",
             () -> new Item(new Item.Properties().food(ModFoodProperties.GARLIC_BREAD)));
 
-    // Register the Rock item
     public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK)));
 
-    // Register the Rock Candy item
     public static final DeferredItem<Item> ROCK_CANDY = ITEMS.register("rock_candy",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK_CANDY)));
 
@@ -90,6 +79,10 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.ATHERIUM, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.ATHERIUM, -4, 1F))));
 
+    public static final DeferredItem<Item> ATHERIUM_HAMMER = ITEMS.register("atherium_hammer",
+            () -> new HammerItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.ATHERIUM, 10, -3.5F))));
+
     // Ruby Tools
     public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
             () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
@@ -110,6 +103,10 @@ public class ModItems {
     public static final DeferredItem<Item> RUBY_HOE = ITEMS.register("ruby_hoe",
             () -> new HoeItem(ModToolTiers.RUBY, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.RUBY, -4, 1F))));
+
+    public static final DeferredItem<Item> RUBY_HAMMER = ITEMS.register("ruby_hammer",
+            () -> new HammerItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.RUBY, 9, -3.5F))));
 
     // Sapphire Tools
     public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
@@ -132,6 +129,10 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.SAPPHIRE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.SAPPHIRE, -3, 1F))));
 
+    public static final DeferredItem<Item> SAPPHIRE_HAMMER = ITEMS.register("sapphire_hammer",
+            () -> new HammerItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.SAPPHIRE, 8, -3.5F))));
+
     // Sunstone Tools
     public static final DeferredItem<SwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
             () -> new SwordItem(ModToolTiers.SUNSTONE, new Item.Properties()
@@ -152,6 +153,10 @@ public class ModItems {
     public static final DeferredItem<Item> SUNSTONE_HOE = ITEMS.register("sunstone_hoe",
             () -> new HoeItem(ModToolTiers.SUNSTONE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.SUNSTONE, -3, 1F))));
+
+    public static final DeferredItem<Item> SUNSTONE_HAMMER = ITEMS.register("sunstone_hammer",
+            () -> new HammerItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE, 8, -3.5F))));
 
     // Malachite Tools
     public static final DeferredItem<SwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
@@ -174,12 +179,10 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.MALACHITE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.MALACHITE, -5, 1F))));
 
+    public static final DeferredItem<Item> MALACHITE_HAMMER = ITEMS.register("malachite_hammer",
+            () -> new HammerItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE, 8, -3.5F))));
 
-
-
-
-
-    // Method to register the DeferredRegister to the event bus
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

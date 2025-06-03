@@ -38,6 +38,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ATHERIUM_AXE.get());
         handheldItem(ModItems.ATHERIUM_SHOVEL.get());
         handheldItem(ModItems.ATHERIUM_HOE.get());
+        handheldItem(ModItems.ATHERIUM_HAMMER.get());
 
         // Register models for ruby tools
         handheldItem(ModItems.RUBY_SWORD.get());
@@ -45,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.RUBY_AXE.get());
         handheldItem(ModItems.RUBY_SHOVEL.get());
         handheldItem(ModItems.RUBY_HOE.get());
+        handheldItem(ModItems.RUBY_HAMMER.get());
 
         // Register models for sapphire tools
         handheldItem(ModItems.SAPPHIRE_SWORD.get());
@@ -52,6 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SAPPHIRE_AXE.get());
         handheldItem(ModItems.SAPPHIRE_SHOVEL.get());
         handheldItem(ModItems.SAPPHIRE_HOE.get());
+        handheldItem(ModItems.SAPPHIRE_HAMMER.get());
 
         // Register models for sunstone tools
         handheldItem(ModItems.SUNSTONE_SWORD.get());
@@ -59,6 +62,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SUNSTONE_AXE.get());
         handheldItem(ModItems.SUNSTONE_SHOVEL.get());
         handheldItem(ModItems.SUNSTONE_HOE.get());
+        handheldItem(ModItems.SUNSTONE_HAMMER.get());
 
         // Register models for malachite tools
         handheldItem(ModItems.MALACHITE_SWORD.get());
@@ -66,8 +70,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.MALACHITE_AXE.get());
         handheldItem(ModItems.MALACHITE_SHOVEL.get());
         handheldItem(ModItems.MALACHITE_HOE.get());
-
-
-
+        handheldItem(ModItems.MALACHITE_HAMMER.get());
     }
 }

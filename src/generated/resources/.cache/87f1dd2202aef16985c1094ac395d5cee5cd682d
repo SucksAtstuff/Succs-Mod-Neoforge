@@ -1,8 +1,8 @@
-// 1.21.1	2025-05-26T17:15:22.6338688	Tags for minecraft:item mod id succsessentials
+// 1.21.1	2025-06-03T17:04:42.2180249	Tags for minecraft:item mod id succsessentials
 d9208db1b927d4fab9c598ee240ffbaa4d624784 data/minecraft/tags/item/axes.json
 7226380a4cac617dedc16d2e3588b74f37a19ce2 data/minecraft/tags/item/hoes.json
 2fd1d413552853febd1c3df136cba0588ff2499c data/minecraft/tags/item/pickaxes.json
 5abd44f3af2dd11c1fbbebd327d53c6c0fb6f341 data/minecraft/tags/item/shovels.json
 51aa356bf827edff23afb554f300d2df131fcfb9 data/minecraft/tags/item/swords.json
 c8e651f6c704b433daa00d2f13342dfa889f4561 data/succsessentials/tags/item/polishable_gems.json
-e0362cbd4d9d37386e0ba3eeadf0dbdf705240f8 data/succsessentials/tags/item/sunstone_sapphire_tools.json
+f8b06a93728c2cbe5b100b00900f0a6c60987372 data/succsessentials/tags/item/sunstone_sapphire_tools.json

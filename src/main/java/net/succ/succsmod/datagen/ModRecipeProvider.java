@@ -128,6 +128,226 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_garlic", has(ModItems.GARLIC.get()))
                 .unlockedBy("has_bread", has(Items.BREAD))
                 .save(recipeOutput, "garlic_bread");
+
+        // Ruby Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_PICKAXE.get())
+                .pattern("RRR")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_AXE.get())
+                .pattern("RR ")
+                .pattern("RG ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_SHOVEL.get())
+                .pattern(" R ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_HOE.get())
+                .pattern("RR ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_SWORD.get())
+                .pattern(" R ")
+                .pattern(" R ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_HAMMER.get())
+                .pattern("RRR")
+                .pattern("RGR")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        // Sapphire Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_PICKAXE.get())
+                .pattern("SSS")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_AXE.get())
+                .pattern("SS ")
+                .pattern("SG ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_SHOVEL.get())
+                .pattern(" S ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_HOE.get())
+                .pattern("SS ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_SWORD.get())
+                .pattern(" S ")
+                .pattern(" S ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_HAMMER.get())
+                .pattern("SSS")
+                .pattern("SGS")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        // Sunstone Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_PICKAXE.get())
+                .pattern("SSS")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_AXE.get())
+                .pattern("SS ")
+                .pattern("SG ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_SHOVEL.get())
+                .pattern(" S ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_HOE.get())
+                .pattern("SS ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_SWORD.get())
+                .pattern(" S ")
+                .pattern(" S ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_HAMMER.get())
+                .pattern("SSS")
+                .pattern("SGS")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        // Malachite Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_PICKAXE.get())
+                .pattern("MMM")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_AXE.get())
+                .pattern("MM ")
+                .pattern("MG ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SHOVEL.get())
+                .pattern(" M ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HOE.get())
+                .pattern("MM ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SWORD.get())
+                .pattern(" M ")
+                .pattern(" M ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HAMMER.get())
+                .pattern("MMM")
+                .pattern("MGG")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
