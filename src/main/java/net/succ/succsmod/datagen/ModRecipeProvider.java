@@ -134,7 +134,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('M', ModItems.MALACHITE.get())
                 .unlockedBy("has_malachite", has(ModItems.MALACHITE.get())).save(recipeOutput);
 
-        // Register shapeless recipe for Garlic Bread
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.GARLIC_BREAD.get())
                 .requires(ModItems.GARLIC.get())
                 .requires(Items.BREAD)

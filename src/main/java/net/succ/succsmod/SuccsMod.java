@@ -37,6 +37,9 @@ public class SuccsMod
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public SuccsMod(IEventBus modEventBus, ModContainer modContainer)
     {
+        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -60,9 +63,6 @@ public class SuccsMod
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
