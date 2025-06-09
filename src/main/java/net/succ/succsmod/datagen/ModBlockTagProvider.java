@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.succ.succsmod.SuccsMod;
@@ -22,7 +23,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         // Add Atherium block tags to the "mineable with pickaxe" tag
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ATHERIUM_BLOCK.get())
                 .add(ModBlocks.ATHERIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
@@ -30,7 +31,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_ATHERIUM_ORE.get());
 
         // Add Ruby block tags to the "mineable with pickaxe" tag
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.RUBY_BLOCK.get())
                 .add(ModBlocks.RUBY_ORE.get())
                 .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
@@ -38,7 +39,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_RUBY_ORE.get());
 
         // Add Sunstone block tags to the "mineable with pickaxe" tag
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.SUNSTONE_BLOCK.get())
                 .add(ModBlocks.SUNSTONE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get())
@@ -46,7 +47,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_SUNSTONE_ORE.get());
 
         // Add Malachite block tags to the "mineable with pickaxe" tag
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.MALACHITE_BLOCK.get())
                 .add(ModBlocks.MALACHITE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get())
@@ -54,7 +55,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_MALACHITE_ORE.get());
 
         // Add Sapphire block tags to the "mineable with pickaxe" tag
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.SAPPHIRE_BLOCK.get())
                 .add(ModBlocks.SAPPHIRE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
@@ -62,7 +63,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_SAPPHIRE_ORE.get());
 
         // Add Sapphire blocks to the "needs Netherite tool" tag
-        tag(net.neoforged.neoforge.common.Tags.Blocks.NEEDS_NETHERITE_TOOL)
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.SAPPHIRE_BLOCK.get())
                 .add(ModBlocks.SAPPHIRE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
@@ -70,7 +71,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.END_SAPPHIRE_ORE.get());
 
         // Add Sunstone blocks to the "needs Netherite tool" tag
-        tag(net.neoforged.neoforge.common.Tags.Blocks.NEEDS_NETHERITE_TOOL)
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.SUNSTONE_BLOCK.get())
                 .add(ModBlocks.SUNSTONE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get())
@@ -131,7 +132,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .remove(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         // Blocks Netherite should NOT be able to mine
-        tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
+        this.tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
                 .add(ModBlocks.ATHERIUM_BLOCK.get())
@@ -139,7 +140,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
                 .add(ModBlocks.NETHER_ATHERIUM_ORE.get())
                 .add(ModBlocks.END_ATHERIUM_ORE.get())
-                .remove(net.neoforged.neoforge.common.Tags.Blocks.NEEDS_NETHERITE_TOOL);
+                .remove(Tags.Blocks.NEEDS_NETHERITE_TOOL);
+
+        this.tag(ModTags.Blocks.PAXEL_MINEABLE)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
 
     }
 }

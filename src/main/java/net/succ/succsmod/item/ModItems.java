@@ -8,10 +8,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.effect.ModEffects;
-import net.succ.succsmod.item.custom.GarlicItem;
-import net.succ.succsmod.item.custom.HammerItem;
-import net.succ.succsmod.item.custom.MobEffectSwordItem;
-import net.succ.succsmod.item.custom.ModArmorItem;
+import net.succ.succsmod.item.custom.*;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -87,6 +84,10 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.ATHERIUM, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.ATHERIUM, 10, -3.5F))));
 
+    public static final DeferredItem<Item> ATHERIUM_PAXEL = ITEMS.register("atherium_paxel",
+            () -> new PaxelItem(ModToolTiers.ATHERIUM, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.ATHERIUM, 4, -3F))));
+
     // Ruby Tools
     public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
             () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
@@ -111,6 +112,10 @@ public class ModItems {
     public static final DeferredItem<Item> RUBY_HAMMER = ITEMS.register("ruby_hammer",
             () -> new HammerItem(ModToolTiers.RUBY, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.RUBY, 9, -3.5F))));
+
+    public static final DeferredItem<Item> RUBY_PAXEL = ITEMS.register("ruby_paxel",
+            () -> new PaxelItem(ModToolTiers.RUBY, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.RUBY, 2, -3F))));
 
     // Sapphire Tools
     public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
@@ -137,6 +142,10 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.SAPPHIRE, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.SAPPHIRE, 8, -3.5F))));
 
+    public static final DeferredItem<Item> SAPPHIRE_PAXEL = ITEMS.register("sapphire_paxel",
+            () -> new PaxelItem(ModToolTiers.SAPPHIRE, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.SAPPHIRE, 1, -3F))));
+
     // Sunstone Tools
     public static final DeferredItem<MobEffectSwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
             () -> new MobEffectSwordItem(ModToolTiers.SUNSTONE, new Item.Properties()
@@ -162,6 +171,10 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.SUNSTONE, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE, 8, -3.5F))));
 
+    public static final DeferredItem<Item> SUNSTONE_PAXEL = ITEMS.register("sunstone_paxel",
+            () -> new PaxelItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.SUNSTONE, 1, -3F))));
+
     // Malachite Tools
     public static final DeferredItem<MobEffectSwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
             () -> new MobEffectSwordItem(ModToolTiers.MALACHITE, new Item.Properties()
@@ -186,6 +199,10 @@ public class ModItems {
     public static final DeferredItem<Item> MALACHITE_HAMMER = ITEMS.register("malachite_hammer",
             () -> new HammerItem(ModToolTiers.MALACHITE, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE, 8, -3.5F))));
+
+    public static final DeferredItem<Item> MALACHITE_PAXEL = ITEMS.register("malachite_paxel",
+            () -> new PaxelItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.MALACHITE, 3, -3F))));
 
     // Atherium Armour (durability factor 42) (Full set grants Health Boost)
     public static final DeferredItem<ArmorItem> ATHERIUM_HELMET = ITEMS.register("atherium_helmet",
