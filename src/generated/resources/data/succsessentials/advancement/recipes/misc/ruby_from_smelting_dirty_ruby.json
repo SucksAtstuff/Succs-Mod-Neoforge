@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dirty_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:dirty_ruby"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "succsessentials:ruby_from_smelting_dirty_ruby"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dirty_ruby"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "succsessentials:ruby_from_smelting_dirty_ruby"
+    ]
+  }
+}

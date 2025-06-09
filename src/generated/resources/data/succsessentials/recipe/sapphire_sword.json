@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "succsessentials:gold_handle"
+    },
+    "S": {
+      "item": "succsessentials:sapphire"
+    }
+  },
+  "pattern": [
+    " S ",
+    " S ",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:sapphire_sword"
+  }
+}

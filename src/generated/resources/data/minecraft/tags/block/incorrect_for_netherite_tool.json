@@ -1,0 +1,12 @@
+{
+  "values": [
+    "succsessentials:ruby_ore",
+    "succsessentials:malachite_ore",
+    "succsessentials:atherium_ore",
+    "#succsessentials:needs_sunstone_tool",
+    "#succsessentials:needs_sapphire_tool",
+    "#succsessentials:needs_ruby_tool",
+    "#succsessentials:needs_malachite_tool",
+    "#succsessentials:needs_atherium_tool"
+  ]
+}
