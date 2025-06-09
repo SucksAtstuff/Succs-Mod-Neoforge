@@ -1,14 +1,6 @@
 {
   "values": [
-    "succsessentials:sapphire_block",
-    "succsessentials:sapphire_ore",
-    "succsessentials:deepslate_sapphire_ore",
-    "succsessentials:nether_sapphire_ore",
-    "succsessentials:end_sapphire_ore",
-    "succsessentials:sunstone_block",
     "succsessentials:sunstone_ore",
-    "succsessentials:deepslate_sunstone_ore",
-    "succsessentials:nether_sunstone_ore",
-    "succsessentials:end_sunstone_ore"
+    "succsessentials:sapphire_ore"
   ]
 }

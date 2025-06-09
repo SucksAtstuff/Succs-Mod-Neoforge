@@ -1,14 +1,9 @@
 {
-  "remove": [
-    "#neoforge:needs_netherite_tool"
-  ],
   "values": [
+    "#succsessentials:needs_sunstone_tool",
+    "#succsessentials:needs_sapphire_tool",
     "#succsessentials:needs_ruby_tool",
     "#succsessentials:needs_malachite_tool",
-    "succsessentials:atherium_block",
-    "succsessentials:atherium_ore",
-    "succsessentials:deepslate_atherium_ore",
-    "succsessentials:nether_atherium_ore",
-    "succsessentials:end_atherium_ore"
+    "#succsessentials:needs_atherium_tool"
   ]
 }

@@ -1,8 +1,7 @@
 {
-  "remove": [
-    "#succsessentials:needs_sapphire_tool"
-  ],
   "values": [
-    "#succsessentials:incorrect_for_sunstone_tool"
+    "#succsessentials:needs_ruby_tool",
+    "#succsessentials:needs_malachite_tool",
+    "#succsessentials:needs_atherium_tool"
   ]
 }
