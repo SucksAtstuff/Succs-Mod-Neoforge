@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.succ.succsmod.SuccsMod;
@@ -52,6 +53,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
+
+        horizontalBlock(ModBlocks.GEM_POLISHING_TABLE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_table")));
 
     }
 

@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-26T14:50:41.8259033	Block States: succsessentials
+// 1.21.1	2025-06-04T14:03:16.1928825	Block States: succsessentials
 0061c142e5b73f499c29bb25dd8ed45b53183d4b assets/succsessentials/blockstates/atherium_block.json
 e439fa0b16a70e78af0ee43aecc083969fa1b6e2 assets/succsessentials/blockstates/atherium_ore.json
 6299f37e7f51bd20a6171907a11fc0567729f0e7 assets/succsessentials/blockstates/deepslate_atherium_ore.json
@@ -12,6 +12,7 @@ cad754118e03682d7594a6366c06bac053ec5a30 assets/succsessentials/blockstates/deep
 9da031d2b7aaa4d63862f69e9c093c45e59749e1 assets/succsessentials/blockstates/end_sapphire_ore.json
 92b1fb80468e28e78a01c7ec011da15a1fdd0556 assets/succsessentials/blockstates/end_sunstone_ore.json
 b4a974607f356eed539e94eaedd9240598ad13d9 assets/succsessentials/blockstates/garlic_crop.json
+62b0c2efc4e08319f67cdb5d49bc4f7d867a0648 assets/succsessentials/blockstates/gem_polishing_table.json
 79c465aaa4ce61baba944131fc68854062c2c4e1 assets/succsessentials/blockstates/malachite_block.json
 0524befdd74f5dcf700db0009be175543f0ee15e assets/succsessentials/blockstates/malachite_ore.json
 6c1f3cd0c19ca55660627f8fe4e45a976b521dff assets/succsessentials/blockstates/nether_atherium_ore.json

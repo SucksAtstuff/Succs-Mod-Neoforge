@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-03T18:28:31.0047519	Item Models: succsessentials
+// 1.21.1	2025-06-04T13:58:03.1770239	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -57,6 +57,7 @@ f3ff8f4ecdc8da57aaf2686931a77127548f3626 assets/succsessentials/models/item/athe
 6c25068db70af239ac6ba1b6051b5f4cdf576262 assets/succsessentials/models/item/dirty_sunstone.json
 f49af2a686c9f636c555b2ad220bec265b12e33e assets/succsessentials/models/item/garlic.json
 b0f43ed726e628f42a761bd658ff147b518ee1d1 assets/succsessentials/models/item/garlic_bread.json
+94970adce11690c8c614510a3d985e803020420d assets/succsessentials/models/item/gem_polishing_table.json
 5403bef9646874ab2cd6693310c27aca00b0b1e3 assets/succsessentials/models/item/gold_handle.json
 2b2d746361a0c3c6ea35a97d54907a9bd0d5835e assets/succsessentials/models/item/malachite.json
 1852f529aa02a3faf58c34b7df9d98efcf59efa7 assets/succsessentials/models/item/malachite_axe.json

@@ -1,8 +1,7 @@
 package net.succ.succsmod;
 
-import net.minecraft.world.item.CreativeModeTabs;
 import net.succ.succsmod.block.ModBlocks;
-import net.succ.succsmod.datagen.ModDatapackProvider;
+import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.loot.ModLootModifiers;
@@ -30,7 +29,7 @@ public class SuccsMod
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "succsessentials";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -48,6 +47,8 @@ public class SuccsMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
 

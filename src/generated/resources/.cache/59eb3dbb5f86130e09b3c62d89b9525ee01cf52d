@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-26T14:35:14.7156311	Loot Tables
+// 1.21.1	2025-06-04T13:49:43.9534326	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 51110d4b246d8573ad324811ff382923f359a0a3 data/succsessentials/loot_table/blocks/deepslate_atherium_ore.json
@@ -12,6 +12,7 @@ bb66a9094ed08105de79f493a47416cefa818141 data/succsessentials/loot_table/blocks/
 949ba58275d5ef26a9c716c416f0bf12c7c65a72 data/succsessentials/loot_table/blocks/end_sapphire_ore.json
 08d3f6e3d8f35cdcc008cf127c79d5ec0be9d05d data/succsessentials/loot_table/blocks/end_sunstone_ore.json
 5314dadf3f9982d3fea0b1d984e267363e2ce0d0 data/succsessentials/loot_table/blocks/garlic_crop.json
+7cee3be5530c7a8239102648055693a3540cf2b2 data/succsessentials/loot_table/blocks/gem_polishing_table.json
 17814f3d4310ada249a5014618e0b70cddbdfa66 data/succsessentials/loot_table/blocks/malachite_block.json
 bd93c8d18a90f73191eb9aed2413f3cb9b0ecfc2 data/succsessentials/loot_table/blocks/malachite_ore.json
 fa56035f197a32e07c40fe432df415b95e130651 data/succsessentials/loot_table/blocks/nether_atherium_ore.json

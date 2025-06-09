@@ -84,6 +84,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NETHER_SUNSTONE_ORE.get());
                         output.accept(ModBlocks.END_SUNSTONE_ORE.get());
                         output.accept(ModBlocks.SUNSTONE_BLOCK.get());
+
+                        output.accept(ModBlocks.GEM_POLISHING_TABLE.get());
                     })
                     .build());
 

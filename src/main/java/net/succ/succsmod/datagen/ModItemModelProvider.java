@@ -15,7 +15,10 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.ModItems;
+import net.minecraft.core.registries.BuiltInRegistries;
+
 
 import java.util.LinkedHashMap;
 
@@ -130,6 +133,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SUNSTONE_CHESTPLATE);
         trimmedArmorItem(ModItems.SUNSTONE_LEGGINGS);
         trimmedArmorItem(ModItems.SUNSTONE_BOOTS);
+
+        complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
     }
 
     // Shoutout to El_Redstoniano for making this
@@ -177,6 +182,13 @@ public class ModItemModelProvider extends ItemModelProvider {
             });
         }
     }
+
+
+    private ItemModelBuilder complexBlock(Block block) {
+        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);
+        return withExistingParent(blockId.getPath(), ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "block/" + blockId.getPath()));
+    }
+
 
     public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))

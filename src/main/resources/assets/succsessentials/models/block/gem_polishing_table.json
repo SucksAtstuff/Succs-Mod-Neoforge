@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "succsmod:block/gem_polishing_table/base",
-		"2": "succsmod:block/gem_polishing_table/table",
-		"3": "succsmod:block/gem_polishing_table/holder",
-		"4": "succsmod:block/gem_polishing_table/tube",
-		"particle": "succsmod:block/gem_polishing_table/base"
+		"1": "succsessentials:block/gem_polishing_table/base",
+		"2": "succsessentials:block/gem_polishing_table/table",
+		"3": "succsessentials:block/gem_polishing_table/holder",
+		"4": "succsessentials:block/gem_polishing_table/tube",
+		"particle": "succsessentials:block/gem_polishing_table/base"
 	},
 	"elements": [
 		{
