@@ -1,8 +1,0 @@
-{
-  "remove": [
-    "#succsessentials:needs_sapphire_tool"
-  ],
-  "values": [
-    "#succsessentials:incorrect_for_sunstone_tool"
-  ]
-}

@@ -1,9 +1,15 @@
 package net.succ.succsmod.item;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;
+import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.util.ModTags;
+
+
+import java.util.List;
 
 public class ModToolTiers {
     // Register a new custom tool tier for Sapphire
@@ -30,4 +36,8 @@ public class ModToolTiers {
     public static final Tier ATHERIUM = new SimpleTier(
             ModTags.Blocks.NEEDS_ATHERIUM_TOOL,
             2565, 12.0F, 5.0F, 18, () -> Ingredient.of(ModItems.ATHERIUM));
+
+
+
+
 }
