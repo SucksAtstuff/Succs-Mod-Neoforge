@@ -24,10 +24,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         // Pickaxe mineable ores
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.SUNSTONE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get())
+                .add(ModBlocks.NETHER_SUNSTONE_ORE.get())
+                .add(ModBlocks.END_SUNSTONE_ORE.get())
+
                 .add(ModBlocks.SAPPHIRE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+                .add(ModBlocks.NETHER_SAPPHIRE_ORE.get())
+                .add(ModBlocks.END_SAPPHIRE_ORE.get())
+
                 .add(ModBlocks.RUBY_ORE.get())
+                .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
+                .add(ModBlocks.NETHER_RUBY_ORE.get())
+                .add(ModBlocks.END_RUBY_ORE.get())
+
                 .add(ModBlocks.MALACHITE_ORE.get())
-                .add(ModBlocks.ATHERIUM_ORE.get());
+                .add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get())
+                .add(ModBlocks.NETHER_MALACHITE_ORE.get())
+                .add(ModBlocks.END_MALACHITE_ORE.get())
+
+                .add(ModBlocks.ATHERIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
+                .add(ModBlocks.NETHER_ATHERIUM_ORE.get())
+                .add(ModBlocks.END_ATHERIUM_ORE.get());
 
         // Paxel mineable inherits pickaxe
         tag(ModTags.Blocks.PAXEL_MINEABLE)
@@ -35,19 +54,37 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.SUNSTONE_ORE.get())
-                .add(ModBlocks.SAPPHIRE_ORE.get());
+                .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get())
+                .add(ModBlocks.NETHER_SUNSTONE_ORE.get())
+                .add(ModBlocks.END_SUNSTONE_ORE.get())
+                .add(ModBlocks.SAPPHIRE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+                .add(ModBlocks.NETHER_SAPPHIRE_ORE.get())
+                .add(ModBlocks.END_SAPPHIRE_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .add(ModBlocks.RUBY_ORE.get());
+                .add(ModBlocks.RUBY_ORE.get())
+                .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
+                .add(ModBlocks.NETHER_RUBY_ORE.get())
+                .add(ModBlocks.END_RUBY_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
-                .add(ModBlocks.RUBY_ORE.get());
+                .add(ModBlocks.RUBY_ORE.get())
+                .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
+                .add(ModBlocks.NETHER_RUBY_ORE.get())
+                .add(ModBlocks.END_RUBY_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_RUBY_TOOL)
-                .add(ModBlocks.MALACHITE_ORE.get());
+                .add(ModBlocks.MALACHITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get())
+                .add(ModBlocks.NETHER_MALACHITE_ORE.get())
+                .add(ModBlocks.END_MALACHITE_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
-                .add(ModBlocks.ATHERIUM_ORE.get());
+                .add(ModBlocks.ATHERIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
+                .add(ModBlocks.NETHER_ATHERIUM_ORE.get())
+                .add(ModBlocks.END_ATHERIUM_ORE.get());
 
         // return empty tag for Atherium, as it is the highest tier
         tag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);

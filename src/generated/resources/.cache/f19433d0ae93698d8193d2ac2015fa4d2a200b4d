@@ -1,7 +1,7 @@
-// 1.21.1	2025-06-10T00:09:46.7948007	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-06-10T01:18:03.8830993	Tags for minecraft:block mod id succsessentials
 0a94bf97c162adc237c00887ae6751e0c3e49c16 data/minecraft/tags/block/incorrect_for_netherite_tool.json
-998d0f1ede9e49ca122fe7d98620c2591ac632b8 data/minecraft/tags/block/mineable/pickaxe.json
-ef179d54c20a07e610636b6c584c258f37f19838 data/neoforge/tags/block/needs_netherite_tool.json
+013bf0220a2874e44adc4eb4e129c4cef423eef7 data/minecraft/tags/block/mineable/pickaxe.json
+3c38d0f1b6d31ca5255e46d8da8ab44985307fc5 data/neoforge/tags/block/needs_netherite_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/succsessentials/tags/block/incorrect_for_atherium_tool.json
 3408ab9977e680a653fb70069bc5ee8a37a3c181 data/succsessentials/tags/block/incorrect_for_malachite_tool.json
 57a1f0fc863eb2365cf29344c9ce255f4f9b21ac data/succsessentials/tags/block/incorrect_for_ruby_tool.json
@@ -9,7 +9,7 @@ e3f8ec13c02e9e96d6f2f8e26e7c600674b214b6 data/succsessentials/tags/block/incorre
 e3f8ec13c02e9e96d6f2f8e26e7c600674b214b6 data/succsessentials/tags/block/incorrect_for_sunstone_tool.json
 73d66f372d8c4d1b45f3aa477fbb0a97cfa88b10 data/succsessentials/tags/block/mineable/paxel.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/succsessentials/tags/block/needs_atherium_tool.json
-30a495e9b5cba6cee3d1c4a1ab51c2e3d9960be2 data/succsessentials/tags/block/needs_malachite_tool.json
-54a066288332175978d25e968cbad63520ddcc86 data/succsessentials/tags/block/needs_ruby_tool.json
-270bc0ca245606f6ad2ceccf35faf5655d6a17d8 data/succsessentials/tags/block/needs_sapphire_tool.json
-270bc0ca245606f6ad2ceccf35faf5655d6a17d8 data/succsessentials/tags/block/needs_sunstone_tool.json
+0e6575e2ad604cec649c436de19765813c5ff220 data/succsessentials/tags/block/needs_malachite_tool.json
+1f0bea739cd813ead20980c0f173bf35422fb45f data/succsessentials/tags/block/needs_ruby_tool.json
+1ba7a3710c7b5acb1b72c1a66feaf300166bebe0 data/succsessentials/tags/block/needs_sapphire_tool.json
+1ba7a3710c7b5acb1b72c1a66feaf300166bebe0 data/succsessentials/tags/block/needs_sunstone_tool.json

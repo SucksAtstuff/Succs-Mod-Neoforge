@@ -1,5 +1,8 @@
 {
   "values": [
-    "succsessentials:ruby_ore"
+    "succsessentials:ruby_ore",
+    "succsessentials:deepslate_ruby_ore",
+    "succsessentials:nether_ruby_ore",
+    "succsessentials:end_ruby_ore"
   ]
 }

@@ -141,16 +141,18 @@
     "painting.succsessentials.theomonty_scream.title": "Theomonty Scream",
     "painting.succsessentials.theomonty_scream.author": "IsuckAtEverything",
 
-    "tooltip.succsessentials.fire_sword.tooltip.shift": "Sets hit mobs on fire",
-    "tooltip.succsessentials.fire_sword.tooltip": "Press §eShift§r for more information",
+
     "tooltip.succsessentials.fortune_pickaxe.tooltip.shift": "Has a chance to drop more items when mining ores",
     "tooltip.succsessentials.fortune_pickaxe.tooltip": "Press §eShift§r for more information",
     "tooltip.succsessentials.looting_sword.tooltip.shift": "Mobs have a chance to drop more items when killed",
     "tooltip.succsessentials.looting_sword.tooltip": "Press §eShift§r for more information",
-    "tooltip.succsessentials.atherium_armor.tooltip.shift": "Gives the player 10+ hearts when wearing a full set",
-    "tooltip.succsessentials.atherium_armor.tooltip": "Press §eShift§r for more information",
-    "tooltip.succsessentials.poison_sword.tooltip.shift": "Inflicts Poison on hit mobs",
-    "tooltip.succsessentials.poison_sword.tooltip": "Press §eShift§r for more information",
+
+    "tooltip.succsmod.mob_effect_armor.tooltip": "Press §eShift§r for more information",
+    "tooltip.succsmod.mob_effect_armor.tooltip.shift": "Full set bonus: %1$s for %2$d seconds (Level %3$d)",
+
+    "tooltip.succsmod.mob_effect_sword.tooltip.shift": "Press §eShift§r for more information",
+    "tooltip.succsmod.mob_effect_sword.tooltip": "On hit: Applies %1$s for %2$d seconds (Level %3$d)",
+
 
     "entity.minecraft.villager.succsessentials.gem_cutter": "'Gem' Cutter",
 
@@ -160,4 +162,6 @@
     "item.minecraft.potion.effect.true_fire_potion": "True Fire Potion",
     "item.minecraft.splash_potion.effect.true_fire_potion": "True Fire Splash Potion",
     "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion"
+
+
 }

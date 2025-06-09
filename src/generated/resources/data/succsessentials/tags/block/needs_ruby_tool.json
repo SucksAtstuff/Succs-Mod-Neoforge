@@ -1,5 +1,8 @@
 {
   "values": [
-    "succsessentials:malachite_ore"
+    "succsessentials:malachite_ore",
+    "succsessentials:deepslate_malachite_ore",
+    "succsessentials:nether_malachite_ore",
+    "succsessentials:end_malachite_ore"
   ]
 }

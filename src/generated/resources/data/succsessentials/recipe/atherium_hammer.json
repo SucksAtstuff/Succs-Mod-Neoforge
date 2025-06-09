@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "succsessentials:atherium"
+    },
+    "G": {
+      "item": "succsessentials:gold_handle"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AGA",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:atherium_hammer"
+  }
+}

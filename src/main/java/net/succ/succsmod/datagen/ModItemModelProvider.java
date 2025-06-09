@@ -45,17 +45,17 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         // Register models for gems
         basicItem(ModItems.ATHERIUM.get());
+        basicItem(ModItems.MALACHITE.get());
         basicItem(ModItems.RUBY.get());
         basicItem(ModItems.SAPPHIRE.get());
         basicItem(ModItems.SUNSTONE.get());
-        basicItem(ModItems.MALACHITE.get());
 
         // Register models for dirty gems
         basicItem(ModItems.DIRTY_ATHERIUM.get());
+        basicItem(ModItems.DIRTY_MALACHITE.get());
         basicItem(ModItems.DIRTY_RUBY.get());
         basicItem(ModItems.DIRTY_SAPPHIRE.get());
         basicItem(ModItems.DIRTY_SUNSTONE.get());
-        basicItem(ModItems.DIRTY_MALACHITE.get());
 
         // Register models for other items
         basicItem(ModItems.GOLD_HANDLE.get());

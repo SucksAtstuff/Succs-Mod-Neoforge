@@ -24,12 +24,12 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ATHERIUM.get());
                         output.accept(ModItems.DIRTY_ATHERIUM.get());
+                        output.accept(ModItems.MALACHITE.get());
+                        output.accept(ModItems.DIRTY_MALACHITE.get());
                         output.accept(ModItems.RUBY.get());
                         output.accept(ModItems.DIRTY_RUBY.get());
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.DIRTY_SAPPHIRE.get());
-                        output.accept(ModItems.MALACHITE.get());
-                        output.accept(ModItems.DIRTY_MALACHITE.get());
                         output.accept(ModItems.SUNSTONE.get());
                         output.accept(ModItems.DIRTY_SUNSTONE.get());
                     })
@@ -61,6 +61,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.END_ATHERIUM_ORE.get());
                         output.accept(ModBlocks.ATHERIUM_BLOCK.get());
 
+                        output.accept(ModBlocks.MALACHITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_MALACHITE_ORE.get());
+                        output.accept(ModBlocks.NETHER_MALACHITE_ORE.get());
+                        output.accept(ModBlocks.END_MALACHITE_ORE.get());
+                        output.accept(ModBlocks.MALACHITE_BLOCK.get());
+
                         output.accept(ModBlocks.RUBY_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());
                         output.accept(ModBlocks.NETHER_RUBY_ORE.get());
@@ -72,12 +78,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NETHER_SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.END_SAPPHIRE_ORE.get());
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
-
-                        output.accept(ModBlocks.MALACHITE_ORE.get());
-                        output.accept(ModBlocks.DEEPSLATE_MALACHITE_ORE.get());
-                        output.accept(ModBlocks.NETHER_MALACHITE_ORE.get());
-                        output.accept(ModBlocks.END_MALACHITE_ORE.get());
-                        output.accept(ModBlocks.MALACHITE_BLOCK.get());
 
                         output.accept(ModBlocks.SUNSTONE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get());
@@ -103,6 +103,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ATHERIUM_HAMMER.get());
                         output.accept(ModItems.ATHERIUM_PAXEL.get());
 
+                        output.accept(ModItems.MALACHITE_SWORD.get());
+                        output.accept(ModItems.MALACHITE_PICKAXE.get());
+                        output.accept(ModItems.MALACHITE_AXE.get());
+                        output.accept(ModItems.MALACHITE_SHOVEL.get());
+                        output.accept(ModItems.MALACHITE_HOE.get());
+                        output.accept(ModItems.MALACHITE_HAMMER.get());
+                        output.accept(ModItems.MALACHITE_PAXEL.get());
+
                         output.accept(ModItems.RUBY_SWORD.get());
                         output.accept(ModItems.RUBY_PICKAXE.get());
                         output.accept(ModItems.RUBY_AXE.get());
@@ -126,14 +134,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_HOE.get());
                         output.accept(ModItems.SUNSTONE_HAMMER.get());
                         output.accept(ModItems.SUNSTONE_PAXEL.get());
-
-                        output.accept(ModItems.MALACHITE_SWORD.get());
-                        output.accept(ModItems.MALACHITE_PICKAXE.get());
-                        output.accept(ModItems.MALACHITE_AXE.get());
-                        output.accept(ModItems.MALACHITE_SHOVEL.get());
-                        output.accept(ModItems.MALACHITE_HOE.get());
-                        output.accept(ModItems.MALACHITE_HAMMER.get());
-                        output.accept(ModItems.MALACHITE_PAXEL.get());
                     })
                     .build());
 
@@ -147,6 +147,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ATHERIUM_CHESTPLATE.get());
                         output.accept(ModItems.ATHERIUM_LEGGINGS.get());
                         output.accept(ModItems.ATHERIUM_BOOTS.get());
+
+                        output.accept(ModItems.MALACHITE_HELMET.get());
+                        output.accept(ModItems.MALACHITE_CHESTPLATE.get());
+                        output.accept(ModItems.MALACHITE_LEGGINGS.get());
+                        output.accept(ModItems.MALACHITE_BOOTS.get());
 
                         output.accept(ModItems.RUBY_HELMET.get());
                         output.accept(ModItems.RUBY_CHESTPLATE.get());
@@ -162,11 +167,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_CHESTPLATE.get());
                         output.accept(ModItems.SUNSTONE_LEGGINGS.get());
                         output.accept(ModItems.SUNSTONE_BOOTS.get());
-
-                        output.accept(ModItems.MALACHITE_HELMET.get());
-                        output.accept(ModItems.MALACHITE_CHESTPLATE.get());
-                        output.accept(ModItems.MALACHITE_LEGGINGS.get());
-                        output.accept(ModItems.MALACHITE_BOOTS.get());
                     })
                     .build());
 

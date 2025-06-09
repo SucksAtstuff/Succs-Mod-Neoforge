@@ -1,5 +1,8 @@
 {
   "values": [
-    "succsessentials:atherium_ore"
+    "succsessentials:atherium_ore",
+    "succsessentials:deepslate_atherium_ore",
+    "succsessentials:nether_atherium_ore",
+    "succsessentials:end_atherium_ore"
   ]
 }

@@ -61,86 +61,157 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.BLACKSTONE), has(Items.BLACKSTONE))
                 .save(recipeOutput);
 
-        // Register shapeless recipe to convert Atherium Block back to Atherium items
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ATHERIUM.get(), 9)
-                        .requires(ModBlocks.ATHERIUM_BLOCK)
-                        .unlockedBy("has_atherium_block", has(ModBlocks.ATHERIUM_BLOCK)).save(recipeOutput);
-
-        // Register shaped recipe for Atherium Block
+        // Atherium Block Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ATHERIUM_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
                 .define('A', ModItems.ATHERIUM.get())
-                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get())).save(recipeOutput);
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shaped recipe for Gold Handle
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_HANDLE.get())
-                .pattern("   ")
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ATHERIUM.get(), 9)
+                .requires(ModBlocks.ATHERIUM_BLOCK.get())
+                .unlockedBy("has_atherium_block", has(ModBlocks.ATHERIUM_BLOCK.get()))
+                .save(recipeOutput);
+
+// Atherium Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_PICKAXE.get())
+                .pattern("AAA")
                 .pattern(" G ")
                 .pattern(" G ")
-                .define('G', Items.GOLD_INGOT)
-                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(recipeOutput);
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shapeless recipe to convert Ruby Block back to Ruby items
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY.get(), 9)
-                        .requires(ModBlocks.RUBY_BLOCK)
-                        .unlockedBy("has_ruby_block", has(ModBlocks.RUBY_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_AXE.get())
+                .pattern("AA ")
+                .pattern("AG ")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shaped recipe for Ruby Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_BLOCK.get())
-                .pattern("RRR")
-                .pattern("RRR")
-                .pattern("RRR")
-                .define('R', ModItems.RUBY.get())
-                .unlockedBy("has_ruby", has(ModItems.RUBY.get())).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_SHOVEL.get())
+                .pattern(" A ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shapeless recipe to convert Sapphire Block back to Sapphire items
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
-                        .requires(ModBlocks.SAPPHIRE_BLOCK)
-                        .unlockedBy("has_sapphire_block", has(ModBlocks.SAPPHIRE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_HOE.get())
+                .pattern("AA ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shaped recipe for Sapphire Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get())).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_SWORD.get())
+                .pattern(" A ")
+                .pattern(" A ")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shapeless recipe to convert Sunstone Block back to Sunstone items
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SUNSTONE.get(), 9)
-                        .requires(ModBlocks.SUNSTONE_BLOCK)
-                        .unlockedBy("has_sunstone_block", has(ModBlocks.SUNSTONE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_HAMMER.get())
+                .pattern("AAA")
+                .pattern("AGA")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
 
-        // Register shaped recipe for Sunstone Block
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SUNSTONE_BLOCK.get())
-                .pattern("SSS")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.SUNSTONE.get())
-                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get())).save(recipeOutput);
-
-        // Register shapeless recipe to convert Malachite Block back to Malachite items
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MALACHITE.get(), 9)
-                        .requires(ModBlocks.MALACHITE_BLOCK)
-                        .unlockedBy("has_malachite_block", has(ModBlocks.MALACHITE_BLOCK)).save(recipeOutput);
-
-        // Register shaped recipe for Malachite Block
+        // Malachite Block Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MALACHITE_BLOCK.get())
                 .pattern("MMM")
                 .pattern("MMM")
                 .pattern("MMM")
                 .define('M', ModItems.MALACHITE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get())).save(recipeOutput);
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
 
-        // Register shapeless recipe for Garlic Bread
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.GARLIC_BREAD.get())
-                .requires(ModItems.GARLIC.get())
-                .requires(Items.BREAD)
-                .unlockedBy("has_garlic", has(ModItems.GARLIC.get()))
-                .unlockedBy("has_bread", has(Items.BREAD))
-                .save(recipeOutput, "garlic_bread");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MALACHITE.get(), 9)
+                .requires(ModBlocks.MALACHITE_BLOCK.get())
+                .unlockedBy("has_malachite_block", has(ModBlocks.MALACHITE_BLOCK.get()))
+                .save(recipeOutput);
+
+// Malachite Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_PICKAXE.get())
+                .pattern("MMM")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_AXE.get())
+                .pattern("MM ")
+                .pattern("MG ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SHOVEL.get())
+                .pattern(" M ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HOE.get())
+                .pattern("MM ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SWORD.get())
+                .pattern(" M ")
+                .pattern(" M ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HAMMER.get())
+                .pattern("MMM")
+                .pattern("MGG")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        // Ruby Block Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBY_BLOCK.get())
+                .pattern("RRR")
+                .pattern("RRR")
+                .pattern("RRR")
+                .define('R', ModItems.RUBY.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY.get(), 9)
+                .requires(ModBlocks.RUBY_BLOCK.get())
+                .unlockedBy("has_ruby_block", has(ModBlocks.RUBY_BLOCK.get()))
+                .save(recipeOutput);
 
         // Ruby Tools
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_PICKAXE.get())
@@ -195,6 +266,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('R', ModItems.RUBY.get())
                 .define('G', ModItems.GOLD_HANDLE.get())
                 .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        // Sapphire Block Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
+                .requires(ModBlocks.SAPPHIRE_BLOCK.get())
+                .unlockedBy("has_sapphire_block", has(ModBlocks.SAPPHIRE_BLOCK.get()))
                 .save(recipeOutput);
 
         // Sapphire Tools
@@ -252,6 +337,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
                 .save(recipeOutput);
 
+        // Sunstone Block Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SUNSTONE_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SUNSTONE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SUNSTONE.get(), 9)
+                .requires(ModBlocks.SUNSTONE_BLOCK.get())
+                .unlockedBy("has_sunstone_block", has(ModBlocks.SUNSTONE_BLOCK.get()))
+                .save(recipeOutput);
+
         // Sunstone Tools
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_PICKAXE.get())
                 .pattern("SSS")
@@ -307,60 +406,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
                 .save(recipeOutput);
 
-        // Malachite Tools
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_PICKAXE.get())
-                .pattern("MMM")
-                .pattern(" G ")
-                .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_AXE.get())
-                .pattern("MM ")
-                .pattern("MG ")
-                .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SHOVEL.get())
-                .pattern(" M ")
+        // Register shaped recipe for Gold Handle
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_HANDLE.get())
+                .pattern("   ")
                 .pattern(" G ")
                 .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
+                .define('G', Items.GOLD_INGOT)
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HOE.get())
-                .pattern("MM ")
-                .pattern(" G ")
-                .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
+        // Register shapeless recipe for Garlic Bread
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.GARLIC_BREAD.get())
+                .requires(ModItems.GARLIC.get())
+                .requires(Items.BREAD)
+                .unlockedBy("has_garlic", has(ModItems.GARLIC.get()))
+                .unlockedBy("has_bread", has(Items.BREAD))
+                .save(recipeOutput, "garlic_bread");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_SWORD.get())
-                .pattern(" M ")
-                .pattern(" M ")
-                .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HAMMER.get())
-                .pattern("MMM")
-                .pattern("MGG")
-                .pattern(" G ")
-                .define('M', ModItems.MALACHITE.get())
-                .define('G', ModItems.GOLD_HANDLE.get())
-                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
-                .save(recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

@@ -88,6 +88,35 @@ public class ModItems {
             () -> new PaxelItem(ModToolTiers.ATHERIUM, new Item.Properties()
                     .attributes(PaxelItem.createAttributes(ModToolTiers.ATHERIUM, 4, -3F))));
 
+    // Malachite Tools
+    public static final DeferredItem<MobEffectSwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
+            () -> new MobEffectSwordItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.MALACHITE, 3, -2.4F)), MobEffects.POISON, 100, 1)); // 100 ticks = 5 seconds, amplifier 0 = Poison I
+
+    public static final DeferredItem<Item> MALACHITE_PICKAXE = ITEMS.register("malachite_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.MALACHITE, 2, -2.8F))));
+
+    public static final DeferredItem<Item> MALACHITE_AXE = ITEMS.register("malachite_axe",
+            () -> new AxeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.MALACHITE, 6, -3F))));
+
+    public static final DeferredItem<Item> MALACHITE_SHOVEL = ITEMS.register("malachite_shovel",
+            () -> new ShovelItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.MALACHITE, 2, -3F))));
+
+    public static final DeferredItem<Item> MALACHITE_HOE = ITEMS.register("malachite_hoe",
+            () -> new HoeItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.MALACHITE, -5, 1F))));
+
+    public static final DeferredItem<Item> MALACHITE_HAMMER = ITEMS.register("malachite_hammer",
+            () -> new HammerItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE, 8, -3.5F))));
+
+    public static final DeferredItem<Item> MALACHITE_PAXEL = ITEMS.register("malachite_paxel",
+            () -> new PaxelItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(PaxelItem.createAttributes(ModToolTiers.MALACHITE, 3, -3F))));
+
     // Ruby Tools
     public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
             () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
@@ -175,44 +204,15 @@ public class ModItems {
             () -> new PaxelItem(ModToolTiers.SUNSTONE, new Item.Properties()
                     .attributes(PaxelItem.createAttributes(ModToolTiers.SUNSTONE, 1, -3F))));
 
-    // Malachite Tools
-    public static final DeferredItem<MobEffectSwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
-            () -> new MobEffectSwordItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.MALACHITE, 3, -2.4F)), MobEffects.POISON, 100, 1)); // 100 ticks = 5 seconds, amplifier 0 = Poison I
-
-    public static final DeferredItem<Item> MALACHITE_PICKAXE = ITEMS.register("malachite_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.MALACHITE, 2, -2.8F))));
-
-    public static final DeferredItem<Item> MALACHITE_AXE = ITEMS.register("malachite_axe",
-            () -> new AxeItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(AxeItem.createAttributes(ModToolTiers.MALACHITE, 6, -3F))));
-
-    public static final DeferredItem<Item> MALACHITE_SHOVEL = ITEMS.register("malachite_shovel",
-            () -> new ShovelItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(ShovelItem.createAttributes(ModToolTiers.MALACHITE, 2, -3F))));
-
-    public static final DeferredItem<Item> MALACHITE_HOE = ITEMS.register("malachite_hoe",
-            () -> new HoeItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(HoeItem.createAttributes(ModToolTiers.MALACHITE, -5, 1F))));
-
-    public static final DeferredItem<Item> MALACHITE_HAMMER = ITEMS.register("malachite_hammer",
-            () -> new HammerItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE, 8, -3.5F))));
-
-    public static final DeferredItem<Item> MALACHITE_PAXEL = ITEMS.register("malachite_paxel",
-            () -> new PaxelItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(PaxelItem.createAttributes(ModToolTiers.MALACHITE, 3, -3F))));
-
     // Atherium Armour (durability factor 42) (Full set grants Health Boost)
     public static final DeferredItem<ArmorItem> ATHERIUM_HELMET = ITEMS.register("atherium_helmet",
             () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_CHESTPLATE = ITEMS.register("atherium_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_LEGGINGS = ITEMS.register("atherium_leggings",
-            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_BOOTS = ITEMS.register("atherium_boots",
-            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
 
     // Malachite Armour (durability factor 41)
     public static final DeferredItem<ArmorItem> MALACHITE_HELMET = ITEMS.register("malachite_helmet",
