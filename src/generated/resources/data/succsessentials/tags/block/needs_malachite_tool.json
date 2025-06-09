@@ -1,8 +1,5 @@
 {
   "values": [
-    "succsessentials:atherium_ore",
-    "#succsessentials:needs_ruby_tool",
-    "#succsessentials:needs_sunstone_tool",
-    "#succsessentials:needs_sapphire_tool"
+    "succsessentials:atherium_ore"
   ]
 }

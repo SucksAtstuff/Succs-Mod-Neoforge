@@ -31,67 +31,40 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         // Paxel mineable inherits pickaxe
         tag(ModTags.Blocks.PAXEL_MINEABLE)
-                .add(ModBlocks.SUNSTONE_ORE.get())
-                .add(ModBlocks.SAPPHIRE_ORE.get())
-                .add(ModBlocks.RUBY_ORE.get())
-                .add(ModBlocks.MALACHITE_ORE.get())
-                .add(ModBlocks.ATHERIUM_ORE.get());
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE);
 
-        // Correct harvest level tags
-        tag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .add(ModBlocks.SAPPHIRE_ORE.get())
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.SUNSTONE_ORE.get())
+                .add(ModBlocks.SAPPHIRE_ORE.get());
+
+        tag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
                 .add(ModBlocks.RUBY_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
-                .add(ModBlocks.SAPPHIRE_ORE.get())
-                .add(ModBlocks.SUNSTONE_ORE.get())
                 .add(ModBlocks.RUBY_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_RUBY_TOOL)
-                .add(ModBlocks.RUBY_ORE.get())
-                .add(ModBlocks.MALACHITE_ORE.get())
-                .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL);
-
+                .add(ModBlocks.MALACHITE_ORE.get());
 
         tag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
-                .add(ModBlocks.ATHERIUM_ORE.get())
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL);
+                .add(ModBlocks.ATHERIUM_ORE.get());
 
 
-        tag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL);
+        // Atherium is the highest tier, so it doesn't need any other tool
 
 
         // Incorrect tool enforcement
         tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
-                .add(ModBlocks.RUBY_ORE.get())
-                .add(ModBlocks.MALACHITE_ORE.get())
-                .add(ModBlocks.ATHERIUM_ORE.get())
                 .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
+                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_SUNSTONE_TOOL)
-                .add(ModBlocks.MALACHITE_ORE.get())
-                .add(ModBlocks.ATHERIUM_ORE.get())
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_SAPPHIRE_TOOL)
-                .add(ModBlocks.MALACHITE_ORE.get())
-                .add(ModBlocks.ATHERIUM_ORE.get())
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_RUBY_TOOL)
-                .add(ModBlocks.ATHERIUM_ORE.get())
                 .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL);
 
 
