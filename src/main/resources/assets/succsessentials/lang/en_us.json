@@ -154,5 +154,10 @@
 
     "entity.minecraft.villager.succsessentials.gem_cutter": "'Gem' Cutter",
 
-    "enchantment.succsessentials.excavation": "Excavation"
+    "enchantment.succsessentials.excavation": "Excavation",
+
+    "effect.succsessentials.true_fire": "True Fire",
+    "item.minecraft.potion.effect.true_fire_potion": "True Fire Potion",
+    "item.minecraft.splash_potion.effect.true_fire_potion": "True Fire Splash Potion",
+    "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion"
 }

@@ -2,9 +2,11 @@ package net.succ.succsmod;
 
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
+import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.loot.ModLootModifiers;
+import net.succ.succsmod.potion.ModPotions;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -47,6 +49,10 @@ public class SuccsMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+
+        ModPotions.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
 

@@ -1,13 +1,16 @@
 package net.succ.succsmod.item;
 
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.item.custom.GarlicItem;
 import net.succ.succsmod.item.custom.HammerItem;
+import net.succ.succsmod.item.custom.MobEffectSwordItem;
 import net.succ.succsmod.item.custom.ModArmorItem;
 
 public class ModItems {
@@ -135,9 +138,9 @@ public class ModItems {
                     .attributes(HammerItem.createAttributes(ModToolTiers.SAPPHIRE, 8, -3.5F))));
 
     // Sunstone Tools
-    public static final DeferredItem<SwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
-            () -> new SwordItem(ModToolTiers.SUNSTONE, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.SUNSTONE, 3, -2.4F))));
+    public static final DeferredItem<MobEffectSwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
+            () -> new MobEffectSwordItem(ModToolTiers.SUNSTONE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.SUNSTONE, 3, -2.4F)), ModEffects.TRUE_FIRE_EFFECT, 25, 1)); // 25 ticks = 1.25 seconds, amplifier 0 = Fire I
 
     public static final DeferredItem<Item> SUNSTONE_PICKAXE = ITEMS.register("sunstone_pickaxe",
             () -> new PickaxeItem(ModToolTiers.SUNSTONE, new Item.Properties()
@@ -160,9 +163,9 @@ public class ModItems {
                     .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE, 8, -3.5F))));
 
     // Malachite Tools
-    public static final DeferredItem<SwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
-            () -> new SwordItem(ModToolTiers.MALACHITE, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.MALACHITE, 3, -2.4F))));
+    public static final DeferredItem<MobEffectSwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",
+            () -> new MobEffectSwordItem(ModToolTiers.MALACHITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.MALACHITE, 3, -2.4F)), MobEffects.POISON, 100, 1)); // 100 ticks = 5 seconds, amplifier 0 = Poison I
 
     public static final DeferredItem<Item> MALACHITE_PICKAXE = ITEMS.register("malachite_pickaxe",
             () -> new PickaxeItem(ModToolTiers.MALACHITE, new Item.Properties()

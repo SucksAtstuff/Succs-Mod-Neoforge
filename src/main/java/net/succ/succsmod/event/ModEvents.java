@@ -1,15 +1,24 @@
 package net.succ.succsmod.event;
 
 
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.item.custom.HammerItem;
+import net.succ.succsmod.potion.ModPotions;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -42,4 +51,13 @@ public class ModEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event){
+        PotionBrewing.Builder builder = event.getBuilder();
+
+        builder.addMix(Potions.AWKWARD, ModItems.SUNSTONE.get(), ModPotions.TRUE_FIRE_POTION);
+    }
+
+
 }
