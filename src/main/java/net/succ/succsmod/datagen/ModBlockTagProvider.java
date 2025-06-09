@@ -52,23 +52,32 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         // return empty tag for Atherium, as it is the highest tier
         tag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
 
-
         // Incorrect tool enforcement
         tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL);
+                .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_SUNSTONE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_SAPPHIRE_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL);
+                .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
 
         tag(ModTags.Blocks.INCORRECT_FOR_RUBY_TOOL)
-                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL);
+                .addTag(ModTags.Blocks.NEEDS_MALACHITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
 
-        // Malachite and Atherium are the highest tiers, so they do not have incorrect tags
-        tag(ModTags.Blocks.INCORRECT_FOR_MALACHITE_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_MALACHITE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_ATHERIUM_TOOL);
+
+        // Atherium is the highest tier, so it has no incorrect tags
         tag(ModTags.Blocks.INCORRECT_FOR_ATHERIUM_TOOL);
 
     }
