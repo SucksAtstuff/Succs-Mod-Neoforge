@@ -1,15 +1,26 @@
 package net.succ.succsmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.succ.succsmod.block.entity.ModBlockEntities;
+import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.*;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -18,17 +29,17 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.succ.succsmod.block.entity.ModBlockEntities;
-import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class GemPolishingTableBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 5, 16);
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final BooleanProperty LIT = BlockStateProperties.LIT;
+    public static final MapCodec<GemPolishingTableBlock> CODEC = simpleCodec(GemPolishingTableBlock::new);
+
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 5, 16);
 
     public GemPolishingTableBlock(Properties pProperties) {
         super(pProperties);
@@ -36,11 +47,21 @@ public class GemPolishingTableBlock extends BaseEntityBlock {
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
+        return CODEC;
     }
 
-    /* Block Shape + Facing */
+    /* FACING */
+
     @Override
+    protected BlockState rotate(BlockState pState, Rotation pRotation) {
+        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState pState, Mirror pMirror) {
+        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    }
+
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }
@@ -48,95 +69,93 @@ public class GemPolishingTableBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite()).setValue(LIT, false);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING);
+        pBuilder.add(FACING, LIT);
     }
 
-    @Override
-    public BlockState rotate(BlockState pState, Rotation pRot) {
-        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
-    }
+    /* BLOCK ENTITY */
 
-    @Override
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
-        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
-    }
-
-    /* BlockEntity */
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new GemPolishingTableBlockEntity(pPos, pState);
     }
 
-    @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pType) {
-        if (pLevel.isClientSide) return null;
-
-        return createTickerHelper(pType, ModBlockEntities.GEM_POLISHING_TABLE_BE.get(),
-                (lvl, pos, state, be) -> be.tick(lvl, pos, state));
-
-    }
-
-    @Override
-    public RenderShape getRenderShape(BlockState pState) {
+    protected RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }
 
     @Override
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
-            BlockEntity be = pLevel.getBlockEntity(pPos);
-            if (be instanceof GemPolishingTableBlockEntity station) {
-                station.drops();
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof GemPolishingTableBlockEntity gemPolishingTableBlockEntity) {
+                gemPolishingTableBlockEntity.drops();
             }
-
         }
+
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
-    /* Interactions */
-
-    public ItemInteractionResult useItemOn (BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
-                                 InteractionHand pHand, BlockHitResult pHit) {
-        if (!(pLevel.getBlockEntity(pPos) instanceof GemPolishingTableBlockEntity be))
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
-
-        ItemStack heldItem = pPlayer.getItemInHand(pHand);
-
-        // Sneak-right-click = open GUI
-        if (pPlayer.isShiftKeyDown()) {
-            // Check that we're on the server and the player are a ServerPlayer
-            if (!pLevel.isClientSide && pPlayer instanceof ServerPlayer serverPlayer) {
-                // Open the menu using vanilla API supported by NeoForge
-                serverPlayer.openMenu(be);
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos,
+                                              Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if (!pLevel.isClientSide()) {
+            BlockEntity entity = pLevel.getBlockEntity(pPos);
+            if(entity instanceof GemPolishingTableBlockEntity gemPolishingTableBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(gemPolishingTableBlockEntity, Component.literal("Crystallizer")), pPos);
+            } else {
+                throw new IllegalStateException("Our Container provider is missing!");
             }
-            return ItemInteractionResult.SUCCESS;
         }
 
+        return ItemInteractionResult.sidedSuccess(pLevel.isClientSide());
+    }
 
-        // Insert item
-        if (be.inventory.getStackInSlot(0).isEmpty() && !heldItem.isEmpty()) {
-            be.inventory.insertItem(0, heldItem.copyWithCount(1), false);
-            heldItem.shrink(1);
-            pLevel.playSound(pPlayer, pPos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-            return ItemInteractionResult.SUCCESS;
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if(pLevel.isClientSide()) {
+            return null;
         }
 
-        // Take item
-        if (heldItem.isEmpty() && !be.inventory.getStackInSlot(0).isEmpty()) {
-            ItemStack inside = be.inventory.extractItem(0,1, false);
-            be.clearContents();
-            pPlayer.setItemInHand(pHand, inside);
-            pLevel.playSound(pPlayer, pPos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
-            return ItemInteractionResult.SUCCESS;
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.GEM_POLISHING_TABLE_BE.get(),
+                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+    }
+
+    /* LIT */
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (!state.getValue(LIT)) {
+            return;
         }
 
-        return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+        double xPos = (double)pos.getX() + 0.5;
+        double yPos = pos.getY();
+        double zPos = (double)pos.getZ() + 0.5;
+        if (random.nextDouble() < 0.15) {
+            level.playLocalSound(xPos, yPos, zPos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0f, 1.0f, false);
+        }
+
+        Direction direction = state.getValue(FACING);
+        Direction.Axis axis = direction.getAxis();
+
+        double defaultOffset = random.nextDouble() * 0.6 - 0.3;
+        double xOffsets = axis == Direction.Axis.X ? (double)direction.getStepX() * 0.52 : defaultOffset;
+        double yOffset = random.nextDouble() * 6.0 / 8.0;
+        double zOffset = axis == Direction.Axis.Z ? (double)direction.getStepZ() * 0.52 : defaultOffset;
+
+        level.addParticle(ParticleTypes.SMOKE, xPos + xOffsets, yPos + yOffset, zPos + zOffset, 0.0, 0.0, 0.0);
+
+        if(level.getBlockEntity(pos) instanceof GemPolishingTableBlockEntity gemPolishingTableBlockEntity && !gemPolishingTableBlockEntity.itemHandler.getStackInSlot(1).isEmpty()) {
+            level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, gemPolishingTableBlockEntity.itemHandler.getStackInSlot(1)),
+                    xPos + xOffsets, yPos + yOffset, zPos + zOffset, 0.0, 0.0, 0.0);
+        }
     }
 }

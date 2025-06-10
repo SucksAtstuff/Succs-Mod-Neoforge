@@ -1,0 +1,10 @@
+{
+  "type": "succsessentials:gem_polishing",
+  "ingredient": {
+    "item": "succsessentials:dirty_malachite"
+  },
+  "result": {
+    "id": "succsessentials:malachite",
+    "count": 1
+  }
+}

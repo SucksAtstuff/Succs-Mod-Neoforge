@@ -148,7 +148,7 @@
     "tooltip.succsessentials.looting_sword.tooltip": "Press §eShift§r for more information",
 
     "tooltip.succsmod.mob_effect_armor.tooltip": "Press §eShift§r for more information",
-    "tooltip.succsmod.mob_effect_armor.tooltip.shift": "Full set bonus: %1$s for %2$d seconds (Level %3$d)",
+    "tooltip.succsmod.mob_effect_armor.tooltip.shift": "Full set bonus: %1$s (Level %3$d)",
 
     "tooltip.succsmod.mob_effect_sword.tooltip.shift": "Press §eShift§r for more information",
     "tooltip.succsmod.mob_effect_sword.tooltip": "On hit: Applies %1$s for %2$d seconds (Level %3$d)",

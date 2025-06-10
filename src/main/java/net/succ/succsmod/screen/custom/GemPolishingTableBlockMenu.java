@@ -1,5 +1,8 @@
 package net.succ.succsmod.screen.custom;
 
+import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
+import net.succ.succsmod.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -7,11 +10,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import net.succ.succsmod.block.ModBlocks;
-import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
-import net.succ.succsmod.screen.ModMenuTypes;
 
 public class GemPolishingTableBlockMenu extends AbstractContainerMenu {
     public final GemPolishingTableBlockEntity blockEntity;
@@ -19,12 +18,11 @@ public class GemPolishingTableBlockMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public GemPolishingTableBlockMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
     public GemPolishingTableBlockMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.GEM_POLISHING_MENU.get(), pContainerId);
-        checkContainerSize(inv, 3);
         blockEntity = ((GemPolishingTableBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -32,11 +30,9 @@ public class GemPolishingTableBlockMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-
-            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 11));
-            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 26, 59));
-            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 80, 59));
-
+        this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 0, 8, 62));
+        this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 54, 34));
+        this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 2, 104, 34));
 
         addDataSlots(data);
     }
@@ -45,12 +41,20 @@ public class GemPolishingTableBlockMenu extends AbstractContainerMenu {
         return data.get(0) > 0;
     }
 
-    public int getScaledProgress() {
+    public int getScaledArrowProgress() {
         int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the height in pixels of your arrow
+        int maxProgress = this.data.get(1);
+        int arrowPixelSize = 24;
 
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+    }
+
+    public int getScaledCrystalProgress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);
+        int crystalPixelSize = 16;
+
+        return maxProgress != 0 && progress != 0 ? progress * crystalPixelSize / maxProgress : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -122,9 +126,4 @@ public class GemPolishingTableBlockMenu extends AbstractContainerMenu {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
-
-    public FluidStack getFluid() {
-        return blockEntity.getFluidTank().getFluid();
-    }
-
 }

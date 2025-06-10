@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "succsessentials:dirty_sunstone"
+    }
+  ],
+  "results": [
+    {
+      "id": "succsessentials:sunstone",
+      "amount": 1
+    }
+  ]
+}

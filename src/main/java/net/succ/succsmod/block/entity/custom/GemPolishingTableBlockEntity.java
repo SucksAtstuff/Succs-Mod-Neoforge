@@ -1,35 +1,50 @@
 package net.succ.succsmod.block.entity.custom;
 
-import net.minecraft.world.inventory.SimpleContainerData;
-import net.minecraft.world.level.Level;
-import net.succ.succsmod.block.entity.ModBlockEntities;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.WaterFluid;
+import net.neoforged.neoforge.items.wrapper.EmptyItemHandler;
+import net.succ.succsmod.block.custom.GemPolishingTableBlock;
+import net.succ.succsmod.recipe.GemPolishingRecipe;
+import net.succ.succsmod.recipe.GemPolishingRecipeInput;
+import net.succ.succsmod.recipe.ModRecipes;
 import net.succ.succsmod.screen.custom.GemPolishingTableBlockMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.*;
+import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jetbrains.annotations.Nullable;
-import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidActionResult;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
+import net.succ.succsmod.util.ModTags;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class GemPolishingTableBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler inventory = new ItemStackHandler(1) {
-        @Override
-        protected int getStackLimit(int slot, ItemStack stack) {
-            return 1;
-        }
-
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -37,47 +52,104 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return switch (slot) {
+                case FLUID_ITEM_SLOT -> isBucket(stack);
+                case INPUT_SLOT -> stack.is(ModTags.Items.POLISHABLE_GEMS);
+                case OUTPUT_SLOT -> stack.is(ModTags.Items.POLISHED_GEMS);
+                default -> false;
+            };
+        }
+
+        private boolean isBucket(ItemStack stack) {
+            return stack.is(ModTags.Items.IS_BUCKET)
+                    || stack.is(Items.WATER_BUCKET);
+        }
     };
-    private float rotation;
+
+    private static final int FLUID_ITEM_SLOT = 0;
+    private static final int INPUT_SLOT = 1;
+    private static final int OUTPUT_SLOT = 2;
+
+    private final ContainerData data;
+    private int progress = 0;
+    private int maxProgress = 72;
+    private final int DEFAULT_MAX_PROGRESS = 72;
+
+    private static final int FLUID_CRAFT_AMOUNT = 1000; // amount of fluid per crafting that is consumed
+
+    private final FluidTank FLUID_TANK = createFluidTank();
+    private FluidTank createFluidTank() {
+        return new FluidTank(64000) {
+            @Override
+            protected void onContentsChanged() {
+                setChanged();
+                if(!level.isClientSide()) {
+                    level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                }
+            }
+
+            @Override
+            public boolean isFluidValid(FluidStack stack) {
+                // Defensive null check in case the FluidStack is null or empty
+                if (stack == null || stack.isEmpty()) {
+                    return false;
+                }
+
+                // Compare the fluid in the stack to the vanilla water fluid
+                return stack.getFluid() == Fluids.WATER;
+            }
+        };
+    }
 
     public GemPolishingTableBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.GEM_POLISHING_TABLE_BE.get(), pPos, pBlockState);
+        super(net.succ.succsmod.block.entity.ModBlockEntities.GEM_POLISHING_TABLE_BE.get(), pPos, pBlockState);
+        this.data = new ContainerData() {
+            @Override
+            public int get(int pIndex) {
+                return switch (pIndex) {
+                    case 0 -> GemPolishingTableBlockEntity.this.progress;
+                    case 1 -> GemPolishingTableBlockEntity.this.maxProgress;
+                    default -> 0;
+                };
+            }
+
+            @Override
+            public void set(int pIndex, int pValue) {
+                switch (pIndex) {
+                    case 0: GemPolishingTableBlockEntity.this.progress = pValue;
+                    case 1: GemPolishingTableBlockEntity.this.maxProgress = pValue;
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
+        };
     }
 
-    public void clearContents() {
-        inventory.setStackInSlot(0, ItemStack.EMPTY);
+    public IFluidHandler getFluidTank(@Nullable Direction direction) {
+        return this.FLUID_TANK;
     }
 
-    public void drops() {
-        SimpleContainer inv = new SimpleContainer(inventory.getSlots());
-        for(int i = 0; i < inventory.getSlots(); i++) {
-            inv.setItem(i, inventory.getStackInSlot(i));
+    public FluidStack getFluid() {
+        return FLUID_TANK.getFluid();
+    }
+
+    public IItemHandler getItemHandler(@Nullable Direction direction) {
+        if (direction == Direction.DOWN) {
+            // Only expose output slot for extraction
+            return new SingleSlotItemHandler(itemHandler, OUTPUT_SLOT, false, true);
+        } else {
+            // Allow insertion into fluid and input slots
+            return new MultiSlotItemHandler(itemHandler, new int[]{FLUID_ITEM_SLOT, INPUT_SLOT}, true, false);
         }
-
-        Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
-    @Override
-    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(pTag, pRegistries);
-        pTag.put("inventory", inventory.serializeNBT(pRegistries));
-        pTag.put("fluid", fluidTank.writeToNBT(pRegistries, new CompoundTag()));
-    }
 
-    @Override
-    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(pTag, pRegistries);
-        inventory.deserializeNBT(pRegistries, pTag.getCompound("inventory"));
-        pTag.put("fluid", fluidTank.writeToNBT(pRegistries, new CompoundTag()));
-    }
-
-    public float getRenderingRotation() {
-        rotation += 0.5f;
-        if(rotation >= 360) {
-            rotation = 0;
-        }
-        return rotation;
-    }
 
     @Override
     public Component getDisplayName() {
@@ -87,9 +159,138 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
-        return new GemPolishingTableBlockMenu(pContainerId, pPlayerInventory, this, new SimpleContainerData(3));
+        return new GemPolishingTableBlockMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
+    @Override
+    protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+        pTag.put("inventory", itemHandler.serializeNBT(pRegistries));
+        pTag.putInt("gem_polsihing_table.progress", progress);
+        pTag.putInt("gem_polsihing_table.max_progress", maxProgress);
+
+        pTag = FLUID_TANK.writeToNBT(pRegistries, pTag);
+
+        super.saveAdditional(pTag, pRegistries);
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
+        super.loadAdditional(pTag, pRegistries);
+        itemHandler.deserializeNBT(pRegistries, pTag.getCompound("inventory"));
+        progress = pTag.getInt("gem_polsihing_table.progress");
+        maxProgress = pTag.getInt("gem_polsihing_table.max_progress");
+
+        FLUID_TANK.readFromNBT(pRegistries, pTag);
+    }
+
+    public void drops() {
+        SimpleContainer inv = new SimpleContainer(itemHandler.getSlots());
+        for(int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        Containers.dropContents(this.level, this.worldPosition, inv);
+    }
+
+    public void tick(Level level, BlockPos pPos, BlockState pState) {
+        if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
+            increaseCraftingProgress();
+            level.setBlockAndUpdate(pPos, pState.setValue(GemPolishingTableBlock.LIT, true));
+            setChanged(level, pPos, pState);
+
+            if (hasCraftingFinished()) {
+                craftItem();
+                extractFluidForCrafting();
+                resetProgress();
+            }
+
+        } else {
+            resetProgress();
+            level.setBlockAndUpdate(pPos, pState.setValue(GemPolishingTableBlock.LIT, false));
+        }
+
+        if (hasFluidStackInSlot()) {
+            transferFluidToTank();
+        }
+    }
+
+    private void extractFluidForCrafting() {
+        this.FLUID_TANK.drain(FLUID_CRAFT_AMOUNT, IFluidHandler.FluidAction.EXECUTE);
+    }
+
+    private void transferFluidToTank() {
+        FluidActionResult result = FluidUtil.tryEmptyContainer(itemHandler.getStackInSlot(0), this.FLUID_TANK, Integer.MAX_VALUE, null, true);
+        if(result.result != ItemStack.EMPTY) {
+            itemHandler.setStackInSlot(FLUID_ITEM_SLOT, result.result);
+        }
+    }
+
+    private boolean hasFluidStackInSlot() {
+        return !itemHandler.getStackInSlot(FLUID_ITEM_SLOT).isEmpty()
+                && itemHandler.getStackInSlot(FLUID_ITEM_SLOT).getCapability(Capabilities.FluidHandler.ITEM, null) != null
+                && !itemHandler.getStackInSlot(FLUID_ITEM_SLOT).getCapability(Capabilities.FluidHandler.ITEM, null).getFluidInTank(0).isEmpty();
+    }
+
+
+    private void resetProgress() {
+        this.progress = 0;
+        this.maxProgress = DEFAULT_MAX_PROGRESS;
+    }
+
+    private void craftItem() {
+        Optional<RecipeHolder<GemPolishingRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
+
+        itemHandler.extractItem(INPUT_SLOT, 1, false);
+        itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
+                itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
+    }
+
+    private boolean hasCraftingFinished() {
+        return this.progress >= this.maxProgress;
+    }
+
+    private void increaseCraftingProgress() {
+        progress++;
+    }
+
+    private boolean isOutputSlotEmptyOrReceivable() {
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() < this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+    }
+
+    private boolean hasRecipe() {
+        Optional<RecipeHolder<GemPolishingRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()) {
+            return false;
+        }
+
+        ItemStack output = recipe.get().value().getResultItem(null);
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) && hasEnoughFluidToCraft();
+    }
+
+    private boolean hasEnoughFluidToCraft() {
+        return FLUID_TANK.getFluidAmount() >= FLUID_CRAFT_AMOUNT;
+    }
+
+
+
+    private Optional<RecipeHolder<GemPolishingRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.GEM_POLISHING_TYPE.get(), new GemPolishingRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
+    }
+
+    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
+        return itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
+                itemHandler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(int count) {
+        int maxCount = itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+        int currentCount = itemHandler.getStackInSlot(OUTPUT_SLOT).getCount();
+
+        return maxCount >= currentCount + count;
+    }
 
     @Nullable
     @Override
@@ -98,40 +299,7 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider lookup) {
-        CompoundTag tag = super.getUpdateTag(lookup);
-        tag.put("fluid", fluidTank.writeToNBT(lookup, new CompoundTag()));
-        return tag;
+    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+        return saveWithoutMetadata(pRegistries);
     }
-
-
-
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider lookup) {
-        super.handleUpdateTag(tag, lookup);
-        fluidTank.readFromNBT(lookup, tag.getCompound("fluid"));
-    }
-
-
-    private final FluidTank fluidTank = new FluidTank(64000, fluid -> true) {
-        @Override
-        protected void onContentsChanged() {
-            setChanged();
-            if (!level.isClientSide) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-            }
-        }
-    };
-
-    public FluidTank getFluidTank() {
-        return fluidTank;
-    }
-
-    public void tick(Level level, BlockPos pos, BlockState state) {
-        if (level.isClientSide) return;
-
-        // For example: progress crafting, animate, etc.
-    }
-
-
 }
