@@ -1,9 +1,12 @@
 package net.succ.succsmod.datagen;
 
+import com.simibubi.create.Create;
+import com.simibubi.create.infrastructure.data.CreateRegistrateTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.succ.succsmod.SuccsMod;
@@ -26,6 +29,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.DIRTY_SAPPHIRE.get())
                 .add(ModItems.DIRTY_SUNSTONE.get())
                 .add(ModItems.DIRTY_MALACHITE.get());
+
+        tag(ModTags.Items.POLISHED_GEMS)
+                .add(ModItems.ATHERIUM.get())
+                .add(ModItems.RUBY.get())
+                .add(ModItems.SAPPHIRE.get())
+                .add(ModItems.SUNSTONE.get())
+                .add(ModItems.MALACHITE.get());
 
         tag(ModTags.Items.SUNSTONE_SAPPHIRE_TOOLS)
                 .add(ModItems.SUNSTONE_PICKAXE.get())
@@ -92,6 +102,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SUNSTONE_CHESTPLATE.get())
                 .add(ModItems.SUNSTONE_LEGGINGS.get())
                 .add(ModItems.SUNSTONE_BOOTS.get());
+
+        this.tag(ModTags.Items.IS_BUCKET)
+                .add(Items.BUCKET)
+                .add(Items.WATER_BUCKET);
 
         tag(ModTags.Items.HAMMER_ENCHANTABLE)
                 .add(ModItems.SUNSTONE_HAMMER.get())

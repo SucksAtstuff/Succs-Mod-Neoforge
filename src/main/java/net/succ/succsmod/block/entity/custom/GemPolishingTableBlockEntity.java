@@ -1,7 +1,9 @@
 package net.succ.succsmod.block.entity.custom;
 
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.WaterFluid;
+import net.neoforged.neoforge.items.wrapper.EmptyItemHandler;
 import net.succ.succsmod.block.custom.GemPolishingTableBlock;
 import net.succ.succsmod.recipe.GemPolishingRecipe;
 import net.succ.succsmod.recipe.GemPolishingRecipeInput;
@@ -35,6 +37,8 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import net.succ.succsmod.util.ModTags;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -47,6 +51,21 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
             if(!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return switch (slot) {
+                case FLUID_ITEM_SLOT -> isBucket(stack);
+                case INPUT_SLOT -> stack.is(ModTags.Items.POLISHABLE_GEMS);
+                case OUTPUT_SLOT -> stack.is(ModTags.Items.POLISHED_GEMS);
+                default -> false;
+            };
+        }
+
+        private boolean isBucket(ItemStack stack) {
+            return stack.is(ModTags.Items.IS_BUCKET)
+                    || stack.is(Items.WATER_BUCKET);
         }
     };
 
@@ -112,7 +131,6 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
         };
     }
 
-
     public IFluidHandler getFluidTank(@Nullable Direction direction) {
         return this.FLUID_TANK;
     }
@@ -121,9 +139,17 @@ public class GemPolishingTableBlockEntity extends BlockEntity implements MenuPro
         return FLUID_TANK.getFluid();
     }
 
-    public IItemHandler getItemHandler(Direction direction) {
-        return this.itemHandler;
+    public IItemHandler getItemHandler(@Nullable Direction direction) {
+        if (direction == Direction.DOWN) {
+            // Only expose output slot for extraction
+            return new SingleSlotItemHandler(itemHandler, OUTPUT_SLOT, false, true);
+        } else {
+            // Allow insertion into fluid and input slots
+            return new MultiSlotItemHandler(itemHandler, new int[]{FLUID_ITEM_SLOT, INPUT_SLOT}, true, false);
+        }
     }
+
+
 
     @Override
     public Component getDisplayName() {

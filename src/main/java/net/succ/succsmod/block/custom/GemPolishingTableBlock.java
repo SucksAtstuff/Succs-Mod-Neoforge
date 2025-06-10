@@ -1,6 +1,9 @@
 package net.succ.succsmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -36,6 +39,8 @@ public class GemPolishingTableBlock extends BaseEntityBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final MapCodec<GemPolishingTableBlock> CODEC = simpleCodec(GemPolishingTableBlock::new);
 
+    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 5, 16);
+
     public GemPolishingTableBlock(Properties pProperties) {
         super(pProperties);
     }
@@ -55,6 +60,10 @@ public class GemPolishingTableBlock extends BaseEntityBlock {
     @Override
     protected BlockState mirror(BlockState pState, Mirror pMirror) {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    }
+
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return SHAPE;
     }
 
     @Nullable

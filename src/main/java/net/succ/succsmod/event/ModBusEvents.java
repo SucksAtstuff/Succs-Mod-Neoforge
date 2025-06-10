@@ -15,7 +15,6 @@ public class ModBusEvents {
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntities.GEM_POLISHING_TABLE_BE.get(), GemPolishingTableBlockEntity::getItemHandler);
 
 
-
         event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, ModBlockEntities.GEM_POLISHING_TABLE_BE.get(), GemPolishingTableBlockEntity::getFluidTank);
     }
 }
