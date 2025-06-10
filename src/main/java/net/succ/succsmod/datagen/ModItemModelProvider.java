@@ -63,6 +63,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.GARLIC_BREAD.get());
         basicItem(ModItems.ROCK.get());
         basicItem(ModItems.ROCK_CANDY.get());
+        basicItem(ModItems.FUNKY_MUSIC_DISC.get());
 
         // Register models for atherium tools
         handheldItem(ModItems.ATHERIUM_SWORD.get());

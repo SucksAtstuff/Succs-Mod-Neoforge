@@ -9,6 +9,7 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.item.custom.*;
+import net.succ.succsmod.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -58,6 +59,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> ROCK_CANDY = ITEMS.register("rock_candy",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK_CANDY)));
+
+    public static final DeferredItem<Item> FUNKY_MUSIC_DISC = ITEMS.registerItem("funky_music_disc",
+            properties -> new Item(properties.jukeboxPlayable(ModSounds.FUNKY_MUSIC_KEY)));
 
     // Atherium Tools
     public static final DeferredItem<SwordItem> ATHERIUM_SWORD = ITEMS.register("atherium_sword",

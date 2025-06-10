@@ -1,0 +1,10 @@
+{
+  "funky_music": {
+    "sounds": [
+      {
+        "name": "succsessentials:funky_music",
+        "stream": true
+      }
+    ]
+  }
+}

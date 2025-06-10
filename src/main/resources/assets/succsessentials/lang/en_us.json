@@ -161,7 +161,8 @@
     "effect.succsessentials.true_fire": "True Fire",
     "item.minecraft.potion.effect.true_fire_potion": "True Fire Potion",
     "item.minecraft.splash_potion.effect.true_fire_potion": "True Fire Splash Potion",
-    "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion"
+    "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion",
 
-
+    "item.succsessentials.funky_music_disc": "IsuckAtEverything - Funky Music Disc",
+    "item.succsessentials.funky_music.desc": "A funky song to liven up your day"
 }

@@ -11,6 +11,7 @@ import net.succ.succsmod.potion.ModPotions;
 import net.succ.succsmod.recipe.ModRecipes;
 import net.succ.succsmod.screen.ModMenuTypes;
 import net.succ.succsmod.screen.custom.GemPolishingTableBlockScreen;
+import net.succ.succsmod.sound.ModSounds;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -65,6 +66,7 @@ public class SuccsMod
 
 
         ModLootModifiers.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

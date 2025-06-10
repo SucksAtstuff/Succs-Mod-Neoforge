@@ -46,6 +46,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GARLIC_BREAD.get());
                         output.accept(ModItems.ROCK.get());
                         output.accept(ModItems.ROCK_CANDY.get());
+                        output.accept(ModItems.FUNKY_MUSIC_DISC.get());
                     })
                     .build());
 
