@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
+import org.jetbrains.annotations.Nullable;
 
 public record GemPolishingRecipe(Ingredient inputItem, ItemStack output) implements Recipe<GemPolishingRecipeInput> {
     @Override
@@ -71,8 +72,6 @@ public record GemPolishingRecipe(Ingredient inputItem, ItemStack output) impleme
         public MapCodec<GemPolishingRecipe> codec() {
             return CODEC;
         }
-
-
 
         @Override
         public StreamCodec<RegistryFriendlyByteBuf, GemPolishingRecipe> streamCodec() {

@@ -1,6 +1,7 @@
 package net.succ.succsmod.compat;
 
 import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.neoforge.NeoForgeTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -11,8 +12,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.recipe.GemPolishingRecipe;
@@ -60,9 +59,9 @@ public class GemPolishingRecipeCategory implements IRecipeCategory<GemPolishingR
         builder.addSlot(RecipeIngredientRole.INPUT, 54, 34).addIngredients(recipe.getIngredients().get(0));
 
 //        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7)
-//                .addIngredients(VanillaTypes.FLUID_STACK, List.of(recipe.getFluid()))
+//                .addIngredients(NeoForgeTypes.FLUID_STACK, List.of(recipe.getFluid()))
 //                .setFluidRenderer(64000, true, 16, 50)
-//                .setOverlayTexture(null, 0, 0);
+//                .setOverlay(null, 0, 0);
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 34).addItemStack(recipe.getResultItem(null));
     }
