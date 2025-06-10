@@ -21,32 +21,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput){
-        // List of smeltable ores
-        List<ItemLike> ATHERIUM_SMELTABLES = List.of(ModItems.DIRTY_ATHERIUM, ModBlocks.ATHERIUM_ORE, ModBlocks.DEEPSLATE_ATHERIUM_ORE, ModBlocks.NETHER_ATHERIUM_ORE, ModBlocks.END_ATHERIUM_ORE);
-        List<ItemLike> RUBY_SMELTABLES = List.of(ModItems.DIRTY_RUBY,ModBlocks.RUBY_ORE, ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE, ModBlocks.END_RUBY_ORE);
-        List<ItemLike> SAPPHIRE_SMELTABLES = List.of(ModItems.DIRTY_SAPPHIRE,ModBlocks.SAPPHIRE_ORE, ModBlocks.DEEPSLATE_SAPPHIRE_ORE, ModBlocks.NETHER_SAPPHIRE_ORE, ModBlocks.END_SAPPHIRE_ORE);
-        List<ItemLike> SUNSTONE_SMELTABLES = List.of(ModItems.DIRTY_SUNSTONE, ModBlocks.SUNSTONE_ORE, ModBlocks.DEEPSLATE_SUNSTONE_ORE, ModBlocks.NETHER_SUNSTONE_ORE, ModBlocks.END_SUNSTONE_ORE);
-        List<ItemLike> MALACHITE_SMELTABLES = List.of(ModItems.DIRTY_MALACHITE,ModBlocks.MALACHITE_ORE, ModBlocks.DEEPSLATE_MALACHITE_ORE, ModBlocks.NETHER_MALACHITE_ORE, ModBlocks.END_MALACHITE_ORE);
-
-        // Register smelting and blasting recipes for Atherium ores
-        oreSmelting(recipeOutput, ATHERIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ATHERIUM.get(), 0.25f, 200, "atherium");
-        oreBlasting(recipeOutput, ATHERIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ATHERIUM.get(), 0.25f, 100, "atherium");
-
-        // Register smelting and blasting recipes for Ruby ores
-        oreSmelting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY.get(), 0.25f, 200, "ruby");
-        oreBlasting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY.get(), 0.25f, 100, "ruby");
-
-        // Register smelting and blasting recipes for Sapphire ores
-        oreSmelting(recipeOutput, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
-        oreBlasting(recipeOutput, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
-
-        // Register smelting and blasting recipes for Sunstone ores
-        oreSmelting(recipeOutput, SUNSTONE_SMELTABLES, RecipeCategory.MISC, ModItems.SUNSTONE.get(), 0.25f, 200, "sunstone");
-        oreBlasting(recipeOutput, SUNSTONE_SMELTABLES, RecipeCategory.MISC, ModItems.SUNSTONE.get(), 0.25f, 100, "sunstone");
-
-        // Register smelting and blasting recipes for Malachite ores
-        oreSmelting(recipeOutput, MALACHITE_SMELTABLES, RecipeCategory.MISC, ModItems.MALACHITE.get(), 0.25f, 200, "malachite");
-        oreBlasting(recipeOutput, MALACHITE_SMELTABLES, RecipeCategory.MISC, ModItems.MALACHITE.get(), 0.25f, 100, "malachite");
 
         // Register recipe for crafting the Gem Polishing Table
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GEM_POLISHING_TABLE.get(), 1)

@@ -122,7 +122,7 @@ public class ModBlocks {
             () -> new GarlicCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).noCollission().noOcclusion()));
 
     public static final DeferredBlock<Block> GEM_POLISHING_TABLE = registerBlock("gem_polishing_table",
-            () -> new GemPolishingTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).noOcclusion()));
+            () -> new GemPolishingTableBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,0 +1,10 @@
+{
+  "type": "succsessentials:gem_polishing",
+  "ingredient": {
+    "item": "succsessentials:dirty_sapphire"
+  },
+  "result": {
+    "id": "succsessentials:sapphire",
+    "count": 1
+  }
+}
