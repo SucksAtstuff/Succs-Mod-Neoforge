@@ -21,6 +21,28 @@
     "item.succsessentials.atherium_leggings": "Atherium Leggings",
     "item.succsessentials.atherium_boots": "Atherium Boots",
 
+    "item.succsessentials.malachite": "Malachite",
+    "item.succsessentials.dirty_malachite": "Dirty Malachite",
+
+    "block.succsessentials.malachite_block": "Block Of Malachite",
+    "block.succsessentials.malachite_ore": "Malachite Ore",
+    "block.succsessentials.deepslate_malachite_ore": "Deepslate Malachite Ore",
+    "block.succsessentials.nether_malachite_ore": "Nether Malachite Ore",
+    "block.succsessentials.end_malachite_ore": "End Malachite Ore",
+
+    "item.succsessentials.malachite_pickaxe": "Malachite Pickaxe",
+    "item.succsessentials.malachite_axe": "Malachite Axe",
+    "item.succsessentials.malachite_shovel": "Malachite Shovel",
+    "item.succsessentials.malachite_hoe": "Malachite Hoe",
+    "item.succsessentials.malachite_sword": "Malachite Sword",
+    "item.succsessentials.malachite_hammer": "Malachite Hammer",
+    "item.succsessentials.malachite_paxel": "Malachite Paxel",
+
+    "item.succsessentials.malachite_helmet": "Malachite Helmet",
+    "item.succsessentials.malachite_chestplate": "Malachite Chestplate",
+    "item.succsessentials.malachite_leggings": "Malachite Leggings",
+    "item.succsessentials.malachite_boots": "Malachite Boots",
+
     "item.succsessentials.ruby": "Ruby",
     "item.succsessentials.dirty_ruby": "Dirty Ruby",
 
@@ -87,27 +109,27 @@
     "item.succsessentials.sunstone_leggings": "Sunstone Leggings",
     "item.succsessentials.sunstone_boots": "Sunstone Boots",
 
-    "item.succsessentials.malachite": "Malachite",
-    "item.succsessentials.dirty_malachite": "Dirty Malachite",
+    "item.succsessentials.jaspilite": "Jaspilite",
+    "item.succsessentials.dirty_jaspilite": "Dirty Jaspilite",
 
-    "block.succsessentials.malachite_block": "Block Of Malachite",
-    "block.succsessentials.malachite_ore": "Malachite Ore",
-    "block.succsessentials.deepslate_malachite_ore": "Deepslate Malachite Ore",
-    "block.succsessentials.nether_malachite_ore": "Nether Malachite Ore",
-    "block.succsessentials.end_malachite_ore": "End Malachite Ore",
+    "block.succsessentials.jaspilite_block": "Block Of Jaspilite",
+    "block.succsessentials.jaspilite_ore": "Jaspilite Ore",
+    "block.succsessentials.deepslate_jaspilite_ore": "Deepslate Jaspilite Ore",
+    "block.succsessentials.nether_jaspilite_ore": "Nether Jaspilite Ore",
+    "block.succsessentials.end_jaspilite_ore": "End Jaspilite Ore",
 
-    "item.succsessentials.malachite_pickaxe": "Malachite Pickaxe",
-    "item.succsessentials.malachite_axe": "Malachite Axe",
-    "item.succsessentials.malachite_shovel": "Malachite Shovel",
-    "item.succsessentials.malachite_hoe": "Malachite Hoe",
-    "item.succsessentials.malachite_sword": "Malachite Sword",
-    "item.succsessentials.malachite_hammer": "Malachite Hammer",
-    "item.succsessentials.malachite_paxel": "Malachite Paxel",
+    "item.succsessentials.jaspilite_pickaxe": "Jaspilite Pickaxe",
+    "item.succsessentials.jaspilite_axe": "Jaspilite Axe",
+    "item.succsessentials.jaspilite_shovel": "Jaspilite Shovel",
+    "item.succsessentials.jaspilite_hoe": "Jaspilite Hoe",
+    "item.succsessentials.jaspilite_sword": "Jaspilite Sword",
+    "item.succsessentials.jaspilite_hammer": "Jaspilite Hammer",
+    "item.succsessentials.jaspilite_paxel": "Jaspilite Paxel",
 
-    "item.succsessentials.malachite_helmet": "Malachite Helmet",
-    "item.succsessentials.malachite_chestplate": "Malachite Chestplate",
-    "item.succsessentials.malachite_leggings": "Malachite Leggings",
-    "item.succsessentials.malachite_boots": "Malachite Boots",
+    "item.succsessentials.jaspilite_helmet": "Jaspilite Helmet",
+    "item.succsessentials.jaspilite_chestplate": "Jaspilite Chestplate",
+    "item.succsessentials.jaspilite_leggings": "Jaspilite Leggings",
+    "item.succsessentials.jaspilite_boots": "Jaspilite Boots",
 
     "item.succsessentials.ring_of_ruby": "Ring Of Ruby",
     "item.succsessentials.ring_of_sapphire": "Ring Of Sapphire",
@@ -164,5 +186,8 @@
     "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion",
 
     "item.succsessentials.funky_music_disc": "IsuckAtEverything - Funky Music Disc",
-    "item.succsessentials.funky_music.desc": "A funky song to liven up your day"
+    "item.succsessentials.funky_music.desc": "A funky song to liven up your day",
+
+    "item.succsessentials.bass_music_disc": "Cloud8ine - Bass Music Disc",
+    "item.succsessentials.bass_music.desc": "Epic boss music"
 }

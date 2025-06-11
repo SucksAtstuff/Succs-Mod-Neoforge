@@ -49,6 +49,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RUBY.get());
         basicItem(ModItems.SAPPHIRE.get());
         basicItem(ModItems.SUNSTONE.get());
+        basicItem(ModItems.JASPILITE.get());
 
         // Register models for dirty gems
         basicItem(ModItems.DIRTY_ATHERIUM.get());
@@ -56,6 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.DIRTY_RUBY.get());
         basicItem(ModItems.DIRTY_SAPPHIRE.get());
         basicItem(ModItems.DIRTY_SUNSTONE.get());
+        basicItem(ModItems.DIRTY_JASPILITE.get());
 
         // Register models for other items
         basicItem(ModItems.GOLD_HANDLE.get());
@@ -64,6 +66,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ROCK.get());
         basicItem(ModItems.ROCK_CANDY.get());
         basicItem(ModItems.FUNKY_MUSIC_DISC.get());
+        basicItem(ModItems.BASS_MUSIC_DISC.get());
 
         // Register models for atherium tools
         handheldItem(ModItems.ATHERIUM_SWORD.get());
@@ -110,6 +113,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SUNSTONE_HAMMER.get());
         handheldItem(ModItems.SUNSTONE_PAXEL.get());
 
+        // Register models for jaspilite tools
+        handheldItem(ModItems.JASPILITE_SWORD.get());
+        handheldItem(ModItems.JASPILITE_PICKAXE.get());
+        handheldItem(ModItems.JASPILITE_AXE.get());
+        handheldItem(ModItems.JASPILITE_SHOVEL.get());
+        handheldItem(ModItems.JASPILITE_HOE.get());
+        handheldItem(ModItems.JASPILITE_HAMMER.get());
+        handheldItem(ModItems.JASPILITE_PAXEL.get());
+
         // Register models for atherium armor
         trimmedArmorItem(ModItems.ATHERIUM_HELMET);
         trimmedArmorItem(ModItems.ATHERIUM_CHESTPLATE);
@@ -139,6 +151,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SUNSTONE_CHESTPLATE);
         trimmedArmorItem(ModItems.SUNSTONE_LEGGINGS);
         trimmedArmorItem(ModItems.SUNSTONE_BOOTS);
+
+        // Register models for jaspilite armor
+        trimmedArmorItem(ModItems.JASPILITE_HELMET);
+        trimmedArmorItem(ModItems.JASPILITE_CHESTPLATE);
+        trimmedArmorItem(ModItems.JASPILITE_LEGGINGS);
+        trimmedArmorItem(ModItems.JASPILITE_BOOTS);
+
+        // Register models for curio items
+        basicItem(ModItems.BRACELET_OF_MALACHITE.get());
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
     }

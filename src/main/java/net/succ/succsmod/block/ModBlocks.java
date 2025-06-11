@@ -42,6 +42,25 @@ public class ModBlocks {
     public static final DeferredBlock<Block> ATHERIUM_BLOCK = registerBlock("atherium_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ANCIENT_DEBRIS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
 
+    public static final DeferredBlock<Block> MALACHITE_ORE = registerBlock("malachite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,7),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> DEEPSLATE_MALACHITE_ORE = registerBlock("deepslate_malachite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,7),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> NETHER_MALACHITE_ORE = registerBlock("nether_malachite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,7),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> END_MALACHITE_ORE = registerBlock("end_malachite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,7),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> MALACHITE_BLOCK = registerBlock("malachite_block",
+            () -> new Block (BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_BLOCK).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> RUBY_ORE = registerBlock("ruby_ore",
             () -> new DropExperienceBlock(UniformInt.of(3,7),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
@@ -99,24 +118,26 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SUNSTONE_BLOCK = registerBlock("sunstone_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> MALACHITE_ORE = registerBlock("malachite_ore",
+    public static final DeferredBlock<Block> JASPILITE_ORE = registerBlock("jaspilite_ore",
             () -> new DropExperienceBlock(UniformInt.of(3,7),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> DEEPSLATE_MALACHITE_ORE = registerBlock("deepslate_malachite_ore",
+    public static final DeferredBlock<Block> DEEPSLATE_JASPILITE_ORE = registerBlock("deepslate_jaspilite_ore",
             () -> new DropExperienceBlock(UniformInt.of(3,7),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> NETHER_MALACHITE_ORE = registerBlock("nether_malachite_ore",
+    public static final DeferredBlock<Block> NETHER_JASPILITE_ORE = registerBlock("nether_jaspilite_ore",
             () -> new DropExperienceBlock(UniformInt.of(3,7),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> END_MALACHITE_ORE = registerBlock("end_malachite_ore",
+    public static final DeferredBlock<Block> END_JASPILITE_ORE = registerBlock("end_jaspilite_ore",
             () -> new DropExperienceBlock(UniformInt.of(3,7),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).requiresCorrectToolForDrops()));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> MALACHITE_BLOCK = registerBlock("malachite_block",
-            () -> new Block (BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_BLOCK).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> JASPILITE_BLOCK = registerBlock("jaspilite_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
+
+
 
     public static final DeferredBlock<Block> GARLIC_CROP = BLOCKS.register("garlic_crop",
             () -> new GarlicCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).noCollission().noOcclusion()));

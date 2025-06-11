@@ -24,10 +24,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         // Registering gem blocks with their respective item models
         blockWithItem(ModBlocks.ATHERIUM_BLOCK);
+        blockWithItem(ModBlocks.MALACHITE_BLOCK);
         blockWithItem(ModBlocks.RUBY_BLOCK);
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.SUNSTONE_BLOCK);
-        blockWithItem(ModBlocks.MALACHITE_BLOCK);
+        blockWithItem(ModBlocks.JASPILITE_BLOCK);
 
         // Registering gem ore blocks with their respective item models
         simpleBlockWithItem(ModBlocks.ATHERIUM_ORE.get(), cubeAll(ModBlocks.ATHERIUM_ORE.get()));
@@ -50,6 +51,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), cubeAll(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()));
         simpleBlockWithItem(ModBlocks.NETHER_SAPPHIRE_ORE.get(), cubeAll(ModBlocks.NETHER_SAPPHIRE_ORE.get()));
         simpleBlockWithItem(ModBlocks.END_SAPPHIRE_ORE.get(), cubeAll(ModBlocks.END_SAPPHIRE_ORE.get()));
+        simpleBlockWithItem(ModBlocks.JASPILITE_ORE.get(), cubeAll(ModBlocks.JASPILITE_ORE.get()));
+        simpleBlockWithItem(ModBlocks.DEEPSLATE_JASPILITE_ORE.get(), cubeAll(ModBlocks.DEEPSLATE_JASPILITE_ORE.get()));
+        simpleBlockWithItem(ModBlocks.NETHER_JASPILITE_ORE.get(), cubeAll(ModBlocks.NETHER_JASPILITE_ORE.get()));
+        simpleBlockWithItem(ModBlocks.END_JASPILITE_ORE.get(), cubeAll(ModBlocks.END_JASPILITE_ORE.get()));
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");

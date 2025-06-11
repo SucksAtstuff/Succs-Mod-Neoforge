@@ -1,4 +1,7 @@
 {
   "replace": "false",
-  "values": ["succsmod:ring_of_ruby", "succsmod:ring_of_sapphire", "succsmod:ring_of_sunstone", "succsmod:ring_of_atherium"]
+  "values": ["succsessentials:ring_of_ruby",
+    "succsessentials:ring_of_sapphire",
+    "succsessentials:ring_of_sunstone",
+    "succsessentials:ring_of_atherium"]
 }

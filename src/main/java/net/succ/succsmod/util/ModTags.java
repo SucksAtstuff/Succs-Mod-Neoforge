@@ -25,18 +25,18 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_ATHERIUM_TOOL = createTag("needs_atherium_tool");
         public static final TagKey<Block> INCORRECT_FOR_ATHERIUM_TOOL = createTag("incorrect_for_atherium_tool");
+        public static final TagKey<Block> NEEDS_MALACHITE_TOOL = createTag("needs_malachite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_MALACHITE_TOOL = createTag("incorrect_for_malachite_tool");
         public static final TagKey<Block> NEEDS_RUBY_TOOL = createTag("needs_ruby_tool");
         public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL = createTag("incorrect_for_ruby_tool");
         public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = createTag("needs_sapphire_tool");
         public static final TagKey<Block> INCORRECT_FOR_SAPPHIRE_TOOL = createTag("incorrect_for_sapphire_tool");
         public static final TagKey<Block> NEEDS_SUNSTONE_TOOL = createTag("needs_sunstone_tool");
         public static final TagKey<Block> INCORRECT_FOR_SUNSTONE_TOOL = createTag("incorrect_for_sunstone_tool");
-        public static final TagKey<Block> NEEDS_MALACHITE_TOOL = createTag("needs_malachite_tool");
-        public static final TagKey<Block> INCORRECT_FOR_MALACHITE_TOOL = createTag("incorrect_for_malachite_tool");
-
+        public static final TagKey<Block> INCORRECT_FOR_JASPILITE_TOOL = createTag("incorrect_for_jaspilite_tool");
+        public static final TagKey<Block> NEEDS_JASPILITE_TOOL = createTag("needs_jaspilite_tool");
 
         public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
-
 
         // Define the custom tag for blocks mineable with Sunstone or Sapphire pickaxes
         public static final TagKey<Block> MINEABLE_WITH_SUNSTONE_OR_SAPPHIRE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "mineable_with_sunstone_or_sapphire"));

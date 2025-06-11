@@ -32,6 +32,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIRTY_SAPPHIRE.get());
                         output.accept(ModItems.SUNSTONE.get());
                         output.accept(ModItems.DIRTY_SUNSTONE.get());
+                        output.accept(ModItems.JASPILITE.get());
+                        output.accept(ModItems.DIRTY_JASPILITE.get());
                     })
                     .build());
 
@@ -47,6 +49,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROCK.get());
                         output.accept(ModItems.ROCK_CANDY.get());
                         output.accept(ModItems.FUNKY_MUSIC_DISC.get());
+                        output.accept(ModItems.BASS_MUSIC_DISC.get());
+                        output.accept(ModItems.BRACELET_OF_MALACHITE.get());
                     })
                     .build());
 
@@ -85,6 +89,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NETHER_SUNSTONE_ORE.get());
                         output.accept(ModBlocks.END_SUNSTONE_ORE.get());
                         output.accept(ModBlocks.SUNSTONE_BLOCK.get());
+
+                        output.accept(ModBlocks.JASPILITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_JASPILITE_ORE.get());
+                        output.accept(ModBlocks.NETHER_JASPILITE_ORE.get());
+                        output.accept(ModBlocks.END_JASPILITE_ORE.get());
+                        output.accept(ModBlocks.JASPILITE_BLOCK.get());
 
                         output.accept(ModBlocks.GEM_POLISHING_TABLE.get());
                     })
@@ -135,6 +145,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_HOE.get());
                         output.accept(ModItems.SUNSTONE_HAMMER.get());
                         output.accept(ModItems.SUNSTONE_PAXEL.get());
+
+                        output.accept(ModItems.JASPILITE_SWORD.get());
+                        output.accept(ModItems.JASPILITE_PICKAXE.get());
+                        output.accept(ModItems.JASPILITE_AXE.get());
+                        output.accept(ModItems.JASPILITE_SHOVEL.get());
+                        output.accept(ModItems.JASPILITE_HOE.get());
+                        output.accept(ModItems.JASPILITE_HAMMER.get());
+                        output.accept(ModItems.JASPILITE_PAXEL.get());
                     })
                     .build());
 
@@ -168,6 +186,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_CHESTPLATE.get());
                         output.accept(ModItems.SUNSTONE_LEGGINGS.get());
                         output.accept(ModItems.SUNSTONE_BOOTS.get());
+
+                        output.accept(ModItems.JASPILITE_HELMET.get());
+                        output.accept(ModItems.JASPILITE_CHESTPLATE.get());
+                        output.accept(ModItems.JASPILITE_LEGGINGS.get());
+                        output.accept(ModItems.JASPILITE_BOOTS.get());
                     })
                     .build());
 

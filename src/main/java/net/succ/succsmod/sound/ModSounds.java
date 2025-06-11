@@ -19,6 +19,9 @@ public class ModSounds {
     public static final Supplier<SoundEvent> FUNKY_MUSIC = registerSoundEvent("funky_music");
     public static final ResourceKey<JukeboxSong> FUNKY_MUSIC_KEY = createSong("funky_music");
 
+    public static final Supplier<SoundEvent> BASS = registerSoundEvent("bass_music");
+    public static final ResourceKey<JukeboxSong> BASS_KEY = createSong("bass_music");
+
     private static ResourceKey<JukeboxSong> createSong(String name){
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
     }

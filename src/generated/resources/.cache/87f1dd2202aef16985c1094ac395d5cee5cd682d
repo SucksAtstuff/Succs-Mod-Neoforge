@@ -1,12 +1,12 @@
-// 1.21.1	2025-06-10T18:50:48.160277	Tags for minecraft:item mod id succsessentials
-d9208db1b927d4fab9c598ee240ffbaa4d624784 data/minecraft/tags/item/axes.json
-7226380a4cac617dedc16d2e3588b74f37a19ce2 data/minecraft/tags/item/hoes.json
-2fd1d413552853febd1c3df136cba0588ff2499c data/minecraft/tags/item/pickaxes.json
-5abd44f3af2dd11c1fbbebd327d53c6c0fb6f341 data/minecraft/tags/item/shovels.json
-51aa356bf827edff23afb554f300d2df131fcfb9 data/minecraft/tags/item/swords.json
-cd3e3cf72432aeda437db8aab8a4479e50fd93f2 data/minecraft/tags/item/trimmable_armor.json
+// 1.21.1	2025-06-11T01:13:23.4467953	Tags for minecraft:item mod id succsessentials
+3303458a5cd8934b667aaaa444e3ab83b48ead0e data/minecraft/tags/item/axes.json
+53257f99afd7e0364348fc8bf44be2eee9a1db67 data/minecraft/tags/item/hoes.json
+5332dfa37090f1d8caf4cfb9b1796fdb91126365 data/minecraft/tags/item/pickaxes.json
+a6611fe266673de755b6841a713377d5a4731c03 data/minecraft/tags/item/shovels.json
+ae1e629ab30534297e9b0691e52c9c91026df677 data/minecraft/tags/item/swords.json
+d7c575c32b6dc2a03784ec41cc0d0ca7852b9b67 data/minecraft/tags/item/trimmable_armor.json
 a1bc89df8764c14fa6bca2f1ca18cd7f7e524ac1 data/minecraft/tags/item/villager_plantable_seeds.json
-0be9270181f0c6c256a1b00155a27a8db1b2185d data/succsessentials/tags/item/hammer_enchantable.json
+b9e7b8be6261e9e7e8ee838b13e9cb2c372d38fe data/succsessentials/tags/item/hammer_enchantable.json
 32be8e421be688a5cb16b8e556e37e7f9a76ac94 data/succsessentials/tags/item/is_bucket.json
 c8e651f6c704b433daa00d2f13342dfa889f4561 data/succsessentials/tags/item/polishable_gems.json
 f12bcca1e9ee1687bc7d7b66725ec821cdd61008 data/succsessentials/tags/item/polished_gems.json

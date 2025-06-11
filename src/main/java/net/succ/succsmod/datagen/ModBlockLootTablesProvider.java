@@ -39,6 +39,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.RUBY_BLOCK.get());
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.SUNSTONE_BLOCK.get());
+        dropSelf(ModBlocks.JASPILITE_BLOCK.get());
         dropSelf(ModBlocks.GEM_POLISHING_TABLE.get());
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
@@ -56,6 +57,14 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.NETHER_ATHERIUM_ORE.get(), ModItems.DIRTY_ATHERIUM.get()));
         add(ModBlocks.END_ATHERIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.END_ATHERIUM_ORE.get(), ModItems.DIRTY_ATHERIUM.get()));
+        add(ModBlocks.MALACHITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
+        add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
+        add(ModBlocks.NETHER_MALACHITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.NETHER_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
+        add(ModBlocks.END_MALACHITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.END_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
         add(ModBlocks.RUBY_ORE.get(),
                 block -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.DIRTY_RUBY.get()));
         add(ModBlocks.DEEPSLATE_RUBY_ORE.get(),
@@ -72,24 +81,24 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.NETHER_SUNSTONE_ORE.get(), ModItems.DIRTY_SUNSTONE.get()));
         add(ModBlocks.END_SUNSTONE_ORE.get(),
                 block -> createOreDrop(ModBlocks.END_SUNSTONE_ORE.get(), ModItems.DIRTY_SUNSTONE.get()));
-        add(ModBlocks.MALACHITE_ORE.get(),
-                block -> createOreDrop(ModBlocks.MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
-        add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get(),
-                block -> createOreDrop(ModBlocks.DEEPSLATE_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
-        add(ModBlocks.NETHER_MALACHITE_ORE.get(),
-                block -> createOreDrop(ModBlocks.NETHER_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
-        add(ModBlocks.END_MALACHITE_ORE.get(),
-                block -> createOreDrop(ModBlocks.END_MALACHITE_ORE.get(), ModItems.DIRTY_MALACHITE.get()));
-
-        // Define loot tables for blocks that drop items similar to copper ores
         add(ModBlocks.SAPPHIRE_ORE.get(),
-                block -> createMultipleOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get(), 2, 4));
+                block -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get()));
         add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
-                block -> createMultipleOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get(), 2, 4));
+                block -> createOreDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get()));
         add(ModBlocks.NETHER_SAPPHIRE_ORE.get(),
-                block -> createMultipleOreDrops(ModBlocks.NETHER_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get(), 2, 4));
+                block -> createOreDrop(ModBlocks.NETHER_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get()));
         add(ModBlocks.END_SAPPHIRE_ORE.get(),
-                block -> createMultipleOreDrops(ModBlocks.END_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get(), 2, 4));
+                block -> createOreDrop(ModBlocks.END_SAPPHIRE_ORE.get(), ModItems.DIRTY_SAPPHIRE.get()));
+        add(ModBlocks.JASPILITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
+        add(ModBlocks.DEEPSLATE_JASPILITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
+        add(ModBlocks.NETHER_JASPILITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.NETHER_JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
+        add(ModBlocks.END_JASPILITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.END_JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
+
+
 
     }
 

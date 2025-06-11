@@ -1,0 +1,10 @@
+{
+  "type": "succsessentials:gem_polishing",
+  "ingredient": {
+    "item": "succsessentials:dirty_jaspilite"
+  },
+  "result": {
+    "id": "succsessentials:jaspilite",
+    "count": 1
+  }
+}

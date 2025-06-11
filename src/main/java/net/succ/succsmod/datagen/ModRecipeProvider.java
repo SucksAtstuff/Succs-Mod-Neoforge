@@ -104,6 +104,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_PAXEL.get())
+                .pattern("APS")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('A', ModItems.ATHERIUM_AXE.get())
+                .define('P', ModItems.ATHERIUM_PICKAXE.get())
+                .define('S', ModItems.ATHERIUM_SHOVEL.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
+
+        // Atherium Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_HELMET.get())
+                .pattern("AAA")
+                .pattern("A A")
+                .define('A', ModItems.ATHERIUM.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_CHESTPLATE.get())
+                .pattern("A A")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ModItems.ATHERIUM.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_LEGGINGS.get())
+                .pattern("AAA")
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', ModItems.ATHERIUM.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_BOOTS.get())
+                .pattern("A A")
+                .pattern("A A")
+                .define('A', ModItems.ATHERIUM.get())
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput);
+
         // Malachite Block Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MALACHITE_BLOCK.get())
                 .pattern("MMM")
@@ -118,7 +160,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_malachite_block", has(ModBlocks.MALACHITE_BLOCK.get()))
                 .save(recipeOutput);
 
-// Malachite Tools
+        // Malachite Tools
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_PICKAXE.get())
                 .pattern("MMM")
                 .pattern(" G ")
@@ -170,6 +212,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" G ")
                 .define('M', ModItems.MALACHITE.get())
                 .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_PAXEL.get())
+                .pattern("MAP")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('M', ModItems.MALACHITE_AXE.get())
+                .define('A', ModItems.MALACHITE_PICKAXE.get())
+                .define('P', ModItems.MALACHITE_SHOVEL.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        // Malachite Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HELMET.get())
+                .pattern("MMM")
+                .pattern("M M")
+                .define('M', ModItems.MALACHITE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_CHESTPLATE.get())
+                .pattern("M M")
+                .pattern("MMM")
+                .pattern("MMM")
+                .define('M', ModItems.MALACHITE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_LEGGINGS.get())
+                .pattern("MMM")
+                .pattern("M M")
+                .pattern("M M")
+                .define('M', ModItems.MALACHITE.get())
+                .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_BOOTS.get())
+                .pattern("M M")
+                .pattern("M M")
+                .define('M', ModItems.MALACHITE.get())
                 .unlockedBy("has_malachite", has(ModItems.MALACHITE.get()))
                 .save(recipeOutput);
 
@@ -242,6 +326,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_PAXEL.get())
+                .pattern("RAP")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('R', ModItems.RUBY_AXE.get())
+                .define('A', ModItems.RUBY_PICKAXE.get())
+                .define('P', ModItems.RUBY_SHOVEL.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        // Ruby Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_HELMET.get())
+                .pattern("RRR")
+                .pattern("R R")
+                .define('R', ModItems.RUBY.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_CHESTPLATE.get())
+                .pattern("R R")
+                .pattern("RRR")
+                .pattern("RRR")
+                .define('R', ModItems.RUBY.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_LEGGINGS.get())
+                .pattern("RRR")
+                .pattern("R R")
+                .pattern("R R")
+                .define('R', ModItems.RUBY.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBY_BOOTS.get())
+                .pattern("R R")
+                .pattern("R R")
+                .define('R', ModItems.RUBY.get())
+                .unlockedBy("has_ruby", has(ModItems.RUBY.get()))
+                .save(recipeOutput);
+
         // Sapphire Block Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
                 .pattern("SSS")
@@ -308,6 +434,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" G ")
                 .define('S', ModItems.SAPPHIRE.get())
                 .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_PAXEL.get())
+                .pattern("SAP")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SAPPHIRE_AXE.get())
+                .define('A', ModItems.SAPPHIRE_PICKAXE.get())
+                .define('P', ModItems.SAPPHIRE_SHOVEL.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        // Sapphire Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_HELMET.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_CHESTPLATE.get())
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_LEGGINGS.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_BOOTS.get())
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SAPPHIRE.get())
                 .unlockedBy("has_sapphire", has(ModItems.SAPPHIRE.get()))
                 .save(recipeOutput);
 
@@ -380,7 +548,158 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_PAXEL.get())
+                .pattern("SAP")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('S', ModItems.SUNSTONE_AXE.get())
+                .define('A', ModItems.SUNSTONE_PICKAXE.get())
+                .define('P', ModItems.SUNSTONE_SHOVEL.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
 
+        // Sunstone Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_HELMET.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S', ModItems.SUNSTONE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_CHESTPLATE.get())
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SUNSTONE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_LEGGINGS.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SUNSTONE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUNSTONE_BOOTS.get())
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SUNSTONE.get())
+                .unlockedBy("has_sunstone", has(ModItems.SUNSTONE.get()))
+                .save(recipeOutput);
+
+        // Jaspilite Block Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.JASPILITE_BLOCK.get())
+                .pattern("JJJ")
+                .pattern("JJJ")
+                .pattern("JJJ")
+                .define('J', ModItems.JASPILITE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.JASPILITE.get(), 9)
+                .requires(ModBlocks.JASPILITE_BLOCK.get())
+                .unlockedBy("has_jaspilite_block", has(ModBlocks.JASPILITE_BLOCK.get()))
+                .save(recipeOutput);
+
+        // Jaspilite Tools
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_PICKAXE.get())
+                .pattern("JJJ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_AXE.get())
+                .pattern("JJ ")
+                .pattern("JG ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_SHOVEL.get())
+                .pattern(" J ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_HOE.get())
+                .pattern("JJ ")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_SWORD.get())
+                .pattern(" J ")
+                .pattern(" J ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_HAMMER.get())
+                .pattern("JJJ")
+                .pattern("JGJ")
+                .pattern(" G ")
+                .define('J', ModItems.JASPILITE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_PAXEL.get())
+                .pattern("ASP")
+                .pattern(" G ")
+                .pattern(" G ")
+                .define('A', ModItems.JASPILITE_AXE.get())
+                .define('S', ModItems.JASPILITE_SHOVEL.get())
+                .define('P', ModItems.JASPILITE_PICKAXE.get())
+                .define('G', ModItems.GOLD_HANDLE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        // Jaspilite Armour Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_HELMET.get())
+                .pattern("JJJ")
+                .pattern("J J")
+                .define('J', ModItems.JASPILITE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_CHESTPLATE.get())
+                .pattern("J J")
+                .pattern("JJJ")
+                .pattern("JJJ")
+                .define('J', ModItems.JASPILITE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_LEGGINGS.get())
+                .pattern("JJJ")
+                .pattern("J J")
+                .pattern("J J")
+                .define('J', ModItems.JASPILITE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.JASPILITE_BOOTS.get())
+                .pattern("J J")
+                .pattern("J J")
+                .define('J', ModItems.JASPILITE.get())
+                .unlockedBy("has_jaspilite", has(ModItems.JASPILITE.get()))
+                .save(recipeOutput);
 
         // Register shaped recipe for Gold Handle
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLD_HANDLE.get())

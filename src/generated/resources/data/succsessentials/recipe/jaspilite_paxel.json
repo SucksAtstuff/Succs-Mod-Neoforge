@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "succsessentials:jaspilite_axe"
+    },
+    "G": {
+      "item": "succsessentials:gold_handle"
+    },
+    "P": {
+      "item": "succsessentials:jaspilite_pickaxe"
+    },
+    "S": {
+      "item": "succsessentials:jaspilite_shovel"
+    }
+  },
+  "pattern": [
+    "ASP",
+    " G ",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:jaspilite_paxel"
+  }
+}

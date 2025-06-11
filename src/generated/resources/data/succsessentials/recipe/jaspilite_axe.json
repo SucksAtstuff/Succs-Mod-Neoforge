@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "succsessentials:gold_handle"
+    },
+    "J": {
+      "item": "succsessentials:jaspilite"
+    }
+  },
+  "pattern": [
+    "JJ ",
+    "JG ",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:jaspilite_axe"
+  }
+}
