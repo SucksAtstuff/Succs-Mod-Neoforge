@@ -1,0 +1,32 @@
+{
+  "parent": "succsessentials:succs_essentials/root",
+  "criteria": {
+    "has_rock_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:rock_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "This doesn't look like candy....",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:rock_candy"
+    },
+    "show_toast": false,
+    "title": "'Rock Candy?'"
+  },
+  "requirements": [
+    [
+      "has_rock_candy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

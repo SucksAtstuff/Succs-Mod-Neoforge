@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/sunstone",
+  "criteria": {
+    "has_sunstone_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sunstone_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.sunstone_hoe.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sunstone_hoe"
+    },
+    "title": {
+      "translate": "item.succsessentials.sunstone_hoe"
+    }
+  },
+  "requirements": [
+    [
+      "has_sunstone_hoe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/jaspilite",
+  "criteria": {
+    "has_jaspilite_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:jaspilite_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.jaspilite_shovel.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:jaspilite_shovel"
+    },
+    "title": {
+      "translate": "item.succsessentials.jaspilite_shovel"
+    }
+  },
+  "requirements": [
+    [
+      "has_jaspilite_shovel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

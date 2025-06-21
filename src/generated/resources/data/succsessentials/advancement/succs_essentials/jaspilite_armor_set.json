@@ -1,0 +1,38 @@
+{
+  "parent": "succsessentials:succs_essentials/jaspilite",
+  "criteria": {
+    "has_full_jaspilite_set": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:jaspilite_helmet"
+          },
+          {
+            "items": "succsessentials:jaspilite_chestplate"
+          },
+          {
+            "items": "succsessentials:jaspilite_leggings"
+          },
+          {
+            "items": "succsessentials:jaspilite_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a full set of Jaspilite armor.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:jaspilite_helmet"
+    },
+    "title": "Jaspilite Armor Set"
+  },
+  "requirements": [
+    [
+      "has_full_jaspilite_set"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
