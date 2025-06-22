@@ -9,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.succ.succsmod.effect.ModEffects;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -30,6 +31,22 @@ public class CustomCurioMobEffectItem extends Item implements ICurioItem {
         // If the effect is POISON, show only "Provides Poison Resistance"
         if (mobEffectInstance.getEffect() == MobEffects.POISON) {
             tooltipComponents.add(Component.literal("Grants Poison Resistance"));
+        }
+        else if (mobEffectInstance.getEffect() == MobEffects.HEALTH_BOOST) {
+            tooltipComponents.add(Component.literal("Grants an extra row of hearts"));
+        }
+        else if (mobEffectInstance.getEffect() == MobEffects.DIG_SPEED) {
+            tooltipComponents.add(Component.literal("Grants Haste"));
+        }
+        else if (mobEffectInstance.getEffect() == MobEffects.FIRE_RESISTANCE) {
+            tooltipComponents.add(Component.literal("Grants Fire Resistance"));
+        }
+        else if (mobEffectInstance.getEffect() == MobEffects.LUCK) {
+            tooltipComponents.add(Component.literal("Grants Luck"));
+        }
+        // If the effect is HEALTH_BOOST, show "Grants an extra row of hearts"
+        else if (mobEffectInstance.getEffect() == ModEffects.ATTACK_SPEED_EFFECT) {
+            tooltipComponents.add(Component.literal("Grants attack speed boost"));
         }
         // For other effects, show the effect name
         else {

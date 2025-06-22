@@ -94,6 +94,47 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         }
     }
 
+    private void addCurioItemstoDungeonChests() {
+        // Loop over each dungeon chest loot table and add all rings and bracelet to each one
+        for (ResourceLocation lootTable : dungeonChestLootTables) {
+            // Add Ring of Ruby
+            add("ring_of_ruby_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.RING_OF_RUBY.get()));
+
+            // Add Ring of Sapphire
+            add("ring_of_sapphire_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.RING_OF_SAPPHIRE.get()));
+
+            // Add Ring of Sunstone
+            add("ring_of_sunstone_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.RING_OF_SUNSTONE.get()));
+
+            // Add Ring of Atherium
+            add("ring_of_atherium_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.RING_OF_ATHERIUM.get()));
+
+            // Add Bracelet of Malachite
+            add("bracelet_of_malachite_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.BRACELET_OF_MALACHITE.get()));
+
+            // Add Necklace of Amethyst
+            add("necklace_of_amethyst_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
+                    LootTableIdCondition.builder(lootTable).build(),
+                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+            }, ModItems.NECKLACE_OF_AMETHYST.get()));
+        }
+    }
+
 
     @Override
     protected void start() {
@@ -118,5 +159,8 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         addSapphireGemsToOverworldDungeonChests();
         addSunstoneGemsToOverworldDungeonChests();
         addMalachiteGemsToOverworldDungeonChests();
+        addCurioItemstoDungeonChests();
     }
+
 }
+

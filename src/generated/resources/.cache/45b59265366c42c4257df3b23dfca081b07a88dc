@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-11T13:02:03.2389553	Item Models: succsessentials
+// 1.21.1	2025-06-22T16:47:14.5245791	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -168,6 +168,11 @@ fb31e7c2cb128e5eca1e3356a2501477ad5d3099 assets/succsessentials/models/item/mala
 5ce397026896c9977c1596e89a790dfd0e3f2745 assets/succsessentials/models/item/malachite_pickaxe.json
 14f478685c299077c2026d210d3e459924c6ed03 assets/succsessentials/models/item/malachite_shovel.json
 a5fbabbeeffb4e41ccbda7da8f90545cd8ada6a2 assets/succsessentials/models/item/malachite_sword.json
+59d9987153ab9b4ef490f990aaf0b95baac59124 assets/succsessentials/models/item/necklace_of_amethyst.json
+e7fb2db413751604fb1fd11556bd01f0de1fbaf0 assets/succsessentials/models/item/ring_of_atherium.json
+a24507e01e34e81675c03ee45a0be68559e58463 assets/succsessentials/models/item/ring_of_ruby.json
+76ca36108dc990311e13007dd368ac01a8b404eb assets/succsessentials/models/item/ring_of_sapphire.json
+1b285fc1897ee7536c6dd734f9f00a06d14a6678 assets/succsessentials/models/item/ring_of_sunstone.json
 fdb05720869d6574739b6578025c0f47e08d6a55 assets/succsessentials/models/item/rock.json
 297a0a5a5b0fa5f0e0edc1f9c8003ce12d487e0c assets/succsessentials/models/item/rock_candy.json
 c3aea8a548c837ff19804de6f2819f2738edd5ea assets/succsessentials/models/item/ruby.json

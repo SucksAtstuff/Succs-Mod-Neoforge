@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-21T01:22:31.495956	Advancements
+// 1.21.1	2025-06-22T16:56:11.3246172	Advancements
 e07fceb6a383d4622402eff4bc98edd5264a1a32 data/succsessentials/advancement/gems/atherium_axe.json
 bf8e56a520161bad9ea40d050a3fbf032cae2f7a data/succsessentials/advancement/gems/atherium_hoe.json
 9bd3fb5c90bb31a1cead7a9665aee40174a2485e data/succsessentials/advancement/gems/atherium_pickaxe.json
@@ -29,7 +29,7 @@ b7a41db3e0052a0599cab895c2ac1121d11cca3a data/succsessentials/advancement/gems/s
 503ca42900957ec56e1e2b98067458f1766758a7 data/succsessentials/advancement/gems/sunstone_pickaxe.json
 841aeb9e7c3d441423a7516480a9ff12e5be5277 data/succsessentials/advancement/gems/sunstone_shovel.json
 cba2ad269b5387a260cb384fffadd85af4ac9eb7 data/succsessentials/advancement/gems/sunstone_sword.json
-7c80df92addc0fbb93d422e7d79986700569ceb3 data/succsessentials/advancement/hidden/rock_candy.json
+e5f4dffe9c02e50afeb87f34c107ecad72eb7841 data/succsessentials/advancement/hidden/rock_candy.json
 91a7cdf7bf9002dd8163616b1cea94dc9af4a272 data/succsessentials/advancement/misc/garlic.json
 a1c9b79b79b9681883242490b028123d78b93a0d data/succsessentials/advancement/misc/garlic_bread.json
 ad133be50713ebd8d4f244e8611368e42189c4bf data/succsessentials/advancement/succs_essentials/atherium.json

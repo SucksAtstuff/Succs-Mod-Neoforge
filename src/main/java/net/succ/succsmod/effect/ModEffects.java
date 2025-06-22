@@ -15,6 +15,9 @@ public class ModEffects {
     public static final Holder<MobEffect> TRUE_FIRE_EFFECT = MOB_EFFECTS.register("true_fire",
             () -> new TrueFireEffect(MobEffectCategory.HARMFUL, 0xFF0059));
 
+    public static final Holder<MobEffect> ATTACK_SPEED_EFFECT = MOB_EFFECTS.register("attack_speed",
+            () -> new AttackSpeedEffect(MobEffectCategory.BENEFICIAL, 0xFFD700));
+
     public static void register (IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

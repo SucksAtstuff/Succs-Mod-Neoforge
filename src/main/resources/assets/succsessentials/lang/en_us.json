@@ -184,6 +184,11 @@
     "item.minecraft.potion.effect.true_fire_potion": "True Fire Potion",
     "item.minecraft.splash_potion.effect.true_fire_potion": "True Fire Splash Potion",
     "item.minecraft.lingering_potion.effect.true_fire_potion": "True Fire Lingering Potion",
+    "effect.succsessentials.attack_speed": "Attack Speed",
+    "item.minecraft.potion.effect.attack_speed_potion": "Attack Speed Potion",
+    "item.minecraft.splash_potion.effect.attack_speed_potion": "Attack Speed Splash Potion",
+    "item.minecraft.lingering_potion.effect.attack_speed_potion": "Attack Speed Lingering Potion",
+
 
     "item.succsessentials.funky_music_disc": "IsuckAtEverything - Funky Music Disc",
     "item.succsessentials.funky_music.desc": "A funky song to liven up your day",

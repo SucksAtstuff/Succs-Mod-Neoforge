@@ -2,6 +2,8 @@ package net.succ.succsmod.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -346,16 +348,16 @@ public class ModItems {
 
     // ★ TIER-6  ATHERIUM (full-set = Health-Boost)
     public static final DeferredItem<ArmorItem> ATHERIUM_HELMET = ITEMS.register("atherium_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_CHESTPLATE = ITEMS.register("atherium_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_LEGGINGS = ITEMS.register("atherium_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
     public static final DeferredItem<ArmorItem> ATHERIUM_BOOTS = ITEMS.register("atherium_boots",
-            () -> new ModArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+            () -> new ArmorItem(ModArmorMaterials.ATHERIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
 
     // ★ TIER-5  MALACHITE
@@ -402,16 +404,16 @@ public class ModItems {
 
     // ★ TIER-3  SUNSTONE  (full-set = Fire-Resistance)
     public static final DeferredItem<ArmorItem> SUNSTONE_HELMET = ITEMS.register("sunstone_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(38))));
     public static final DeferredItem<ArmorItem> SUNSTONE_CHESTPLATE = ITEMS.register("sunstone_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+            () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(38))));
     public static final DeferredItem<ArmorItem> SUNSTONE_LEGGINGS = ITEMS.register("sunstone_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+            () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(38))));
     public static final DeferredItem<ArmorItem> SUNSTONE_BOOTS = ITEMS.register("sunstone_boots",
-            () -> new ModArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+            () -> new ArmorItem(ModArmorMaterials.SUNSTONE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(38))));
 
     // ★ TIER-1  JASPILITE
@@ -432,8 +434,27 @@ public class ModItems {
         *                      CURIOS ITEM REGISTRATION
         * ===================================================================== */
 
+    // Register the Ring of Atherium item with attack speed effect for the ring slot
+    public static final DeferredItem<Item> RING_OF_ATHERIUM = ITEMS.register("ring_of_atherium",
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(ModEffects.ATTACK_SPEED_EFFECT, Integer.MAX_VALUE, 0, true, false, false), "ring"));
+
+    // Register the Ring of Ruby item with health effect for the ring slot
+    public static final DeferredItem<Item> RING_OF_RUBY = ITEMS.register("ring_of_ruby",
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.HEALTH_BOOST, Integer.MAX_VALUE, 0, true, false, false), "ring"));
+
+    // Register the Ring of Sapphire item with luck effect for the ring slot
+    public static final DeferredItem<Item> RING_OF_SAPPHIRE = ITEMS.register("ring_of_sapphire",
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.LUCK, Integer.MAX_VALUE, 2, true, false, false), "ring"));
+
     public static final DeferredItem<Item> BRACELET_OF_MALACHITE = ITEMS.register("bracelet_of_malachite",
             () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.POISON, Integer.MAX_VALUE, 0, true, false, false), "bracelet"));
+
+    public static final DeferredItem<Item> RING_OF_SUNSTONE = ITEMS.register("ring_of_sunstone",
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Integer.MAX_VALUE, 0, true, false, false), "ring"));
+
+    // Register the Necklace of Amethyst item with haste effect for the necklace slot
+    public static final DeferredItem<Item> NECKLACE_OF_AMETHYST = ITEMS.register("necklace_of_amethyst",
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.DIG_SPEED, Integer.MAX_VALUE, 1, true, false, false), "necklace"));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

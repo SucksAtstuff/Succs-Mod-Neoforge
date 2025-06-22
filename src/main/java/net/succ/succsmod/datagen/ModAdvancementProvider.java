@@ -122,7 +122,7 @@ public class ModAdvancementProvider extends AdvancementProvider {
             Advancement.Builder.advancement()
                     .parent(parentMap.get(parentKey))
                     .display(item, Component.literal(title), Component.literal(description), null, AdvancementType.TASK,
-                            false, false, true) // showToast=false, announce=false, hidden=true
+                            true, true, true) // showToast=false, announce=false, hidden=true
                     .addCriterion("has_" + name, InventoryChangeTrigger.TriggerInstance.hasItems(item))
                     .save(holder -> {
                         consumer.accept(holder);
