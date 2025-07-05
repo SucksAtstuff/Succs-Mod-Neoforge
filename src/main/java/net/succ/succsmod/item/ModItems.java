@@ -453,7 +453,7 @@ public class ModItems {
             () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, Integer.MAX_VALUE, 0, true, false, false), "ring"));
 
     // Register the Necklace of Amethyst item with haste effect for the necklace slot
-    public static final DeferredItem<Item> NECKLACE_OF_AMETHYST = ITEMS.register("necklace_of_amethyst",
+    public static final DeferredItem<Item> NECKLACE_OF_JASPILITE = ITEMS.register("necklace_of_jaspilite",
             () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.DIG_SPEED, Integer.MAX_VALUE, 1, true, false, false), "necklace"));
 
     public static void register(IEventBus eventBus) {

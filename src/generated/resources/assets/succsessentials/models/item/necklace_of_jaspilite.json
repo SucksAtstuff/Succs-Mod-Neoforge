@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "succsessentials:item/necklace_of_amethyst"
+    "layer0": "succsessentials:item/necklace_of_jaspilite"
   }
 }

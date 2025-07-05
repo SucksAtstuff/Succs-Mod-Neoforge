@@ -131,7 +131,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             add("necklace_of_amethyst_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
                     LootItemRandomChanceCondition.randomChance(0.01f).build()
-            }, ModItems.NECKLACE_OF_AMETHYST.get()));
+            }, ModItems.NECKLACE_OF_JASPILITE.get()));
         }
     }
 

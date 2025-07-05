@@ -56,7 +56,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RING_OF_RUBY.get());
                         output.accept(ModItems.RING_OF_ATHERIUM.get());
                         output.accept(ModItems.BRACELET_OF_MALACHITE.get());
-                        output.accept(ModItems.NECKLACE_OF_AMETHYST.get());
+                        output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
                     })
                     .build());
 

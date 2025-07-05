@@ -160,7 +160,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Register models for curio items
         basicItem(ModItems.BRACELET_OF_MALACHITE.get());
-        basicItem(ModItems.NECKLACE_OF_AMETHYST.get());
+        basicItem(ModItems.NECKLACE_OF_JASPILITE.get());
         basicItem(ModItems.RING_OF_RUBY.get());
         basicItem(ModItems.RING_OF_SUNSTONE.get());
         basicItem(ModItems.RING_OF_ATHERIUM.get());
