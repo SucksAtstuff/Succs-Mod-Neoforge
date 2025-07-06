@@ -12,6 +12,7 @@ import net.succ.succsmod.recipe.ModRecipes;
 import net.succ.succsmod.screen.ModMenuTypes;
 import net.succ.succsmod.screen.custom.GemPolishingTableBlockScreen;
 import net.succ.succsmod.sound.ModSounds;
+import net.succ.succsmod.villager.ModVillagers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -58,6 +59,7 @@ public class SuccsMod
         ModEffects.register(modEventBus);
 
         ModPotions.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
