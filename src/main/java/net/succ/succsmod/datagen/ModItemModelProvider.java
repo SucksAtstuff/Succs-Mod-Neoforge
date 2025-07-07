@@ -167,6 +167,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RING_OF_SAPPHIRE.get());
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
+
+        withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     // Shoutout to El_Redstoniano for making this

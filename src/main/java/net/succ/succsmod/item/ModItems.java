@@ -6,20 +6,24 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.effect.ModEffects;
+import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.item.custom.*;
 import net.succ.succsmod.sound.ModSounds;
+
+import javax.swing.*;
 
 public class ModItems {
 
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(SuccsMod.MOD_ID);
 
-    /* ----------  RAW ORES / GEMS / MISC  ---------- */
+    /* ----------  RAW ORES / GEMS ---------- */
 
     public static final DeferredItem<Item> DIRTY_ATHERIUM = ITEMS.register("dirty_atherium",
             () -> new Item(new Item.Properties()));
@@ -51,8 +55,15 @@ public class ModItems {
     public static final DeferredItem<Item> DIRTY_JASPILITE = ITEMS.register("dirty_jaspilite",
             () -> new Item(new Item.Properties()));
 
+
+    /* ----------   MISC   ---------- */
     public static final DeferredItem<Item> GOLD_HANDLE = ITEMS.register("gold_handle",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> PUKEKO_SPAWN_EGG = ITEMS.register("pukeko_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.PUKEKO, 0xE6B8A2, 0xC4D6B0,
+                    new Item.Properties()));
+
 
     /* ----------  CROPS / FOOD / MUSIC DISCS  ---------- */
 
