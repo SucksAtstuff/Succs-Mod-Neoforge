@@ -20,6 +20,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = registerKey("sapphire_ore_placed");
     public static final ResourceKey<PlacedFeature> SUNSTONE_ORE_PLACED_KEY = registerKey("sunstone_ore_placed");
     public static final ResourceKey<PlacedFeature> MALACHITE_ORE_PLACED_KEY = registerKey("malachite_ore_placed");
+    public static final ResourceKey<PlacedFeature> JASPILITE_ORE_PLACED_KEY = registerKey("jaspilite_ore_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -73,6 +74,18 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_MALACHITE_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(2, HeightRangePlacement.triangle(
                         VerticalAnchor.absolute(0), VerticalAnchor.absolute(48))));
+
+        // --- Jaspilite Ore ---
+        // Most common rarer than diamonds but more common than ancient debris.
+        // Spawns in the Overworld from Y -16 to 32.
+        // Most common around Y 8.
+        // 4 veins per chunk.
+        register(context, JASPILITE_ORE_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_JASPILITE_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.triangle(
+                        VerticalAnchor.absolute(-16), VerticalAnchor.absolute(32))));
+
+
     }
 
 

@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -29,6 +30,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_SUNSTONE_ORE_KEY = registerKey("sunstone_ore");
 
     public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_MALACHITE_ORE_KEY = registerKey("malachite_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_JASPILITE_ORE_KEY = registerKey("jaspilite_ore");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
@@ -80,6 +83,14 @@ public class ModConfiguredFeatures {
         // Register Nether Ruby ore configured feature
         register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(netherRubyOres, 8));
 
+        // Define target block states for Jaspilite ores
+        List<OreConfiguration.TargetBlockState> overworldJaspiliteOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.JASPILITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_JASPILITE_ORE.get().defaultBlockState())
+        );
+
+        // Register Overworld Jaspilite ore configured feature
+        register(context, OVERWORLD_JASPILITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldJaspiliteOres, 10));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){
