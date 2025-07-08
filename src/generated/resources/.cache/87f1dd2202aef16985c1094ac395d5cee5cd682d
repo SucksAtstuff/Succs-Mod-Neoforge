@@ -1,7 +1,9 @@
-// 1.21.1	2025-06-11T01:13:23.4467953	Tags for minecraft:item mod id succsessentials
+// 1.21.1	2025-07-08T13:00:26.4349284	Tags for minecraft:item mod id succsessentials
 3303458a5cd8934b667aaaa444e3ab83b48ead0e data/minecraft/tags/item/axes.json
 53257f99afd7e0364348fc8bf44be2eee9a1db67 data/minecraft/tags/item/hoes.json
+b7f23d3e91eebe01afa1ee98a676a4f594fbd679 data/minecraft/tags/item/logs_that_burn.json
 5332dfa37090f1d8caf4cfb9b1796fdb91126365 data/minecraft/tags/item/pickaxes.json
+c97f531b2cabe8b3d2ec48c3ad3589dfb53cfeca data/minecraft/tags/item/planks.json
 a6611fe266673de755b6841a713377d5a4731c03 data/minecraft/tags/item/shovels.json
 ae1e629ab30534297e9b0691e52c9c91026df677 data/minecraft/tags/item/swords.json
 d7c575c32b6dc2a03784ec41cc0d0ca7852b9b67 data/minecraft/tags/item/trimmable_armor.json
@@ -10,4 +12,5 @@ b9e7b8be6261e9e7e8ee838b13e9cb2c372d38fe data/succsessentials/tags/item/hammer_e
 32be8e421be688a5cb16b8e556e37e7f9a76ac94 data/succsessentials/tags/item/is_bucket.json
 c8e651f6c704b433daa00d2f13342dfa889f4561 data/succsessentials/tags/item/polishable_gems.json
 f12bcca1e9ee1687bc7d7b66725ec821cdd61008 data/succsessentials/tags/item/polished_gems.json
+b7f23d3e91eebe01afa1ee98a676a4f594fbd679 data/succsessentials/tags/item/shatterbloom_logs.json
 b70b6f6b36a348bc9ca58115fe4b403114bd887c data/succsessentials/tags/item/sunstone_sapphire_tools.json

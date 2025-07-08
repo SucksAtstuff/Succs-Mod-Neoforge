@@ -167,6 +167,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RING_OF_SAPPHIRE.get());
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
+
+        saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
     }
 
     // Shoutout to El_Redstoniano for making this
@@ -215,6 +217,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
     }
 
+    private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,"block/" + item.getId().getPath()));
+    }
 
     private ItemModelBuilder complexBlock(Block block) {
         ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(block);

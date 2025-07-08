@@ -16,6 +16,7 @@ public class ModTags {
         public static final TagKey<Item> SUNSTONE_SAPPHIRE_TOOLS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "sunstone_sapphire_tools"));
         public static final TagKey<Item> HAMMER_ENCHANTABLE = createTag("hammer_enchantable");
         public static final TagKey<Item> IS_BUCKET = createTag("is_bucket");
+        public static final TagKey<Item> SHATTERBLOOM_LOGS = createTag("shatterbloom_logs");
 
         private static TagKey<Item> createTag (String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));

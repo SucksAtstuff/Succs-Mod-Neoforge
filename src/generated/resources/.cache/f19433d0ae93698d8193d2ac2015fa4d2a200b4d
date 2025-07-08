@@ -1,10 +1,11 @@
-// 1.21.1	2025-06-11T12:50:24.7319352	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-07-08T13:00:26.4369259	Tags for minecraft:block mod id succsessentials
 c71f8a2e08c795e57881efec77f2935f940a5847 data/minecraft/tags/block/incorrect_for_diamond_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_gold_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_iron_tool.json
 0a94bf97c162adc237c00887ae6751e0c3e49c16 data/minecraft/tags/block/incorrect_for_netherite_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_stone_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_wooden_tool.json
+b7f23d3e91eebe01afa1ee98a676a4f594fbd679 data/minecraft/tags/block/logs_that_burn.json
 2ee76a766b47c60be270f90f103f5ee016170a66 data/minecraft/tags/block/mineable/pickaxe.json
 8cd6db184cbf63a293cf7b9cf570865bec72c5a4 data/minecraft/tags/block/needs_diamond_tool.json
 3c38d0f1b6d31ca5255e46d8da8ab44985307fc5 data/neoforge/tags/block/needs_netherite_tool.json

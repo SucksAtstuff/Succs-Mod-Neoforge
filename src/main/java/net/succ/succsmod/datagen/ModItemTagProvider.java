@@ -10,6 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
@@ -123,6 +124,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.RUBY_HAMMER.get())
                 .add(ModItems.MALACHITE_HAMMER.get());
 
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.SHATTERBLOOM_LOG.get().asItem())
+                .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem());
+
+
+        tag(ModTags.Items.SHATTERBLOOM_LOGS)
+                .add(ModBlocks.SHATTERBLOOM_LOG.get().asItem())
+                .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem());
     }
 
 
