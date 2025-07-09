@@ -9,7 +9,8 @@
   "downfall": 0.0,
   "effects": {
     "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
-    "fog_color": 12431667,
+    "fog_color": 11069183,
+    "grass_color": 8240716,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -29,8 +30,8 @@
       "probability": 0.00725
     },
     "sky_color": 7254527,
-    "water_color": 12431667,
-    "water_fog_color": 12431667
+    "water_color": 9657048,
+    "water_fog_color": 4179455
   },
   "features": [
     [],
@@ -81,6 +82,8 @@
       "minecraft:glow_lichen",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "succsessentials:patch_grass_placed",
+      "succsessentials:patch_shattergrove_flowers_placed",
       "succsessentials:shatterbloom_placed"
     ]
   ],
