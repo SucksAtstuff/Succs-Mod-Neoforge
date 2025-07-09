@@ -10,6 +10,7 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.ModItems;
+import net.succ.succsmod.util.ModTags;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -717,6 +718,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bread", has(Items.BREAD))
                 .save(recipeOutput, "garlic_bread");
 
+
+        // Register recipes for turning logs to planks
+        planksFromLog(recipeOutput, ModBlocks.SHATTERBLOOM_PLANKS.get(), ModTags.Items.SHATTERBLOOM_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.SHATTERBLOOM_WOOD.get(), ModBlocks.SHATTERBLOOM_LOG.get());
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

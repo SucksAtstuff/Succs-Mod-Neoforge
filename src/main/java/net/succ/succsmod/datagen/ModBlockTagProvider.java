@@ -187,6 +187,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         // Atherium is the highest tier, so it has no incorrect tags
         tag(ModTags.Blocks.INCORRECT_FOR_ATHERIUM_TOOL);
 
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.SHATTERBLOOM_LOG.get())
+                .add(ModBlocks.SHATTERBLOOM_WOOD.get())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get())
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
+
+
     }
 
 

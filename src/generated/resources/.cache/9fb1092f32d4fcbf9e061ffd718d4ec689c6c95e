@@ -1,6 +1,8 @@
-// 1.21.1	2025-06-11T12:23:00.2834363	Recipes
+// 1.21.1	2025-07-08T13:00:26.442926	Recipes
 976040964e0bef133fb39f9530442e73f8651213 data/minecraft/advancement/recipes/food/garlic_bread.json
 4892c9732aab73aab90096d05a0a2ee5eb56eebf data/minecraft/recipe/garlic_bread.json
+1b73c2d8bba31d1b731f17ee71a72b2eb3b330de data/succsessentials/advancement/recipes/building_blocks/shatterbloom_planks.json
+81d46b23715104d46afc81247d851352d4fa94ac data/succsessentials/advancement/recipes/building_blocks/shatterbloom_wood.json
 cb0e127bd608e7f49b79439379d4b2e5d67ff0df data/succsessentials/advancement/recipes/misc/atherium.json
 234a0ac3630f3079c685326f79673675dccc6b96 data/succsessentials/advancement/recipes/misc/atherium_axe.json
 9041d329698239211a2f788a2a5a225399f89adc data/succsessentials/advancement/recipes/misc/atherium_block.json
@@ -148,6 +150,8 @@ de70e2796cb4ee8535436d5c6daa24e81d615d67 data/succsessentials/recipe/sapphire_he
 d5546b46fee58efc43941e0bcf4be3d61e046a4d data/succsessentials/recipe/sapphire_pickaxe.json
 39ba82feec08132c58f2068bbf95137f815e0afa data/succsessentials/recipe/sapphire_shovel.json
 22122886fc299565e6caea394ac338d4948c25d0 data/succsessentials/recipe/sapphire_sword.json
+3518daba3c417f767a6c69ed0f98ac27dee08fa7 data/succsessentials/recipe/shatterbloom_planks.json
+8480f9a2faef9fa0b92f80f88f2ea16100a0acfd data/succsessentials/recipe/shatterbloom_wood.json
 9ae7fc449ceee0cf5b419ab9bc3d425573bd6ec0 data/succsessentials/recipe/sunstone.json
 68b610214d4ca4fb1b4861185b5e104c1490a944 data/succsessentials/recipe/sunstone_axe.json
 2b765860f72cade4469283037329b3401cb1e8dd data/succsessentials/recipe/sunstone_block.json
