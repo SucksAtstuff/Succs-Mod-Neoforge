@@ -16,8 +16,10 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -105,17 +107,16 @@ public class ModConfiguredFeatures {
         // Register Shatterwood tree configured feature
         register(context, SHATTERBLOOM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.SHATTERBLOOM_LOG.get()),
-                new BendingTrunkPlacer(
-                        4,  // base height
-                        4,  // height rand A
-                        4,  // height rand B
-                        4,  // min height for leaves
-                        UniformInt.of(1, 2) // bend length
+                new DarkOakTrunkPlacer(
+                        5, // base height
+                        2, // height variance
+                        0 // max branch length
                 ),
                 BlockStateProvider.simple(ModBlocks.SHATTERBLOOM_LEAVES.get()),
-                new AcaciaFoliagePlacer(
-                        ConstantInt.of(2), // offset
+                new DarkOakFoliagePlacer(
+                        ConstantInt.of(0), // offset
                         UniformInt.of(0, 1) // radius
+
                 ),
                 new TwoLayersFeatureSize(1, 0, 2)
         )
