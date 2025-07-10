@@ -113,6 +113,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SHATTERBLOOM_PLANKS.get());
                         output.accept(ModBlocks.SHATTERBLOOM_LEAVES.get());
                         output.accept(ModBlocks.SHATTERBLOOM_SAPLING.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_DOOR.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_TRAPDOOR.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_STAIRS.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_SLAB.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_BUTTON.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_FENCE.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
+
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
 
                     })
                     .build());

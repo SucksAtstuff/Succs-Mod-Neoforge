@@ -76,11 +76,6 @@ public class ModOverworldBiomes {
         addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_TALL_GRASS_PLACED_KEY);
         addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_VENOMOUS_FEN_FLOWERS_PLACED);
 
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.POISON_LILY_PADS.get());
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.TOXIN_PLANT.get());
-//
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.VENOMROOT_TREE.get());
-
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
 
         return new Biome.BiomeBuilder()

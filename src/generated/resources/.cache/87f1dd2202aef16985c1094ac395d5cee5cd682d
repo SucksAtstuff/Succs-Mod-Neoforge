@@ -1,7 +1,7 @@
-// 1.21.1	2025-07-08T13:00:26.4349284	Tags for minecraft:item mod id succsessentials
+// 1.21.1	2025-07-10T19:02:38.5650504	Tags for minecraft:item mod id succsessentials
 3303458a5cd8934b667aaaa444e3ab83b48ead0e data/minecraft/tags/item/axes.json
 53257f99afd7e0364348fc8bf44be2eee9a1db67 data/minecraft/tags/item/hoes.json
-b7f23d3e91eebe01afa1ee98a676a4f594fbd679 data/minecraft/tags/item/logs_that_burn.json
+50d13d4dad81405d3e0053a99ef61738a45d2428 data/minecraft/tags/item/logs_that_burn.json
 5332dfa37090f1d8caf4cfb9b1796fdb91126365 data/minecraft/tags/item/pickaxes.json
 c97f531b2cabe8b3d2ec48c3ad3589dfb53cfeca data/minecraft/tags/item/planks.json
 a6611fe266673de755b6841a713377d5a4731c03 data/minecraft/tags/item/shovels.json

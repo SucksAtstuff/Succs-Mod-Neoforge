@@ -49,6 +49,18 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
         dropSelf(ModBlocks.SHATTERBLOOM_SAPLING.get());
         dropSelf(ModBlocks.SHATTERBLOOM_PLANKS.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+
+        this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
+                block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
+        dropSelf(ModBlocks.SHATTERBLOOM_TRAPDOOR.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_STAIRS.get());
+        this.add(ModBlocks.SHATTERBLOOM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SHATTERBLOOM_SLAB.get()));
+        dropSelf(ModBlocks.SHATTERBLOOM_BUTTON.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_FENCE.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
 
         // Define loot tables for flowers that drop themselves
         dropSelf(ModBlocks.POISON_LILY.get());

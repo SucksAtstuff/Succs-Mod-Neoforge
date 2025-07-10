@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "start_pool": "succsessentials:gem_rock_2",
+  "start_pool": "succsessentials:gem_rock_pool_shattergrove",
   "size": 2,
   "max_distance_from_center": 80,
   "biomes": "#succsessentials:has_structure/gem_rock_2_biomes",
@@ -9,9 +9,8 @@
   "start_height": {
     "absolute": 0
   },
-  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "project_start_to_heightmap": "MOTION_BLOCKING_NO_LEAVES",
   "use_expansion_hack": false,
-  "liquid_settings": "apply_waterlogging",
   "spawn_overrides": {},
   "pool_aliases": []
 }

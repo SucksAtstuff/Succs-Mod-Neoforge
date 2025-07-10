@@ -722,6 +722,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Register recipes for turning logs to planks
         planksFromLog(recipeOutput, ModBlocks.SHATTERBLOOM_PLANKS.get(), ModTags.Items.SHATTERBLOOM_LOGS, 4);
         woodFromLogs(recipeOutput, ModBlocks.SHATTERBLOOM_WOOD.get(), ModBlocks.SHATTERBLOOM_LOG.get());
+
+        // Register recipes for turning planks to door and trapdoors
+        doorBuilder(ModBlocks.SHATTERBLOOM_DOOR.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.SHATTERBLOOM_TRAPDOOR.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+
+        // Register recipes for turning planks slabs and stairs
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHATTERBLOOM_SLAB.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
+        stairBuilder(ModBlocks.SHATTERBLOOM_STAIRS.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+
+        // Register recipes for turning planks to buttons and pressure plates
+        pressurePlate(recipeOutput, ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
+        buttonBuilder(ModBlocks.SHATTERBLOOM_BUTTON.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+
+        // Register recipes for turning planks to fences and fence gates
+        fenceBuilder(ModBlocks.SHATTERBLOOM_FENCE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.SHATTERBLOOM_FENCE_GATE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
+                .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

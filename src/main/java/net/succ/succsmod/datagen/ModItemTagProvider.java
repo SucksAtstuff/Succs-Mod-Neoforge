@@ -128,7 +128,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_LOG.get().asItem())
                 .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem());
 
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem());

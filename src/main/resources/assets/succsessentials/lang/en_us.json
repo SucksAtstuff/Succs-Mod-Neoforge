@@ -202,8 +202,19 @@
     "block.succsessentials.shatterbloom_planks": "Shatterbloom Planks",
     "block.succsessentials.stripped_shatterbloom_log": "Stripped Shatterbloom Log",
     "block.succsessentials.stripped_shatterbloom_wood": "Stripped Shatterbloom Wood",
+    "block.succsessentials.shatterbloom_door": "Shatterbloom Door",
+    "block.succsessentials.shatterbloom_trapdoor": "Shatterbloom Trapdoor",
+    "block.succsessentials.shatterbloom_slab": "Shatterbloom Slab",
+    "block.succsessentials.shatterbloom_stairs": "Shatterbloom Stairs",
+    "block.succsessentials.shatterbloom_button": "Shatterbloom Button",
+    "block.succsessentials.shatterbloom_pressure_plate": "Shatterbloom Pressure Plate",
+    "block.succsessentials.shatterbloom_fence": "Shatterbloom Fence",
+    "block.succsessentials.shatterbloom_fence_gate": "Shatterbloom Fence Gate",
+    "block.succsessentials.mycelial_sporewood_log": "Mycelial Sporewood Log",
+
 
     "block.succsessentials.shatterbloom_sapling": "Shatterbloom Sapling",
+
 
     "block.succsessentials.poison_lily": "Poison Lily",
     "item.succsessentials.potted_poison_lily": "Potted Poison Lily"

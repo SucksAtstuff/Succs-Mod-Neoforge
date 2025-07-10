@@ -1,13 +1,22 @@
-// 1.21.1	2025-07-08T13:00:26.4369259	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-07-10T23:25:28.5472858	Tags for minecraft:block mod id succsessentials
+0a25938e8b127592288a4019e79a0e068eb92e8c data/minecraft/tags/block/fences.json
+9245c446c1a3451adb369d86024bbc3d79fc139d data/minecraft/tags/block/fence_gates.json
 c71f8a2e08c795e57881efec77f2935f940a5847 data/minecraft/tags/block/incorrect_for_diamond_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_gold_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_iron_tool.json
 0a94bf97c162adc237c00887ae6751e0c3e49c16 data/minecraft/tags/block/incorrect_for_netherite_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_stone_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_wooden_tool.json
-b7f23d3e91eebe01afa1ee98a676a4f594fbd679 data/minecraft/tags/block/logs_that_burn.json
+50d13d4dad81405d3e0053a99ef61738a45d2428 data/minecraft/tags/block/logs_that_burn.json
 2ee76a766b47c60be270f90f103f5ee016170a66 data/minecraft/tags/block/mineable/pickaxe.json
 8cd6db184cbf63a293cf7b9cf570865bec72c5a4 data/minecraft/tags/block/needs_diamond_tool.json
+178bb42d843cb7b219f7f370eb3f63e8057a37c5 data/minecraft/tags/block/wooden_buttons.json
+0803f9c9496e31da7546a63fe90fc45790061daf data/minecraft/tags/block/wooden_doors.json
+f41bee9edafd3f5c92bc89c3db7dda95b52589da data/minecraft/tags/block/wooden_fences.json
+b112d5be8afedb396927b8ccca7a145ed66c0e20 data/minecraft/tags/block/wooden_pressure_plates.json
+aadc150b622955b2460ac79b12cca6b7ce3f9946 data/minecraft/tags/block/wooden_slabs.json
+5dadea4f6dc78609b4534d21229fc7d70bc71481 data/minecraft/tags/block/wooden_stairs.json
+eaebce319f2619d3bd2ff6be427411b718d1c531 data/minecraft/tags/block/wooden_trapdoors.json
 3c38d0f1b6d31ca5255e46d8da8ab44985307fc5 data/neoforge/tags/block/needs_netherite_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/succsessentials/tags/block/incorrect_for_atherium_tool.json
 061788c17fd936ffd922a5396f4aa3a578120e4e data/succsessentials/tags/block/incorrect_for_jaspilite_tool.json

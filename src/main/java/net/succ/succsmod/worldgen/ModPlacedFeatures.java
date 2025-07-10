@@ -117,14 +117,14 @@ public class ModPlacedFeatures {
                 context,
                 PATCH_SHATTERGROVE_FLOWERS_PLACED,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SHATTERGROVE_FLOWERS_KEY),
-                VegetationPlacements.worldSurfaceSquaredWithCount(1)
+                VegetationPlacements.worldSurfaceSquaredWithCount(2)
         );
 
         register(
                 context,
                 PATCH_VENOMOUS_FEN_FLOWERS_PLACED,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_VENOMOUS_FEN_FLOWERS_KEY),
-                VegetationPlacements.worldSurfaceSquaredWithCount(1)
+                VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
 
     }

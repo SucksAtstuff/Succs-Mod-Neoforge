@@ -1,0 +1,53 @@
+{
+  // More info on template pools: https://minecraft.gamepedia.com/Custom_world_generation#JSON_format_8
+  // This pool is used for gem rocks that generate in the Shattergrove biome.
+
+  // The fallback pool to use if all elements fail to place.
+  "fallback": "minecraft:empty",
+
+  // List of structure elements (.nbt files) to randomly pick from.
+  "elements": [
+    {
+      // gem_rock_1 appears commonly in the Shattergrove.
+      "weight": 2,
+      "element": {
+        // Location of the NBT structure file: data/succsessentials/structures/gem_rock_1.nbt
+        "location": "succsessentials:gem_rock_1",
+
+        // No special block processors used.
+        "processors": "minecraft:empty",
+
+        // Match terrain shape while placing (slight contour-following).
+        "projection": "terrain_matching",
+
+        // Basic structure element (not legacy or jigsawed).
+        "element_type": "minecraft:single_pool_element",
+
+        // Ensure the structure is placed at ground level.
+        "grounded": true
+      }
+    },
+    {
+      // gem_rock_2 is also common in the Shattergrove.
+      "weight": 2,
+      "element": {
+        "location": "succsessentials:gem_rock_2",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element",
+        "grounded": true
+      }
+    },
+    {
+      // gem_rock_3 is also common in the Shattergrove.
+      "weight": 2,
+      "element": {
+        "location": "succsessentials:gem_rock_3",
+        "processors": "minecraft:empty",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element",
+        "grounded": true
+      }
+    }
+  ]
+}

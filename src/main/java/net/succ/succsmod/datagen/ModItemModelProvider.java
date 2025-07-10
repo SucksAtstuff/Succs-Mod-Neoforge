@@ -170,8 +170,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
 
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
+        basicItem(ModBlocks.SHATTERBLOOM_DOOR.asItem());
 
         flowerItem(ModBlocks.POISON_LILY);
+
+        buttonItem(ModBlocks.SHATTERBLOOM_BUTTON, ModBlocks.SHATTERBLOOM_PLANKS);
+        fenceItem(ModBlocks.SHATTERBLOOM_FENCE, ModBlocks.SHATTERBLOOM_PLANKS);
     }
 
     // Shoutout to El_Redstoniano for making this
