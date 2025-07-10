@@ -36,6 +36,16 @@ public class OverworldRegion extends Region {
             .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
             .build().forEach(point -> builder.add(point, ModBiomes.SHATTERGROVE));
 
+        // Add the VENOMOUS_FEN biome with its own parameters.
+        new ParameterPointListBuilder()
+            .temperature(Temperature.span(Temperature.WARM, Temperature.HOT))
+            .humidity(Humidity.span(Humidity.HUMID, Humidity.WET))
+            .continentalness(Continentalness.COAST)
+            .erosion(Erosion.EROSION_2, Erosion.EROSION_3)
+            .depth(Depth.SURFACE, Depth.FLOOR)
+            .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
+            .build().forEach(point -> builder.add(point, ModBiomes.VENOMOUS_FEN));
+
         // Add our points to the mapper
         builder.build().forEach(mapper);
     }

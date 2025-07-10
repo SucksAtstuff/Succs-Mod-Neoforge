@@ -203,5 +203,8 @@
     "block.succsessentials.stripped_shatterbloom_log": "Stripped Shatterbloom Log",
     "block.succsessentials.stripped_shatterbloom_wood": "Stripped Shatterbloom Wood",
 
-    "block.succsessentials.shatterbloom_sapling": "Shatterbloom Sapling"
+    "block.succsessentials.shatterbloom_sapling": "Shatterbloom Sapling",
+
+    "block.succsessentials.poison_lily": "Poison Lily",
+    "item.succsessentials.potted_poison_lily": "Potted Poison Lily"
 }

@@ -2,7 +2,9 @@ package net.succ.succsmod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -16,8 +18,11 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.custom.GarlicCropBlock;
 import net.succ.succsmod.block.custom.GemPolishingTableBlock;
 import net.succ.succsmod.block.custom.ModFlammableRotatedPillarBlock;
+import net.succ.succsmod.block.custom.PoisonLilyBlock;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.worldgen.tree.ModTreeGrowers;
+import net.minecraft.world.effect.MobEffects;
+
 
 import java.util.function.Supplier;
 
@@ -199,6 +204,15 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SHATTERBLOOM_SAPLING = registerBlock("shatterbloom_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SHATTERBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
+    public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
+            () -> new PoisonLilyBlock(
+                    MobEffects.POISON,
+                    40,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY).noCollission().lightLevel(state -> 3)
+            ));
+
+    public static final DeferredBlock<Block> POTTED_POISON_LILY = registerBlock("potted_poison_lily",
+            () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), POISON_LILY, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

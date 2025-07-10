@@ -32,6 +32,18 @@ public class ModSurfaceRules {
         );
     }
 
+    public static SurfaceRules.RuleSource makeVenomousFenRules() {
+        return SurfaceRules.sequence(
+                // Only apply to VENOMOUS_FEN biome
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.VENOMOUS_FEN),
+                        SurfaceRules.sequence(
+                                // Grass on top (floor)
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK),
+                                // Dirt just beneath the top (subsurface)
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT)))
+        );
+    }
+
 
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {

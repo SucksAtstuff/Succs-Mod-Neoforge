@@ -1,5 +1,7 @@
 package net.succ.succsmod;
 
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
@@ -82,8 +84,10 @@ public class SuccsMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
         ModBiomes.registerBiomes();
+        event.enqueueWork(()->{
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.POISON_LILY.getId(), ModBlocks.POTTED_POISON_LILY);
+        });
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());
     }

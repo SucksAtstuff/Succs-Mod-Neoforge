@@ -76,6 +76,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.SHATTERBLOOM_LEAVES);
         saplingBlock(ModBlocks.SHATTERBLOOM_SAPLING);
 
+        simpleBlock(ModBlocks.POISON_LILY.get(),
+                models().cross(blockTexture(ModBlocks.POISON_LILY.get()).getPath(), blockTexture(ModBlocks.POISON_LILY.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_POISON_LILY.get(), models().singleTexture("potted_poison_lily", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.POISON_LILY.get())).renderType("cutout"));
+
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");

@@ -51,7 +51,11 @@ public class ModConfiguredFeatures {
 
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS_KEY = registerKey("patch_tall_grass");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SHATTERGROVE_FLOWERS_KEY = registerKey("patch_shattergrove_flowers");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_VENOMOUS_FEN_FLOWERS_KEY = registerKey("patch_venomous_fen_flowers");
 
 
 
@@ -146,6 +150,18 @@ public class ModConfiguredFeatures {
                 )
         ));
 
+        context.register(PATCH_TALL_GRASS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        16, // tries
+                        6, // x spread
+                        2, // y spread
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.TALL_GRASS))
+
+                        )
+                )
+        ));
+
         WeightedStateProvider flowerProvider = new WeightedStateProvider(
                 SimpleWeightedRandomList.<BlockState>builder()
                         .add(Blocks.ALLIUM.defaultBlockState(), 3)
@@ -157,14 +173,35 @@ public class ModConfiguredFeatures {
                         .build()
         );
 
+        WeightedStateProvider venomousFenFlowerProvider = new WeightedStateProvider(
+                SimpleWeightedRandomList.<BlockState>builder()
+                        .add(Blocks.OXEYE_DAISY.defaultBlockState(), 2)
+                        .add(Blocks.WITHER_ROSE.defaultBlockState(), 1)
+                        .add(Blocks.LILY_OF_THE_VALLEY.defaultBlockState(), 1)
+                        .add(ModBlocks.POISON_LILY.get().defaultBlockState(), 2)
+                        .build()
+        );
+
         context.register(PATCH_SHATTERGROVE_FLOWERS_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
-                        64, // tries
+                        16, // tries
                         6,  // x spread
                         2,  // y spread
                         PlacementUtils.onlyWhenEmpty(
                                 Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(flowerProvider)
+                        )
+                )
+        ));
+
+        context.register(PATCH_VENOMOUS_FEN_FLOWERS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        32, // tries
+                        6,  // x spread
+                        2,  // y spread
+                        PlacementUtils.onlyWhenEmpty(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(venomousFenFlowerProvider)
                         )
                 )
         ));

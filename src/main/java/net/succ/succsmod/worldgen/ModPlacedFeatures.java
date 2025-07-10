@@ -28,8 +28,11 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SHATTERBLOOM_PLACED_KEY = registerKey("shatterbloom_placed");
     public static final ResourceKey<PlacedFeature> PATCH_SHATTERGROVE_FLOWERS_PLACED = registerKey("patch_shattergrove_flowers_placed");
 
+    public static final ResourceKey<PlacedFeature> PATCH_VENOMOUS_FEN_FLOWERS_PLACED = registerKey("patch_venomous_fen_flowers_placed");
 
     public static final ResourceKey<PlacedFeature> PATCH_GRASS_PLACED_KEY = registerKey("patch_grass_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_PLACED_KEY = registerKey("patch_tall_grass_placed");
+
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -105,10 +108,22 @@ public class ModPlacedFeatures {
                 VegetationPlacements.worldSurfaceSquaredWithCount(4)
         );
 
+        register(context, PATCH_TALL_GRASS_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_TALL_GRASS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+        );
+
         register(
                 context,
                 PATCH_SHATTERGROVE_FLOWERS_PLACED,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SHATTERGROVE_FLOWERS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(1)
+        );
+
+        register(
+                context,
+                PATCH_VENOMOUS_FEN_FLOWERS_PLACED,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_VENOMOUS_FEN_FLOWERS_KEY),
                 VegetationPlacements.worldSurfaceSquaredWithCount(1)
         );
 

@@ -10,42 +10,27 @@
             "entries": [
               {
                 "data": {
-                  "Name": "minecraft:allium"
-                },
-                "weight": 3
-              },
-              {
-                "data": {
-                  "Name": "minecraft:cornflower"
-                },
-                "weight": 3
-              },
-              {
-                "data": {
-                  "Name": "minecraft:azure_bluet"
+                  "Name": "minecraft:oxeye_daisy"
                 },
                 "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:wither_rose"
+                },
+                "weight": 1
               },
               {
                 "data": {
                   "Name": "minecraft:lily_of_the_valley"
                 },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "succsessentials:poison_lily"
+                },
                 "weight": 2
-              },
-              {
-                "data": {
-                  "Name": "minecraft:blue_orchid"
-                },
-                "weight": 1
-              },
-              {
-                "data": {
-                  "Name": "minecraft:pitcher_plant",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                },
-                "weight": 1
               }
             ]
           }
@@ -61,7 +46,7 @@
         }
       ]
     },
-    "tries": 16,
+    "tries": 32,
     "xz_spread": 6,
     "y_spread": 2
   }

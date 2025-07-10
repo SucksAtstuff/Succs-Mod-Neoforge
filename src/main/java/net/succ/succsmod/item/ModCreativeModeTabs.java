@@ -57,6 +57,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RING_OF_ATHERIUM.get());
                         output.accept(ModItems.BRACELET_OF_MALACHITE.get());
                         output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
+
+                        output.accept(ModBlocks.POISON_LILY.get());
                     })
                     .build());
 

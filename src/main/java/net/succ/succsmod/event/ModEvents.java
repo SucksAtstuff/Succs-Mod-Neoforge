@@ -12,6 +12,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
@@ -24,6 +25,7 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.item.custom.HammerItem;
 import net.succ.succsmod.potion.ModPotions;
@@ -67,6 +69,7 @@ public class ModEvents {
         PotionBrewing.Builder builder = event.getBuilder();
 
         builder.addMix(Potions.AWKWARD, ModItems.SUNSTONE.get(), ModPotions.TRUE_FIRE_POTION);
+        builder.addMix(Potions.AWKWARD, ModBlocks.POISON_LILY.asItem(), Potions.POISON);
     }
 
     @SubscribeEvent

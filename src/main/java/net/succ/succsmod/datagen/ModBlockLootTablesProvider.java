@@ -50,6 +50,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SHATTERBLOOM_SAPLING.get());
         dropSelf(ModBlocks.SHATTERBLOOM_PLANKS.get());
 
+        // Define loot tables for flowers that drop themselves
+        dropSelf(ModBlocks.POISON_LILY.get());
+        add(ModBlocks.POTTED_POISON_LILY.get(), createPotFlowerItemTable(ModBlocks.POISON_LILY));
+
         // Define loot tables for leaves that drop saplings
         add(ModBlocks.SHATTERBLOOM_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.SHATTERBLOOM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

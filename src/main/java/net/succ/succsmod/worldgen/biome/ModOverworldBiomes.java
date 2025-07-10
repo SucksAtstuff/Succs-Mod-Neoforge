@@ -56,6 +56,54 @@ public class ModOverworldBiomes {
                 .mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
+    public static Biome venomousFen(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        // Mob spawns
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder, 25); // Lower general density, more custom mobs
+
+        // custom mobs
+        //spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.FEN_SERPENT.get(), 80, 1, 2));
+        //spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.TOXIC_SLIME.get(), 100, 2, 4));
+
+        // Biome features
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_TALL_GRASS_PLACED_KEY);
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_VENOMOUS_FEN_FLOWERS_PLACED);
+
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.POISON_LILY_PADS.get());
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.TOXIN_PLANT.get());
+//
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModFeatures.VENOMROOT_TREE.get());
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(0.8F)
+                .downfall(0.9F)
+                .specialEffects((new BiomeSpecialEffects.Builder()
+                        .waterColor(0x223311) // Murky toxic swamp water
+                        .waterFogColor(0x334422)
+                        .fogColor(0x2d4c3d) // Dense green fog
+                        .skyColor(calculateSkyColor(0.8F))
+                        .grassColorOverride(0x507F3E) // Dark green grass
+                        .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CRIMSON_FOREST_MOOD, 6000, 8, 2.0D))
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP))
+                        .build()))
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+    }
+
+
+
+
     protected static int calculateSkyColor(float temperature) {
         float $$1 = temperature / 3.0F;
         $$1 = Mth.clamp($$1, -1.0F, 1.0F);

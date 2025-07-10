@@ -15,6 +15,7 @@ import terrablender.api.Regions;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> SHATTERGROVE = registerBiomeKey("shattergrove");
+    public static final ResourceKey<Biome> VENOMOUS_FEN = registerBiomeKey("venomous_fen");
 
     public static void registerBiomes() {
         Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succsessentials_overworld"), 20));
@@ -25,6 +26,7 @@ public class ModBiomes {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
         register(context, SHATTERGROVE, ModOverworldBiomes.shatterGrove(placedFeatures, carver));
+        register(context, VENOMOUS_FEN, ModOverworldBiomes.venomousFen(placedFeatures, carver));
     }
 
 
