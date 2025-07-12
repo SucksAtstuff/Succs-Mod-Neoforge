@@ -22,6 +22,12 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.swamp"
     },
+    "particle": {
+      "options": {
+        "type": "minecraft:spore_blossom_air"
+      },
+      "probability": 0.02
+    },
     "sky_color": 7907327,
     "water_color": 2241297,
     "water_fog_color": 3359778
@@ -75,6 +81,7 @@
       "minecraft:glow_lichen",
       "succsessentials:patch_tall_grass_placed",
       "succsessentials:patch_venomous_fen_flowers_placed",
+      "succsessentials:mycelial_sporewood_placed",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal"
     ]

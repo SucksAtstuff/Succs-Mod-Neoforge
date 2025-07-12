@@ -192,34 +192,47 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_WOOD.get())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get())
-                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
 
         tag(BlockTags.WOODEN_BUTTONS)
-                .add(ModBlocks.SHATTERBLOOM_BUTTON.get());
+                .add(ModBlocks.SHATTERBLOOM_BUTTON.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
 
         tag(BlockTags.WOODEN_DOORS)
-                .add(ModBlocks.SHATTERBLOOM_DOOR.get());
+                .add(ModBlocks.SHATTERBLOOM_DOOR.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get());
 
         tag(BlockTags.WOODEN_SLABS)
-                .add(ModBlocks.SHATTERBLOOM_SLAB.get());
+                .add(ModBlocks.SHATTERBLOOM_SLAB.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get());
 
         tag(BlockTags.WOODEN_STAIRS)
-                .add(ModBlocks.SHATTERBLOOM_STAIRS.get());
+                .add(ModBlocks.SHATTERBLOOM_STAIRS.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
-                .add(ModBlocks.SHATTERBLOOM_TRAPDOOR.get());
+                .add(ModBlocks.SHATTERBLOOM_TRAPDOOR.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get());
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
-                .add(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get());
+                .add(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get());
 
         tag(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.SHATTERBLOOM_FENCE.get())
-                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
+                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
 
         tag(BlockTags.FENCES)
-                .add(ModBlocks.SHATTERBLOOM_FENCE.get());
+                .add(ModBlocks.SHATTERBLOOM_FENCE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
+                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "succsessentials:block/mycelial_sporewood_planks"
+  }
+}

@@ -123,6 +123,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
 
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
 
                     })
                     .build());

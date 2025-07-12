@@ -20,10 +20,13 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -48,6 +51,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_JASPILITE_ORE_KEY = registerKey("jaspilite_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHATTERBLOOM_KEY = registerKey("shatterbloom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
 
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
@@ -137,6 +141,29 @@ public class ModConfiguredFeatures {
         )
                 .dirt(BlockStateProvider.simple(Blocks.DIRT))
                 .build());
+
+        // Register Mycelial Sporewood tree configured feature
+        register(context, MYCELIAL_SPOREWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()),
+                new BendingTrunkPlacer(
+                        4,
+                        1,
+                        1,
+                        4,
+                        ConstantInt.of(3)),
+                BlockStateProvider.simple(Blocks.JUNGLE_LEAVES),
+                new AcaciaFoliagePlacer(
+                        ConstantInt.of(2), // wide canopy
+                        ConstantInt.of(1)  // no vertical offset
+                ),
+        new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(Blocks.MUD))
+                .decorators(List.of(
+                        new LeaveVineDecorator(0.3f)))
+                .build());
+
+
 
         context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,

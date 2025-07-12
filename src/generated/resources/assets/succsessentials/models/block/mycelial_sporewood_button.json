@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "succsessentials:block/mycelial_sporewood_planks"
+  }
+}

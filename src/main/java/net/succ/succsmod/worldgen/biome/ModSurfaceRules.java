@@ -11,6 +11,10 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource RED_TERRACOTTA = makeStateRule(Blocks.RED_TERRACOTTA);
     private static final SurfaceRules.RuleSource BLUE_TERRACOTTA = makeStateRule(Blocks.BLUE_TERRACOTTA);
     private static final SurfaceRules.RuleSource GREEN_TERRACOTTA = makeStateRule(Blocks.GREEN_TERRACOTTA);
+    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
+    private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
+    private static final SurfaceRules.RuleSource CLAY = makeStateRule(Blocks.CLAY);
 
     private static final SurfaceRules.RuleSource OBSIDIAN = makeStateRule(Blocks.OBSIDIAN);
     private static final SurfaceRules.RuleSource END_STONE = makeStateRule(Blocks.END_STONE);
@@ -38,9 +42,9 @@ public class ModSurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.VENOMOUS_FEN),
                         SurfaceRules.sequence(
                                 // Grass on top (floor)
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MUD),
                                 // Dirt just beneath the top (subsurface)
-                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT)))
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, CLAY)))
         );
     }
 

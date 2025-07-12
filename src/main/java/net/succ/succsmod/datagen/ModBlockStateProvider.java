@@ -63,14 +63,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
-        logBlock(((RotatedPillarBlock)ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()));
+
 
         // Registering shatterbloom blocks with their respective item models
         blockItem(ModBlocks.SHATTERBLOOM_LOG);
         blockItem(ModBlocks.SHATTERBLOOM_WOOD);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_LOG);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD);
-        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_LOG);
+
 
         blockWithItem(ModBlocks.SHATTERBLOOM_PLANKS);
 
@@ -94,6 +94,40 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItem(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE);
         blockItem(ModBlocks.SHATTERBLOOM_FENCE_GATE);
+
+        logBlock(((RotatedPillarBlock)ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()));
+        logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get()), blockTexture(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()), blockTexture(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()));
+
+        // Registering mycelial sporewood blocks with their respective item models
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_LOG);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_WOOD);
+        blockItem(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG);
+        blockItem(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD);
+
+        blockWithItem(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+
+        leavesBlock(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES);
+        saplingBlock(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
+
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get()), modLoc("block/mycelial_sporewood_door_bottom"), modLoc("block/mycelial_sporewood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get()), modLoc("block/mycelial_sporewood_trapdoor"), true, "cutout");
+        stairsBlock(((StairBlock) ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_SLAB);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS);
+
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE);
 
         simpleBlock(ModBlocks.POISON_LILY.get(),
                 models().cross(blockTexture(ModBlocks.POISON_LILY.get()).getPath(), blockTexture(ModBlocks.POISON_LILY.get())).renderType("cutout"));

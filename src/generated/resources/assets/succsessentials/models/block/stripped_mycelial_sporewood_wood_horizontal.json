@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "succsessentials:block/stripped_mycelial_sporewood_log",
+    "side": "succsessentials:block/stripped_mycelial_sporewood_log"
+  }
+}

@@ -722,28 +722,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // Register recipes for turning logs to planks
         planksFromLog(recipeOutput, ModBlocks.SHATTERBLOOM_PLANKS.get(), ModTags.Items.SHATTERBLOOM_LOGS, 4);
         woodFromLogs(recipeOutput, ModBlocks.SHATTERBLOOM_WOOD.get(), ModBlocks.SHATTERBLOOM_LOG.get());
+        planksFromLog(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get(), ModTags.Items.MYCELIAL_SPOREWOOD_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get(), ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
 
         // Register recipes for turning planks to door and trapdoors
         doorBuilder(ModBlocks.SHATTERBLOOM_DOOR.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
         trapdoorBuilder(ModBlocks.SHATTERBLOOM_TRAPDOOR.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        doorBuilder(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks slabs and stairs
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHATTERBLOOM_SLAB.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
         stairBuilder(ModBlocks.SHATTERBLOOM_STAIRS.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get(), ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+        stairBuilder(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks to buttons and pressure plates
         pressurePlate(recipeOutput, ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
         buttonBuilder(ModBlocks.SHATTERBLOOM_BUTTON.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get(), ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+        buttonBuilder(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks to fences and fence gates
         fenceBuilder(ModBlocks.SHATTERBLOOM_FENCE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
         fenceGateBuilder(ModBlocks.SHATTERBLOOM_FENCE_GATE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
                 .unlockedBy("has_shatterbloom_planks", has(ModBlocks.SHATTERBLOOM_PLANKS.get())).save(recipeOutput);
+        fenceBuilder(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
+                .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

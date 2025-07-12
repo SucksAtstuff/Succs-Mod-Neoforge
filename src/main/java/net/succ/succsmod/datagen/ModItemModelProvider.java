@@ -176,6 +176,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         buttonItem(ModBlocks.SHATTERBLOOM_BUTTON, ModBlocks.SHATTERBLOOM_PLANKS);
         fenceItem(ModBlocks.SHATTERBLOOM_FENCE, ModBlocks.SHATTERBLOOM_PLANKS);
+
+        buttonItem(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+        fenceItem(ModBlocks.MYCELIAL_SPOREWOOD_FENCE, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+
+        saplingItem(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
+        basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
     }
 
     // Shoutout to El_Redstoniano for making this

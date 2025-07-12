@@ -75,6 +75,7 @@ public class ModOverworldBiomes {
 
         addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_TALL_GRASS_PLACED_KEY);
         addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_VENOMOUS_FEN_FLOWERS_PLACED);
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.MYCELIAL_SPOREWOOD_PLACED_KEY);
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
 
@@ -86,6 +87,7 @@ public class ModOverworldBiomes {
                         .waterColor(0x223311) // Murky toxic swamp water
                         .waterFogColor(0x334422)
                         .fogColor(0x2d4c3d) // Dense green fog
+                        .ambientParticle(new AmbientParticleSettings(ParticleTypes.SPORE_BLOSSOM_AIR, 0.02F))
                         .skyColor(calculateSkyColor(0.8F))
                         .grassColorOverride(0x507F3E) // Dark green grass
                         .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CRIMSON_FOREST_MOOD, 6000, 8, 2.0D))

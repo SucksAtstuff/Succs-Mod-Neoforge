@@ -211,10 +211,22 @@
     "block.succsessentials.shatterbloom_fence": "Shatterbloom Fence",
     "block.succsessentials.shatterbloom_fence_gate": "Shatterbloom Fence Gate",
     "block.succsessentials.mycelial_sporewood_log": "Mycelial Sporewood Log",
-
+    "block.succsessentials.mycelial_sporewood_wood": "Mycelial Sporewood Wood",
+    "block.succsessentials.mycelial_sporewood_leaves": "Mycelial Sporewood Leaves",
+    "block.succsessentials.mycelial_sporewood_planks": "Mycelial Sporewood Planks",
+    "block.succsessentials.stripped_mycelial_sporewood_log": "Stripped Mycelial Sporewood Log",
+    "block.succsessentials.stripped_mycelial_sporewood_wood": "Stripped Mycelial Sporewood Wood",
+    "block.succsessentials.mycelial_sporewood_door": "Mycelial Sporewood Door",
+    "block.succsessentials.mycelial_sporewood_trapdoor": "Mycelial Sporewood Trapdoor",
+    "block.succsessentials.mycelial_sporewood_slab": "Mycelial Sporewood Slab",
+    "block.succsessentials.mycelial_sporewood_stairs": "Mycelial Sporewood Stairs",
+    "block.succsessentials.mycelial_sporewood_button": "Mycelial Sporewood Button",
+    "block.succsessentials.mycelial_sporewood_pressure_plate": "Mycelial Sporewood Pressure Plate",
+    "block.succsessentials.mycelial_sporewood_fence": "Mycelial Sporewood Fence",
+    "block.succsessentials.mycelial_sporewood_fence_gate": "Mycelial Sporewood Fence Gate",
 
     "block.succsessentials.shatterbloom_sapling": "Shatterbloom Sapling",
-
+    "block.succsessentials.mycelial_sporewood_sapling": "Mycelial Sporewood Sapling",
 
     "block.succsessentials.poison_lily": "Poison Lily",
     "item.succsessentials.potted_poison_lily": "Potted Poison Lily"

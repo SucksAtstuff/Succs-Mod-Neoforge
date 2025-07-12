@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-10T23:24:27.0685909	Item Models: succsessentials
+// 1.21.1	2025-07-11T21:47:56.2866561	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -168,6 +168,10 @@ fb31e7c2cb128e5eca1e3356a2501477ad5d3099 assets/succsessentials/models/item/mala
 5ce397026896c9977c1596e89a790dfd0e3f2745 assets/succsessentials/models/item/malachite_pickaxe.json
 14f478685c299077c2026d210d3e459924c6ed03 assets/succsessentials/models/item/malachite_shovel.json
 a5fbabbeeffb4e41ccbda7da8f90545cd8ada6a2 assets/succsessentials/models/item/malachite_sword.json
+56cf529ee6512750aa74f1ebe6f4fec03360b5b7 assets/succsessentials/models/item/mycelial_sporewood_button.json
+b641b889a0b996857574884c49890cc9c553e108 assets/succsessentials/models/item/mycelial_sporewood_door.json
+f27c5ed89c11aa577bf27bbeec34a26f272a1dd5 assets/succsessentials/models/item/mycelial_sporewood_fence.json
+bd469188328ddb05fd0ae908e64bf0377333c392 assets/succsessentials/models/item/mycelial_sporewood_sapling.json
 c55eb32e7baded77868f814a4c41c295f34d2d20 assets/succsessentials/models/item/necklace_of_jaspilite.json
 b0ceeb2ea65c7a85de7239e4937145b3f14bbd55 assets/succsessentials/models/item/poison_lily.json
 e7fb2db413751604fb1fd11556bd01f0de1fbaf0 assets/succsessentials/models/item/ring_of_atherium.json
