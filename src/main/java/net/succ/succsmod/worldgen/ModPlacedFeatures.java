@@ -3,6 +3,8 @@ package net.succ.succsmod.worldgen;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -11,6 +13,7 @@ import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.block.ModBlocks;
 
 import java.util.List;
 
@@ -21,6 +24,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SUNSTONE_ORE_PLACED_KEY = registerKey("sunstone_ore_placed");
     public static final ResourceKey<PlacedFeature> MALACHITE_ORE_PLACED_KEY = registerKey("malachite_ore_placed");
     public static final ResourceKey<PlacedFeature> JASPILITE_ORE_PLACED_KEY = registerKey("jaspilite_ore_placed");
+
+    public static final ResourceKey<PlacedFeature> SHATTERBLOOM_PLACED_KEY = registerKey("shatterbloom_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -84,6 +89,11 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_JASPILITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.triangle(
                         VerticalAnchor.absolute(-16), VerticalAnchor.absolute(32))));
+
+        register(context, SHATTERBLOOM_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.SHATTERBLOOM_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
+                        ModBlocks.SHATTERBLOOM_SAPLING.get()));
 
 
     }

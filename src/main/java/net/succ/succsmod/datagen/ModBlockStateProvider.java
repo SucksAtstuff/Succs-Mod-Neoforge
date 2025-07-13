@@ -1,8 +1,12 @@
 package net.succ.succsmod.datagen;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -56,6 +60,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.NETHER_JASPILITE_ORE.get(), cubeAll(ModBlocks.NETHER_JASPILITE_ORE.get()));
         simpleBlockWithItem(ModBlocks.END_JASPILITE_ORE.get(), cubeAll(ModBlocks.END_JASPILITE_ORE.get()));
 
+        // Registering wood blocks with their respective item models
+        logBlock(((RotatedPillarBlock) ModBlocks.SHATTERBLOOM_LOG.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
+
+        blockItem(ModBlocks.SHATTERBLOOM_LOG);
+        blockItem(ModBlocks.SHATTERBLOOM_WOOD);
+        blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_LOG);
+        blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD);
+
+        blockWithItem(ModBlocks.SHATTERBLOOM_PLANKS);
+
+        leavesBlock(ModBlocks.SHATTERBLOOM_LEAVES);
+        saplingBlock(ModBlocks.SHATTERBLOOM_SAPLING);
+
+
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
 
@@ -78,7 +99,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return models;
     }
 
+    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
+    private void saplingBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
     private void blockWithItem(DeferredBlock<?> deferredBlock){
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
+    }
+
+    private void blockItem(DeferredBlock<Block> deferredBlock){
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath()));
     }
 }

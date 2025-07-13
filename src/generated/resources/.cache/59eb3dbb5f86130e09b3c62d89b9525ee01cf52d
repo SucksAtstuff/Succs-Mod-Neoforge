@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-11T01:13:23.4487953	Loot Tables
+// 1.21.1	2025-07-08T13:00:26.442926	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 51110d4b246d8573ad324811ff382923f359a0a3 data/succsessentials/loot_table/blocks/deepslate_atherium_ore.json
@@ -29,5 +29,12 @@ aad1787d741b472940925ec29a5c37f852bf1cae data/succsessentials/loot_table/blocks/
 46067b03dd41a47fc113f75f93aa38b279878bf4 data/succsessentials/loot_table/blocks/ruby_ore.json
 687e7fafeb6586e1d40ff0257dbf0a0845214402 data/succsessentials/loot_table/blocks/sapphire_block.json
 c7f34f238286501f211b44b03f2ebdafee9da1d3 data/succsessentials/loot_table/blocks/sapphire_ore.json
+57bb762fc7479b18786996e452a0b0a3d17cd850 data/succsessentials/loot_table/blocks/shatterbloom_leaves.json
+be000dfb57a161354e403b93dc0042adb2dd87e2 data/succsessentials/loot_table/blocks/shatterbloom_log.json
+3464fccfbd4fa09bf4f130a25b1e84507cc9f180 data/succsessentials/loot_table/blocks/shatterbloom_planks.json
+0df0821fcf381a1c9a5bfdd79c1caf0a5d322aec data/succsessentials/loot_table/blocks/shatterbloom_sapling.json
+babb006ac0f0d2a91bdd7ea96412a607167703de data/succsessentials/loot_table/blocks/shatterbloom_wood.json
+6b9eb9b45a5114773029285ecaf29113b28b693d data/succsessentials/loot_table/blocks/stripped_shatterbloom_log.json
+ae8bd63e9b1014129e33caec37840a17b8b960c0 data/succsessentials/loot_table/blocks/stripped_shatterbloom_wood.json
 030b1cce4b3873165bf224d16aa036de3328e674 data/succsessentials/loot_table/blocks/sunstone_block.json
 6f725d1756b6c3e4ba978725ef80e4064ad585d8 data/succsessentials/loot_table/blocks/sunstone_ore.json

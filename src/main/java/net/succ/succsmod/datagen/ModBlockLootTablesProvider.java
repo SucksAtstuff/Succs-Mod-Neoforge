@@ -42,6 +42,19 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.JASPILITE_BLOCK.get());
         dropSelf(ModBlocks.GEM_POLISHING_TABLE.get());
 
+        // Define loot tables for tree blocks that drop themselves
+        dropSelf(ModBlocks.SHATTERBLOOM_LOG.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_SAPLING.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_PLANKS.get());
+
+        // Define loot tables for leaves that drop saplings
+        add(ModBlocks.SHATTERBLOOM_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.SHATTERBLOOM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));
         this.add(ModBlocks.GARLIC_CROP.get(), this.createCropDrops(ModBlocks.GARLIC_CROP.get(),

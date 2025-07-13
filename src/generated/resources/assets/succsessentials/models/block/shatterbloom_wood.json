@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "succsessentials:block/shatterbloom_log",
+    "side": "succsessentials:block/shatterbloom_log"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-07T22:05:03.3617329	Item Models: succsessentials
+
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -280,6 +280,7 @@ b0805639787354162c8407d4f464f4be8938fe93 assets/succsessentials/models/item/sapp
 25eff47c40485c8cdb99dd45435a7f72a6490e7e assets/succsessentials/models/item/sapphire_pickaxe.json
 762407cd5a9b0acf10975b040ead6fff3eed8bdb assets/succsessentials/models/item/sapphire_shovel.json
 fdfdaaadf3c39afc6a5a91a2391f6d9525f2932c assets/succsessentials/models/item/sapphire_sword.json
+5fad2731697188430ff375177280edbbb2bc8a81 assets/succsessentials/models/item/shatterbloom_sapling.json
 f38cd8ac1f1694b422cf1954775b4e214f9bf293 assets/succsessentials/models/item/sunstone.json
 9516bf10f81184e94254d8457df5fc0c8546b9eb assets/succsessentials/models/item/sunstone_axe.json
 c45628f5275b0af090cb3f80a632726dec496dcc assets/succsessentials/models/item/sunstone_boots.json

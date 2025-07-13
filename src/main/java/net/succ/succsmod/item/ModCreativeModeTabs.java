@@ -104,6 +104,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JASPILITE_BLOCK.get());
 
                         output.accept(ModBlocks.GEM_POLISHING_TABLE.get());
+
+                        output.accept(ModBlocks.SHATTERBLOOM_LOG.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_PLANKS.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_LEAVES.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_SAPLING.get());
+
                     })
                     .build());
 
