@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-08T13:00:26.4369259	Item Models: succsessentials
+
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -169,6 +169,7 @@ fb31e7c2cb128e5eca1e3356a2501477ad5d3099 assets/succsessentials/models/item/mala
 14f478685c299077c2026d210d3e459924c6ed03 assets/succsessentials/models/item/malachite_shovel.json
 a5fbabbeeffb4e41ccbda7da8f90545cd8ada6a2 assets/succsessentials/models/item/malachite_sword.json
 c55eb32e7baded77868f814a4c41c295f34d2d20 assets/succsessentials/models/item/necklace_of_jaspilite.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/succsessentials/models/item/pukeko_spawn_egg.json
 e7fb2db413751604fb1fd11556bd01f0de1fbaf0 assets/succsessentials/models/item/ring_of_atherium.json
 a24507e01e34e81675c03ee45a0be68559e58463 assets/succsessentials/models/item/ring_of_ruby.json
 76ca36108dc990311e13007dd368ac01a8b404eb assets/succsessentials/models/item/ring_of_sapphire.json
