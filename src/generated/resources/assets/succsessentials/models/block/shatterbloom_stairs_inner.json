@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "succsessentials:block/shatterbloom_planks",
-    "side": "succsessentials:block/shatterbloom_planks",
-    "top": "succsessentials:block/shatterbloom_planks"
-  }
-}

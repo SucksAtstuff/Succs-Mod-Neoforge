@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-11T22:02:45.8473584	Loot Tables
+// 1.21.1	2025-07-14T01:26:57.8123701	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 51110d4b246d8573ad324811ff382923f359a0a3 data/succsessentials/loot_table/blocks/deepslate_atherium_ore.json
@@ -31,6 +31,7 @@ e7963332b33d961d4dca915c42671d00479caef3 data/succsessentials/loot_table/blocks/
 90fb236887e218a5dcc6e20b274d60de53106fb4 data/succsessentials/loot_table/blocks/mycelial_sporewood_slab.json
 7a357e64f2169528faddd79334c1c4af7f8064b7 data/succsessentials/loot_table/blocks/mycelial_sporewood_stairs.json
 13ae44c1a0a3d748e0e4952be7a836042add89ce data/succsessentials/loot_table/blocks/mycelial_sporewood_trapdoor.json
+9011462a72b0edbdb5e389fccdacdd7d2487bffa data/succsessentials/loot_table/blocks/mycelial_sporewood_vine.json
 08dad3af697656d3b6ebf708d54c2eaf7deea7cb data/succsessentials/loot_table/blocks/mycelial_sporewood_wood.json
 fa56035f197a32e07c40fe432df415b95e130651 data/succsessentials/loot_table/blocks/nether_atherium_ore.json
 dc5f91d90f56d09a0b87cdff90322dca222f3211 data/succsessentials/loot_table/blocks/nether_jaspilite_ore.json

@@ -1,4 +1,5 @@
-// 1.21.1	2025-07-11T22:02:45.8453588	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-07-14T02:16:10.0488597	Tags for minecraft:block mod id succsessentials
+e3790bdf5a75cd49b5bb1885b0df983048f4b53d data/minecraft/tags/block/climbable.json
 7abaf65d044deeee4492da5a9c6f3dbf9e6452a8 data/minecraft/tags/block/fences.json
 1934a3d2fe07f0dda0fbf908dbd181bbfb180f33 data/minecraft/tags/block/fence_gates.json
 c71f8a2e08c795e57881efec77f2935f940a5847 data/minecraft/tags/block/incorrect_for_diamond_tool.json
@@ -10,6 +11,7 @@ c71f8a2e08c795e57881efec77f2935f940a5847 data/minecraft/tags/block/incorrect_for
 4949c0ba03c655451da36821ada0dde3aeba903e data/minecraft/tags/block/logs_that_burn.json
 2ee76a766b47c60be270f90f103f5ee016170a66 data/minecraft/tags/block/mineable/pickaxe.json
 8cd6db184cbf63a293cf7b9cf570865bec72c5a4 data/minecraft/tags/block/needs_diamond_tool.json
+98d116de462c1ef4fb0dca8c4f1c88d8c1c50eeb data/minecraft/tags/block/saplings.json
 f852337e49c7d1d309bd3aefe529f0cbbfcc9584 data/minecraft/tags/block/wooden_buttons.json
 a1c7de822271f292e9f3cd5c3cd05ef62278eeb3 data/minecraft/tags/block/wooden_doors.json
 138d4fdb9a0e8fecbdf563957f40f036c1528900 data/minecraft/tags/block/wooden_fences.json

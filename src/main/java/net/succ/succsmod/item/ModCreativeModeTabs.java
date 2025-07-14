@@ -137,6 +137,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
                     })
                     .build());

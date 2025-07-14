@@ -151,7 +151,7 @@ public class ModConfiguredFeatures {
                         1,
                         4,
                         ConstantInt.of(3)),
-                BlockStateProvider.simple(Blocks.JUNGLE_LEAVES),
+                BlockStateProvider.simple(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get()),
                 new AcaciaFoliagePlacer(
                         ConstantInt.of(2), // wide canopy
                         ConstantInt.of(1)  // no vertical offset

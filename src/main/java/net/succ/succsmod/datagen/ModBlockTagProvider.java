@@ -234,5 +234,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.SHATTERBLOOM_SAPLING.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
+
+        tag(BlockTags.CLIMBABLE)
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
+
     }
 }

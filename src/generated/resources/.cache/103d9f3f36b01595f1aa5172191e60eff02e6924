@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-11T22:45:35.8898564	Registries
+// 1.21.1	2025-07-14T00:30:22.4773387	Registries
 c2b7e432d1541d4e1f7a3f768eef15fdd2b31aac data/succsessentials/neoforge/biome_modifier/add_end_atherium_ore.json
 5a29fbcc59a961f45a296472c3fbe48227fb28ae data/succsessentials/neoforge/biome_modifier/add_jaspilite_ore.json
 9f6db5d3d8b6a97dd992097aa75462f997c70a25 data/succsessentials/neoforge/biome_modifier/add_malachite_ore.json
@@ -10,7 +10,7 @@ ec614497b4aa88da51b8610e6f2eff8534d6d11b data/succsessentials/worldgen/biome/sha
 eec6bd6a0d1355a574c09ac1c459a65369e6406f data/succsessentials/worldgen/configured_feature/end_atherium_ore.json
 d985f3545483e47028b6dd1506522eb3bae74926 data/succsessentials/worldgen/configured_feature/jaspilite_ore.json
 910eeffdeac7f8ac6384ce22e4c84db68159c961 data/succsessentials/worldgen/configured_feature/malachite_ore.json
-25c77c293de7bc91da00e025c408da2124b77118 data/succsessentials/worldgen/configured_feature/mycelical_sporewood.json
+ab48fee972e5e6a548118ac7b22bdc0b6bb9cdb8 data/succsessentials/worldgen/configured_feature/mycelical_sporewood.json
 22ce17e0758caa7aa86b5997b4333f87e7f49bbd data/succsessentials/worldgen/configured_feature/nether_ruby_ore.json
 862758fd3fa3548a29aa8f77f185076e4a444821 data/succsessentials/worldgen/configured_feature/patch_grass.json
 b309020a570ec85cbbc69409bf87c4fc8bdc8e21 data/succsessentials/worldgen/configured_feature/patch_shattergrove_flowers.json

@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -140,6 +141,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlock(ModBlocks.GEM_POLISHING_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_table")));
 
+
+        getMultipartBuilder(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get())
+                .part().modelFile(vineFaceModel("north")).rotationY(0).addModel().condition(BlockStateProperties.NORTH, true).end()
+                .part().modelFile(vineFaceModel("south")).rotationY(180).addModel().condition(BlockStateProperties.SOUTH, true).end()
+                .part().modelFile(vineFaceModel("east")).rotationY(90).addModel().condition(BlockStateProperties.EAST, true).end()
+                .part().modelFile(vineFaceModel("west")).rotationY(270).addModel().condition(BlockStateProperties.WEST, true).end()
+                .part().modelFile(vineFaceModel("up")).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end();
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
+
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {
@@ -177,4 +187,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void blockItem(DeferredBlock<Block> deferredBlock, String appendix){
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath() + appendix));
     }
+
+    private ModelFile vineFaceModel(String face) {
+        return models()
+                .withExistingParent("mycelial_sporewood_vine_" + face, mcLoc("block/vine"))
+                .texture("vine", modLoc("block/mycelial_sporewood_vine"))
+                .renderType("cutout");
+    }
+
 }

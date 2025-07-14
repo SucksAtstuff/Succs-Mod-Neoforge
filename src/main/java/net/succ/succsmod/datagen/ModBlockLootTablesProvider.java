@@ -78,6 +78,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
 
+        add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
+                block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
 
         // Define loot tables for flowers that drop themselves
         dropSelf(ModBlocks.POISON_LILY.get());

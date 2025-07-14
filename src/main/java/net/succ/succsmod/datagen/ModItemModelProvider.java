@@ -182,6 +182,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         saplingItem(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
         basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
+        blockItemFromBlockTexture(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
     }
 
     // Shoutout to El_Redstoniano for making this
@@ -272,4 +273,10 @@ public class ModItemModelProvider extends ItemModelProvider {
                         "block/" + block.getId().getPath()));
 
     }
+
+    public void blockItemFromBlockTexture(DeferredBlock<Block> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/" + block.getId().getPath()));
+    }
+
 }

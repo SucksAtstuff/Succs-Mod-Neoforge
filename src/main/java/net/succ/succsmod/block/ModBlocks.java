@@ -2,7 +2,6 @@ package net.succ.succsmod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -17,13 +16,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.block.custom.GarlicCropBlock;
-import net.succ.succsmod.block.custom.GemPolishingTableBlock;
-import net.succ.succsmod.block.custom.ModFlammableRotatedPillarBlock;
-import net.succ.succsmod.block.custom.PoisonLilyBlock;
+import net.succ.succsmod.block.custom.*;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.worldgen.tree.ModTreeGrowers;
-import net.minecraft.world.effect.MobEffects;
 
 
 import java.util.function.Supplier;
@@ -260,23 +255,6 @@ public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_PLANKS = registerBlo
                 }
             });
 
-public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_LEAVES = registerBlock("mycelial_sporewood_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-            });
 
 public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_STAIRS = registerBlock("mycelial_sporewood_stairs",
             () -> new StairBlock(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().defaultBlockState(),
@@ -305,6 +283,15 @@ public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_TRAPDOOR = registerB
 
     public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_SAPLING = registerBlock("mycelial_sporewood_sapling",
             () -> new SaplingBlock(ModTreeGrowers.MYCELIAL_SPOREWOOD_KEY, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS)));
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_LEAVES = registerBlock("mycelial_sporewood_leaves",
+            GlowingLeavesBlock::new);
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_VINE = registerBlock("mycelial_sporewood_vine",
+            () -> new ModVineBlock());
+
+
+
 
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(
