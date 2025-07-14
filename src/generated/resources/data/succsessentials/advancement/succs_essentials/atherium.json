@@ -1,0 +1,29 @@
+{
+  "parent": "succsessentials:succs_essentials/malachite",
+  "criteria": {
+    "has_atherium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:atherium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Obtain a polished Atherium.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:atherium"
+    },
+    "title": "Rare Atherium"
+  },
+  "requirements": [
+    [
+      "has_atherium"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

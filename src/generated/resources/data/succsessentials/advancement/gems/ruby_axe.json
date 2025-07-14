@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/ruby",
+  "criteria": {
+    "has_ruby_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:ruby_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.ruby_axe.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:ruby_axe"
+    },
+    "title": {
+      "translate": "item.succsessentials.ruby_axe"
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_axe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

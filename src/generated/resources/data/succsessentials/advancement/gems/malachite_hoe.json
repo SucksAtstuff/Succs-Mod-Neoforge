@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/malachite",
+  "criteria": {
+    "has_malachite_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:malachite_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.malachite_hoe.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:malachite_hoe"
+    },
+    "title": {
+      "translate": "item.succsessentials.malachite_hoe"
+    }
+  },
+  "requirements": [
+    [
+      "has_malachite_hoe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

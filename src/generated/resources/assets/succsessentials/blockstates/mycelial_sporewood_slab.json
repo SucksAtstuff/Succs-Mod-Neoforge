@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "succsessentials:block/mycelial_sporewood_slab"
+    },
+    "type=double": {
+      "model": "succsessentials:block/mycelial_sporewood_planks"
+    },
+    "type=top": {
+      "model": "succsessentials:block/mycelial_sporewood_slab_top"
+    }
+  }
+}

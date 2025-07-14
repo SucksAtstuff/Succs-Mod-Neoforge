@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/jaspilite",
+  "criteria": {
+    "has_jaspilite_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:jaspilite_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.jaspilite_sword.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:jaspilite_sword"
+    },
+    "title": {
+      "translate": "item.succsessentials.jaspilite_sword"
+    }
+  },
+  "requirements": [
+    [
+      "has_jaspilite_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

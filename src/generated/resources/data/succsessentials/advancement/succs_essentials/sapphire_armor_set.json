@@ -1,0 +1,38 @@
+{
+  "parent": "succsessentials:succs_essentials/sapphire",
+  "criteria": {
+    "has_full_sapphire_set": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_helmet"
+          },
+          {
+            "items": "succsessentials:sapphire_chestplate"
+          },
+          {
+            "items": "succsessentials:sapphire_leggings"
+          },
+          {
+            "items": "succsessentials:sapphire_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a full set of Sapphire armor.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sapphire_helmet"
+    },
+    "title": "Sapphire Armor Set"
+  },
+  "requirements": [
+    [
+      "has_full_sapphire_set"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

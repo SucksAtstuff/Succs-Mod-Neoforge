@@ -1,0 +1,29 @@
+{
+  "parent": "succsessentials:succs_essentials/sunstone",
+  "criteria": {
+    "has_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:ruby"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Obtain a polished Ruby.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:ruby"
+    },
+    "title": "Red Ruby"
+  },
+  "requirements": [
+    [
+      "has_ruby"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

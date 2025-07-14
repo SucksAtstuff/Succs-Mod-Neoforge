@@ -1,0 +1,44 @@
+{
+  "criteria": {
+    "has_any_gem": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:ruby"
+          },
+          {
+            "items": "succsessentials:sapphire"
+          },
+          {
+            "items": "succsessentials:malachite"
+          },
+          {
+            "items": "succsessentials:sunstone"
+          },
+          {
+            "items": "succsessentials:atherium"
+          },
+          {
+            "items": "succsessentials:jaspilite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": "Discover your first Succ's Essentials gem.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:atherium"
+    },
+    "title": "Succ's Essentials"
+  },
+  "requirements": [
+    [
+      "has_any_gem"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

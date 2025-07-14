@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "succsessentials:ruby"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "R R",
+    "R R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:ruby_leggings"
+  }
+}

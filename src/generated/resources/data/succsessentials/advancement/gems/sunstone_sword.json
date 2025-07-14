@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/sunstone",
+  "criteria": {
+    "has_sunstone_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sunstone_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.sunstone_sword.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sunstone_sword"
+    },
+    "title": {
+      "translate": "item.succsessentials.sunstone_sword"
+    }
+  },
+  "requirements": [
+    [
+      "has_sunstone_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

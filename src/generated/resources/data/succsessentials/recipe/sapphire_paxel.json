@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "succsessentials:sapphire_pickaxe"
+    },
+    "G": {
+      "item": "succsessentials:gold_handle"
+    },
+    "P": {
+      "item": "succsessentials:sapphire_shovel"
+    },
+    "S": {
+      "item": "succsessentials:sapphire_axe"
+    }
+  },
+  "pattern": [
+    "SAP",
+    " G ",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:sapphire_paxel"
+  }
+}

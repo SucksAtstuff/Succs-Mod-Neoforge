@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/atherium",
+  "criteria": {
+    "has_atherium_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:atherium_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.atherium_sword.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:atherium_sword"
+    },
+    "title": {
+      "translate": "item.succsessentials.atherium_sword"
+    }
+  },
+  "requirements": [
+    [
+      "has_atherium_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
