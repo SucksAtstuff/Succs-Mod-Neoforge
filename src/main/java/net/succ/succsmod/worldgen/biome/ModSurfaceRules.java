@@ -41,9 +41,7 @@ public class ModSurfaceRules {
                 // Only apply to VENOMOUS_FEN biome
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.VENOMOUS_FEN),
                         SurfaceRules.sequence(
-                                // Grass on top (floor)
                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MUD),
-                                // Dirt just beneath the top (subsurface)
                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, CLAY)))
         );
     }

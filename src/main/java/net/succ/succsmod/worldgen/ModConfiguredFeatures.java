@@ -33,6 +33,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.worldgen.tree.custom.ModTreeDecorator;
 
 import java.util.List;
 
@@ -160,7 +161,7 @@ public class ModConfiguredFeatures {
         )
                 .dirt(BlockStateProvider.simple(Blocks.MUD))
                 .decorators(List.of(
-                        new LeaveVineDecorator(0.3f)))
+                        new ModTreeDecorator(0.15f)))
                 .build());
 
 

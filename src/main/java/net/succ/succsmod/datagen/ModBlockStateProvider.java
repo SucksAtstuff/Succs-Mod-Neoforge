@@ -194,5 +194,4 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("vine", modLoc("block/mycelial_sporewood_vine"))
                 .renderType("cutout");
     }
-
 }

@@ -17,6 +17,7 @@ import net.succ.succsmod.sound.ModSounds;
 import net.succ.succsmod.villager.ModVillagers;
 import net.succ.succsmod.worldgen.biome.ModBiomes;
 import net.succ.succsmod.worldgen.biome.ModSurfaceRules;
+import net.succ.succsmod.worldgen.tree.ModTreeDecoratorTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -71,9 +72,11 @@ public class SuccsMod
 
         ModRecipes.register(modEventBus);
 
-
         ModLootModifiers.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModTreeDecoratorTypes.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -90,6 +93,7 @@ public class SuccsMod
         });
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeVenomousFenRules());
     }
 
     // Add the example block item to the building blocks tab

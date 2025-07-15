@@ -3,8 +3,8 @@
   "config": {
     "decorators": [
       {
-        "type": "minecraft:leave_vine",
-        "probability": 0.3
+        "type": "succsessentials:mycelial_vine",
+        "probability": 0.15
       }
     ],
     "dirt_provider": {
