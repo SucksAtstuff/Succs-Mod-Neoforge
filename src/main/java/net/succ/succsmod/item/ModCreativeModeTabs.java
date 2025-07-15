@@ -57,10 +57,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RING_OF_ATHERIUM.get());
                         output.accept(ModItems.BRACELET_OF_MALACHITE.get());
                         output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
+                      
+                        output.accept(ModBlocks.POISON_LILY.get());
                         output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
                     })
                     .build());
-
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.ATHERIUM_ORE.get()))
@@ -112,6 +113,31 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SHATTERBLOOM_PLANKS.get());
                         output.accept(ModBlocks.SHATTERBLOOM_LEAVES.get());
                         output.accept(ModBlocks.SHATTERBLOOM_SAPLING.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_DOOR.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_TRAPDOOR.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_STAIRS.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_SLAB.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_BUTTON.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_FENCE.get());
+                        output.accept(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
+
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+                        output.accept(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
                     })
                     .build());

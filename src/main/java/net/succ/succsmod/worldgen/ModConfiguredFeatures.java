@@ -1,30 +1,39 @@
 package net.succ.succsmod.worldgen;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.worldgen.tree.custom.ModTreeDecorator;
 
 import java.util.List;
 
@@ -43,6 +52,17 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_JASPILITE_ORE_KEY = registerKey("jaspilite_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHATTERBLOOM_KEY = registerKey("shatterbloom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
+
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS_KEY = registerKey("patch_tall_grass");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SHATTERGROVE_FLOWERS_KEY = registerKey("patch_shattergrove_flowers");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_VENOMOUS_FEN_FLOWERS_KEY = registerKey("patch_venomous_fen_flowers");
+
+
 
 
 
@@ -123,6 +143,96 @@ public class ModConfiguredFeatures {
                 .dirt(BlockStateProvider.simple(Blocks.DIRT))
                 .build());
 
+        // Register Mycelial Sporewood tree configured feature
+        register(context, MYCELIAL_SPOREWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()),
+                new BendingTrunkPlacer(
+                        4,
+                        1,
+                        1,
+                        4,
+                        ConstantInt.of(3)),
+                BlockStateProvider.simple(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get()),
+                new AcaciaFoliagePlacer(
+                        ConstantInt.of(2), // wide canopy
+                        ConstantInt.of(1)  // no vertical offset
+                ),
+        new TwoLayersFeatureSize(1, 0, 2)
+        )
+                .dirt(BlockStateProvider.simple(Blocks.MUD))
+                .decorators(List.of(
+                        new ModTreeDecorator(0.15f)))
+                .build());
+
+
+
+        context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        12, // tries
+                        6, // x spread
+                        2, // y spread
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.SHORT_GRASS))
+
+                        )
+                )
+        ));
+
+        context.register(PATCH_TALL_GRASS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        16, // tries
+                        6, // x spread
+                        2, // y spread
+                        PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.TALL_GRASS))
+
+                        )
+                )
+        ));
+
+        WeightedStateProvider flowerProvider = new WeightedStateProvider(
+                SimpleWeightedRandomList.<BlockState>builder()
+                        .add(Blocks.ALLIUM.defaultBlockState(), 3)
+                        .add(Blocks.CORNFLOWER.defaultBlockState(), 3)
+                        .add(Blocks.AZURE_BLUET.defaultBlockState(), 2)
+                        .add(Blocks.LILY_OF_THE_VALLEY.defaultBlockState(), 2)
+                        .add(Blocks.BLUE_ORCHID.defaultBlockState(), 1)
+                        .add(Blocks.PITCHER_PLANT.defaultBlockState(), 1)
+                        .build()
+        );
+
+        WeightedStateProvider venomousFenFlowerProvider = new WeightedStateProvider(
+                SimpleWeightedRandomList.<BlockState>builder()
+                        .add(Blocks.OXEYE_DAISY.defaultBlockState(), 2)
+                        .add(Blocks.WITHER_ROSE.defaultBlockState(), 1)
+                        .add(Blocks.LILY_OF_THE_VALLEY.defaultBlockState(), 1)
+                        .add(ModBlocks.POISON_LILY.get().defaultBlockState(), 2)
+                        .build()
+        );
+
+        context.register(PATCH_SHATTERGROVE_FLOWERS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        16, // tries
+                        6,  // x spread
+                        2,  // y spread
+                        PlacementUtils.onlyWhenEmpty(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(flowerProvider)
+                        )
+                )
+        ));
+
+        context.register(PATCH_VENOMOUS_FEN_FLOWERS_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        32, // tries
+                        6,  // x spread
+                        2,  // y spread
+                        PlacementUtils.onlyWhenEmpty(
+                                Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(venomousFenFlowerProvider)
+                        )
+                )
+        ));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){

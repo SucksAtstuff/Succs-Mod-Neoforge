@@ -49,10 +49,48 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
         dropSelf(ModBlocks.SHATTERBLOOM_SAPLING.get());
         dropSelf(ModBlocks.SHATTERBLOOM_PLANKS.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+
+        this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
+                block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
+        dropSelf(ModBlocks.SHATTERBLOOM_TRAPDOOR.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_STAIRS.get());
+        this.add(ModBlocks.SHATTERBLOOM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SHATTERBLOOM_SLAB.get()));
+        dropSelf(ModBlocks.SHATTERBLOOM_BUTTON.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_FENCE.get());
+        dropSelf(ModBlocks.SHATTERBLOOM_FENCE_GATE.get());
+
+        this.add(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get(),
+                block -> createDoorTable(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get()));
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get());
+        this.add(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get()));
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
+        dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+
+        add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
+                block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
+
+        // Define loot tables for flowers that drop themselves
+        dropSelf(ModBlocks.POISON_LILY.get());
+        add(ModBlocks.POTTED_POISON_LILY.get(), createPotFlowerItemTable(ModBlocks.POISON_LILY));
 
         // Define loot tables for leaves that drop saplings
         add(ModBlocks.SHATTERBLOOM_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.SHATTERBLOOM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())

@@ -9,4 +9,7 @@ import java.util.Optional;
 public class ModTreeGrowers {
     public static final TreeGrower SHATTERBLOOM = new TreeGrower(SuccsMod.MOD_ID + ":shatterbloom",
             Optional.empty(), Optional.of(ModConfiguredFeatures.SHATTERBLOOM_KEY), Optional.empty());
+
+    public static final TreeGrower MYCELIAL_SPOREWOOD_KEY = new TreeGrower(SuccsMod.MOD_ID + ":mycelial_sporewood",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.MYCELIAL_SPOREWOOD_KEY), Optional.empty());
 }

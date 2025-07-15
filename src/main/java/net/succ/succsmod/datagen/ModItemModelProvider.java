@@ -24,6 +24,7 @@ import java.util.LinkedHashMap;
 
 public class ModItemModelProvider extends ItemModelProvider {
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
+
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
         trimMaterials.put(TrimMaterials.IRON, 0.2F);
@@ -168,15 +169,29 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
       
-      withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-       saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
+        saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
+        basicItem(ModBlocks.SHATTERBLOOM_DOOR.asItem());
+
+        flowerItem(ModBlocks.POISON_LILY);
+
+        buttonItem(ModBlocks.SHATTERBLOOM_BUTTON, ModBlocks.SHATTERBLOOM_PLANKS);
+        fenceItem(ModBlocks.SHATTERBLOOM_FENCE, ModBlocks.SHATTERBLOOM_PLANKS);
+
+        buttonItem(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+        fenceItem(ModBlocks.MYCELIAL_SPOREWOOD_FENCE, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+
+        saplingItem(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
+        basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
+        blockItemFromBlockTexture(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
+        withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
     }
 
     // Shoutout to El_Redstoniano for making this
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {
         final String MOD_ID = SuccsMod.MOD_ID; // Change this to your mod id
 
-        if(itemDeferredItem.get() instanceof ArmorItem armorItem) {
+        if (itemDeferredItem.get() instanceof ArmorItem armorItem) {
             trimMaterials.forEach((trimMaterial, value) -> {
                 float trimValue = value;
 
@@ -209,7 +224,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 this.withExistingParent(itemDeferredItem.getId().getPath(),
                                 mcLoc("item/generated"))
                         .override()
-                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace()  + ":item/" + trimNameResLoc.getPath()))
+                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace() + ":item/" + trimNameResLoc.getPath()))
                         .predicate(mcLoc("trim_type"), trimValue).end()
                         .texture("layer0",
                                 ResourceLocation.fromNamespaceAndPath(MOD_ID,
@@ -221,7 +236,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,"block/" + item.getId().getPath()));
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder complexBlock(Block block) {
@@ -232,25 +247,38 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
+                .texture("texture", ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
                         "block/" + baseBlock.getId().getPath()));
     }
 
     public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
+                .texture("texture", ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
                         "block/" + baseBlock.getId().getPath()));
     }
 
     public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall",  ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
+                .texture("wall", ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
                         "block/" + baseBlock.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,"item/" + item.getId().getPath()));
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "item/" + item.getId().getPath()));
     }
+
+    public void flowerItem(DeferredBlock<Block> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID,
+                        "block/" + block.getId().getPath()));
+
+    }
+
+    public void blockItemFromBlockTexture(DeferredBlock<Block> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/" + block.getId().getPath()));
+    }
+
 }

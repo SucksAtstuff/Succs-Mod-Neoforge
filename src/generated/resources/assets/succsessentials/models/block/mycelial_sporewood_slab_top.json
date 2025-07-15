@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "succsessentials:block/mycelial_sporewood_planks",
+    "side": "succsessentials:block/mycelial_sporewood_planks",
+    "top": "succsessentials:block/mycelial_sporewood_planks"
+  }
+}

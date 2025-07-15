@@ -26,6 +26,15 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> JASPILITE_ORE_PLACED_KEY = registerKey("jaspilite_ore_placed");
 
     public static final ResourceKey<PlacedFeature> SHATTERBLOOM_PLACED_KEY = registerKey("shatterbloom_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_SHATTERGROVE_FLOWERS_PLACED = registerKey("patch_shattergrove_flowers_placed");
+
+    public static final ResourceKey<PlacedFeature> MYCELIAL_SPOREWOOD_PLACED_KEY = registerKey("mycelial_sporewood_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_VENOMOUS_FEN_FLOWERS_PLACED = registerKey("patch_venomous_fen_flowers_placed");
+
+    public static final ResourceKey<PlacedFeature> PATCH_GRASS_PLACED_KEY = registerKey("patch_grass_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_PLACED_KEY = registerKey("patch_tall_grass_placed");
+
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -95,6 +104,35 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3,0.1f,2),
                         ModBlocks.SHATTERBLOOM_SAPLING.get()));
 
+        register(context, MYCELIAL_SPOREWOOD_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.MYCELIAL_SPOREWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1f, 3),
+                        ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get()));
+
+
+        register(context, PATCH_GRASS_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_GRASS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+        );
+
+        register(context, PATCH_TALL_GRASS_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_TALL_GRASS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+        );
+
+        register(
+                context,
+                PATCH_SHATTERGROVE_FLOWERS_PLACED,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SHATTERGROVE_FLOWERS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(2)
+        );
+
+        register(
+                context,
+                PATCH_VENOMOUS_FEN_FLOWERS_PLACED,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_VENOMOUS_FEN_FLOWERS_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(3)
+        );
 
     }
 

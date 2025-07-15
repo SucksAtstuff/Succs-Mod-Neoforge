@@ -128,10 +128,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_LOG.get().asItem())
                 .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get().asItem());
 
         tag(ItemTags.PLANKS)
-                .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem());
+                .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().asItem());
 
 
         tag(ModTags.Items.SHATTERBLOOM_LOGS)
@@ -139,6 +145,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem());
+
+        tag(ModTags.Items.MYCELIAL_SPOREWOOD_LOGS)
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get().asItem());
     }
 
 

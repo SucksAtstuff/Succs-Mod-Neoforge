@@ -152,8 +152,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.NEEDS_JASPILITE_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
-       tag(ModTags.Blocks.INCORRECT_FOR_JASPILITE_TOOL)
-               .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_JASPILITE_TOOL)
+                .addTag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_SUNSTONE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
                 .addTag(ModTags.Blocks.NEEDS_RUBY_TOOL)
@@ -191,10 +191,56 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_LOG.get())
                 .add(ModBlocks.SHATTERBLOOM_WOOD.get())
                 .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get())
-                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get());
+                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get())
+                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
 
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.SHATTERBLOOM_BUTTON.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get());
+
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.SHATTERBLOOM_DOOR.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get());
+
+        tag(BlockTags.WOODEN_SLABS)
+                .add(ModBlocks.SHATTERBLOOM_SLAB.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get());
+
+        tag(BlockTags.WOODEN_STAIRS)
+                .add(ModBlocks.SHATTERBLOOM_STAIRS.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get());
+
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.SHATTERBLOOM_TRAPDOOR.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get());
+
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get());
+
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.SHATTERBLOOM_FENCE.get())
+                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.SHATTERBLOOM_FENCE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
+
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.SHATTERBLOOM_SAPLING.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
+
+        tag(BlockTags.CLIMBABLE)
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
     }
-
-
 }

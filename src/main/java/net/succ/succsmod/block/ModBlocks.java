@@ -3,21 +3,23 @@ package net.succ.succsmod.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.block.custom.GarlicCropBlock;
-import net.succ.succsmod.block.custom.GemPolishingTableBlock;
-import net.succ.succsmod.block.custom.ModFlammableRotatedPillarBlock;
+import net.succ.succsmod.block.custom.*;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.worldgen.tree.ModTreeGrowers;
+
 
 import java.util.function.Supplier;
 
@@ -148,6 +150,12 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GEM_POLISHING_TABLE = registerBlock("gem_polishing_table",
             () -> new GemPolishingTableBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> SHATTERBLOOM_DOOR = registerBlock("shatterbloom_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).strength(3f).noOcclusion()));
+
+    public static final DeferredBlock<Block> SHATTERBLOOM_TRAPDOOR = registerBlock("shatterbloom_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).strength(3f).noOcclusion()));
+
     public static final DeferredBlock<Block> SHATTERBLOOM_LOG = registerBlock("shatterbloom_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
 
@@ -196,9 +204,106 @@ public class ModBlocks {
                 }
             });
 
+    public static final DeferredBlock<Block> SHATTERBLOOM_STAIRS = registerBlock("shatterbloom_stairs",
+            () -> new StairBlock(ModBlocks.SHATTERBLOOM_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final DeferredBlock<Block> SHATTERBLOOM_SLAB = registerBlock("shatterbloom_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+
     public static final DeferredBlock<Block> SHATTERBLOOM_SAPLING = registerBlock("shatterbloom_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SHATTERBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
+
+
+    public static final DeferredBlock<Block> SHATTERBLOOM_PRESSURE_PLATE = registerBlock("shatterbloom_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final DeferredBlock<Block> SHATTERBLOOM_BUTTON = registerBlock("shatterbloom_button",
+            () -> new ButtonBlock(BlockSetType.OAK, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON).noCollission()));
+
+    public static final DeferredBlock<Block> SHATTERBLOOM_FENCE = registerBlock("shatterbloom_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+    public static final DeferredBlock<Block> SHATTERBLOOM_FENCE_GATE = registerBlock("shatterbloom_fence_gate",
+            () -> new FenceGateBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_LOG = registerBlock("mycelial_sporewood_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_WOOD = registerBlock("mycelial_sporewood_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_STEM)));
+
+public static final DeferredBlock<Block> STRIPPED_MYCELIAL_SPOREWOOD_LOG = registerBlock("stripped_mycelial_sporewood_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_CRIMSON_HYPHAE)));
+
+public static final DeferredBlock<Block> STRIPPED_MYCELIAL_SPOREWOOD_WOOD = registerBlock("stripped_mycelial_sporewood_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_CRIMSON_STEM)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_PLANKS = registerBlock("mycelial_sporewood_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_STAIRS = registerBlock("mycelial_sporewood_stairs",
+            () -> new StairBlock(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_STAIRS)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_SLAB = registerBlock("mycelial_sporewood_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_PRESSURE_PLATE = registerBlock("mycelial_sporewood_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PRESSURE_PLATE)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_BUTTON = registerBlock("mycelial_sporewood_button",
+            () -> new ButtonBlock(BlockSetType.CRIMSON, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_BUTTON).noCollission()));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_FENCE = registerBlock("mycelial_sporewood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_FENCE_GATE = registerBlock("mycelial_sporewood_fence_gate",
+            () -> new FenceGateBlock(WoodType.CRIMSON, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE_GATE)));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_DOOR = registerBlock("mycelial_sporewood_door",
+            () -> new DoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_DOOR).strength(3f).noOcclusion()));
+
+public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_TRAPDOOR = registerBlock("mycelial_sporewood_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.CRIMSON, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_SAPLING = registerBlock("mycelial_sporewood_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.MYCELIAL_SPOREWOOD_KEY, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_ROOTS)));
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_LEAVES = registerBlock("mycelial_sporewood_leaves",
+            GlowingLeavesBlock::new);
+
+    public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_VINE = registerBlock("mycelial_sporewood_vine",
+            () -> new ModVineBlock());
+
+
+
+
+    public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
+            () -> new PoisonLilyBlock(
+                    MobEffects.POISON,
+                    40,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY).noCollission().lightLevel(state -> 3)
+            ));
+
+
+
+    public static final DeferredBlock<Block> POTTED_POISON_LILY = registerBlock("potted_poison_lily",
+            () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), POISON_LILY, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

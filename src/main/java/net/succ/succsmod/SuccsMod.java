@@ -1,5 +1,7 @@
 package net.succ.succsmod;
 
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.succ.succsmod.block.ModBlocks;
@@ -16,6 +18,9 @@ import net.succ.succsmod.screen.ModMenuTypes;
 import net.succ.succsmod.screen.custom.GemPolishingTableBlockScreen;
 import net.succ.succsmod.sound.ModSounds;
 import net.succ.succsmod.villager.ModVillagers;
+import net.succ.succsmod.worldgen.biome.ModBiomes;
+import net.succ.succsmod.worldgen.biome.ModSurfaceRules;
+import net.succ.succsmod.worldgen.tree.ModTreeDecoratorTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -32,6 +37,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(SuccsMod.MOD_ID)
@@ -71,9 +77,11 @@ public class SuccsMod
 
         ModRecipes.register(modEventBus);
 
-
         ModLootModifiers.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModTreeDecoratorTypes.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -84,7 +92,13 @@ public class SuccsMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        ModBiomes.registerBiomes();
+        event.enqueueWork(()->{
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.POISON_LILY.getId(), ModBlocks.POTTED_POISON_LILY);
+        });
 
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeVenomousFenRules());
     }
 
     // Add the example block item to the building blocks tab

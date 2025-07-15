@@ -4,10 +4,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -66,22 +65,90 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
 
+
+        // Registering shatterbloom blocks with their respective item models
         blockItem(ModBlocks.SHATTERBLOOM_LOG);
         blockItem(ModBlocks.SHATTERBLOOM_WOOD);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_LOG);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD);
+
 
         blockWithItem(ModBlocks.SHATTERBLOOM_PLANKS);
 
         leavesBlock(ModBlocks.SHATTERBLOOM_LEAVES);
         saplingBlock(ModBlocks.SHATTERBLOOM_SAPLING);
 
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.SHATTERBLOOM_DOOR.get()), modLoc("block/shatterbloom_door_bottom"), modLoc("block/shatterbloom_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SHATTERBLOOM_TRAPDOOR.get()), modLoc("block/shatterbloom_trapdoor"),true, "cutout");
+        stairsBlock(((StairBlock) ModBlocks.SHATTERBLOOM_STAIRS.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.SHATTERBLOOM_SLAB.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+
+        blockItem(ModBlocks.SHATTERBLOOM_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.SHATTERBLOOM_SLAB);
+        blockItem(ModBlocks.SHATTERBLOOM_STAIRS);
+        
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.SHATTERBLOOM_BUTTON.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.SHATTERBLOOM_FENCE.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.SHATTERBLOOM_FENCE_GATE.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
+
+        blockItem(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE);
+        blockItem(ModBlocks.SHATTERBLOOM_FENCE_GATE);
+
+        logBlock(((RotatedPillarBlock)ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()));
+        logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get()), blockTexture(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()), blockTexture(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get()));
+
+        // Registering mycelial sporewood blocks with their respective item models
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_LOG);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_WOOD);
+        blockItem(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG);
+        blockItem(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD);
+
+        blockWithItem(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS);
+
+        leavesBlock(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES);
+        saplingBlock(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
+
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get()), modLoc("block/mycelial_sporewood_door_bottom"), modLoc("block/mycelial_sporewood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get()), modLoc("block/mycelial_sporewood_trapdoor"), true, "cutout");
+        stairsBlock(((StairBlock) ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_SLAB);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS);
+
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
+
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE);
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE);
+
+        simpleBlock(ModBlocks.POISON_LILY.get(),
+                models().cross(blockTexture(ModBlocks.POISON_LILY.get()).getPath(), blockTexture(ModBlocks.POISON_LILY.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_POISON_LILY.get(), models().singleTexture("potted_poison_lily", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.POISON_LILY.get())).renderType("cutout"));
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
 
         horizontalBlock(ModBlocks.GEM_POLISHING_TABLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_table")));
+
+
+        getMultipartBuilder(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get())
+                .part().modelFile(vineFaceModel("north")).rotationY(0).addModel().condition(BlockStateProperties.NORTH, true).end()
+                .part().modelFile(vineFaceModel("south")).rotationY(180).addModel().condition(BlockStateProperties.SOUTH, true).end()
+                .part().modelFile(vineFaceModel("east")).rotationY(90).addModel().condition(BlockStateProperties.EAST, true).end()
+                .part().modelFile(vineFaceModel("west")).rotationY(270).addModel().condition(BlockStateProperties.WEST, true).end()
+                .part().modelFile(vineFaceModel("up")).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end();
+        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
 
     }
 
@@ -115,5 +182,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockItem(DeferredBlock<Block> deferredBlock){
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath()));
+    }
+
+    private void blockItem(DeferredBlock<Block> deferredBlock, String appendix){
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath() + appendix));
+    }
+
+    private ModelFile vineFaceModel(String face) {
+        return models()
+                .withExistingParent("mycelial_sporewood_vine_" + face, mcLoc("block/vine"))
+                .texture("vine", modLoc("block/mycelial_sporewood_vine"))
+                .renderType("cutout");
     }
 }
