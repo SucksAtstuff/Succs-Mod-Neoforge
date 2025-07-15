@@ -150,10 +150,16 @@
         "weight": 5
       },
       {
+        "type": "succsessentials:toxic_slime",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 100
+      },
+      {
         "type": "minecraft:slime",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 15
+        "weight": 45
       }
     ],
     "underground_water_creature": [

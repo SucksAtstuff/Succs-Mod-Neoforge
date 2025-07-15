@@ -64,6 +64,10 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.PUKEKO, 0xE6B8A2, 0xC4D6B0,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> TOXIC_SLIME_SPAWN_EGG = ITEMS.register("toxic_slime_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.TOXIC_SLIME, 0xA8D8B9, 0x4C7A6D,
+                    new Item.Properties()));
+
 
     /* ----------  CROPS / FOOD / MUSIC DISCS  ---------- */
 

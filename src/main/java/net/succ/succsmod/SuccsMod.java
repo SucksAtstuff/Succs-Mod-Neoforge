@@ -1,5 +1,8 @@
 package net.succ.succsmod;
 
+import net.minecraft.client.renderer.entity.SlimeRenderer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -122,6 +125,14 @@ public class SuccsMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.PUKEKO.get(), PukekoRenderer::new);
+            EntityRenderers.register(ModEntities.TOXIC_SLIME.get(), ctx ->
+                    new SlimeRenderer(ctx) {
+                        @Override
+                        public ResourceLocation getTextureLocation(Slime entity) {
+                            return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/toxic_slime/toxic_slime.png");
+                        }
+                    }
+            );
         }
 
         @SubscribeEvent

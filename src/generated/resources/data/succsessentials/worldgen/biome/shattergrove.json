@@ -99,7 +99,14 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "succsessentials:pukeko",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 100
+      }
+    ],
     "misc": [],
     "monster": [
       {

@@ -196,8 +196,12 @@
     "item.succsessentials.bass_music_disc": "Cloud8ine - Bass Music Disc",
     "item.succsessentials.bass_music.desc": "Epic boss music",
 
-   "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg"
-  
+   "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg",
+    "entity.succsessentials.pukeko": "Pukeko",
+
+    "item.succsessentials.toxic_slime_egg": "Toxic Slime Spawn Egg",
+    "entity.succsessentials.toxic_slime": "Toxic Slime",
+
    "block.succsessentials.shatterbloom_log": "Shatterbloom Log",
     "block.succsessentials.shatterbloom_wood": "Shatterbloom Wood",
     "block.succsessentials.shatterbloom_leaves": "Shatterbloom Leaves",
