@@ -86,7 +86,6 @@ public class ToxicSlimeEntity extends Slime {
 
         if (!level().isClientSide && this.tickCount % 20 == 0) {
             createPoisonAura();
-            leaveToxicTrail();
         }
     }
 
@@ -98,12 +97,6 @@ public class ToxicSlimeEntity extends Slime {
         }
     }
 
-    private void leaveToxicTrail() {
-        BlockPos pos = this.blockPosition();
-        if (level().getBlockState(pos).isAir()) {
-            level().setBlockAndUpdate(pos, Blocks.SLIME_BLOCK.defaultBlockState()); // Or use ModBlocks.TOXIC_GOO
-        }
-    }
 
     @Override
     public void die(DamageSource source) {

@@ -17,6 +17,7 @@ import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.entity.client.ModModelLayers;
 import net.succ.succsmod.entity.client.PukekoModel;
 import net.succ.succsmod.entity.custom.PukekoEntity;
+import net.succ.succsmod.entity.custom.ToxicSlimeEntity;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModBusEvents {
@@ -35,6 +36,7 @@ public class ModBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(ModEntities.PUKEKO.get(), PukekoEntity.createAttributes().build());
+        event.put(ModEntities.TOXIC_SLIME.get(), ToxicSlimeEntity.createAttributes().build());
     }
 
     @SubscribeEvent
