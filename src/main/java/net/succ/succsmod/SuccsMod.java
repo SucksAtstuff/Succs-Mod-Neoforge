@@ -2,10 +2,13 @@ package net.succ.succsmod;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.effect.ModEffects;
+import net.succ.succsmod.entity.ModEntities;
+import net.succ.succsmod.entity.client.PukekoRenderer;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.loot.ModLootModifiers;
@@ -62,6 +65,8 @@ public class SuccsMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         ModEffects.register(modEventBus);
 
         ModPotions.register(modEventBus);
@@ -116,7 +121,7 @@ public class SuccsMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            
+            EntityRenderers.register(ModEntities.PUKEKO.get(), PukekoRenderer::new);
         }
 
         @SubscribeEvent

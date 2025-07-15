@@ -1,4 +1,3 @@
-// 1.21.1	2025-07-14T02:46:14.0004899	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -174,7 +173,6 @@ f27c5ed89c11aa577bf27bbeec34a26f272a1dd5 assets/succsessentials/models/item/myce
 bd469188328ddb05fd0ae908e64bf0377333c392 assets/succsessentials/models/item/mycelial_sporewood_sapling.json
 1dabe8f04afa499d1e5b7aeb8e7e2f8198933231 assets/succsessentials/models/item/mycelial_sporewood_vine.json
 c55eb32e7baded77868f814a4c41c295f34d2d20 assets/succsessentials/models/item/necklace_of_jaspilite.json
-b0ceeb2ea65c7a85de7239e4937145b3f14bbd55 assets/succsessentials/models/item/poison_lily.json
 e7fb2db413751604fb1fd11556bd01f0de1fbaf0 assets/succsessentials/models/item/ring_of_atherium.json
 a24507e01e34e81675c03ee45a0be68559e58463 assets/succsessentials/models/item/ring_of_ruby.json
 76ca36108dc990311e13007dd368ac01a8b404eb assets/succsessentials/models/item/ring_of_sapphire.json

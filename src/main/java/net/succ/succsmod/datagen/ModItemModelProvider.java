@@ -168,7 +168,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RING_OF_SAPPHIRE.get());
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
-
+      
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
         basicItem(ModBlocks.SHATTERBLOOM_DOOR.asItem());
 
@@ -183,6 +183,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
         basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
         blockItemFromBlockTexture(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
+        withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
     }
 
     // Shoutout to El_Redstoniano for making this

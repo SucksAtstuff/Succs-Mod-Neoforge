@@ -57,11 +57,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RING_OF_ATHERIUM.get());
                         output.accept(ModItems.BRACELET_OF_MALACHITE.get());
                         output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
-
+                      
                         output.accept(ModBlocks.POISON_LILY.get());
+                        output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
                     })
                     .build());
-
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.ATHERIUM_ORE.get()))
