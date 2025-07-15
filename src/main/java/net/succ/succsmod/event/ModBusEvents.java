@@ -2,6 +2,8 @@ package net.succ.succsmod.event;
 
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -40,8 +42,17 @@ public class ModBusEvents {
     }
 
     @SubscribeEvent
-    public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event){
-        event.register(ModEntities.PUKEKO.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+    public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(ModEntities.PUKEKO.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.TOXIC_SLIME.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING,
+                ToxicSlimeEntity::checkToxicSlimeSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
+
 }
