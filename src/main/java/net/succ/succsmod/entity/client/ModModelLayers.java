@@ -7,4 +7,7 @@ import net.succ.succsmod.SuccsMod;
 public class ModModelLayers {
     public static final ModelLayerLocation PUKEKO = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "pukeko"), "main");
+
+    public static final ModelLayerLocation TOXIC_SLIME = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "toxic_slime"), "main");
 }
