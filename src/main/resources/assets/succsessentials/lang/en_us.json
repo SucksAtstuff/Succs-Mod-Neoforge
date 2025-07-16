@@ -196,7 +196,7 @@
     "item.succsessentials.bass_music_disc": "Cloud8ine - Bass Music Disc",
     "item.succsessentials.bass_music.desc": "Epic boss music",
 
-   "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg"
+   "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg",
   
    "block.succsessentials.shatterbloom_log": "Shatterbloom Log",
     "block.succsessentials.shatterbloom_wood": "Shatterbloom Wood",
@@ -232,5 +232,7 @@
     "block.succsessentials.mycelial_sporewood_vine": "Mycelial Sporewood Vine",
 
     "block.succsessentials.poison_lily": "Poison Lily",
-    "item.succsessentials.potted_poison_lily": "Potted Poison Lily"
+    "item.succsessentials.potted_poison_lily": "Potted Poison Lily",
+    "block.succsessentials.potted_shatterbloom_sapling": "Potted Shatterbloom Sapling",
+    "block.succsessentials.potted_mycelial_sporewood_sapling": "Potted Mycelial Sporewood Sapling"
 }

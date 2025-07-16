@@ -204,7 +204,6 @@ public class ModConfiguredFeatures {
         WeightedStateProvider venomousFenFlowerProvider = new WeightedStateProvider(
                 SimpleWeightedRandomList.<BlockState>builder()
                         .add(Blocks.OXEYE_DAISY.defaultBlockState(), 2)
-                        .add(Blocks.WITHER_ROSE.defaultBlockState(), 1)
                         .add(Blocks.LILY_OF_THE_VALLEY.defaultBlockState(), 1)
                         .add(ModBlocks.POISON_LILY.get().defaultBlockState(), 2)
                         .build()
