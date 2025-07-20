@@ -60,6 +60,9 @@ public class ModCreativeModeTabs {
                       
                         output.accept(ModBlocks.POISON_LILY.get());
                         output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
+
+
+                        output.accept(ModItems.HEDGEHOG_SPAWN_EGG.get());
                     })
                     .build());
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",

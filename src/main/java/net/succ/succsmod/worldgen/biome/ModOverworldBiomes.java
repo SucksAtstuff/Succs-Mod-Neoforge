@@ -1,5 +1,6 @@
 package net.succ.succsmod.worldgen.biome;
 
+import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
@@ -27,6 +28,7 @@ public class ModOverworldBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnBuilder, 30);
         // spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData()) // Add pukeko later
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.HEDGEHOG.get(), 10, 2, 4));
 
         // Biome features
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);

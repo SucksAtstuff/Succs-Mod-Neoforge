@@ -14,8 +14,10 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.block.entity.custom.GemPolishingTableBlockEntity;
 import net.succ.succsmod.entity.ModEntities;
+import net.succ.succsmod.entity.client.HedgehogModel;
 import net.succ.succsmod.entity.client.ModModelLayers;
 import net.succ.succsmod.entity.client.PukekoModel;
+import net.succ.succsmod.entity.custom.HedgehogEntity;
 import net.succ.succsmod.entity.custom.PukekoEntity;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -30,16 +32,25 @@ public class ModBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(ModModelLayers.PUKEKO, PukekoModel::createBodyLayer);
+
+        event.registerLayerDefinition(ModModelLayers.HEDGEHOG, HedgehogModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(ModEntities.PUKEKO.get(), PukekoEntity.createAttributes().build());
+
+
+        event.put(ModEntities.HEDGEHOG.get(), HedgehogEntity.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event){
         event.register(ModEntities.PUKEKO.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+
+        event.register(ModEntities.HEDGEHOG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 }

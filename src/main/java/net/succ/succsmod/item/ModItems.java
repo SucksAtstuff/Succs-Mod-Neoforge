@@ -65,6 +65,12 @@ public class ModItems {
                     new Item.Properties()));
 
 
+
+    public static final DeferredItem<Item> HEDGEHOG_SPAWN_EGG = ITEMS.register("hedgehog_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.HEDGEHOG, 0xA0522D, 0x8B4513,
+                    new Item.Properties()));
+
+
     /* ----------  CROPS / FOOD / MUSIC DISCS  ---------- */
 
     public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",

@@ -8,6 +8,7 @@ import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.ModEntities;
+import net.succ.succsmod.entity.client.HedgehogRenderer;
 import net.succ.succsmod.entity.client.PukekoRenderer;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
@@ -124,6 +125,9 @@ public class SuccsMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.PUKEKO.get(), PukekoRenderer::new);
+
+
+            EntityRenderers.register(ModEntities.HEDGEHOG.get(), HedgehogRenderer::new);
         }
 
         @SubscribeEvent
