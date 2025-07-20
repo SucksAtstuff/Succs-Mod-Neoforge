@@ -197,6 +197,11 @@
     "item.succsessentials.bass_music.desc": "Epic boss music",
 
    "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg",
+
+
+    "item.succsessentials.hedgehog_spawn_egg": "Hedgehog Spawn Egg",
+  
+
     "entity.succsessentials.pukeko": "Pukeko",
 
     "item.succsessentials.toxic_slime_spawn_egg": "Toxic Slime Spawn Egg",
@@ -236,5 +241,7 @@
     "block.succsessentials.mycelial_sporewood_vine": "Mycelial Sporewood Vine",
 
     "block.succsessentials.poison_lily": "Poison Lily",
-    "item.succsessentials.potted_poison_lily": "Potted Poison Lily"
+    "item.succsessentials.potted_poison_lily": "Potted Poison Lily",
+    "block.succsessentials.potted_shatterbloom_sapling": "Potted Shatterbloom Sapling",
+    "block.succsessentials.potted_mycelial_sporewood_sapling": "Potted Mycelial Sporewood Sapling"
 }

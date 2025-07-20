@@ -11,6 +11,7 @@ import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
 import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.ModEntities;
+import net.succ.succsmod.entity.client.HedgehogRenderer;
 import net.succ.succsmod.entity.client.PukekoRenderer;
 import net.succ.succsmod.item.ModCreativeModeTabs;
 import net.succ.succsmod.item.ModItems;
@@ -98,6 +99,8 @@ public class SuccsMod
         ModBiomes.registerBiomes();
         event.enqueueWork(()->{
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.POISON_LILY.getId(), ModBlocks.POTTED_POISON_LILY);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SHATTERBLOOM_SAPLING.getId(), ModBlocks.POTTED_SHATTERBLOOM_SAPLING);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.getId(), ModBlocks.POTTED_MYCELIAL_SPOREWOOD_SAPLING);
         });
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());
@@ -125,6 +128,11 @@ public class SuccsMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.PUKEKO.get(), PukekoRenderer::new);
+
+
+
+            EntityRenderers.register(ModEntities.HEDGEHOG.get(), HedgehogRenderer::new);
+
             EntityRenderers.register(ModEntities.TOXIC_SLIME.get(), ctx ->
                     new SlimeRenderer(ctx) {
                         @Override
@@ -133,6 +141,7 @@ public class SuccsMod
                         }
                     }
             );
+
         }
 
         @SubscribeEvent

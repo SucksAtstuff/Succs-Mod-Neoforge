@@ -186,6 +186,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.TOXIC_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
+
+
+        withExistingParent(ModItems.HEDGEHOG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     // Shoutout to El_Redstoniano for making this

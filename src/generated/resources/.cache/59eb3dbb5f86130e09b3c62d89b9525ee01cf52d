@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-14T01:26:57.8123701	Loot Tables
+// 1.21.1	2025-07-16T21:23:40.4823855	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 51110d4b246d8573ad324811ff382923f359a0a3 data/succsessentials/loot_table/blocks/deepslate_atherium_ore.json
@@ -40,7 +40,9 @@ a19d7b46f970613c19c5d0fb817c98d2f964b8be data/succsessentials/loot_table/blocks/
 0fa12bd00ea2737cf087a162c513259905161fa7 data/succsessentials/loot_table/blocks/nether_sapphire_ore.json
 3dbc7807436a0656d63bd7fc642f977f26ca1655 data/succsessentials/loot_table/blocks/nether_sunstone_ore.json
 00d2836efb102d83d21a3442949a2c1e4d78a532 data/succsessentials/loot_table/blocks/poison_lily.json
+cd8354ef1cd56539115eee620290eb075d661d50 data/succsessentials/loot_table/blocks/potted_mycelial_sporewood_sapling.json
 414a61598f9ded1ba570122e1638a50396d77719 data/succsessentials/loot_table/blocks/potted_poison_lily.json
+e155994bb86ebd44913b48f84f23bea9db6155d2 data/succsessentials/loot_table/blocks/potted_shatterbloom_sapling.json
 aad1787d741b472940925ec29a5c37f852bf1cae data/succsessentials/loot_table/blocks/ruby_block.json
 46067b03dd41a47fc113f75f93aa38b279878bf4 data/succsessentials/loot_table/blocks/ruby_ore.json
 687e7fafeb6586e1d40ff0257dbf0a0845214402 data/succsessentials/loot_table/blocks/sapphire_block.json

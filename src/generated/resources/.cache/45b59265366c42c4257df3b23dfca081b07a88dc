@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-16T00:15:34.8500599	Item Models: succsessentials
+
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -64,6 +64,7 @@ f49af2a686c9f636c555b2ad220bec265b12e33e assets/succsessentials/models/item/garl
 b0f43ed726e628f42a761bd658ff147b518ee1d1 assets/succsessentials/models/item/garlic_bread.json
 94970adce11690c8c614510a3d985e803020420d assets/succsessentials/models/item/gem_polishing_table.json
 5403bef9646874ab2cd6693310c27aca00b0b1e3 assets/succsessentials/models/item/gold_handle.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/succsessentials/models/item/hedgehog_spawn_egg.json
 1dc22eb5661d857366930cbff5eddd6fd7e1d401 assets/succsessentials/models/item/jaspilite.json
 68b9d8f367cf1d2a50b9d642fd33e0d96965d342 assets/succsessentials/models/item/jaspilite_axe.json
 455aa2b5d3b9f597c25f08d6fbc20be37ca55c57 assets/succsessentials/models/item/jaspilite_boots.json

@@ -56,8 +56,8 @@ public class PukekoModel extends HierarchicalModel<PukekoEntity> {
         headYaw = Mth.clamp(headYaw, -30f, 30f);
         headPitch = Mth.clamp(headPitch, -25f, 45);
 
-        this.head.xRot = headYaw * ((float) Math.PI / 180F);
-        this.head.yRot = headPitch * ((float) Math.PI / 180F);
+        this.head.yRot = headYaw * ((float) Math.PI / 180F);
+        this.head.xRot = headPitch * ((float) Math.PI / 180F);
     }
 
     @Override

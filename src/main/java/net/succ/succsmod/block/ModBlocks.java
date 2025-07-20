@@ -290,9 +290,6 @@ public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_TRAPDOOR = registerB
     public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_VINE = registerBlock("mycelial_sporewood_vine",
             () -> new ModVineBlock());
 
-
-
-
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(
                     MobEffects.POISON,
@@ -300,10 +297,13 @@ public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_TRAPDOOR = registerB
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY).noCollission().lightLevel(state -> 3)
             ));
 
-
-
     public static final DeferredBlock<Block> POTTED_POISON_LILY = registerBlock("potted_poison_lily",
             () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), POISON_LILY, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+    public static final DeferredBlock<Block> POTTED_SHATTERBLOOM_SAPLING = registerBlock("potted_shatterbloom_sapling",
+            () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), SHATTERBLOOM_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_MYCELIAL_SPOREWOOD_SAPLING = registerBlock("potted_mycelial_sporewood_sapling",
+            () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), MYCELIAL_SPOREWOOD_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_CRIMSON_ROOTS)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
