@@ -104,11 +104,13 @@
         "type": "succsessentials:hedgehog",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 10
+        "weight": 200
+      },
+      {
         "type": "succsessentials:pukeko",
         "maxCount": 5,
         "minCount": 3,
-        "weight": 100
+        "weight": 200
       }
     ],
     "misc": [],
