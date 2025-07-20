@@ -129,8 +129,6 @@ public class SuccsMod
         {
             EntityRenderers.register(ModEntities.PUKEKO.get(), PukekoRenderer::new);
 
-
-
             EntityRenderers.register(ModEntities.HEDGEHOG.get(), HedgehogRenderer::new);
 
             EntityRenderers.register(ModEntities.TOXIC_SLIME.get(), ctx ->

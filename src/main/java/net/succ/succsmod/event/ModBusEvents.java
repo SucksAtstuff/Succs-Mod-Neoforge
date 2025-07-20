@@ -35,18 +35,13 @@ public class ModBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(ModModelLayers.PUKEKO, PukekoModel::createBodyLayer);
-
         event.registerLayerDefinition(ModModelLayers.HEDGEHOG, HedgehogModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(ModEntities.PUKEKO.get(), PukekoEntity.createAttributes().build());
-
-
-
         event.put(ModEntities.HEDGEHOG.get(), HedgehogEntity.createAttributes().build());
-
         event.put(ModEntities.TOXIC_SLIME.get(), ToxicSlimeEntity.createAttributes().build());
 
     }
@@ -57,8 +52,6 @@ public class ModBusEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
-
-
 
         event.register(ModEntities.HEDGEHOG.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);

@@ -21,7 +21,6 @@ public class ModEntities {
             ENTITY_TYPES.register("pukeko", () -> EntityType.Builder.of(PukekoEntity::new, MobCategory.CREATURE)
                     .sized(0.75f, 0.95f).build("pukeko"));
 
-
     public static final Supplier<EntityType<HedgehogEntity>> HEDGEHOG =
             ENTITY_TYPES.register("hedgehog", () -> EntityType.Builder.of(HedgehogEntity::new, MobCategory.CREATURE)
                     .sized(0.35f, 0.35f).build("hedgehog"));
