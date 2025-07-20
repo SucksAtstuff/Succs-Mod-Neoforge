@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-20T15:00:22.9907045	Item Models: succsessentials
+
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -343,3 +343,4 @@ e97984f9d683512610b5f9174c4f9074addf4d60 assets/succsessentials/models/item/suns
 6fc5f9770ef7d7bb51047d6400c14e778375b879 assets/succsessentials/models/item/sunstone_pickaxe.json
 55ad5798ed2f8f71608061035f9ba14a560f67b1 assets/succsessentials/models/item/sunstone_shovel.json
 9c7dfe84c3c46b590d9a60c4a2e12937ada21e12 assets/succsessentials/models/item/sunstone_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/succsessentials/models/item/toxic_slime_spawn_egg.json

@@ -105,6 +105,10 @@
         "maxCount": 4,
         "minCount": 2,
         "weight": 10
+        "type": "succsessentials:pukeko",
+        "maxCount": 5,
+        "minCount": 3,
+        "weight": 100
       }
     ],
     "misc": [],

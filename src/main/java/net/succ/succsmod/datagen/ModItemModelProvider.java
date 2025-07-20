@@ -184,6 +184,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
         blockItemFromBlockTexture(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
         withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.TOXIC_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
 
 

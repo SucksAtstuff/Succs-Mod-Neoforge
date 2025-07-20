@@ -10,4 +10,8 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation HEDGEHOG = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "hedgehog"), "main");
+
+    public static final ModelLayerLocation TOXIC_SLIME = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "toxic_slime"), "main");
+
 }

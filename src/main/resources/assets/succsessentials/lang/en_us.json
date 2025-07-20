@@ -201,6 +201,12 @@
 
     "item.succsessentials.hedgehog_spawn_egg": "Hedgehog Spawn Egg",
   
+
+    "entity.succsessentials.pukeko": "Pukeko",
+
+    "item.succsessentials.toxic_slime_spawn_egg": "Toxic Slime Spawn Egg",
+    "entity.succsessentials.toxic_slime": "Toxic Slime",
+
    "block.succsessentials.shatterbloom_log": "Shatterbloom Log",
     "block.succsessentials.shatterbloom_wood": "Shatterbloom Wood",
     "block.succsessentials.shatterbloom_leaves": "Shatterbloom Leaves",
