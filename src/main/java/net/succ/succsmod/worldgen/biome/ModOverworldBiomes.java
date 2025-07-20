@@ -29,8 +29,8 @@ public class ModOverworldBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder, 30);
 
         // spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData()) // Add pukeko later
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.HEDGEHOG.get(), 10, 2, 4));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.PUKEKO.get(), 100, 3, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.HEDGEHOG.get(), 200, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.PUKEKO.get(), 200, 3, 5));
 
         // Biome features
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);

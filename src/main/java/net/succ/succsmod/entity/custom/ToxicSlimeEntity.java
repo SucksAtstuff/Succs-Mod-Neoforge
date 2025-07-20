@@ -108,7 +108,6 @@ public class ToxicSlimeEntity extends Slime {
                                                     RandomSource random) {
         return level.getDifficulty() != Difficulty.PEACEFUL
                 && level.getMaxLocalRawBrightness(pos) <= 7
-                && pos.getY() < 60
                 && level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP);
     }
 
