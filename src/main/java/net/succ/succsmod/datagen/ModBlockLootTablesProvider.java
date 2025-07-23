@@ -55,6 +55,12 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get());
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get());
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
+        dropSelf(ModBlocks.CRYOHEART_LOG.get());
+        dropSelf(ModBlocks.CRYOHEART_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_CRYOHEART_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_CRYOHEART_WOOD.get());
+        dropSelf(ModBlocks.CRYOHEART_SAPLING.get());
+        dropSelf(ModBlocks.CRYOHEART_PLANKS.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
@@ -78,6 +84,17 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
         dropSelf(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
 
+        this.add(ModBlocks.CRYOHEART_DOOR.get(),
+                block -> createDoorTable(ModBlocks.CRYOHEART_DOOR.get()));
+        dropSelf(ModBlocks.CRYOHEART_TRAPDOOR.get());
+        dropSelf(ModBlocks.CRYOHEART_STAIRS.get());
+        this.add(ModBlocks.CRYOHEART_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CRYOHEART_SLAB.get()));
+        dropSelf(ModBlocks.CRYOHEART_BUTTON.get());
+        dropSelf(ModBlocks.CRYOHEART_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.CRYOHEART_FENCE.get());
+        dropSelf(ModBlocks.CRYOHEART_FENCE_GATE.get());
+
         add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
                 block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
 
@@ -86,6 +103,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.POTTED_POISON_LILY.get(), createPotFlowerItemTable(ModBlocks.POISON_LILY));
         add(ModBlocks.POTTED_SHATTERBLOOM_SAPLING.get(), createPotFlowerItemTable(ModBlocks.SHATTERBLOOM_SAPLING));
         add(ModBlocks.POTTED_MYCELIAL_SPOREWOOD_SAPLING.get(), createPotFlowerItemTable(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING));
+        add(ModBlocks.POTTED_CRYOHEART_SAPLING.get(), createPotFlowerItemTable(ModBlocks.CRYOHEART_SAPLING));
 
         // Define loot tables for leaves that drop saplings
         add(ModBlocks.SHATTERBLOOM_LEAVES.get(),
@@ -93,6 +111,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        add(ModBlocks.CRYOHEART_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.CRYOHEART_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())

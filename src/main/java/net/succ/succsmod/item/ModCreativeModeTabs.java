@@ -59,12 +59,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
                       
                         output.accept(ModBlocks.POISON_LILY.get());
+
                         output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
-
-
-
                         output.accept(ModItems.HEDGEHOG_SPAWN_EGG.get());
-
                         output.accept(ModItems.TOXIC_SLIME_SPAWN_EGG.get());
 
                     })
@@ -145,6 +142,22 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get());
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get());
                         output.accept(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
+
+                        output.accept(ModBlocks.CRYOHEART_LOG.get());
+                        output.accept(ModBlocks.CRYOHEART_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_CRYOHEART_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_CRYOHEART_WOOD.get());
+                        output.accept(ModBlocks.CRYOHEART_PLANKS.get());
+                        output.accept(ModBlocks.CRYOHEART_LEAVES.get());
+                        output.accept(ModBlocks.CRYOHEART_SAPLING.get());
+                        output.accept(ModBlocks.CRYOHEART_DOOR.get());
+                        output.accept(ModBlocks.CRYOHEART_TRAPDOOR.get());
+                        output.accept(ModBlocks.CRYOHEART_STAIRS.get());
+                        output.accept(ModBlocks.CRYOHEART_SLAB.get());
+                        output.accept(ModBlocks.CRYOHEART_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.CRYOHEART_BUTTON.get());
+                        output.accept(ModBlocks.CRYOHEART_FENCE.get());
+                        output.accept(ModBlocks.CRYOHEART_FENCE_GATE.get());
 
                     })
                     .build());

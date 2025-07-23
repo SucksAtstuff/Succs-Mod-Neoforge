@@ -1,6 +1,7 @@
 package net.succ.succsmod.worldgen;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -11,22 +12,18 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -53,6 +50,7 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHATTERBLOOM_KEY = registerKey("shatterbloom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOHEART_KEY = registerKey("cryoheart");
 
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
@@ -164,6 +162,55 @@ public class ModConfiguredFeatures {
                         new ModTreeDecorator(0.15f)))
                 .build());
 
+//        // Register Cryoheart tree configured feature
+//        register(context, CRYOHEART_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+//                BlockStateProvider.simple(ModBlocks.CRYOHEART_LOG.get()),
+//                new UpwardsBranchingTrunkPlacer(
+//                        4, // baseHeight
+//                        5, // heightRandA
+//                        3, // heightRandB
+//                        ConstantInt.of(4), // extraBranchSteps
+//                        0.5f, // placeBranchPerLogProbability
+//                        ConstantInt.of(3), // extraBranchLength
+//                        HolderSet.direct(Block::builtInRegistryHolder, Blocks.AIR, Blocks.GRASS_BLOCK)
+//                ),
+//                BlockStateProvider.simple(ModBlocks.CRYOHEART_LEAVES.get()), // <-- no .setValue(PERSISTENT, true)
+//                new FancyFoliagePlacer(
+//                        ConstantInt.of(2), // foliageRadius
+//                        ConstantInt.of(1), // foliageOffset
+//                        2 // foliageHeight
+//                ),
+//                new TwoLayersFeatureSize(
+//                        1, // limit
+//                        0, // lower size
+//                        2  // upper size
+//                )
+//        )
+//                .dirt(BlockStateProvider.simple(Blocks.DIRT))
+//                .build());
+
+                // Register Cryoheart tree configured feature
+        register(context, CRYOHEART_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.CRYOHEART_LOG.get()),
+                new FancyTrunkPlacer(
+                        4, // baseHeight
+                        5, // heightRandA
+                        3 // heightRandB
+                ),
+                BlockStateProvider.simple(ModBlocks.CRYOHEART_LEAVES.get()), // <-- no .setValue(PERSISTENT, true)
+                new FancyFoliagePlacer(
+                        ConstantInt.of(2), // foliageRadius
+                        ConstantInt.of(2), // foliageOffset
+                        2 // foliageHeight
+                ),
+                new TwoLayersFeatureSize(
+                        1, // limit
+                        0, // lower size
+                        2  // upper size
+                )
+        )
+                .dirt(BlockStateProvider.simple(Blocks.DIRT))
+                .build());
 
 
         context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(

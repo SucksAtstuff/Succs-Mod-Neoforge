@@ -25,6 +25,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
+import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.goals.ToxicSlimeAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,25 +60,7 @@ public class ToxicSlimeEntity extends Slime {
             if (target instanceof LivingEntity living) {
                 // Apply poison effect
                 living.addEffect(new MobEffectInstance(MobEffects.POISON, 60, 1));
-
-                // Damage armor (corrosion simulation)
-                for (EquipmentSlot slot : EquipmentSlot.values()) {
-                    if (slot.getType() == EquipmentSlot.Type.HUMANOID_ARMOR) {
-                        ItemStack stack = living.getItemBySlot(slot);
-                        if (!stack.isEmpty()) {
-                            stack.hurtAndBreak(2, living, null);
-
-                            // Manually trigger break animation (client-side only)
-                            if (!living.level().isClientSide) {
-                                living.level().broadcastEntityEvent(living, (byte) (0x1F + slot.getIndex()));
-                            }
-                        }
-                    }
-                }
-
-
-
-
+                living.addEffect(new MobEffectInstance(ModEffects.CORROSION_EFFECT, 100, 0));
             }
             return true;
         }

@@ -18,6 +18,7 @@ public class ModTags {
         public static final TagKey<Item> IS_BUCKET = createTag("is_bucket");
         public static final TagKey<Item> SHATTERBLOOM_LOGS = createTag("shatterbloom_logs");
         public static final TagKey<Item> MYCELIAL_SPOREWOOD_LOGS = createTag("mycelial_sporewood_logs");
+        public static final TagKey<Item> CRYOHEART_LOGS = createTag("cryoheart_logs");
 
         private static TagKey<Item> createTag (String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));

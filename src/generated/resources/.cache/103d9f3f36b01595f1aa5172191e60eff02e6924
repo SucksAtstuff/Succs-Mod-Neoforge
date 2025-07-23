@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-21T01:19:09.8703699	Registries
+// 1.21.1	2025-07-23T03:10:58.9402921	Registries
 c2b7e432d1541d4e1f7a3f768eef15fdd2b31aac data/succsessentials/neoforge/biome_modifier/add_end_atherium_ore.json
 5a29fbcc59a961f45a296472c3fbe48227fb28ae data/succsessentials/neoforge/biome_modifier/add_jaspilite_ore.json
 9f6db5d3d8b6a97dd992097aa75462f997c70a25 data/succsessentials/neoforge/biome_modifier/add_malachite_ore.json
@@ -7,6 +7,7 @@ ee1c23c500ccfcc33b9cb58102dc35c45edaca34 data/succsessentials/neoforge/biome_mod
 7b42594d7827a8136a59ce14bb08dd9868a48fcc data/succsessentials/neoforge/biome_modifier/add_sunstone_ore.json
 f9d8f52417cda0382acd764cda917c2142ee38d3 data/succsessentials/worldgen/biome/shattergrove.json
 606e5d8ad6129c97dd9815cfb683dd6da9cc784a data/succsessentials/worldgen/biome/venomous_fen.json
+c9e27ee954ed9dab60cf6e28d933db55b956ec33 data/succsessentials/worldgen/configured_feature/cryoheart.json
 eec6bd6a0d1355a574c09ac1c459a65369e6406f data/succsessentials/worldgen/configured_feature/end_atherium_ore.json
 d985f3545483e47028b6dd1506522eb3bae74926 data/succsessentials/worldgen/configured_feature/jaspilite_ore.json
 910eeffdeac7f8ac6384ce22e4c84db68159c961 data/succsessentials/worldgen/configured_feature/malachite_ore.json

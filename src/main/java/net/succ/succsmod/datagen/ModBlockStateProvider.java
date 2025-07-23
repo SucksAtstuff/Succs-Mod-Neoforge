@@ -142,6 +142,39 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.POTTED_MYCELIAL_SPOREWOOD_SAPLING.get(), models().singleTexture("potted_mycelial_sporewood_sapling", ResourceLocation.parse("flower_pot_cross"), "plant",
                 blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get())).renderType("cutout"));
 
+        simpleBlock(ModBlocks.POTTED_CRYOHEART_SAPLING.get(), models().singleTexture("potted_cryoheart_sapling", ResourceLocation.parse("flower_pot_cross"), "plant",
+                blockTexture(ModBlocks.CRYOHEART_SAPLING.get())).renderType("cutout"));
+
+        // Registering cryoheart blocks with their respective item models
+        logBlock(((RotatedPillarBlock)ModBlocks.CRYOHEART_LOG.get()));
+        logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_CRYOHEART_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.CRYOHEART_WOOD.get()), blockTexture(ModBlocks.CRYOHEART_LOG.get()), blockTexture(ModBlocks.CRYOHEART_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_CRYOHEART_WOOD.get()), blockTexture(ModBlocks.STRIPPED_CRYOHEART_LOG.get()), blockTexture(ModBlocks.STRIPPED_CRYOHEART_LOG.get()));
+
+        // Registering cryoheart blocks with their respective item models
+        blockItem(ModBlocks.CRYOHEART_LOG);
+        blockItem(ModBlocks.CRYOHEART_WOOD);
+        blockItem(ModBlocks.STRIPPED_CRYOHEART_LOG);
+        blockItem(ModBlocks.STRIPPED_CRYOHEART_WOOD);
+
+        blockWithItem(ModBlocks.CRYOHEART_PLANKS);
+        leavesBlock(ModBlocks.CRYOHEART_LEAVES);
+        saplingBlock(ModBlocks.CRYOHEART_SAPLING);
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.CRYOHEART_DOOR.get()), modLoc("block/cryoheart_door_bottom"), modLoc("block/cryoheart_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.CRYOHEART_TRAPDOOR.get()), modLoc("block/cryoheart_trapdoor"), true, "cutout");
+        stairsBlock(((StairBlock) ModBlocks.CRYOHEART_STAIRS.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.CRYOHEART_SLAB.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        blockItem(ModBlocks.CRYOHEART_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.CRYOHEART_SLAB);
+        blockItem(ModBlocks.CRYOHEART_STAIRS);
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.CRYOHEART_PRESSURE_PLATE.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.CRYOHEART_BUTTON.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.CRYOHEART_FENCE.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.CRYOHEART_FENCE_GATE.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
+        blockItem(ModBlocks.CRYOHEART_PRESSURE_PLATE);
+        blockItem(ModBlocks.CRYOHEART_FENCE_GATE);
+
+
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
 

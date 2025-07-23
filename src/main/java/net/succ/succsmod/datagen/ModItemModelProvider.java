@@ -187,6 +187,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.TOXIC_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
 
+        saplingItem(ModBlocks.CRYOHEART_SAPLING);
+        basicItem(ModBlocks.CRYOHEART_DOOR.asItem());
+
+        buttonItem(ModBlocks.CRYOHEART_BUTTON, ModBlocks.CRYOHEART_PLANKS);
+        fenceItem(ModBlocks.CRYOHEART_FENCE, ModBlocks.CRYOHEART_PLANKS);
 
         withExistingParent(ModItems.HEDGEHOG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }

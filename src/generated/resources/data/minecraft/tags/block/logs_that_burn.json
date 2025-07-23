@@ -7,6 +7,10 @@
     "succsessentials:mycelial_sporewood_log",
     "succsessentials:mycelial_sporewood_wood",
     "succsessentials:stripped_mycelial_sporewood_log",
-    "succsessentials:stripped_mycelial_sporewood_wood"
+    "succsessentials:stripped_mycelial_sporewood_wood",
+    "succsessentials:cryoheart_log",
+    "succsessentials:cryoheart_wood",
+    "succsessentials:stripped_cryoheart_log",
+    "succsessentials:stripped_cryoheart_wood"
   ]
 }

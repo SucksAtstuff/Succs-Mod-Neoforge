@@ -101,6 +101,7 @@ public class SuccsMod
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.POISON_LILY.getId(), ModBlocks.POTTED_POISON_LILY);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.SHATTERBLOOM_SAPLING.getId(), ModBlocks.POTTED_SHATTERBLOOM_SAPLING);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.getId(), ModBlocks.POTTED_MYCELIAL_SPOREWOOD_SAPLING);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CRYOHEART_SAPLING.getId(), ModBlocks.POTTED_CRYOHEART_SAPLING);
         });
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());

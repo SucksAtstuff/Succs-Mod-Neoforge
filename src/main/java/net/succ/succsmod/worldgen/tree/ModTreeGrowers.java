@@ -12,4 +12,7 @@ public class ModTreeGrowers {
 
     public static final TreeGrower MYCELIAL_SPOREWOOD_KEY = new TreeGrower(SuccsMod.MOD_ID + ":mycelial_sporewood",
             Optional.empty(), Optional.of(ModConfiguredFeatures.MYCELIAL_SPOREWOOD_KEY), Optional.empty());
+
+    public static final TreeGrower CRYOHEART = new TreeGrower(SuccsMod.MOD_ID + ":cryoheart",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.CRYOHEART_KEY), Optional.empty());
 }

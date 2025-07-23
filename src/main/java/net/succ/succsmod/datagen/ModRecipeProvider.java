@@ -724,6 +724,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         woodFromLogs(recipeOutput, ModBlocks.SHATTERBLOOM_WOOD.get(), ModBlocks.SHATTERBLOOM_LOG.get());
         planksFromLog(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get(), ModTags.Items.MYCELIAL_SPOREWOOD_LOGS, 4);
         woodFromLogs(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get(), ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
+        planksFromLog(recipeOutput, ModBlocks.CRYOHEART_PLANKS.get(), ModTags.Items.CRYOHEART_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.CRYOHEART_WOOD.get(), ModBlocks.CRYOHEART_LOG.get());
+
 
         // Register recipes for turning planks to door and trapdoors
         doorBuilder(ModBlocks.SHATTERBLOOM_DOOR.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
@@ -734,6 +737,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
         trapdoorBuilder(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        doorBuilder(ModBlocks.CRYOHEART_DOOR.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.CRYOHEART_TRAPDOOR.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks slabs and stairs
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHATTERBLOOM_SLAB.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
@@ -742,6 +749,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get(), ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
         stairBuilder(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRYOHEART_SLAB.get(), ModBlocks.CRYOHEART_PLANKS.get());
+        stairBuilder(ModBlocks.CRYOHEART_STAIRS.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks to buttons and pressure plates
         pressurePlate(recipeOutput, ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
@@ -750,6 +760,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pressurePlate(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get(), ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get());
         buttonBuilder(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.CRYOHEART_PRESSURE_PLATE.get(), ModBlocks.CRYOHEART_PLANKS.get());
+        buttonBuilder(ModBlocks.CRYOHEART_BUTTON.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks to fences and fence gates
         fenceBuilder(ModBlocks.SHATTERBLOOM_FENCE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
@@ -760,6 +773,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
         fenceGateBuilder(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get(), Ingredient.of(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).group("mycelial_sporewood")
                 .unlockedBy("has_mycelial_sporewood_planks", has(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get())).save(recipeOutput);
+        fenceBuilder(ModBlocks.CRYOHEART_FENCE.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.CRYOHEART_FENCE_GATE.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
+                .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
 
     }
 

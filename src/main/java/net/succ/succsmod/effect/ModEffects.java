@@ -18,6 +18,9 @@ public class ModEffects {
     public static final Holder<MobEffect> ATTACK_SPEED_EFFECT = MOB_EFFECTS.register("attack_speed",
             () -> new AttackSpeedEffect(MobEffectCategory.BENEFICIAL, 0xFFD700));
 
+    public static final Holder<MobEffect> CORROSION_EFFECT = MOB_EFFECTS.register("corrosion",
+            () -> new CorrosionEffect(MobEffectCategory.HARMFUL, 0x00FF00));
+
     public static void register (IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

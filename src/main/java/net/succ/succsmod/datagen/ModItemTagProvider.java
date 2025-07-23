@@ -151,6 +151,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get().asItem());
+
+        tag(ModTags.Items.CRYOHEART_LOGS)
+                .add(ModBlocks.CRYOHEART_LOG.get().asItem())
+                .add(ModBlocks.CRYOHEART_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_CRYOHEART_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_CRYOHEART_WOOD.get().asItem());
     }
 
 
