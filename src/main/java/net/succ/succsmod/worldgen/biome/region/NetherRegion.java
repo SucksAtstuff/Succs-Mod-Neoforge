@@ -11,8 +11,6 @@ import terrablender.api.RegionType;
 
 import java.util.function.Consumer;
 
-import static terrablender.api.ParameterUtils.*;
-
 public class NetherRegion extends Region {
     public NetherRegion(ResourceLocation name, int weight) {
         super(name, RegionType.NETHER, weight);

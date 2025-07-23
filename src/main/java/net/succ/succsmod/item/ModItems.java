@@ -2,8 +2,6 @@ package net.succ.succsmod.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
@@ -15,8 +13,6 @@ import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.item.custom.*;
 import net.succ.succsmod.sound.ModSounds;
-
-import javax.swing.*;
 
 public class ModItems {
 

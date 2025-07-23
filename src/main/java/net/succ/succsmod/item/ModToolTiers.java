@@ -1,15 +1,9 @@
 package net.succ.succsmod.item;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;
-import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.util.ModTags;
-
-
-import java.util.List;
 
 public class ModToolTiers {
     // Register a new custom tool tier for Jaspilite

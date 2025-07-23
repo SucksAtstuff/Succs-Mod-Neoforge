@@ -9,7 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
-import java.awt.*;
+
 import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {

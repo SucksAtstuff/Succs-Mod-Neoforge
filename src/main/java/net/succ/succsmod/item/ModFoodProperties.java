@@ -1,6 +1,5 @@
 package net.succ.succsmod.item;
 
-// Import statements for necessary classes from Minecraft
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;

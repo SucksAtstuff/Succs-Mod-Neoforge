@@ -1,16 +1,12 @@
 package net.succ.succsmod.worldgen.biome;
 
 import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.worldgen.biome.region.NetherRegion;
 import net.succ.succsmod.worldgen.biome.region.OverworldRegion;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
-import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.worldgen.biome.region.NetherRegion;
-import terrablender.api.EndBiomeRegistry;
 import terrablender.api.Regions;
 
 public class ModBiomes {

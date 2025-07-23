@@ -1,7 +1,5 @@
 package net.succ.succsmod.datagen;
 
-import com.simibubi.create.Create;
-import com.simibubi.create.infrastructure.data.CreateRegistrateTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;

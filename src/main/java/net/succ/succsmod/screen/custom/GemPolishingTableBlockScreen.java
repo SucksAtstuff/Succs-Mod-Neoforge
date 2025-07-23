@@ -2,7 +2,6 @@ package net.succ.succsmod.screen.custom;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.screen.custom.GemPolishingTableBlockMenu;
 import net.succ.succsmod.screen.renderer.FluidTankRenderer;
 import net.succ.succsmod.util.MouseUtil;
 import net.minecraft.client.gui.GuiGraphics;

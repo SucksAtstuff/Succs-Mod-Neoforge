@@ -1,7 +1,6 @@
 package net.succ.succsmod.compat;
 
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.neoforge.NeoForgeTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.helpers.IGuiHelper;
@@ -16,8 +15,6 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.recipe.GemPolishingRecipe;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class GemPolishingRecipeCategory implements IRecipeCategory<GemPolishingRecipe> {
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "gem_polishing");

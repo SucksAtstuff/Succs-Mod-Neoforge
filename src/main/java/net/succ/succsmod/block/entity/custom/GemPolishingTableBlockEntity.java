@@ -2,8 +2,6 @@ package net.succ.succsmod.block.entity.custom;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.WaterFluid;
-import net.neoforged.neoforge.items.wrapper.EmptyItemHandler;
 import net.succ.succsmod.block.custom.GemPolishingTableBlock;
 import net.succ.succsmod.recipe.GemPolishingRecipe;
 import net.succ.succsmod.recipe.GemPolishingRecipeInput;

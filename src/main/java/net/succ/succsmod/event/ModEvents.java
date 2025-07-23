@@ -27,7 +27,6 @@ import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.item.custom.HammerItem;
 import net.succ.succsmod.potion.ModPotions;
 import net.succ.succsmod.villager.ModVillagers;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
 
 import java.util.HashSet;
 import java.util.List;
