@@ -107,7 +107,7 @@ public class ModConfiguredFeatures {
 
         // Define target block states for Nether Ruby ores
         List<OreConfiguration.TargetBlockState> netherRubyOres = List.of(
-                OreConfiguration.target(netherrackReplaceables, ModBlocks.RUBY_ORE.get().defaultBlockState())
+                OreConfiguration.target(netherrackReplaceables, ModBlocks.NETHER_RUBY_ORE.get().defaultBlockState())
         );
 
         // Register Nether Ruby ore configured feature

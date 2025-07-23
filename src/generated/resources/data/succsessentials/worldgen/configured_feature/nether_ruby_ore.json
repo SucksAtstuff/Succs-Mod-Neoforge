@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "succsessentials:ruby_ore"
+          "Name": "succsessentials:nether_ruby_ore"
         },
         "target": {
           "block": "minecraft:netherrack",

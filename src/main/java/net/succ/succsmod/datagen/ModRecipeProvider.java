@@ -209,7 +209,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALACHITE_HAMMER.get())
                 .pattern("MMM")
-                .pattern("MGG")
+                .pattern("MGM")
                 .pattern(" G ")
                 .define('M', ModItems.MALACHITE.get())
                 .define('G', ModItems.GOLD_HANDLE.get())

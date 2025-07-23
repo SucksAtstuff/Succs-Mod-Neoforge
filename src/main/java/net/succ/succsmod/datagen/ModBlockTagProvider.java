@@ -52,7 +52,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ATHERIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
                 .add(ModBlocks.NETHER_ATHERIUM_ORE.get())
-                .add(ModBlocks.END_ATHERIUM_ORE.get());
+                .add(ModBlocks.END_ATHERIUM_ORE.get())
+
+                .add(ModBlocks.GEM_POLISHING_TABLE.get());
 
         // Paxel mineable inherits pickaxe
         tag(ModTags.Blocks.PAXEL_MINEABLE)

@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-23T02:20:47.4243778	Recipes
+// 1.21.1	2025-07-23T21:24:52.3870665	Recipes
 976040964e0bef133fb39f9530442e73f8651213 data/minecraft/advancement/recipes/food/garlic_bread.json
 4892c9732aab73aab90096d05a0a2ee5eb56eebf data/minecraft/recipe/garlic_bread.json
 181a530e0d5e18a3ee92d250382fb96f9d66e638 data/succsessentials/advancement/recipes/building_blocks/cryoheart_planks.json
@@ -154,7 +154,7 @@ a431b95a42cd4c10206f13ba24583a6a7fa7bc8f data/succsessentials/recipe/malachite_a
 fe093f23dd5c5b61c0e164b1343ffe7fdf38e6d0 data/succsessentials/recipe/malachite_block.json
 8c083cfb7d714c16c1d36db321e52ec368eddffc data/succsessentials/recipe/malachite_boots.json
 b8c685c05826bd441b0d2ec7b462923a7069bb82 data/succsessentials/recipe/malachite_chestplate.json
-8f5d1c87273ee137afaf52a939b4659ec54c08a4 data/succsessentials/recipe/malachite_hammer.json
+a120eb35276dfa10b45ddb6edb833672e94dee2e data/succsessentials/recipe/malachite_hammer.json
 fffbffa1c598367fcde8f7a6e0a6095cacba4faf data/succsessentials/recipe/malachite_helmet.json
 8ff1d5463fd784c6c5081826f2dc691ba93098e5 data/succsessentials/recipe/malachite_hoe.json
 d6f60e960f2ba99b70e7e611de0b0b88e60d9fa9 data/succsessentials/recipe/malachite_leggings.json
