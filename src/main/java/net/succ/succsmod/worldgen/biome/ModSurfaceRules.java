@@ -46,6 +46,16 @@ public class ModSurfaceRules {
         );
     }
 
+    public static SurfaceRules.RuleSource makeCrystalfrostValeRules() {
+        return SurfaceRules.sequence(
+                // Only apply to CRYSTALFROST_VALE biome
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRYSTALFROST_VALE),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT)))
+        );
+    }
+
 
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {

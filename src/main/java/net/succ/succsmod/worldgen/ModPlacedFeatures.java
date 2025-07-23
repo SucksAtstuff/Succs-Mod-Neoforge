@@ -31,6 +31,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MYCELIAL_SPOREWOOD_PLACED_KEY = registerKey("mycelial_sporewood_placed");
     public static final ResourceKey<PlacedFeature> PATCH_VENOMOUS_FEN_FLOWERS_PLACED = registerKey("patch_venomous_fen_flowers_placed");
 
+    public static final ResourceKey<PlacedFeature> CRYOHEART_PLACED_KEY = registerKey("cryoheart_placed");
+
     public static final ResourceKey<PlacedFeature> PATCH_GRASS_PLACED_KEY = registerKey("patch_grass_placed");
     public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_PLACED_KEY = registerKey("patch_tall_grass_placed");
 
@@ -108,6 +110,11 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.MYCELIAL_SPOREWOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1f, 3),
                         ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get()));
+
+        register(context, CRYOHEART_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.CRYOHEART_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(4, 0.1f, 2),
+                        ModBlocks.CRYOHEART_SAPLING.get()));
 
 
         register(context, PATCH_GRASS_PLACED_KEY,

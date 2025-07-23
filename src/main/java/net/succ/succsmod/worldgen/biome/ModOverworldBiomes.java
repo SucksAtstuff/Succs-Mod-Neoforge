@@ -103,6 +103,46 @@ public class ModOverworldBiomes {
                 .build();
     }
 
+    public static Biome crystalfrostVale(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        // Mob spawns
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder, 20);
+        // TODO: Replace with frozen mob variants when added
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.STRAY, 80, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SNOW_GOLEM, 5, 1, 1));
+
+        // Biome features
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+        // Custom features (you can register these in ModPlacedFeatures)
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CRYOHEART_PLACED_KEY);
+//        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CRYSTALFROST_FROSTFRUIT_PATCH);
+//        addFeature(biomeBuilder, GenerationStep.Decoration.UNDERGROUND_DECORATION, ModPlacedFeatures.SAPPHIRE_GEODE_UNDER_ICE);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(-0.5F)
+                .downfall(0.5F)
+                .specialEffects((new BiomeSpecialEffects.Builder()
+                        .waterColor(0x4FD6FF) // Pale icy cyan
+                        .waterFogColor(0xACCBE1)
+                        .fogColor(0xD6F3FF)    // Cold airy fog
+                        .skyColor(calculateSkyColor(-0.5F))
+                        .ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.0065F))
+                        .grassColorOverride(0xA0D8EF) // Frosted blue-green
+                        .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_WARPED_FOREST_MOOD, 6000, 8, 2.0D))
+                        .build()))
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+    }
+
+
 
 
 

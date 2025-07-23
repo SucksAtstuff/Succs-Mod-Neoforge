@@ -46,6 +46,17 @@ public class OverworldRegion extends Region {
             .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
             .build().forEach(point -> builder.add(point, ModBiomes.VENOMOUS_FEN));
 
+        // Add the CRYSTALFROST_VALE biome: cold, rare, high inland
+        new ParameterPointListBuilder()
+                .temperature(Temperature.FROZEN)
+                .humidity(Humidity.span(Humidity.DRY, Humidity.NEUTRAL))
+                .continentalness(Continentalness.INLAND)
+                .erosion(Erosion.EROSION_0) // High cliffs / low erosion = icy peaks
+                .depth(Depth.SURFACE)
+                .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING) // Optional: isolate it more
+                .build().forEach(point -> builder.add(point, ModBiomes.CRYSTALFROST_VALE));
+
+
         // Add our points to the mapper
         builder.build().forEach(mapper);
     }
