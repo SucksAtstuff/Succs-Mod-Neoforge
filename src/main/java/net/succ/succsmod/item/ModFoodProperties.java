@@ -25,7 +25,7 @@ public class ModFoodProperties {
             .nutrition(4)
             // Make the food consume quickly
             .fast()
-            // Set the saturation modifier to 0.1F (how much saturation is restored)
+            // Set the saturation modifier to 0.5F (how much saturation is restored)
             .saturationModifier(0.5F)
             // Add an effect that grants a speed boost for 200 ticks (10 seconds) at level 1, with a 100% chance
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1), 1.0f)
@@ -36,8 +36,8 @@ public class ModFoodProperties {
     public static final FoodProperties GARLIC = new FoodProperties.Builder()
             // Set the nutrition value (hunger restored) to 2
             .nutrition(2)
-            // Set the saturation modifier to 0.1F (how much saturation is restored)
-            .saturationModifier(0.2F)
+            // Set the saturation modifier to 0.5F (how much saturation is restored)
+            .saturationModifier(0.5F)
             // Build the FoodProperties instance
             .build();
 
@@ -45,8 +45,17 @@ public class ModFoodProperties {
     public static final FoodProperties GARLIC_BREAD = new FoodProperties.Builder()
             // Set the nutrition value (hunger restored) to 6
             .nutrition(6)
-            // Set the saturation modifier to 0.6F (how much saturation is restored)
-            .saturationModifier(0.6F)
+            // Set the saturation modifier to 3F (how much saturation is restored)
+            .saturationModifier(3F)
+            // Build the FoodProperties instance
+            .build();
+
+    // Define the FoodProperties for Frost Fruit
+    public static final FoodProperties FROST_FRUIT = new FoodProperties.Builder()
+            // Set the nutrition value (hunger restored) to 4
+            .nutrition(2)
+            // Set the saturation modifier to 0.3F (how much saturation is restored)
+            .saturationModifier(0.3F)
             // Build the FoodProperties instance
             .build();
 

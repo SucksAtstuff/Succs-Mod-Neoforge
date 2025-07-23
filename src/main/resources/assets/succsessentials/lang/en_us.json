@@ -152,6 +152,7 @@
     "item.succsessentials.rock": "Rock",
     "item.succsessentials.garlic": "Garlic",
     "item.succsessentials.garlic_bread": "Garlic Bread",
+    "item.succsessentials.frost_fruit": "Frost Fruit",
 
     "succsessentials.tooltip.liquid.amount.with.capacity": "%s / %s mB",
     "succsessentials.tooltip.liquid.amount": "%s mB",
@@ -189,6 +190,7 @@
     "item.minecraft.splash_potion.effect.attack_speed_potion": "Attack Speed Splash Potion",
     "item.minecraft.lingering_potion.effect.attack_speed_potion": "Attack Speed Lingering Potion",
     "effect.succsessentials.corrosion": "Corrosion",
+    "effect.succsessentials.frost_resistance": "Frost Resistance",
 
     "item.succsessentials.funky_music_disc": "IsuckAtEverything - Funky Music Disc",
     "item.succsessentials.funky_music.desc": "A funky song to liven up your day",

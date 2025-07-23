@@ -2,34 +2,32 @@ package net.succ.succsmod.event;
 
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.living.LivingBreatheEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.item.custom.HammerItem;
 import net.succ.succsmod.potion.ModPotions;
 import net.succ.succsmod.villager.ModVillagers;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
 
 import java.util.HashSet;
 import java.util.List;
@@ -63,6 +61,17 @@ public class ModEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onLivingBreathe(LivingBreatheEvent event) {
+        LivingEntity entity = event.getEntity();
+        if (entity.level().isClientSide) return;
+
+        if (entity.hasEffect(ModEffects.FROST_RESISTANCE_EFFECT)) {
+            entity.setTicksFrozen(0); // Fully suppress freezing from powdered snow
+        }
+    }
+
 
     @SubscribeEvent
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event){

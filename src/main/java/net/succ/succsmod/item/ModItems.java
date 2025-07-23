@@ -83,6 +83,9 @@ public class ModItems {
     public static final DeferredItem<Item> GARLIC_BREAD = ITEMS.register("garlic_bread",
             () -> new Item(new Item.Properties().food(ModFoodProperties.GARLIC_BREAD)));
 
+    public static final DeferredItem<Item> FROST_FRUIT = ITEMS.register("frost_fruit",
+            () -> new FrostFruitItem());
+
     public static final DeferredItem<Item> ROCK = ITEMS.register("rock",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ROCK)));
     public static final DeferredItem<Item> ROCK_CANDY = ITEMS.register("rock_candy",

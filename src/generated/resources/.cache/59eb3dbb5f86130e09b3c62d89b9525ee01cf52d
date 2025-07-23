@@ -1,11 +1,11 @@
-// 1.21.1	2025-07-23T02:14:18.4744626	Loot Tables
+// 1.21.1	2025-07-24T00:24:02.386731	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 812c713aae98a2b11839acd356fbb15a3cfa378e data/succsessentials/loot_table/blocks/cryoheart_button.json
 4cc93ebcd2a87d9b9476392b2956d41e2da1cf5e data/succsessentials/loot_table/blocks/cryoheart_door.json
 e54a3d8b96f3f2d5f8e1bd032a3dd87950f5507b data/succsessentials/loot_table/blocks/cryoheart_fence.json
 265dce72e770ffcbee44f188ffa3c3a1e0e1fc0b data/succsessentials/loot_table/blocks/cryoheart_fence_gate.json
-1e60828d67b9feafe54cdd79674fe3baa5bf5217 data/succsessentials/loot_table/blocks/cryoheart_leaves.json
+9666763553641a07867535b85afc001f9db11396 data/succsessentials/loot_table/blocks/cryoheart_leaves.json
 8ba58b076f462ce79b88b7b349a4bf34a3f54a5e data/succsessentials/loot_table/blocks/cryoheart_log.json
 88f3e7e23e2ec1ccbcbc6839890108c347ff231a data/succsessentials/loot_table/blocks/cryoheart_planks.json
 c8ed74bac1a7806d53e56752722ebd3cec75669d data/succsessentials/loot_table/blocks/cryoheart_pressure_plate.json

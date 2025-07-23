@@ -9,16 +9,23 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.custom.GarlicCropBlock;
@@ -27,9 +34,17 @@ import net.succ.succsmod.item.ModItems;
 import java.util.Set;
 
 public class ModBlockLootTablesProvider extends BlockLootSubProvider {
+
+    private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+    private static final float[] NORMAL_LEAVES_STICK_CHANCES = new float[]{0.02F, 0.022222223F, 0.025F, 0.033333335F};
+
+
     protected ModBlockLootTablesProvider(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
+        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
     }
+
 
     @Override
     protected void generate() {
@@ -113,8 +128,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createLeavesDrops(block, ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         add(ModBlocks.CRYOHEART_LEAVES.get(),
-                block -> createLeavesDrops(block, ModBlocks.CRYOHEART_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-
+                block -> createFrostLeavesDrop(block, ModBlocks.CRYOHEART_SAPLING.get(), ModItems.FROST_FRUIT.get(),
+                        0.05F, 0.0625F, 0.0833F, 0.1F));
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));
@@ -176,12 +191,70 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
     }
 
+    protected LootTable.Builder createFrostLeavesDrop(Block leavesBlock, Block saplingBlock, ItemLike fruitItem, float... saplingChances) {
+        HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        LootTable.Builder builder = LootTable.lootTable();
+
+        // Sanity check: make sure sapling chances array isn't empty
+        boolean hasValidSaplingChances = saplingChances != null && saplingChances.length > 0;
+
+        LootPool.Builder saplingPool = LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1.0F))
+                .when(this.hasShearsOrSilkTouch());
+
+        if (hasValidSaplingChances) {
+            saplingPool.add(LootItem.lootTableItem(saplingBlock)
+                    .when(BonusLevelTableCondition.bonusLevelFlatChance(
+                            enchantments.getOrThrow(Enchantments.FORTUNE), saplingChances)));
+        } else {
+            // Fallback: always drop sapling if something is wrong
+            saplingPool.add(LootItem.lootTableItem(saplingBlock));
+        }
+
+        builder.withPool(saplingPool);
+
+        // Stick + fruit pool
+        LootPool.Builder stickAndFruitPool = LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1.0F))
+                .when(this.doesNotHaveShearsOrSilkTouch())
+                .add(LootItem.lootTableItem(Items.STICK)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                        .when(BonusLevelTableCondition.bonusLevelFlatChance(
+                                enchantments.getOrThrow(Enchantments.FORTUNE),
+                                NORMAL_LEAVES_STICK_CHANCES)))
+                .add(LootItem.lootTableItem(fruitItem)
+                        .when(LootItemRandomChanceCondition.randomChance(0.05F))); // 5% chance
+
+        builder.withPool(stickAndFruitPool);
+
+        // Defensive dummy pool in case above somehow becomes invalid
+        builder.withPool(LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(0.0F))
+                .add(LootItem.lootTableItem(Items.AIR)));
+
+        return builder;
+    }
+
+
+
+
+
+
     protected LootTable.Builder createMultipleOreDrops (Block pBlock, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(pBlock,
                 this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops,maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registryLookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+
+    private LootItemCondition.Builder doesNotHaveShearsOrSilkTouch() {
+        return this.hasShearsOrSilkTouch().invert();
+    }
+
+    private LootItemCondition.Builder hasShearsOrSilkTouch() {
+        return HAS_SHEARS.or(this.hasSilkTouch());
     }
 
     @Override
