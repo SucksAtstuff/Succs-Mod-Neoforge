@@ -64,6 +64,7 @@ public class ModConfiguredFeatures {
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplacables = new BlockMatchTest(Blocks.END_STONE);
+        RuleTest packedIceReplaceables = new BlockMatchTest(Blocks.PACKED_ICE);
 
         // Define target block states for Atherium ores
         List<OreConfiguration.TargetBlockState> endAtheriumOres = List.of(
@@ -73,14 +74,15 @@ public class ModConfiguredFeatures {
         // Register End Atherium ore configured feature
         register(context, END_ATHERIUM_ORE_KEY, Feature.ORE, new OreConfiguration(endAtheriumOres, 5));
 
-        // Define target block states for Sapphire ores
-        List<OreConfiguration.TargetBlockState> overworldSapphireOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())
-        );
+        // --- Sapphire Ore (Crystalfrost Vale only) ---
+        // Only replace ice blocks with Sapphire Ore
+        List<OreConfiguration.TargetBlockState> sapphireInIce = List.of(
+                OreConfiguration.target(packedIceReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState())
+                );
+        // Register Sapphire ore configured feature (restricted to ice blocks)
+                register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE,
+                        new OreConfiguration(sapphireInIce, 10));
 
-        // Register Overworld Sapphire ore configured feature
-        register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 10));
 
         // Define target block states for Sunstone ores
         List<OreConfiguration.TargetBlockState> overworldSunstoneOres = List.of(

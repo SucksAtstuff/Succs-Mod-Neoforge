@@ -1,19 +1,22 @@
 package net.succ.succsmod.worldgen;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 
 import java.util.List;
 
@@ -61,15 +64,11 @@ public class ModPlacedFeatures {
                 ModOrePlacement.rareOrePlacement(3, HeightRangePlacement.triangle(
                         VerticalAnchor.absolute(20), VerticalAnchor.absolute(80))));
 
-        // --- Sapphire Ore ---
-        // Tied for 4th most rare; rarer than ancient debris.
-        // Spawns in the Overworld from Y 8 to 40.
-        // Most common around Y 24.
-        // 2 veins per chunk.
-        register(context, SAPPHIRE_ORE_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SAPPHIRE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(2, HeightRangePlacement.triangle(
-                        VerticalAnchor.absolute(8), VerticalAnchor.absolute(40))));
+        // Register Sapphire ore placed feature with its configuration and placement modifiers
+        // Sapphire Ore is most common around Y level 36 (range from 8 to 64)
+        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SAPPHIRE_ORE_KEY),
+                // pCount represents the number of ore veins to generate per chunk (5 veins per chunk for Sapphire ore)
+                ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(8), VerticalAnchor.absolute(64))));
 
         // --- Sunstone Ore ---
         // Tied with Sapphire in rarity.
@@ -142,7 +141,6 @@ public class ModPlacedFeatures {
         );
 
     }
-
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));

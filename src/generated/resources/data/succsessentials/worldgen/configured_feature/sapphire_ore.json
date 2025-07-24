@@ -9,17 +9,8 @@
           "Name": "succsessentials:sapphire_ore"
         },
         "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:stone_ore_replaceables"
-        }
-      },
-      {
-        "state": {
-          "Name": "succsessentials:deepslate_sapphire_ore"
-        },
-        "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:deepslate_ore_replaceables"
+          "block": "minecraft:packed_ice",
+          "predicate_type": "minecraft:block_match"
         }
       }
     ]
