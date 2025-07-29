@@ -3,7 +3,7 @@ Source code for versions below 1.21.1 can be found here https://github.com/Sucks
 
 # EVERYTHING IS CURRENTLY BEING PORTED FROM FORGE SO BASICALLY NONE OF THE FEATURES EXIST RIGHT NOW
 
-### Requires [Curios API](https://modrinth.com/mod/curios) to run
+### Requires [Curios API](https://modrinth.com/mod/curios) and [TerraBlender](https://modrinth.com/mod/terrablender) to run
 
 ### **Succ's Essentials**
 
@@ -20,7 +20,7 @@ Source code for versions below 1.21.1 can be found here https://github.com/Sucks
 #### **Armor and Tools**:
 
 Each material comes with a complete set of armor and tools, including:
- 
+
 * **Tools**: Each material includes swords, pickaxes, shovels, axes, hoes, hammers and paxels.
   * **Sunstone Sword**: Inflicts **True Fire** on mobs when hit, making it a deadly weapon in combat.
   * **Malachite Sword**: Inflicts **poison** on mobs when hit, adding a unique tactical advantage.
@@ -45,7 +45,7 @@ In addition to rings, the mod introduces **special bracelets** with unique abili
 * **Malachite Bracelet**: Grants **poison resistance**, protecting you from poison effects.
 
 #### **Special Necklaces**:
-* **Amethyst Necklace**: Grants **haste**, letting you mine even faster.
+* **Jaspilite Necklace**: Grants **haste**, letting you mine even faster.
 
 **Succ's Essentials** offers new progression paths with materials found in different dimensions, pushing you to explore **The End**, **Nether**, and **Overworld** to gather resources. Future updates will continue to expand the mod with more features and balance improvements!
 
