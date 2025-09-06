@@ -64,11 +64,6 @@ public class ModPlacedFeatures {
                 ModOrePlacement.rareOrePlacement(3, HeightRangePlacement.triangle(
                         VerticalAnchor.absolute(20), VerticalAnchor.absolute(80))));
 
-        // Register Sapphire ore placed feature with its configuration and placement modifiers
-        // Sapphire Ore is most common around Y level 36 (range from 8 to 64)
-        register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SAPPHIRE_ORE_KEY),
-                // pCount represents the number of ore veins to generate per chunk (5 veins per chunk for Sapphire ore)
-                ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(8), VerticalAnchor.absolute(64))));
 
         // --- Sunstone Ore ---
         // Tied with Sapphire in rarity.

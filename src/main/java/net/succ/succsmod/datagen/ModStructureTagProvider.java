@@ -35,7 +35,11 @@ public class ModStructureTagProvider extends TagsProvider<Structure> {
                 .addOptional(id("gem_rock_2"))
                 .addOptional(id("gem_rock_3"));
 
-        // You can always add more with .addOptional(id("..."))
+        // Crystalfrost vale rock formations
+        this.tag(ModTags.Structures.CRYSTALFROST_VALE_ROCK_FORMATIONS)
+                .addOptional(id("gem_rock_7"))
+                .addOptional(id("gem_rock_8"))
+                .addOptional(id("gem_rock_9"));
     }
 
     private static ResourceLocation id(String path) {

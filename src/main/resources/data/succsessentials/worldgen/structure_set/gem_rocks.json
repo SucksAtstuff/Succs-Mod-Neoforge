@@ -25,7 +25,20 @@
     {
       "structure": "succsessentials:gem_rock_6",
       "weight": 1
+    },
+    {
+      "structure": "succsessentials:gem_rock_7",
+      "weight": 1
+    },
+    {
+      "structure": "succsessentials:gem_rock_8",
+      "weight": 1
+    },
+    {
+      "structure": "succsessentials:gem_rock_9",
+      "weight": 1
     }
+
   ],
   "placement": {
     // The kind of placement to use. The other kind is ring based like strongholds use.

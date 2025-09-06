@@ -64,10 +64,10 @@ public class ModTags {
                 Registries.STRUCTURE,
                 ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "shattergrove_rock_formations")
         );
+
+        public static final TagKey<Structure> CRYSTALFROST_VALE_ROCK_FORMATIONS = TagKey.create(
+                Registries.STRUCTURE,
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "crystalfrost_vale_rock_formations")
+        );
     }
-
-
-
-
-
 }

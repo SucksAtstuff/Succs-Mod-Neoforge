@@ -74,16 +74,6 @@ public class ModConfiguredFeatures {
         // Register End Atherium ore configured feature
         register(context, END_ATHERIUM_ORE_KEY, Feature.ORE, new OreConfiguration(endAtheriumOres, 5));
 
-        // --- Sapphire Ore (Crystalfrost Vale only) ---
-        // Only replace ice blocks with Sapphire Ore
-        List<OreConfiguration.TargetBlockState> sapphireInIce = List.of(
-                OreConfiguration.target(packedIceReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState())
-                );
-        // Register Sapphire ore configured feature (restricted to ice blocks)
-                register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE,
-                        new OreConfiguration(sapphireInIce, 10));
-
-
         // Define target block states for Sunstone ores
         List<OreConfiguration.TargetBlockState> overworldSunstoneOres = List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.SUNSTONE_ORE.get().defaultBlockState()),
