@@ -51,6 +51,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROST_FRUIT.get());
                         output.accept(ModItems.FUNKY_MUSIC_DISC.get());
                         output.accept(ModItems.BASS_MUSIC_DISC.get());
+                        output.accept(ModItems.CLEAR_MUD_DISC.get());
 
                         output.accept(ModItems.RING_OF_SUNSTONE.get());
                         output.accept(ModItems.RING_OF_SAPPHIRE.get());

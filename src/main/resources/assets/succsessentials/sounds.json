@@ -7,10 +7,18 @@
       }
     ]
   },
-  "BASS": {
+  "bass_music": {
     "sounds": [
       {
         "name": "succsessentials:bass_music",
+        "stream": true
+      }
+    ]
+  },
+  "clear_mud": {
+    "sounds": [
+      {
+        "name": "succsessentials:clear_mud",
         "stream": true
       }
     ]

@@ -1,12 +1,14 @@
 package net.succ.succsmod.util;
 
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.succ.succsmod.SuccsMod;
 
 public class ModTags {
@@ -51,6 +53,19 @@ public class ModTags {
 
 
     }
+
+    public static class Structures {
+        public static final TagKey<Structure> VENOMOUS_FEN_ROCK_FORMATIONS = TagKey.create(
+                Registries.STRUCTURE,
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "venomous_fen_rock_formations")
+        );
+
+        public static final TagKey<Structure> SHATTERGROVE_ROCK_FORMATIONS = TagKey.create(
+                Registries.STRUCTURE,
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "shattergrove_rock_formations")
+        );
+    }
+
 
 
 

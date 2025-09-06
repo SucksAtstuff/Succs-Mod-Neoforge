@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-24T00:37:08.2173859	Item Models: succsessentials
+// 1.21.1	2025-08-08T21:41:47.635830259	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -53,6 +53,7 @@ f3ff8f4ecdc8da57aaf2686931a77127548f3626 assets/succsessentials/models/item/athe
 641719cb8fdd3aef78093961b49c54ff263928ae assets/succsessentials/models/item/atherium_sword.json
 01704fda59dcf1af470833ae9736d1c70d03262a assets/succsessentials/models/item/bass_music_disc.json
 8de35ff09305f6afcc375afa9ab06e2b7e507895 assets/succsessentials/models/item/bracelet_of_malachite.json
+ec7a64d5213441edf24fff4d016ff36b44a98986 assets/succsessentials/models/item/clear_mud_disc.json
 a7e6dbdc670d10bb12a078a6bf39cedb379c55de assets/succsessentials/models/item/cryoheart_button.json
 13ac75894d6d25359ee9e18d6ff3f3c506a6a1c6 assets/succsessentials/models/item/cryoheart_door.json
 6288ff3c2836280195038a1159fa372d83137324 assets/succsessentials/models/item/cryoheart_fence.json

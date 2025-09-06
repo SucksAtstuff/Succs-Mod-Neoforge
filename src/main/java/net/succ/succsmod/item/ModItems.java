@@ -90,8 +90,9 @@ public class ModItems {
     public static final DeferredItem<Item> FUNKY_MUSIC_DISC = ITEMS.registerItem("funky_music_disc",
             p -> new Item(p.jukeboxPlayable(ModSounds.FUNKY_MUSIC_KEY)));
     public static final DeferredItem<Item> BASS_MUSIC_DISC = ITEMS.registerItem("bass_music_disc",
-            p -> new Item(p.jukeboxPlayable(ModSounds.BASS_KEY)));
-
+            p -> new Item(p.jukeboxPlayable(ModSounds.BASS_MUSIC_KEY)));
+    public static final DeferredItem<Item> CLEAR_MUD_DISC = ITEMS.registerItem("clear_mud_disc",
+            p -> new Item(p.jukeboxPlayable(ModSounds.CLEAR_MUD_KEY)));
     /* =====================================================================
      *                           TOOL & WEAPON TIERS
      * ===================================================================== */

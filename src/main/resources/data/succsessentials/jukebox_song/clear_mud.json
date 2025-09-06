@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.succsessentials.clear_mud.desc"
+  },
+  "length_in_seconds": 52,
+  "sound_event": "succsessentials:clear_mud"
+}

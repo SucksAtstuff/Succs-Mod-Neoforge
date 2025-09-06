@@ -192,11 +192,13 @@
     "effect.succsessentials.corrosion": "Corrosion",
     "effect.succsessentials.frost_resistance": "Frost Resistance",
 
-    "item.succsessentials.funky_music_disc": "IsuckAtEverything - Funky Music Disc",
-    "item.succsessentials.funky_music.desc": "A funky song to liven up your day",
+    "item.succsessentials.funky_music_disc": "Music Disc",
+    "item.succsessentials.funky_music.desc": "IsuckAtEverything - Funky Music Disc",
+    "item.succsessentials.clear_mud_disc": "Music Disc",
+    "item.succsessentials.clear_mud.desc": "Cloud8ine - Clear mud",
 
-    "item.succsessentials.bass_music_disc": "Cloud8ine - Bass Music Disc",
-    "item.succsessentials.bass_music.desc": "Epic boss music",
+    "item.succsessentials.bass_music_disc": "Music Disc",
+    "item.succsessentials.bass_music.desc": "Cloud8ine - Bass Music Disc",
 
     "entity.succsessentials.pukeko": "Pukeko",
     "item.succsessentials.pukeko_spawn_egg": "pukeko Spawn Egg",
