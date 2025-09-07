@@ -1,6 +1,0 @@
-{
-  "weight": 10,
-  "max_level": 3,
-  "primary_items":   { "tag": "succsessentials:enchantable/hammer" },
-  "supported_items": { "tag": "succsessentials:enchantable/hammer" }
-}

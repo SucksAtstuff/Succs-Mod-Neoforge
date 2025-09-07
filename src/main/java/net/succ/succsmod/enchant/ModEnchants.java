@@ -8,7 +8,7 @@ import net.succ.succsmod.SuccsMod;
 
 public final class ModEnchants {
     public static final ResourceKey<Enchantment> WIDENING =
-            ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath("succsessentials", "widening"));
+            ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "widening"));
 
     private ModEnchants() {}
 }
