@@ -129,7 +129,7 @@ public class ModItems {
                                     1,        //  Tier-6  ➜  only positive hoe ΔDMG
                                     1F))));
     public static final DeferredItem<Item> ATHERIUM_HAMMER = ITEMS.register("atherium_hammer",
-            () -> new BiggerHammerItem(ModToolTiers.ATHERIUM,
+            () -> new HammerItem(ModToolTiers.ATHERIUM,
                     new Item.Properties()
                             .attributes(HammerItem.createAttributes(ModToolTiers.ATHERIUM,
                                     11,        //  Tier-6  ➜  highest hammer ΔDMG

@@ -2,15 +2,21 @@ package net.succ.succsmod.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.succ.succsmod.enchant.ModEnchants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +27,15 @@ public class HammerItem extends DiggerItem {
     }
 
 
-    public int getAoeRange(ItemStack mainHandItem, Player player) {
-        return 1;
+    public int getAoeRange(ItemStack stack, Player player) {
+        int base = 1; // normal hammer = 3x3.
+
+        HolderLookup.RegistryLookup<Enchantment> reg =
+                player.level().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+        Holder<Enchantment> widening = reg.getOrThrow(ModEnchants.WIDENING);
+
+        int lvl = EnchantmentHelper.getTagEnchantmentLevel(widening, stack); // 0..max_level
+        return base + lvl; // L1 -> +1 (5x5 if base=1), L2 -> +2, etc.
     }
 
     @Override

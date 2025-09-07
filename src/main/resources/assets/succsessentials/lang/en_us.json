@@ -259,5 +259,7 @@
     "block.succsessentials.poison_lily": "Poison Lily",
     "item.succsessentials.potted_poison_lily": "Potted Poison Lily",
     "block.succsessentials.potted_shatterbloom_sapling": "Potted Shatterbloom Sapling",
-    "block.succsessentials.potted_mycelial_sporewood_sapling": "Potted Mycelial Sporewood Sapling"
+    "block.succsessentials.potted_mycelial_sporewood_sapling": "Potted Mycelial Sporewood Sapling",
+
+    "enchantment.succsessentials.widening": "Widening"
 }

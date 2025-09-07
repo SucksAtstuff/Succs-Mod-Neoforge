@@ -86,7 +86,6 @@ public class SuccsMod
 
         ModTreeDecoratorTypes.register(modEventBus);
 
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
