@@ -74,22 +74,6 @@ public class ModConfiguredFeatures {
         // Register End Atherium ore configured feature
         register(context, END_ATHERIUM_ORE_KEY, Feature.ORE, new OreConfiguration(endAtheriumOres, 5));
 
-        // Define target block states for Sunstone ores
-        List<OreConfiguration.TargetBlockState> overworldSunstoneOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.SUNSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_SUNSTONE_ORE.get().defaultBlockState())
-        );
-        // Register Overworld Sunstone ore configured feature
-        register(context, OVERWORLD_SUNSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSunstoneOres, 10));
-
-        // Define target block states for Malachite ores
-        List<OreConfiguration.TargetBlockState> overworldMalachiteOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.MALACHITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MALACHITE_ORE.get().defaultBlockState())
-        );
-
-        // Register Overworld Malachite ore configured feature
-        register(context, OVERWORLD_MALACHITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldMalachiteOres, 10));
 
         // Define target block states for Nether Ruby ores
         List<OreConfiguration.TargetBlockState> netherRubyOres = List.of(

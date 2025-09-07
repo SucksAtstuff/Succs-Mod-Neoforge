@@ -65,26 +65,6 @@ public class ModPlacedFeatures {
                         VerticalAnchor.absolute(20), VerticalAnchor.absolute(80))));
 
 
-        // --- Sunstone Ore ---
-        // Tied with Sapphire in rarity.
-        // Spawns in the Overworld from Y 8 to 40.
-        // Most common around Y 24.
-        // 2 veins per chunk.
-        register(context, SUNSTONE_ORE_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SUNSTONE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(2, HeightRangePlacement.triangle(
-                        VerticalAnchor.absolute(8), VerticalAnchor.absolute(40))));
-
-        // --- Malachite Ore ---
-        // Second rarest overall.
-        // Spawns in the Overworld from Y 0 to 48.
-        // Most common around Y 24.
-        // 2 veins per chunk.
-        register(context, MALACHITE_ORE_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_MALACHITE_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(2, HeightRangePlacement.triangle(
-                        VerticalAnchor.absolute(0), VerticalAnchor.absolute(48))));
-
         // --- Jaspilite Ore ---
         // Most common rarer than diamonds but more common than ancient debris.
         // Spawns in the Overworld from Y -16 to 32.
