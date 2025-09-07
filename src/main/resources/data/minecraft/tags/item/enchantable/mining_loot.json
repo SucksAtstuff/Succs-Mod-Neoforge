@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "succsessentials:atherium_hammer",
+    "succsessentials:jaspilite_hammer",
+    "succsessentials:sapphire_hammer",
+    "succsessentials:sunstone_hammer",
+    "succsessentials:ruby_hammer",
+    "succsessentials:malachite_hammer"
+  ]
+}
