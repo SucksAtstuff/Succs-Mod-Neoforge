@@ -157,13 +157,11 @@
     "succsessentials.tooltip.liquid.amount.with.capacity": "%s / %s mB",
     "succsessentials.tooltip.liquid.amount": "%s mB",
 
-    "painting.succsessentials.theomonty.title": "Theomonty",
-    "painting.succsessentials.theomonty.author": "IsuckAtEverything",
     "painting.succsessentials.kurgerbing.title": "Kurger Bing",
     "painting.succsessentials.kurgerbing.author": "IsuckAtEverything",
-    "painting.succsessentials.theomonty_scream.title": "Theomonty Scream",
-    "painting.succsessentials.theomonty_scream.author": "IsuckAtEverything",
 
+    "painting.succsessentials.farquaad.title": "Farquaad",
+    "painting.succsessentials.farquaad.author": "IsuckAtEverything",
 
     "tooltip.succsessentials.fortune_pickaxe.tooltip.shift": "Has a chance to drop more items when mining ores",
     "tooltip.succsessentials.fortune_pickaxe.tooltip": "Press §eShift§r for more information",
