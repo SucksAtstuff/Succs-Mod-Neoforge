@@ -177,6 +177,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ATHERIUM_HOE.get());
                         output.accept(ModItems.ATHERIUM_HAMMER.get());
                         output.accept(ModItems.ATHERIUM_PAXEL.get());
+                        output.accept(ModItems.ATHERIUM_REINFORCED_HAMMER);
 
                         output.accept(ModItems.MALACHITE_SWORD.get());
                         output.accept(ModItems.MALACHITE_PICKAXE.get());

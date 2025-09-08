@@ -140,6 +140,13 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.ATHERIUM,
                                     4,         //  Tier-6  ➜  highest paxel ΔDMG
                                     -3F))));
+    public static final DeferredItem<Item> ATHERIUM_REINFORCED_HAMMER = ITEMS.register("atherium_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.ATHERIUM,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.ATHERIUM,
+                                    12,        // Tier-6 (reinforced)
+                                    -3.5F))
+                            .durability(ModToolTiers.ATHERIUM.getUses() + 300)));
 
     /* ----------  ✦  TIER-5  MALACHITE  ✦  ------------------------------ */
     public static final DeferredItem<MobEffectSwordItem> MALACHITE_SWORD = ITEMS.register("malachite_sword",

@@ -2,12 +2,14 @@ package net.succ.succsmod.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -39,6 +41,12 @@ public class HammerItem extends DiggerItem {
     /** Base depth (0 => 1 layer thick; 1 => 3 layers, etc.). */
     public int getBaseDepthRange(ItemStack stack, Player player) {
         return 0;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.literal("Mines a 3x3"));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
     /** Radius expansion from Widening. */

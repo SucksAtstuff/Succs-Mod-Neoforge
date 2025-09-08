@@ -1,17 +1,14 @@
 {
   "description": { "translate": "enchantment.succsessentials.widening" },
-
   "supported_items": "#succsessentials:enchantable/hammer",
   "primary_items":   "#succsessentials:enchantable/hammer",
 
-  "weight": 10,
+  "weight": 12,
   "max_level": 3,
-
-  "min_cost": { "base": 3,  "per_level_above_first": 8 },
-  "max_cost": { "base": 12, "per_level_above_first": 9 },
-
+  "min_cost": { "base": 5,  "per_level_above_first": 8 },
+  "max_cost": { "base": 20, "per_level_above_first": 10 },
   "anvil_cost": 2,
   "slots": ["mainhand"],
-
-  "effects": { }
+  "exclusive_set": ["succsessentials:depth"],
+  "effects": {}
 }
