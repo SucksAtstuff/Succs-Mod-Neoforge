@@ -1,5 +1,6 @@
 package net.succ.succsmod.item.custom;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -44,10 +45,44 @@ public class HammerItem extends DiggerItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.literal("Mines a 3x3"));
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    public void appendHoverText(ItemStack stack,
+                                TooltipContext ctx,
+                                java.util.List<Component> tooltip,
+                                TooltipFlag flag) {
+        // Registry lookup via TooltipContext (1.21.1 style)
+        HolderLookup.RegistryLookup<Enchantment> reg =
+                ctx.registries().lookupOrThrow(Registries.ENCHANTMENT);
+
+        Holder<Enchantment> widening = reg.getOrThrow(ModEnchants.WIDENING);
+        Holder<Enchantment> depth    = reg.getOrThrow(ModEnchants.DEPTH);
+
+        int widenLvl = EnchantmentHelper.getTagEnchantmentLevel(widening, stack);
+        int depthLvl = EnchantmentHelper.getTagEnchantmentLevel(depth, stack);
+
+        // Base ranges (Reinforced should return baseDepth = 0 so default is 3x3x3)
+        int baseWidth = getBaseWidthRange(stack, null);
+        int baseDepth = getBaseDepthRange(stack, null);
+
+        // Effective width (radius) = base + Widening
+        int widthRange = Math.max(0, baseWidth + widenLvl);
+        int side = 2 * widthRange + 1;
+
+        int third;
+        if (this.minesVolume(stack, null)) {
+            // Volume (reinforced): base is a cube with edge "side"
+            // Only the Depth ENCHANT adds extra along the hit axis
+            third = side + 2 * Math.max(0, depthLvl);
+        } else {
+            // Plane (normal): thickness is baseDepth + depthLvl
+            third = 2 * Math.max(0, baseDepth + depthLvl) + 1;
+        }
+
+        tooltip.add(Component.translatable("tooltip.succsessentials.area", side, side, third)
+                .withStyle(ChatFormatting.GRAY));
+        super.appendHoverText(stack, ctx, tooltip, flag);
     }
+
+
 
     /** Radius expansion from Widening. */
     public int getWidthRange(ItemStack stack, Player player) {

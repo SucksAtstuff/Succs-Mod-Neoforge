@@ -263,5 +263,7 @@
     "block.succsessentials.potted_mycelial_sporewood_sapling": "Potted Mycelial Sporewood Sapling",
 
     "enchantment.succsessentials.widening": "Widening",
-    "enchantment.succsessentials.depth": "Depth"
+    "enchantment.succsessentials.depth": "Depth",
+
+    "tooltip.succsessentials.area": "Area: %sx%sx%s"
 }
