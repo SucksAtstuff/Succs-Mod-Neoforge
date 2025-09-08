@@ -1,6 +1,5 @@
 package net.succ.succsmod.event;
 
-
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -51,12 +50,13 @@ public class ModEvents {
 
         // Read ranges from hammer (base + enchant levels)
         int widthRange = hammer.getWidthRange(mainHandItem, player);
-        int depthRange = hammer.getDepthRange(mainHandItem, player);
+        int totalDepthRange = hammer.getDepthRange(mainHandItem, player);
+        int baseDepthRange = hammer.getBaseDepthRange(mainHandItem, player);
 
         // Build target list based on plane vs volume mode
         List<BlockPos> targets = hammer.minesVolume(mainHandItem, player)
-                ? HammerItem.getVolumeTargets(serverPlayer, initialBlockPos, widthRange, depthRange)
-                : HammerItem.getPlaneTargets(serverPlayer, initialBlockPos, widthRange, depthRange);
+                ? HammerItem.getVolumeTargets(serverPlayer, initialBlockPos, widthRange, baseDepthRange, totalDepthRange)
+                : HammerItem.getPlaneTargets(serverPlayer, initialBlockPos, widthRange, totalDepthRange);
 
         for (BlockPos pos : targets) {
             // Skip the block already broken by this event
@@ -71,7 +71,6 @@ public class ModEvents {
         }
     }
 
-
     @SubscribeEvent
     public static void onLivingBreathe(LivingBreatheEvent event) {
         LivingEntity entity = event.getEntity();
@@ -81,7 +80,6 @@ public class ModEvents {
             entity.setTicksFrozen(0); // Fully suppress freezing from powdered snow
         }
     }
-
 
     @SubscribeEvent
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event){
@@ -107,6 +105,4 @@ public class ModEvents {
     public static void addWanderingTrades(WandererTradesEvent event){
 
     }
-
-
 }

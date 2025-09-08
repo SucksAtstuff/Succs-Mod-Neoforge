@@ -59,30 +59,31 @@ public class HammerItem extends DiggerItem {
         int widenLvl = EnchantmentHelper.getTagEnchantmentLevel(widening, stack);
         int depthLvl = EnchantmentHelper.getTagEnchantmentLevel(depth, stack);
 
-        // Base ranges (Reinforced should return baseDepth = 0 so default is 3x3x3)
+        // Base ranges (Reinforced returns baseDepth = 1 so default is 3x3x3)
         int baseWidth = getBaseWidthRange(stack, null);
         int baseDepth = getBaseDepthRange(stack, null);
 
-        // Effective width (radius) = base + Widening
+        // Effective radii
         int widthRange = Math.max(0, baseWidth + widenLvl);
-        int side = 2 * widthRange + 1;
+        int depthRange = Math.max(0, baseDepth + depthLvl);
 
+        // Visualized size (width × height × depth)
+        int side = 2 * widthRange + 1;
         int third;
+
         if (this.minesVolume(stack, null)) {
-            // Volume (reinforced): base is a cube with edge "side"
-            // Only the Depth ENCHANT adds extra along the hit axis
-            third = side + 2 * Math.max(0, depthLvl);
+            // Volume (reinforced): DEPTH is independent of widening
+            // thickness = 2 * (baseDepth + depthLvl) + 1
+            third = 2 * depthRange + 1;
         } else {
             // Plane (normal): thickness is baseDepth + depthLvl
-            third = 2 * Math.max(0, baseDepth + depthLvl) + 1;
+            third = 2 * depthRange + 1;
         }
 
         tooltip.add(Component.translatable("tooltip.succsessentials.area", side, side, third)
                 .withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, ctx, tooltip, flag);
     }
-
-
 
     /** Radius expansion from Widening. */
     public int getWidthRange(ItemStack stack, Player player) {
@@ -137,42 +138,60 @@ public class HammerItem extends DiggerItem {
         return out;
     }
 
-    /** Volume mode: base cube (widthRange) + extension along hit face (depthRange). */
-    public static List<BlockPos> getVolumeTargets(ServerPlayer player, BlockPos origin, int widthRange, int depthRange) {
+    /**
+     * Volume mode:
+     * Build a base prism using widthRange on the 2 perpendicular axes,
+     * and ONLY the *base depth* on the face axis, then extend along the face by (totalDepthRange - baseDepthRange).
+     *
+     * @param widthRange          radius for width/height (includes Widening)
+     * @param baseDepthRange      base depth half-thickness (without Depth enchant)
+     * @param totalDepthRange     baseDepthRange + Depth levels
+     */
+    public static List<BlockPos> getVolumeTargets(ServerPlayer player, BlockPos origin, int widthRange, int baseDepthRange, int totalDepthRange) {
         List<BlockPos> out = new ArrayList<>();
-        // base cube
-        for (int dx = -widthRange; dx <= widthRange; dx++)
-            for (int dy = -widthRange; dy <= widthRange; dy++)
-                for (int dz = -widthRange; dz <= widthRange; dz++)
-                    out.add(origin.offset(dx, dy, dz));
 
-        // add extra slices along the hit face
         BlockHitResult hit = player.level().clip(new ClipContext(
                 player.getEyePosition(1f),
                 player.getEyePosition(1f).add(player.getViewVector(1f).scale(6f)),
                 ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player));
-        if (hit.getType() == HitResult.Type.MISS || depthRange <= 0) return out;
+        if (hit.getType() == HitResult.Type.MISS) return out;
 
         Direction face = hit.getDirection();
-        if (face.getAxis() == Direction.Axis.X) {
-            for (int sign : new int[]{-1, 1})
-                for (int ex = widthRange + 1; ex <= widthRange + depthRange; ex++)
-                    for (int dy = -widthRange; dy <= widthRange; dy++)
-                        for (int dz = -widthRange; dz <= widthRange; dz++)
-                            out.add(origin.offset(sign * ex, dy, dz));
-        } else if (face.getAxis() == Direction.Axis.Y) {
-            for (int sign : new int[]{-1, 1})
-                for (int ey = widthRange + 1; ey <= widthRange + depthRange; ey++)
-                    for (int dx = -widthRange; dx <= widthRange; dx++)
-                        for (int dz = -widthRange; dz <= widthRange; dz++)
-                            out.add(origin.offset(dx, sign * ey, dz));
-        } else { // Z
-            for (int sign : new int[]{-1, 1})
-                for (int ez = widthRange + 1; ez <= widthRange + depthRange; ez++)
-                    for (int dx = -widthRange; dx <= widthRange; dx++)
-                        for (int dy = -widthRange; dy <= widthRange; dy++)
-                            out.add(origin.offset(dx, dy, sign * ez));
+        Direction.Axis axis = face.getAxis();
+
+        // 1) Base prism: depth uses *baseDepthRange*, not widthRange
+        for (int a = -widthRange; a <= widthRange; a++) {
+            for (int b = -widthRange; b <= widthRange; b++) {
+                for (int c = -baseDepthRange; c <= baseDepthRange; c++) {
+                    int dx = 0, dy = 0, dz = 0;
+                    switch (axis) {
+                        case X -> { dy = a; dz = b; dx = face.getAxisDirection().getStep() * c; }
+                        case Y -> { dx = a; dz = b; dy = face.getAxisDirection().getStep() * c; }
+                        case Z -> { dx = a; dy = b; dz = face.getAxisDirection().getStep() * c; }
+                    }
+                    out.add(origin.offset(dx, dy, dz));
+                }
+            }
         }
+
+        // 2) Extra slices for Depth enchant beyond the base thickness
+        int extraDepth = Math.max(0, totalDepthRange - baseDepthRange);
+        if (extraDepth <= 0) return out;
+
+        for (int extra = baseDepthRange + 1; extra <= baseDepthRange + extraDepth; extra++) {
+            for (int a = -widthRange; a <= widthRange; a++) {
+                for (int b = -widthRange; b <= widthRange; b++) {
+                    int dx = 0, dy = 0, dz = 0;
+                    switch (axis) {
+                        case X -> { dy = a; dz = b; dx = face.getAxisDirection().getStep() * extra; }
+                        case Y -> { dx = a; dz = b; dy = face.getAxisDirection().getStep() * extra; }
+                        case Z -> { dx = a; dy = b; dz = face.getAxisDirection().getStep() * extra; }
+                    }
+                    out.add(origin.offset(dx, dy, dz));
+                }
+            }
+        }
+
         return out;
     }
 }

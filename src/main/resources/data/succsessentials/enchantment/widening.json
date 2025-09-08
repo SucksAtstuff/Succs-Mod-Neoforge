@@ -1,5 +1,6 @@
 {
   "description": { "translate": "enchantment.succsessentials.widening" },
+
   "supported_items": "#succsessentials:enchantable/hammer",
   "primary_items":   "#succsessentials:enchantable/hammer",
 
@@ -12,5 +13,6 @@
   "anvil_cost": 2,
   "slots": ["mainhand"],
 
-  "effects": {}
+  "exclusive_set": ["succsessentials:depth"],
+  "effects": { }
 }
