@@ -41,26 +41,36 @@ public class ModEvents {
     @SubscribeEvent
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
+        if (!(player instanceof ServerPlayer serverPlayer)) return;
+
         ItemStack mainHandItem = player.getMainHandItem();
+        if (!(mainHandItem.getItem() instanceof HammerItem hammer)) return;
 
-        if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
-            BlockPos initialBlockPos = event.getPos();
-            if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
-                return;
-            }
+        BlockPos initialBlockPos = event.getPos();
+        if (HARVESTED_BLOCKS.contains(initialBlockPos)) return;
 
-            int range = hammer.getAoeRange(mainHandItem, player);
-            for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(range, initialBlockPos, serverPlayer)) {
-                if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
-                    continue;
-                }
+        // Read ranges from hammer (base + enchant levels)
+        int widthRange = hammer.getWidthRange(mainHandItem, player);
+        int depthRange = hammer.getDepthRange(mainHandItem, player);
 
-                HARVESTED_BLOCKS.add(pos);
-                serverPlayer.gameMode.destroyBlock(pos);
-                HARVESTED_BLOCKS.remove(pos);
-            }
+        // Build target list based on plane vs volume mode
+        List<BlockPos> targets = hammer.minesVolume(mainHandItem, player)
+                ? HammerItem.getVolumeTargets(serverPlayer, initialBlockPos, widthRange, depthRange)
+                : HammerItem.getPlaneTargets(serverPlayer, initialBlockPos, widthRange, depthRange);
+
+        for (BlockPos pos : targets) {
+            // Skip the block already broken by this event
+            if (pos.equals(initialBlockPos)) continue;
+
+            // Only break if the hammer is correct for drops
+            if (!hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) continue;
+
+            HARVESTED_BLOCKS.add(pos);
+            serverPlayer.gameMode.destroyBlock(pos);
+            HARVESTED_BLOCKS.remove(pos);
         }
     }
+
 
     @SubscribeEvent
     public static void onLivingBreathe(LivingBreatheEvent event) {

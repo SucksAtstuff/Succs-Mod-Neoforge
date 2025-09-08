@@ -1,13 +1,6 @@
 {
   "replace": false,
   "values": [
-    "succsessentials:jaspilite_hammer",
-    "succsessentials:sapphire_hammer",
-    "succsessentials:sunstone_hammer",
-    "succsessentials:ruby_hammer",
-    "succsessentials:malachite_hammer",
-    "succsessentials:atherium_hammer",
-
     "succsessentials:jaspilite_reinforced_hammer",
     "succsessentials:sapphire_reinforced_hammer",
     "succsessentials:sunstone_reinforced_hammer",
