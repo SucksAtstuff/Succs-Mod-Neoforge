@@ -53,6 +53,10 @@ public class ModEvents {
         int totalDepthRange = hammer.getDepthRange(mainHandItem, player);
         int baseDepthRange = hammer.getBaseDepthRange(mainHandItem, player);
 
+        SuccsMod.LOGGER.info("Depth debug -> base={}, total={}, expectedThickness={}",
+                baseDepthRange, totalDepthRange, (2*totalDepthRange + 1));
+
+
         // Build target list based on plane vs volume mode
         List<BlockPos> targets = hammer.minesVolume(mainHandItem, player)
                 ? HammerItem.getVolumeTargets(serverPlayer, initialBlockPos, widthRange, baseDepthRange, totalDepthRange)

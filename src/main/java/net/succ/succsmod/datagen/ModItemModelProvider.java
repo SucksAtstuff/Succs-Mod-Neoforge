@@ -79,6 +79,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ATHERIUM_HAMMER.get());
         handheldItem(ModItems.ATHERIUM_PAXEL.get());
         handheldItem(ModItems.ATHERIUM_REINFORCED_HAMMER.get());
+        handheldItem(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get());
 
         // Register models for malachite tools
         handheldItem(ModItems.MALACHITE_SWORD.get());

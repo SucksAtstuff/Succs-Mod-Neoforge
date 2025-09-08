@@ -1,5 +1,6 @@
 package net.succ.succsmod.item;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
@@ -7,12 +8,16 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.RegistryBuilder;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.item.custom.*;
 import net.succ.succsmod.sound.ModSounds;
+
+import java.util.Collections;
+import java.util.List;
 
 public class ModItems {
 
@@ -65,10 +70,24 @@ public class ModItems {
                     new Item.Properties()));
 
 
-
     public static final DeferredItem<Item> HEDGEHOG_SPAWN_EGG = ITEMS.register("hedgehog_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.HEDGEHOG, 0xA0522D, 0x8B4513,
                     new Item.Properties()));
+
+    public static final DeferredItem<Item> REINFORCEMENT_SMITHING_TEMPLATE =
+            ITEMS.register("reinforcement_smithing_template", () ->
+                    new SmithingTemplateItem(
+                            Component.translatable("item.succsessentials.smithing_template.reinforcement.applies_to"),
+                            Component.translatable("item.succsessentials.smithing_template.reinforcement.ingredients"),
+                            Component.translatable("item.succsessentials.smithing_template.reinforcement.title"),
+                            Component.translatable("item.succsessentials.smithing_template.reinforcement.base_slot_description"),
+                            Component.translatable("item.succsessentials.smithing_template.reinforcement.additions_slot_description"),
+                            Collections.emptyList(), // base slot overlays (optional)
+                            Collections.emptyList()  // addition slot overlays (optional)
+                    )
+            );
+
+
 
 
     /* ----------  CROPS / FOOD / MUSIC DISCS  ---------- */

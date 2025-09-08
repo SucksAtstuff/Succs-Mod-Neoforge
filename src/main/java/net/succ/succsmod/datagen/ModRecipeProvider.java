@@ -116,6 +116,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
                 .save(recipeOutput);
 
+        // Reinforced Atherium Hammer — smithing upgrade using your custom template
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()), // template
+                        Ingredient.of(ModItems.ATHERIUM_HAMMER.get()),                 // base
+                        Ingredient.of(ModBlocks.ATHERIUM_BLOCK.get()),                 // addition (block instead of ingot)
+                        RecipeCategory.TOOLS,
+                        ModItems.ATHERIUM_REINFORCED_HAMMER.get()                      // result
+                )
+                .unlocks("has_template", has(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()))
+                .unlocks("has_hammer", has(ModItems.ATHERIUM_HAMMER.get()))
+                .unlocks("has_block", has(ModBlocks.ATHERIUM_BLOCK.get()))
+                .save(recipeOutput, SuccsMod.MOD_ID + ":atherium_reinforced_hammer_smithing");
+
+        // Copy/duplicate the Reinforcement Template (similar to vanilla smithing-template copies)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get(), 2)
+                .pattern("DTD")
+                .pattern("DSD")
+                .pattern("DDD")
+                .define('D', Items.DIAMOND)
+                .define('T', ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()) // the template to copy
+                .define('S', ModItems.ATHERIUM.get())                        // your theme block/material
+                .unlockedBy("has_template", has(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
+                .save(recipeOutput, SuccsMod.MOD_ID + ":reinforcement_template_copy");
+
+
         // Atherium Armour Recipes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ATHERIUM_HELMET.get())
                 .pattern("AAA")

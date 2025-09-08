@@ -66,6 +66,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HEDGEHOG_SPAWN_EGG.get());
                         output.accept(ModItems.TOXIC_SLIME_SPAWN_EGG.get());
 
+                        output.accept(ModItems.REINFORCEMENT_SMITHING_TEMPLATE);
+
                     })
                     .build());
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",

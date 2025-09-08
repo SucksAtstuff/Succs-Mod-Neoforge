@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "succsessentials:atherium_block"
+  },
+  "base": {
+    "item": "succsessentials:atherium_hammer"
+  },
+  "result": {
+    "count": 1,
+    "id": "succsessentials:atherium_reinforced_hammer"
+  },
+  "template": {
+    "item": "succsessentials:reinforcement_smithing_template"
+  }
+}
