@@ -51,7 +51,13 @@
     "succsessentials:ring_of_sunstone_in_chests/abandoned_mineshaft",
     "succsessentials:ring_of_atherium_in_chests/abandoned_mineshaft",
     "succsessentials:bracelet_of_malachite_in_chests/abandoned_mineshaft",
-    "succsessentials:necklace_of_jaspilite_in_chests/abandoned_mineshaft"
+    "succsessentials:necklace_of_jaspilite_in_chests/abandoned_mineshaft",
+    "succsessentials:reinforcement_template_in_chests/bastion_treasure",
+    "succsessentials:reinforcement_template_in_chests/ancient_city",
+    "succsessentials:reinforcement_template_in_chests/end_city_treasure",
+    "succsessentials:reinforcement_template_in_chests/stronghold_library",
+    "succsessentials:reinforcement_template_in_chests/stronghold_corridor",
+    "succsessentials:reinforcement_template_in_chests/nether_bridge"
   ],
   "replace": false
 }

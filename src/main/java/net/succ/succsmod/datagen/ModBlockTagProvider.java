@@ -257,5 +257,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.CLIMBABLE)
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.SCORCHED_SAND.get());
+
     }
 }

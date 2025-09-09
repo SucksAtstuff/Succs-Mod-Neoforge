@@ -56,6 +56,26 @@ public class OverworldRegion extends Region {
                 .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING) // Optional: isolate it more
                 .build().forEach(point -> builder.add(point, ModBiomes.CRYSTALFROST_VALE));
 
+        // Add the SOLARBLIGHT_EXPANSE biome: very hot, arid, inland desert
+        new ParameterPointListBuilder()
+                .temperature(Temperature.HOT)
+                .humidity(Humidity.ARID)
+                .continentalness(Continentalness.span(Continentalness.MID_INLAND, Continentalness.FAR_INLAND)) // keep away from coasts
+                .erosion(Erosion.EROSION_3, Erosion.EROSION_5) // flatter lowlands
+                .depth(Depth.SURFACE) // surface only
+                .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .build().forEach(p -> builder.add(p, ModBiomes.SOLARBLIGHT_EXPANSE));
+
+        // (Optional) add a second wide slice to make it more common/continuous:
+        new ParameterPointListBuilder()
+                .temperature(Temperature.HOT)
+                .humidity(Humidity.ARID)
+                .continentalness(Continentalness.INLAND)
+                .erosion(Erosion.EROSION_4, Erosion.EROSION_5)
+                .depth(Depth.SURFACE)
+                .weirdness(Weirdness.MID_SLICE_VARIANT_ASCENDING, Weirdness.MID_SLICE_VARIANT_DESCENDING)
+                .build().forEach(p -> builder.add(p, ModBiomes.SOLARBLIGHT_EXPANSE));
+
 
         // Add our points to the mapper
         builder.build().forEach(mapper);

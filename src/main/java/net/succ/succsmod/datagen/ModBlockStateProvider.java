@@ -189,6 +189,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .part().modelFile(vineFaceModel("up")).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end();
         blockItem(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
 
+        simpleBlockWithItem(ModBlocks.SCORCHED_SAND.get(), cubeAll(ModBlocks.SCORCHED_SAND.get()));
+
+
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

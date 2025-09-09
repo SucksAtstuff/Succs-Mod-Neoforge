@@ -49,6 +49,15 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             ResourceLocation.withDefaultNamespace("chests/abandoned_mineshaft")
     };
 
+    ResourceLocation[] highTierChestLootTables = new ResourceLocation[] {
+            ResourceLocation.withDefaultNamespace("chests/bastion_treasure"),
+            ResourceLocation.withDefaultNamespace("chests/ancient_city"),
+            ResourceLocation.withDefaultNamespace("chests/end_city_treasure"),
+            ResourceLocation.withDefaultNamespace("chests/stronghold_library"),
+            ResourceLocation.withDefaultNamespace("chests/stronghold_corridor"),
+            ResourceLocation.withDefaultNamespace("chests/nether_bridge")
+    };
+
     // Loop over each end dungeon chest loot table and add a chance for atherium gems to spawn
     private void addAtheriumGemsToEndDungeonChests() {
         for (ResourceLocation lootTable : endDungeonChestLootTables) {
@@ -94,6 +103,16 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         }
     }
 
+    private void addReinforcementTemplateToHighTierChests() {
+        for (ResourceLocation lootTable : highTierChestLootTables) {
+            this.add("reinforcement_template_in_" + lootTable.getPath(),
+                    new AddItemModifier(new LootItemCondition[] {
+                            LootTableIdCondition.builder(lootTable).build(),
+                            LootItemRandomChanceCondition.randomChance(0.08f).build()
+                    }, ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()));
+        }
+    }
+
     private void addCurioItemstoDungeonChests() {
         // Loop over each dungeon chest loot table and add all rings and bracelet to each one
         for (ResourceLocation lootTable : dungeonChestLootTables) {
@@ -135,7 +154,6 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         }
     }
 
-
     @Override
     protected void start() {
         this.add("garlic_to_short_grass",
@@ -153,13 +171,14 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
                         LootItemRandomChanceCondition.randomChance(0.1f).build()}, ModItems.ROCK.get()));
 
 
-        // Add gem loot modifiers
+        // Add loot modifiers
         addAtheriumGemsToEndDungeonChests();
         addRubyGemsToNetherDungeonChests();
         addSapphireGemsToOverworldDungeonChests();
         addSunstoneGemsToOverworldDungeonChests();
         addMalachiteGemsToOverworldDungeonChests();
         addCurioItemstoDungeonChests();
+        addReinforcementTemplateToHighTierChests();
     }
 
 }

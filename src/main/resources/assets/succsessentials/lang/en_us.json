@@ -273,5 +273,7 @@
     "item.succsessentials.smithing_template.reinforcement.ingredients": "Ingredients: Atherium block",
     "item.succsessentials.smithing_template.reinforcement.title": "Reinforcement Upgrade",
     "item.succsessentials.smithing_template.reinforcement.base_slot_description": "Place Atherium Hammer here",
-    "item.succsessentials.smithing_template.reinforcement.additions_slot_description": "Place the reinforcing material here"
+    "item.succsessentials.smithing_template.reinforcement.additions_slot_description": "Place the reinforcing material here",
+
+    "block.succsessentials.scorched_sand": "Scorched Sand"
 }

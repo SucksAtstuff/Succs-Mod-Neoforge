@@ -1,0 +1,5 @@
+{
+  "type": "neoforge:remove_features",
+  "biomes": "succsessentials:solarblight_expanse",
+  "features": "#minecraft:springs"
+}

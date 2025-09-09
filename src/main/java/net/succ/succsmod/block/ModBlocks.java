@@ -1,5 +1,6 @@
 package net.succ.succsmod.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -142,8 +144,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> JASPILITE_BLOCK = registerBlock("jaspilite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
 
-
-
     public static final DeferredBlock<Block> GARLIC_CROP = BLOCKS.register("garlic_crop",
             () -> new GarlicCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).noCollission().noOcclusion()));
 
@@ -213,8 +213,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SHATTERBLOOM_SAPLING = registerBlock("shatterbloom_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SHATTERBLOOM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
-
-
     public static final DeferredBlock<Block> SHATTERBLOOM_PRESSURE_PLATE = registerBlock("shatterbloom_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
     public static final DeferredBlock<Block> SHATTERBLOOM_BUTTON = registerBlock("shatterbloom_button",
@@ -254,7 +252,6 @@ public class ModBlocks {
                         return 5;
                     }
                 });
-
 
     public static final DeferredBlock<Block> MYCELIAL_SPOREWOOD_STAIRS = registerBlock("mycelial_sporewood_stairs",
                 () -> new StairBlock(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().defaultBlockState(),
@@ -377,6 +374,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POTTED_CRYOHEART_SAPLING = registerBlock("potted_cryoheart_sapling",
             () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), CRYOHEART_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
 
+    public static final DeferredBlock<Block> SCORCHED_SAND = registerBlock("scorched_sand",
+            () -> new ScorchedSandBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLACK)
+                            .strength(0.5F)
+                            .sound(SoundType.SAND)
+            ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

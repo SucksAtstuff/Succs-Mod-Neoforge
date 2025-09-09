@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-24T00:24:02.386731	Loot Tables
+// 1.21.1	2025-09-09T22:19:49.281019253	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 812c713aae98a2b11839acd356fbb15a3cfa378e data/succsessentials/loot_table/blocks/cryoheart_button.json
@@ -61,6 +61,7 @@ aad1787d741b472940925ec29a5c37f852bf1cae data/succsessentials/loot_table/blocks/
 46067b03dd41a47fc113f75f93aa38b279878bf4 data/succsessentials/loot_table/blocks/ruby_ore.json
 687e7fafeb6586e1d40ff0257dbf0a0845214402 data/succsessentials/loot_table/blocks/sapphire_block.json
 c7f34f238286501f211b44b03f2ebdafee9da1d3 data/succsessentials/loot_table/blocks/sapphire_ore.json
+4a7259f96f312b4b15394c3065ee21627b63ad44 data/succsessentials/loot_table/blocks/scorched_sand.json
 46c4c3a73a7cc78718c98324be7ae12f610a20d9 data/succsessentials/loot_table/blocks/shatterbloom_button.json
 4b1cf578c25700fa47d4ce2030a4d1543cb06961 data/succsessentials/loot_table/blocks/shatterbloom_door.json
 7cb18cb70e0d6aa180f0941e8305d7fcea0cada5 data/succsessentials/loot_table/blocks/shatterbloom_fence.json

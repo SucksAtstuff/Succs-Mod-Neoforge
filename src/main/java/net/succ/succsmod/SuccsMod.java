@@ -24,6 +24,7 @@ import net.succ.succsmod.sound.ModSounds;
 import net.succ.succsmod.villager.ModVillagers;
 import net.succ.succsmod.worldgen.biome.ModBiomes;
 import net.succ.succsmod.worldgen.biome.ModSurfaceRules;
+import net.succ.succsmod.worldgen.feature.ModFeatures;
 import net.succ.succsmod.worldgen.tree.ModTreeDecoratorTypes;
 import org.slf4j.Logger;
 
@@ -76,6 +77,8 @@ public class SuccsMod
         ModPotions.register(modEventBus);
         ModVillagers.register(modEventBus);
 
+        ModFeatures.FEATURES.register(modEventBus);
+
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
@@ -106,6 +109,9 @@ public class SuccsMod
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeShatterGroveRules());
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeVenomousFenRules());
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeCrystalfrostValeRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeSolarblightExpanseRules());
+
+
     }
 
     // Add the example block item to the building blocks tab

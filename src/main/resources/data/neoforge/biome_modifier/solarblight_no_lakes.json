@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:remove_features",
+  "biomes": "succsessentials:solarblight_expanse",
+  "steps": ["lakes"],
+  "features": "#minecraft:lakes"
+}

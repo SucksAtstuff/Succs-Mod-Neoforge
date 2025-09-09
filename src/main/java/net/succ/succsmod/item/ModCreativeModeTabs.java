@@ -163,6 +163,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CRYOHEART_FENCE.get());
                         output.accept(ModBlocks.CRYOHEART_FENCE_GATE.get());
 
+                        output.accept(ModBlocks.SCORCHED_SAND.get());
+
                     })
                     .build());
 

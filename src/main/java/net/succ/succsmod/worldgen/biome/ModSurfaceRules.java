@@ -3,6 +3,7 @@ package net.succ.succsmod.worldgen.biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.succ.succsmod.block.ModBlocks;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
@@ -14,6 +15,8 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
     private static final SurfaceRules.RuleSource CLAY = makeStateRule(Blocks.CLAY);
+    private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
+    private static final SurfaceRules.RuleSource SCORCHED_SAND = SurfaceRules.state(ModBlocks.SCORCHED_SAND.get().defaultBlockState());
 
     private static final SurfaceRules.RuleSource OBSIDIAN = makeStateRule(Blocks.OBSIDIAN);
     private static final SurfaceRules.RuleSource END_STONE = makeStateRule(Blocks.END_STONE);
@@ -55,6 +58,17 @@ public class ModSurfaceRules {
         );
     }
 
+    public static SurfaceRules.RuleSource makeSolarblightExpanseRules() {
+        // Apply only inside the Solarblight Expanse biome
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SOLARBLIGHT_EXPANSE),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SCORCHED_SAND),  // top block
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, RED_SANDSTONE)    // subsurface
+                        )
+                )
+        );
+    }
 
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {

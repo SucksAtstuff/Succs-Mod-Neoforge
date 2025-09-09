@@ -24,6 +24,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
+import net.succ.succsmod.worldgen.feature.ModFeatures;
+import net.succ.succsmod.worldgen.feature.config.DunePatchConfig;
 import net.succ.succsmod.worldgen.tree.custom.ModTreeDecorator;
 
 import java.util.List;
@@ -54,9 +56,8 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_VENOMOUS_FEN_FLOWERS_KEY = registerKey("patch_venomous_fen_flowers");
 
-
-
-
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOLARBLIGHT_DUNE_PATCH =
+            ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_dune_patch"));
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
         // Define RuleTests for blocks that can be replaced by ores
@@ -132,34 +133,7 @@ public class ModConfiguredFeatures {
                         new ModTreeDecorator(0.15f)))
                 .build());
 
-//        // Register Cryoheart tree configured feature
-//        register(context, CRYOHEART_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-//                BlockStateProvider.simple(ModBlocks.CRYOHEART_LOG.get()),
-//                new UpwardsBranchingTrunkPlacer(
-//                        4, // baseHeight
-//                        5, // heightRandA
-//                        3, // heightRandB
-//                        ConstantInt.of(4), // extraBranchSteps
-//                        0.5f, // placeBranchPerLogProbability
-//                        ConstantInt.of(3), // extraBranchLength
-//                        HolderSet.direct(Block::builtInRegistryHolder, Blocks.AIR, Blocks.GRASS_BLOCK)
-//                ),
-//                BlockStateProvider.simple(ModBlocks.CRYOHEART_LEAVES.get()), // <-- no .setValue(PERSISTENT, true)
-//                new FancyFoliagePlacer(
-//                        ConstantInt.of(2), // foliageRadius
-//                        ConstantInt.of(1), // foliageOffset
-//                        2 // foliageHeight
-//                ),
-//                new TwoLayersFeatureSize(
-//                        1, // limit
-//                        0, // lower size
-//                        2  // upper size
-//                )
-//        )
-//                .dirt(BlockStateProvider.simple(Blocks.DIRT))
-//                .build());
-
-                // Register Cryoheart tree configured feature
+        // Register Cryoheart tree configured feature
         register(context, CRYOHEART_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.CRYOHEART_LOG.get()),
                 new FancyTrunkPlacer(
@@ -249,6 +223,18 @@ public class ModConfiguredFeatures {
                         )
                 )
         ));
+
+
+        var top  = ModBlocks.SCORCHED_SAND.get().defaultBlockState();
+        var core = Blocks.RED_SANDSTONE.defaultBlockState();
+
+        var cfg = new DunePatchConfig(
+                top, core,
+                6, 12,        // radius range (tweak to taste)
+                0.45f, 1.2f   // height scale & shape exponent (higher exponent = steeper center)
+        );
+
+        context.register(SOLARBLIGHT_DUNE_PATCH, new ConfiguredFeature<>(ModFeatures.DUNE_PATCH.get(), cfg));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){

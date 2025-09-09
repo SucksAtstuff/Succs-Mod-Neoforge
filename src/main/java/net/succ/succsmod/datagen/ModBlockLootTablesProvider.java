@@ -52,6 +52,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SUNSTONE_BLOCK.get());
         dropSelf(ModBlocks.JASPILITE_BLOCK.get());
         dropSelf(ModBlocks.GEM_POLISHING_TABLE.get());
+        dropSelf(ModBlocks.SCORCHED_SAND.get());
 
         // Define loot tables for tree blocks that drop themselves
         dropSelf(ModBlocks.SHATTERBLOOM_LOG.get());

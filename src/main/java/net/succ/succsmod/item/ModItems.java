@@ -87,9 +87,6 @@ public class ModItems {
                     )
             );
 
-
-
-
     /* ----------  CROPS / FOOD / MUSIC DISCS  ---------- */
 
     public static final DeferredItem<Item> GARLIC = ITEMS.register("garlic",
