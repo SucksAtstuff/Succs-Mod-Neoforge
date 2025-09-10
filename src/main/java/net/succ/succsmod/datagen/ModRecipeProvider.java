@@ -753,6 +753,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         woodFromLogs(recipeOutput, ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get(), ModBlocks.MYCELIAL_SPOREWOOD_LOG.get());
         planksFromLog(recipeOutput, ModBlocks.CRYOHEART_PLANKS.get(), ModTags.Items.CRYOHEART_LOGS, 4);
         woodFromLogs(recipeOutput, ModBlocks.CRYOHEART_WOOD.get(), ModBlocks.CRYOHEART_LOG.get());
+        planksFromLog(recipeOutput, ModBlocks.EMBERPINE_PLANKS.get(), ModTags.Items.EMBERPINE_LOGS, 4);
+        woodFromLogs(recipeOutput, ModBlocks.EMBERPINE_WOOD.get(), ModBlocks.EMBERPINE_LOG.get());
 
 
         // Register recipes for turning planks to door and trapdoors
@@ -768,6 +770,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
         trapdoorBuilder(ModBlocks.CRYOHEART_TRAPDOOR.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        doorBuilder(ModBlocks.EMBERPINE_DOOR.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.EMBERPINE_TRAPDOOR.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks slabs and stairs
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHATTERBLOOM_SLAB.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
@@ -779,6 +785,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRYOHEART_SLAB.get(), ModBlocks.CRYOHEART_PLANKS.get());
         stairBuilder(ModBlocks.CRYOHEART_STAIRS.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.EMBERPINE_SLAB.get(), ModBlocks.EMBERPINE_PLANKS.get());
+        stairBuilder(ModBlocks.EMBERPINE_STAIRS.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
+
 
         // Register recipes for turning planks to buttons and pressure plates
         pressurePlate(recipeOutput, ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
@@ -790,6 +800,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pressurePlate(recipeOutput, ModBlocks.CRYOHEART_PRESSURE_PLATE.get(), ModBlocks.CRYOHEART_PLANKS.get());
         buttonBuilder(ModBlocks.CRYOHEART_BUTTON.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.EMBERPINE_PRESSURE_PLATE.get(), ModBlocks.EMBERPINE_PLANKS.get());
+        buttonBuilder(ModBlocks.EMBERPINE_BUTTON.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
 
         // Register recipes for turning planks to fences and fence gates
         fenceBuilder(ModBlocks.SHATTERBLOOM_FENCE.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")
@@ -804,6 +817,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
         fenceGateBuilder(ModBlocks.CRYOHEART_FENCE_GATE.get(), Ingredient.of(ModBlocks.CRYOHEART_PLANKS.get())).group("cryoheart")
                 .unlockedBy("has_cryoheart_planks", has(ModBlocks.CRYOHEART_PLANKS.get())).save(recipeOutput);
+        fenceBuilder(ModBlocks.EMBERPINE_FENCE.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.EMBERPINE_FENCE_GATE.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
+                .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
 
     }
 

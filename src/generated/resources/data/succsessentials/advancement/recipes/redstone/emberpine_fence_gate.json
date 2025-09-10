@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_emberpine_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:emberpine_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "succsessentials:emberpine_fence_gate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_emberpine_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "succsessentials:emberpine_fence_gate"
+    ]
+  }
+}
