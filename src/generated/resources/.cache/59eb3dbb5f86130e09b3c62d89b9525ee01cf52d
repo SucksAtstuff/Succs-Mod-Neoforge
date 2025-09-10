@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-09T22:19:49.281019253	Loot Tables
+// 1.21.1	2025-09-10T22:23:49.256542167	Loot Tables
 7c6687de0cf2d3186244725cee1cd0d3fc9c1a29 data/succsessentials/loot_table/blocks/atherium_block.json
 bc96a838db11198ef74e4e979de85779978e3c17 data/succsessentials/loot_table/blocks/atherium_ore.json
 812c713aae98a2b11839acd356fbb15a3cfa378e data/succsessentials/loot_table/blocks/cryoheart_button.json
@@ -20,6 +20,7 @@ fabbf601634175e3b52c9a169f238270834b7e68 data/succsessentials/loot_table/blocks/
 c6db78eb5222431a76bd5a293418637ca3c3b525 data/succsessentials/loot_table/blocks/deepslate_ruby_ore.json
 acb3097d85c4d6ccea9addf7c02655a9d64851cc data/succsessentials/loot_table/blocks/deepslate_sapphire_ore.json
 2aeb5cc8a520c92211b3af3fb9da512e75db0be0 data/succsessentials/loot_table/blocks/deepslate_sunstone_ore.json
+823b2322de5527776bb670317877b721e715e475 data/succsessentials/loot_table/blocks/emberpine_log.json
 bb66a9094ed08105de79f493a47416cefa818141 data/succsessentials/loot_table/blocks/end_atherium_ore.json
 9306592960e9bf901d661d66b8c53bc107d05135 data/succsessentials/loot_table/blocks/end_jaspilite_ore.json
 7e19579fc43b2c612681abcd81d87e912801c7b9 data/succsessentials/loot_table/blocks/end_malachite_ore.json

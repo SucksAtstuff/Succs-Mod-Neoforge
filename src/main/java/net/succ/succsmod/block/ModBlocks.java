@@ -355,8 +355,8 @@ public class ModBlocks {
                 }
             });
 
-
-
+    public static final DeferredBlock<Block> EMBERPINE_LOG = registerBlock("emberpine_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
 
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(

@@ -275,5 +275,6 @@
     "item.succsessentials.smithing_template.reinforcement.base_slot_description": "Place Atherium Hammer here",
     "item.succsessentials.smithing_template.reinforcement.additions_slot_description": "Place the reinforcing material here",
 
-    "block.succsessentials.scorched_sand": "Scorched Sand"
+    "block.succsessentials.scorched_sand": "Scorched Sand",
+    "block.succsessentials.emberpine_log": "Emberpine log"
 }

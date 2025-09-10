@@ -173,6 +173,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.CRYOHEART_PRESSURE_PLATE);
         blockItem(ModBlocks.CRYOHEART_FENCE_GATE);
 
+        // Registering Emberpine blocks with their respective item models
+        logBlock(((RotatedPillarBlock)ModBlocks.EMBERPINE_LOG.get()));
+
+        // Registering Emberpine blocks with their respective item models
+        blockItem(ModBlocks.EMBERPINE_LOG);
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
