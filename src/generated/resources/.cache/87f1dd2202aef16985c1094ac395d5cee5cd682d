@@ -1,14 +1,15 @@
-// 1.21.1	2025-07-23T02:20:47.4223797	Tags for minecraft:item mod id succsessentials
+// 1.21.1	2025-09-11T01:07:02.260678049	Tags for minecraft:item mod id succsessentials
 3303458a5cd8934b667aaaa444e3ab83b48ead0e data/minecraft/tags/item/axes.json
 53257f99afd7e0364348fc8bf44be2eee9a1db67 data/minecraft/tags/item/hoes.json
-d45bb3c1cb80b9c38c0a41d711ef172ce7f37fde data/minecraft/tags/item/logs_that_burn.json
+77ce82d7b4d063de3fa852745503ffa350ceac05 data/minecraft/tags/item/logs_that_burn.json
 5332dfa37090f1d8caf4cfb9b1796fdb91126365 data/minecraft/tags/item/pickaxes.json
-d58d68059a7ff2a3afa91aa4198e0096e6be0df4 data/minecraft/tags/item/planks.json
+27128eba2f22cf5060bc9529d2044839c38e2b31 data/minecraft/tags/item/planks.json
 a6611fe266673de755b6841a713377d5a4731c03 data/minecraft/tags/item/shovels.json
 ae1e629ab30534297e9b0691e52c9c91026df677 data/minecraft/tags/item/swords.json
 d7c575c32b6dc2a03784ec41cc0d0ca7852b9b67 data/minecraft/tags/item/trimmable_armor.json
 a1bc89df8764c14fa6bca2f1ca18cd7f7e524ac1 data/minecraft/tags/item/villager_plantable_seeds.json
 11e527d2956cf23b248e309b998594cc5ce5f9ee data/succsessentials/tags/item/cryoheart_logs.json
+261fd5417580344fb29eb73e59f06ee0d2b6a58a data/succsessentials/tags/item/emberpine_logs.json
 b9e7b8be6261e9e7e8ee838b13e9cb2c372d38fe data/succsessentials/tags/item/hammer_enchantable.json
 32be8e421be688a5cb16b8e556e37e7f9a76ac94 data/succsessentials/tags/item/is_bucket.json
 c89c90cb10856cbc774da842e2b80280356637a5 data/succsessentials/tags/item/mycelial_sporewood_logs.json

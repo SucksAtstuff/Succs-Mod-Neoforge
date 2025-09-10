@@ -175,9 +175,56 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Registering Emberpine blocks with their respective item models
         logBlock(((RotatedPillarBlock)ModBlocks.EMBERPINE_LOG.get()));
+        logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_EMBERPINE_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.EMBERPINE_WOOD.get()), blockTexture(ModBlocks.EMBERPINE_LOG.get()), blockTexture(ModBlocks.EMBERPINE_LOG.get()));
+        axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_EMBERPINE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_EMBERPINE_LOG.get()), blockTexture(ModBlocks.STRIPPED_EMBERPINE_LOG.get()));
 
         // Registering Emberpine blocks with their respective item models
         blockItem(ModBlocks.EMBERPINE_LOG);
+        blockItem(ModBlocks.EMBERPINE_WOOD);
+        blockItem(ModBlocks.STRIPPED_EMBERPINE_LOG);
+        blockItem(ModBlocks.STRIPPED_EMBERPINE_WOOD);
+
+        blockWithItem(ModBlocks.EMBERPINE_PLANKS);
+
+        // EMBERPINE woodset
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.EMBERPINE_DOOR.get()),
+                modLoc("block/emberpine_door_bottom"),
+                modLoc("block/emberpine_door_top"),
+                "cutout");
+
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.EMBERPINE_TRAPDOOR.get()),
+                modLoc("block/emberpine_trapdoor"),
+                true,
+                "cutout");
+
+        stairsBlock(((StairBlock) ModBlocks.EMBERPINE_STAIRS.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        slabBlock(((SlabBlock) ModBlocks.EMBERPINE_SLAB.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        blockItem(ModBlocks.EMBERPINE_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.EMBERPINE_SLAB);
+        blockItem(ModBlocks.EMBERPINE_STAIRS);
+
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.EMBERPINE_PRESSURE_PLATE.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        buttonBlock(((ButtonBlock) ModBlocks.EMBERPINE_BUTTON.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        fenceBlock(((FenceBlock) ModBlocks.EMBERPINE_FENCE.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        fenceGateBlock(((FenceGateBlock) ModBlocks.EMBERPINE_FENCE_GATE.get()),
+                blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
+
+        blockItem(ModBlocks.EMBERPINE_PRESSURE_PLATE);
+        blockItem(ModBlocks.EMBERPINE_FENCE_GATE);
+
+
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");

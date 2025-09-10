@@ -200,36 +200,43 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRYOHEART_WOOD.get())
                 .add(ModBlocks.STRIPPED_CRYOHEART_LOG.get())
                 .add(ModBlocks.STRIPPED_CRYOHEART_WOOD.get());
+        // (Intentionally NOT adding Emberpine here; say the word if you want it to burn.)
 
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(ModBlocks.SHATTERBLOOM_BUTTON.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get())
-                .add(ModBlocks.CRYOHEART_BUTTON.get());
+                .add(ModBlocks.CRYOHEART_BUTTON.get())
+                .add(ModBlocks.EMBERPINE_BUTTON.get());
 
         tag(BlockTags.WOODEN_DOORS)
                 .add(ModBlocks.SHATTERBLOOM_DOOR.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.get())
-                .add(ModBlocks.CRYOHEART_DOOR.get());
+                .add(ModBlocks.CRYOHEART_DOOR.get())
+                .add(ModBlocks.EMBERPINE_DOOR.get());
 
         tag(BlockTags.WOODEN_SLABS)
                 .add(ModBlocks.SHATTERBLOOM_SLAB.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get())
-                .add(ModBlocks.CRYOHEART_SLAB.get());
+                .add(ModBlocks.CRYOHEART_SLAB.get())
+                .add(ModBlocks.EMBERPINE_SLAB.get());
 
         tag(BlockTags.WOODEN_STAIRS)
                 .add(ModBlocks.SHATTERBLOOM_STAIRS.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get())
-                .add(ModBlocks.CRYOHEART_STAIRS.get());
+                .add(ModBlocks.CRYOHEART_STAIRS.get())
+                .add(ModBlocks.EMBERPINE_STAIRS.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(ModBlocks.SHATTERBLOOM_TRAPDOOR.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR.get())
-                .add(ModBlocks.CRYOHEART_TRAPDOOR.get());
+                .add(ModBlocks.CRYOHEART_TRAPDOOR.get())
+                .add(ModBlocks.EMBERPINE_TRAPDOOR.get());
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_PRESSURE_PLATE.get())
-                .add(ModBlocks.CRYOHEART_PRESSURE_PLATE.get());
+                .add(ModBlocks.CRYOHEART_PRESSURE_PLATE.get())
+                .add(ModBlocks.EMBERPINE_PRESSURE_PLATE.get());
 
         tag(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.SHATTERBLOOM_FENCE.get())
@@ -237,28 +244,32 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get())
                 .add(ModBlocks.CRYOHEART_FENCE.get())
-                .add(ModBlocks.CRYOHEART_FENCE_GATE.get());
+                .add(ModBlocks.CRYOHEART_FENCE_GATE.get())
+                .add(ModBlocks.EMBERPINE_FENCE.get())
+                .add(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
         tag(BlockTags.FENCES)
                 .add(ModBlocks.SHATTERBLOOM_FENCE.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE.get())
-                .add(ModBlocks.CRYOHEART_FENCE.get());
+                .add(ModBlocks.CRYOHEART_FENCE.get())
+                .add(ModBlocks.EMBERPINE_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.SHATTERBLOOM_FENCE_GATE.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_FENCE_GATE.get())
-                .add(ModBlocks.CRYOHEART_FENCE_GATE.get());
+                .add(ModBlocks.CRYOHEART_FENCE_GATE.get())
+                .add(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
         tag(BlockTags.SAPLINGS)
                 .add(ModBlocks.SHATTERBLOOM_SAPLING.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get())
                 .add(ModBlocks.CRYOHEART_SAPLING.get());
+                //.add(ModBlocks.EMBERPINE_SAPLING.get());
 
         tag(BlockTags.CLIMBABLE)
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.SCORCHED_SAND.get());
-
     }
 }

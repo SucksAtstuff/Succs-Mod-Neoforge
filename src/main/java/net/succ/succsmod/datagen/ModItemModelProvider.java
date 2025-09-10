@@ -196,6 +196,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.CRYOHEART_BUTTON, ModBlocks.CRYOHEART_PLANKS);
         fenceItem(ModBlocks.CRYOHEART_FENCE, ModBlocks.CRYOHEART_PLANKS);
 
+        //saplingItem(ModBlocks.EMBERPINE_SAPLING);
+        basicItem(ModBlocks.EMBERPINE_DOOR.asItem());
+
+        buttonItem(ModBlocks.EMBERPINE_BUTTON, ModBlocks.EMBERPINE_PLANKS);
+        fenceItem(ModBlocks.EMBERPINE_FENCE, ModBlocks.EMBERPINE_PLANKS);
+
         basicItem(ModItems.FROST_FRUIT.get());
 
         withExistingParent(ModItems.HEDGEHOG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

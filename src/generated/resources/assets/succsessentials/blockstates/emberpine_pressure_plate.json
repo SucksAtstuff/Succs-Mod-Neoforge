@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "succsessentials:block/emberpine_pressure_plate"
+    },
+    "powered=true": {
+      "model": "succsessentials:block/emberpine_pressure_plate_down"
+    }
+  }
+}

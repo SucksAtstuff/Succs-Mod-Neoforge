@@ -123,19 +123,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MALACHITE_HAMMER.get());
 
         tag(ItemTags.LOGS_THAT_BURN)
-                .add(ModBlocks.SHATTERBLOOM_LOG.get().asItem())
-                .add(ModBlocks.SHATTERBLOOM_WOOD.get().asItem())
-                .add(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get().asItem())
-                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem())
-                .add(ModBlocks.MYCELIAL_SPOREWOOD_LOG.get().asItem())
-                .add(ModBlocks.MYCELIAL_SPOREWOOD_WOOD.get().asItem())
-                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_LOG.get().asItem())
-                .add(ModBlocks.STRIPPED_MYCELIAL_SPOREWOOD_WOOD.get().asItem());
+                .addTag(ModTags.Items.CRYOHEART_LOGS)
+                .addTag(ModTags.Items.EMBERPINE_LOGS)
+                .addTag(ModTags.Items.MYCELIAL_SPOREWOOD_LOGS)
+                .addTag(ModTags.Items.SHATTERBLOOM_LOGS);
 
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem())
-                .add(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().asItem());
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().asItem())
+                .add(ModBlocks.CRYOHEART_PLANKS.get().asItem())
+                .add(ModBlocks.EMBERPINE_PLANKS.get().asItem());
 
 
         tag(ModTags.Items.SHATTERBLOOM_LOGS)
@@ -155,6 +152,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.CRYOHEART_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_CRYOHEART_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_CRYOHEART_WOOD.get().asItem());
+
+        tag(ModTags.Items.EMBERPINE_LOGS)
+                .add(ModBlocks.EMBERPINE_LOG.get().asItem())
+                .add(ModBlocks.EMBERPINE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_EMBERPINE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_EMBERPINE_WOOD.get().asItem());
+
+
+
+
     }
 
 

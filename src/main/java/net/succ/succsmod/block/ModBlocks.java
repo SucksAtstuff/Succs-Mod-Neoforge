@@ -356,7 +356,63 @@ public class ModBlocks {
             });
 
     public static final DeferredBlock<Block> EMBERPINE_LOG = registerBlock("emberpine_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+    public static final DeferredBlock<Block> EMBERPINE_WOOD = registerBlock("emberpine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+    public static final DeferredBlock<Block> STRIPPED_EMBERPINE_LOG = registerBlock("stripped_emberpine_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+    public static final DeferredBlock<Block> STRIPPED_EMBERPINE_WOOD = registerBlock("stripped_emberpine_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+
+    public static final DeferredBlock<Block> EMBERPINE_PLANKS = registerBlock("emberpine_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+
+    public static final DeferredBlock<Block> EMBERPINE_STAIRS = registerBlock("emberpine_stairs",
+            () -> new StairBlock(ModBlocks.EMBERPINE_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_STAIRS)));
+
+    public static final DeferredBlock<Block> EMBERPINE_SLAB = registerBlock("emberpine_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
+
+    public static final DeferredBlock<Block> EMBERPINE_PRESSURE_PLATE = registerBlock("emberpine_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PRESSURE_PLATE)));
+
+    public static final DeferredBlock<Block> EMBERPINE_BUTTON = registerBlock("emberpine_button",
+            () -> new ButtonBlock(BlockSetType.CRIMSON, 10,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_BUTTON).noCollission()));
+
+    public static final DeferredBlock<Block> EMBERPINE_FENCE = registerBlock("emberpine_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE)));
+
+    public static final DeferredBlock<Block> EMBERPINE_FENCE_GATE = registerBlock("emberpine_fence_gate",
+            () -> new FenceGateBlock(WoodType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE_GATE)));
+
+    public static final DeferredBlock<Block> EMBERPINE_DOOR = registerBlock("emberpine_door",
+            () -> new DoorBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_DOOR).strength(3f).noOcclusion()));
+
+    public static final DeferredBlock<Block> EMBERPINE_TRAPDOOR = registerBlock("emberpine_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
+
+
 
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(

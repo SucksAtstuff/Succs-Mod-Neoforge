@@ -275,6 +275,21 @@
     "item.succsessentials.smithing_template.reinforcement.base_slot_description": "Place Atherium Hammer here",
     "item.succsessentials.smithing_template.reinforcement.additions_slot_description": "Place the reinforcing material here",
 
-    "block.succsessentials.scorched_sand": "Scorched Sand",
-    "block.succsessentials.emberpine_log": "Emberpine log"
+    "block.succsessentials.scorched_sand": "Scorched sand",
+
+    "block.succsessentials.emberpine_log": "Emberpine Log",
+    "block.succsessentials.stripped_emberpine_log": "Stripped Emberpine Log",
+    "block.succsessentials.emberpine_wood": "Emberpine Wood",
+    "block.succsessentials.stripped_emberpine_wood": "Stripped Emberpine Wood",
+    "block.succsessentials.emberpine_planks": "Emberpine Planks",
+    "block.succsessentials.emberpine_leaves": "Emberpine Leaves",
+    "block.succsessentials.emberpine_sapling": "Emberpine Sapling",
+    "block.succsessentials.emberpine_door": "Emberpine Door",
+    "block.succsessentials.emberpine_trapdoor": "Emberpine Trapdoor",
+    "block.succsessentials.emberpine_stairs": "Emberpine Stairs",
+    "block.succsessentials.emberpine_slab": "Emberpine Slab",
+    "block.succsessentials.emberpine_pressure_plate": "Emberpine Pressure Plate",
+    "block.succsessentials.emberpine_button": "Emberpine Button",
+    "block.succsessentials.emberpine_fence": "Emberpine Fence",
+    "block.succsessentials.emberpine_fence_gate": "Emberpine Fence Gate"
 }

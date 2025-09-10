@@ -164,6 +164,21 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CRYOHEART_FENCE_GATE.get());
 
                         output.accept(ModBlocks.SCORCHED_SAND.get());
+                        output.accept(ModBlocks.EMBERPINE_LOG.get());
+                        output.accept(ModBlocks.EMBERPINE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_EMBERPINE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
+                        output.accept(ModBlocks.EMBERPINE_PLANKS.get());
+                        //output.accept(ModBlocks.EMBERPINE_LEAVES.get());
+                        //output.accept(ModBlocks.EMBERPINE_SAPLING.get());
+                        output.accept(ModBlocks.EMBERPINE_DOOR.get());
+                        output.accept(ModBlocks.EMBERPINE_TRAPDOOR.get());
+                        output.accept(ModBlocks.EMBERPINE_STAIRS.get());
+                        output.accept(ModBlocks.EMBERPINE_SLAB.get());
+                        output.accept(ModBlocks.EMBERPINE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.EMBERPINE_BUTTON.get());
+                        output.accept(ModBlocks.EMBERPINE_FENCE.get());
+                        output.accept(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
                     })
                     .build());

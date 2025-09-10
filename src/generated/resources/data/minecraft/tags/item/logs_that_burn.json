@@ -1,13 +1,8 @@
 {
   "values": [
-    "succsessentials:shatterbloom_log",
-    "succsessentials:shatterbloom_wood",
-    "succsessentials:stripped_shatterbloom_log",
-    "succsessentials:stripped_shatterbloom_wood",
-    "succsessentials:mycelial_sporewood_log",
-    "succsessentials:mycelial_sporewood_log",
-    "succsessentials:mycelial_sporewood_wood",
-    "succsessentials:stripped_mycelial_sporewood_log",
-    "succsessentials:stripped_mycelial_sporewood_wood"
+    "#succsessentials:cryoheart_logs",
+    "#succsessentials:emberpine_logs",
+    "#succsessentials:mycelial_sporewood_logs",
+    "#succsessentials:shatterbloom_logs"
   ]
 }

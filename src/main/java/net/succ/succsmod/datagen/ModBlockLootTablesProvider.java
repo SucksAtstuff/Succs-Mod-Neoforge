@@ -74,6 +74,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CRYOHEART_SAPLING.get());
         dropSelf(ModBlocks.CRYOHEART_PLANKS.get());
         dropSelf(ModBlocks.EMBERPINE_LOG.get());
+        dropSelf(ModBlocks.EMBERPINE_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_EMBERPINE_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
+        dropSelf(ModBlocks.EMBERPINE_PLANKS.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
@@ -107,6 +111,21 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CRYOHEART_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.CRYOHEART_FENCE.get());
         dropSelf(ModBlocks.CRYOHEART_FENCE_GATE.get());
+
+        this.add(ModBlocks.EMBERPINE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.EMBERPINE_DOOR.get()));
+
+        dropSelf(ModBlocks.EMBERPINE_TRAPDOOR.get());
+        dropSelf(ModBlocks.EMBERPINE_STAIRS.get());
+
+        this.add(ModBlocks.EMBERPINE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.EMBERPINE_SLAB.get()));
+
+        dropSelf(ModBlocks.EMBERPINE_BUTTON.get());
+        dropSelf(ModBlocks.EMBERPINE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.EMBERPINE_FENCE.get());
+        dropSelf(ModBlocks.EMBERPINE_FENCE_GATE.get());
+
 
         add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
                 block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
