@@ -96,11 +96,28 @@ public class ModPlacedFeatures {
 
         register(context, EMBERPINE_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.EMBERPINE_KEY),
-                VegetationPlacements.treePlacement(
-                        PlacementUtils.countExtra(1, 0.05f, 1),
-                        ModBlocks.EMBERPINE_SAPLING.get()
+                // Build our own placement list (like VegetationPlacements.treePlacement) but
+                // allow SCORCHED_SAND as valid soil in addition to vanilla survival.
+                List.of(
+                        PlacementUtils.countExtra(1, 0.05f, 1),          // ✅ at least 1 per chunk, +1 with 5% chance
+                        InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,          // or HEIGHTMAP_OCEAN_FLOOR_NO_TEARS in your mappings
+                        BlockPredicateFilter.forPredicate(
+                                BlockPredicate.anyOf(
+                                        // vanilla survival (dirt/grass/etc.)
+                                        BlockPredicate.wouldSurvive(
+                                                ModBlocks.EMBERPINE_SAPLING.get().defaultBlockState(), BlockPos.ZERO
+                                        ),
+                                        // also allow when the block UNDER is scorched sand
+                                        BlockPredicate.matchesBlocks(new BlockPos(0, -1, 0),
+                                                ModBlocks.SCORCHED_SAND.get())
+                                )
+                        ),
+                        BiomeFilter.biome()
                 )
         );
+
 
         register(context, PATCH_GRASS_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_GRASS_KEY),
