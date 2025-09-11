@@ -24,6 +24,9 @@ public class ModEffects {
     public static final Holder<MobEffect> FROST_RESISTANCE_EFFECT = MOB_EFFECTS.register("frost_resistance",
             () -> new FrostResistanceEffect(MobEffectCategory.BENEFICIAL, 0xADD8E6));
 
+    public static final Holder<MobEffect> CHILLING_EFFECT = MOB_EFFECTS.register("chilling",
+            () -> new FrostResistanceEffect(MobEffectCategory.BENEFICIAL, 0xADD8E6));
+
     public static void register (IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

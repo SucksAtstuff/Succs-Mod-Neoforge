@@ -12,6 +12,7 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -53,9 +54,6 @@ public class ModEvents {
         int totalDepthRange = hammer.getDepthRange(mainHandItem, player);
         int baseDepthRange = hammer.getBaseDepthRange(mainHandItem, player);
 
-        SuccsMod.LOGGER.info("Depth debug -> base={}, total={}, expectedThickness={}",
-                baseDepthRange, totalDepthRange, (2*totalDepthRange + 1));
-
 
         // Build target list based on plane vs volume mode
         List<BlockPos> targets = hammer.minesVolume(mainHandItem, player)
@@ -91,6 +89,9 @@ public class ModEvents {
 
         builder.addMix(Potions.AWKWARD, ModItems.SUNSTONE.get(), ModPotions.TRUE_FIRE_POTION);
         builder.addMix(Potions.AWKWARD, ModBlocks.POISON_LILY.asItem(), Potions.POISON);
+        builder.addMix(Potions.AWKWARD, Blocks.ICE.asItem(), ModPotions.CHILLING_POTION);
+        builder.addMix(ModPotions.CHILLING_POTION, Items.REDSTONE.asItem(), ModPotions.LONG_CHILLING_POTION);
+
     }
 
     @SubscribeEvent
