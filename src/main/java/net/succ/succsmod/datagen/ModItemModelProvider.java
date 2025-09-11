@@ -196,7 +196,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.CRYOHEART_BUTTON, ModBlocks.CRYOHEART_PLANKS);
         fenceItem(ModBlocks.CRYOHEART_FENCE, ModBlocks.CRYOHEART_PLANKS);
 
-        //saplingItem(ModBlocks.EMBERPINE_SAPLING);
+        saplingItem(ModBlocks.EMBERPINE_SAPLING);
         basicItem(ModBlocks.EMBERPINE_DOOR.asItem());
 
         buttonItem(ModBlocks.EMBERPINE_BUTTON, ModBlocks.EMBERPINE_PLANKS);

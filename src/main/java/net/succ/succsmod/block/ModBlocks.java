@@ -207,6 +207,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SHATTERBLOOM_STAIRS = registerBlock("shatterbloom_stairs",
             () -> new StairBlock(ModBlocks.SHATTERBLOOM_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+
     public static final DeferredBlock<Block> SHATTERBLOOM_SLAB = registerBlock("shatterbloom_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
 
@@ -389,6 +390,27 @@ public class ModBlocks {
     public static final DeferredBlock<Block> EMBERPINE_SLAB = registerBlock("emberpine_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
 
+    public static final DeferredBlock<Block> EMBERPINE_SAPLING = registerBlock("emberpine_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.EMBERPINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final DeferredBlock<Block> EMBERPINE_LEAVES = registerBlock("emberpine_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            });
+
     public static final DeferredBlock<Block> EMBERPINE_PRESSURE_PLATE = registerBlock("emberpine_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PRESSURE_PLATE)));
@@ -429,6 +451,9 @@ public class ModBlocks {
             () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), MYCELIAL_SPOREWOOD_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_CRIMSON_ROOTS)));
     public static final DeferredBlock<Block> POTTED_CRYOHEART_SAPLING = registerBlock("potted_cryoheart_sapling",
             () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), CRYOHEART_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
+    public static final DeferredBlock<Block> POTTED_EMBERPINE_SAPLING = registerBlock("potted_emberpine_sapling",
+            () -> new FlowerPotBlock(()-> ((FlowerPotBlock) Blocks.FLOWER_POT), EMBERPINE_SAPLING, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING)));
+
 
     public static final DeferredBlock<Block> SCORCHED_SAND = registerBlock("scorched_sand",
             () -> new ScorchedSandBlock(

@@ -47,6 +47,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHATTERBLOOM_KEY = registerKey("shatterbloom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOHEART_KEY = registerKey("cryoheart");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EMBERPINE_KEY = registerKey("emberpine");
+
 
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
@@ -155,6 +157,31 @@ public class ModConfiguredFeatures {
         )
                 .dirt(BlockStateProvider.simple(Blocks.DIRT))
                 .build());
+
+        // Register Emberpine tree configured feature
+        register(context, EMBERPINE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.EMBERPINE_LOG.get()),
+                new StraightTrunkPlacer(
+                        6, // baseHeight (taller than oak)
+                        2, // heightRandA
+                        1  // heightRandB
+                ),
+                BlockStateProvider.simple(ModBlocks.EMBERPINE_LEAVES.get()),
+                new PineFoliagePlacer(
+                        ConstantInt.of(2), // foliageRadius near top
+                        ConstantInt.of(1), // foliageOffset
+                        ConstantInt.of(4)  // foliageHeight (taller cone)
+                ),
+                new TwoLayersFeatureSize(
+                        1, // limit
+                        0, // lower size
+                        2  // upper size
+                )
+        )
+                // Use scorched sand as the “dirt” patch under the trunk
+                .dirt(BlockStateProvider.simple(ModBlocks.SCORCHED_SAND.get()))
+                .build());
+
 
 
         context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(

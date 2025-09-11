@@ -186,6 +186,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_EMBERPINE_WOOD);
 
         blockWithItem(ModBlocks.EMBERPINE_PLANKS);
+        leavesBlock(ModBlocks.EMBERPINE_LEAVES);
+        saplingBlock(ModBlocks.EMBERPINE_SAPLING);
 
         // EMBERPINE woodset
         doorBlockWithRenderType(((DoorBlock) ModBlocks.EMBERPINE_DOOR.get()),

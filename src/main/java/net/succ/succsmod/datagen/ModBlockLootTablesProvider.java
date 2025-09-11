@@ -78,6 +78,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_EMBERPINE_LOG.get());
         dropSelf(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
         dropSelf(ModBlocks.EMBERPINE_PLANKS.get());
+        dropSelf(ModBlocks.EMBERPINE_SAPLING.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
@@ -126,7 +127,6 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.EMBERPINE_FENCE.get());
         dropSelf(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
-
         add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
                 block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
 
@@ -136,6 +136,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.POTTED_SHATTERBLOOM_SAPLING.get(), createPotFlowerItemTable(ModBlocks.SHATTERBLOOM_SAPLING));
         add(ModBlocks.POTTED_MYCELIAL_SPOREWOOD_SAPLING.get(), createPotFlowerItemTable(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING));
         add(ModBlocks.POTTED_CRYOHEART_SAPLING.get(), createPotFlowerItemTable(ModBlocks.CRYOHEART_SAPLING));
+        add(ModBlocks.POTTED_EMBERPINE_SAPLING.get(), createPotFlowerItemTable(ModBlocks.EMBERPINE_SAPLING));
 
         // Define loot tables for leaves that drop saplings
         add(ModBlocks.SHATTERBLOOM_LEAVES.get(),
@@ -147,6 +148,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.CRYOHEART_LEAVES.get(),
                 block -> createFrostLeavesDrop(block, ModBlocks.CRYOHEART_SAPLING.get(), ModItems.FROST_FRUIT.get(),
                         0.05F, 0.0625F, 0.0833F, 0.1F));
+
+        add(ModBlocks.EMBERPINE_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.EMBERPINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));

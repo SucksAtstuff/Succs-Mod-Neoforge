@@ -161,7 +161,7 @@ public class ModOverworldBiomes {
 
         // Optional: your custom dunes / emberpine, enable when registered
         addFeature(gen, GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.SOLARBLIGHT_DUNE_PATCH_PLACED);
-        // addFeature(gen, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.EMBERPINE_PLACED_KEY);
+        addFeature(gen, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.EMBERPINE_PLACED_KEY);
 
         // --- Visuals / Ambience ---
         BiomeSpecialEffects.Builder fx = new BiomeSpecialEffects.Builder()

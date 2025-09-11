@@ -169,8 +169,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STRIPPED_EMBERPINE_LOG.get());
                         output.accept(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
                         output.accept(ModBlocks.EMBERPINE_PLANKS.get());
-                        //output.accept(ModBlocks.EMBERPINE_LEAVES.get());
-                        //output.accept(ModBlocks.EMBERPINE_SAPLING.get());
+                        output.accept(ModBlocks.EMBERPINE_LEAVES.get());
+                        output.accept(ModBlocks.EMBERPINE_SAPLING.get());
                         output.accept(ModBlocks.EMBERPINE_DOOR.get());
                         output.accept(ModBlocks.EMBERPINE_TRAPDOOR.get());
                         output.accept(ModBlocks.EMBERPINE_STAIRS.get());

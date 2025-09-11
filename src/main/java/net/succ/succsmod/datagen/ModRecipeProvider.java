@@ -789,7 +789,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stairBuilder(ModBlocks.EMBERPINE_STAIRS.get(), Ingredient.of(ModBlocks.EMBERPINE_PLANKS.get())).group("emberpine")
                 .unlockedBy("has_emberpine_planks", has(ModBlocks.EMBERPINE_PLANKS.get())).save(recipeOutput);
 
-
         // Register recipes for turning planks to buttons and pressure plates
         pressurePlate(recipeOutput, ModBlocks.SHATTERBLOOM_PRESSURE_PLATE.get(), ModBlocks.SHATTERBLOOM_PLANKS.get());
         buttonBuilder(ModBlocks.SHATTERBLOOM_BUTTON.get(), Ingredient.of(ModBlocks.SHATTERBLOOM_PLANKS.get())).group("shatterbloom")

@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-11T01:11:50.782715473	Item Models: succsessentials
+// 1.21.1	2025-09-11T18:30:15.571606786	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -68,6 +68,7 @@ a7e6dbdc670d10bb12a078a6bf39cedb379c55de assets/succsessentials/models/item/cryo
 03da34c931f6e69b7e3f9260f65aca0b6d191691 assets/succsessentials/models/item/emberpine_button.json
 83e5596eba7071bba9afdab86d3e35cae91dad97 assets/succsessentials/models/item/emberpine_door.json
 6c3dd122d03e85f4c708e85e618d43e462b2e269 assets/succsessentials/models/item/emberpine_fence.json
+fe1e431a53383ff93a84db26c286a18af3b3c78b assets/succsessentials/models/item/emberpine_sapling.json
 332c2ef4836faf4862b8cdb4ceebe71604d5d9fb assets/succsessentials/models/item/frost_fruit.json
 62352b64fb862e7435962815e1962f1c80a1e3a9 assets/succsessentials/models/item/funky_music_disc.json
 f49af2a686c9f636c555b2ad220bec265b12e33e assets/succsessentials/models/item/garlic.json

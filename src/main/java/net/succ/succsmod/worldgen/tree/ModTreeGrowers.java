@@ -15,4 +15,7 @@ public class ModTreeGrowers {
 
     public static final TreeGrower CRYOHEART = new TreeGrower(SuccsMod.MOD_ID + ":cryoheart",
             Optional.empty(), Optional.of(ModConfiguredFeatures.CRYOHEART_KEY), Optional.empty());
+
+    public static final TreeGrower EMBERPINE = new TreeGrower(SuccsMod.MOD_ID + ":emberpine",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.EMBERPINE_KEY), Optional.empty());
 }
