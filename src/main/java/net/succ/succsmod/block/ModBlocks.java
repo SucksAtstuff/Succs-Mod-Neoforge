@@ -391,7 +391,11 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
 
     public static final DeferredBlock<Block> EMBERPINE_SAPLING = registerBlock("emberpine_sapling",
-            () -> new SaplingBlock(ModTreeGrowers.EMBERPINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new EmberpineSaplingBlock(
+                    ModTreeGrowers.EMBERPINE,                     // your TreeGrower
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
+            ));
+
 
     public static final DeferredBlock<Block> EMBERPINE_LEAVES = registerBlock("emberpine_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)){
