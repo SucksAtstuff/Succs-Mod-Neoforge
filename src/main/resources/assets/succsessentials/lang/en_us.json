@@ -132,6 +132,8 @@
     "item.succsessentials.jaspilite_leggings": "Jaspilite Leggings",
     "item.succsessentials.jaspilite_boots": "Jaspilite Boots",
 
+    "item.succsessentials.swim_trunks": "Swim trunks",
+    "item.succsessentials.bikini_top": "Bikini top",
     "item.succsessentials.ring_of_ruby": "Ring Of Ruby",
     "item.succsessentials.ring_of_sapphire": "Ring Of Sapphire",
     "item.succsessentials.ring_of_sunstone": "Ring Of Sunstone",
@@ -174,7 +176,6 @@
 
     "tooltip.succsmod.mob_effect_sword.tooltip.shift": "Press §eShift§r for more information",
     "tooltip.succsmod.mob_effect_sword.tooltip": "On hit: Applies %1$s for %2$d seconds (Level %3$d)",
-
 
     "entity.minecraft.villager.succsessentials.gem_cutter": "'Gem' Cutter",
 

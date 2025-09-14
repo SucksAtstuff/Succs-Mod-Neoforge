@@ -70,5 +70,10 @@ public class ModTags {
                 Registries.STRUCTURE,
                 ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "crystalfrost_vale_rock_formations")
         );
+
+        public static final TagKey<Structure> SOLARBLIGHT_EXPANSE_STRUCTURES = TagKey.create(
+                Registries.STRUCTURE,
+                ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_expanse_structures")
+        );
     }
 }

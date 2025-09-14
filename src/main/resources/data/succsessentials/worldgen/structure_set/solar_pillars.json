@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "succsessentials:solar_pillar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 911716,
+    "spacing": 6,
+    "separation": 5
+  }
+}

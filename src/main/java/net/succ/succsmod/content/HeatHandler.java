@@ -1,4 +1,3 @@
-// HeatHandler.java
 package net.succ.succsmod.content;
 
 import net.minecraft.nbt.CompoundTag;
@@ -7,16 +6,13 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.Biome;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.effect.ModEffects;
+import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.worldgen.biome.ModBiomes;
-// import your effect/armor classes:
-// import net.succ.succsmod.effect.ModEffects;
-// import net.succ.succsmod.item.ModItems;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID) // GAME bus (aka Forge bus)
 public class HeatHandler {
@@ -106,11 +102,12 @@ public class HeatHandler {
         ItemStack legs  = p.getItemBySlot(EquipmentSlot.LEGS);
         ItemStack feet  = p.getItemBySlot(EquipmentSlot.FEET);
 
-        // TODO: swap these predicates to your items, e.g. ModItems.ICE_HELMET.get() etc.
-        boolean h = !head.isEmpty()  /* && head.is(ModTags.Items.COOLING_HELMET) */ ;
-        boolean c = !chest.isEmpty() /* && chest.is(ModTags.Items.COOLING_CHEST)  */ ;
-        boolean l = !legs.isEmpty()  /* && legs.is(ModTags.Items.COOLING_LEGS)   */ ;
-        boolean f = !feet.isEmpty()  /* && feet.is(ModTags.Items.COOLING_BOOTS)  */ ;
-        return h && c && l && f;
+        boolean h = !head.isEmpty(); // not used, but kept for syntax consistency
+        boolean c = !chest.isEmpty() && chest.is(ModItems.BIKINI_TOP.get());
+        boolean l = !legs.isEmpty()  && legs.is(ModItems.SWIM_TRUNKS.get());
+        boolean f = !feet.isEmpty(); // not used, but kept for syntax consistency
+
+        return c && l;
     }
+
 }

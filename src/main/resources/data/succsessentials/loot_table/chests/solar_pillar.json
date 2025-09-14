@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": { "min": 2, "max": 5 },
+      "entries": [
+        { "type": "minecraft:item", "name": "succsessentials:scorched_sand", "weight": 55 },
+
+        { "type": "minecraft:item", "name": "minecraft:rotten_flesh", "weight": 18 },
+        { "type": "minecraft:item", "name": "minecraft:bone", "weight": 18 },
+        { "type": "minecraft:item", "name": "minecraft:string", "weight": 12 },
+        { "type": "minecraft:item", "name": "minecraft:spider_eye", "weight": 8 },
+        { "type": "minecraft:item", "name": "minecraft:gunpowder", "weight": 8 },
+        { "type": "minecraft:item", "name": "minecraft:stick", "weight": 8 },
+        { "type": "minecraft:item", "name": "minecraft:flint", "weight": 6 },
+
+        { "type": "minecraft:item", "name": "succsessentials:swim_trunks", "weight": 5 },
+        { "type": "minecraft:item", "name": "succsessentials:bikini_top", "weight": 5 }
+      ]
+    }
+  ]
+}

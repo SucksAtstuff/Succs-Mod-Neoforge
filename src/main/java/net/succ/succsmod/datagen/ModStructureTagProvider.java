@@ -40,6 +40,9 @@ public class ModStructureTagProvider extends TagsProvider<Structure> {
                 .addOptional(id("gem_rock_7"))
                 .addOptional(id("gem_rock_8"))
                 .addOptional(id("gem_rock_9"));
+
+        // Solarblight expanse structures
+        this.tag(ModTags.Structures.SOLARBLIGHT_EXPANSE_STRUCTURES);
     }
 
     private static ResourceLocation id(String path) {

@@ -162,6 +162,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.JASPILITE_LEGGINGS);
         trimmedArmorItem(ModItems.JASPILITE_BOOTS);
 
+        // Register models for swimwear armor
+        trimmedArmorItem(ModItems.SWIM_TRUNKS);
+        trimmedArmorItem(ModItems.BIKINI_TOP);
+
         // Register models for curio items
         basicItem(ModItems.BRACELET_OF_MALACHITE.get());
         basicItem(ModItems.NECKLACE_OF_JASPILITE.get());

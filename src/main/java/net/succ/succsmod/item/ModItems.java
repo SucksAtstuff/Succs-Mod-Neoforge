@@ -474,6 +474,15 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.JASPILITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(32))));
 
+    // Cooling armour
+    public static final DeferredItem<ArmorItem> SWIM_TRUNKS = ITEMS.register("swim_trunks",
+            () -> new ArmorItem(ModArmorMaterials.SWIMWEAR_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(5))));
+    public static final DeferredItem<ArmorItem> BIKINI_TOP = ITEMS.register("bikini_top",
+            () -> new ArmorItem(ModArmorMaterials.SWIMWEAR_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(5))));
+
+
     /* =====================================================================
         *                      CURIOS ITEM REGISTRATION
         * ===================================================================== */

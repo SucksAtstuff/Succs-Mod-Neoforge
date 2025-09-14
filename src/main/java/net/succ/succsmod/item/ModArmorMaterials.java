@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.succ.succsmod.SuccsMod;
 
@@ -71,6 +72,17 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.HELMET, 3);
                 attribute.put(ArmorItem.Type.BODY, 4);
             }), 12, 2.5f, 0.05f, () -> ModItems.JASPILITE.get());
+
+    public static Holder<ArmorMaterial> SWIMWEAR_ARMOR_MATERIAL = register("swimwear",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 1);
+                attribute.put(ArmorItem.Type.LEGGINGS, 1);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 1);
+                attribute.put(ArmorItem.Type.HELMET, 1);
+                attribute.put(ArmorItem.Type.BODY, 1);
+            }),
+            25, 0.0f, 0.0f, () -> Items.STRING);
+
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,

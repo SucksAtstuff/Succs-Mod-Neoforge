@@ -275,6 +275,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.JASPILITE_CHESTPLATE.get());
                         output.accept(ModItems.JASPILITE_LEGGINGS.get());
                         output.accept(ModItems.JASPILITE_BOOTS.get());
+
+                        output.accept(ModItems.BIKINI_TOP.get());
+                        output.accept(ModItems.SWIM_TRUNKS.get());
                     })
                     .build());
 
