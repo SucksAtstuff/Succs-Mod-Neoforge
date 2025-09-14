@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-11T21:35:35.246706898	Registries
+// 1.21.1	2025-09-14T19:12:46.874563832	Registries
 c2b7e432d1541d4e1f7a3f768eef15fdd2b31aac data/succsessentials/neoforge/biome_modifier/add_end_atherium_ore.json
 5a29fbcc59a961f45a296472c3fbe48227fb28ae data/succsessentials/neoforge/biome_modifier/add_jaspilite_ore.json
 937efe3fd7543266ed8efe0d8356b8c33b8e4c1e data/succsessentials/neoforge/biome_modifier/add_nether_ruby_ore.json
@@ -29,4 +29,4 @@ bd224bca17dbc9376de1f8f83607205f4ce77dcb data/succsessentials/worldgen/placed_fe
 b1aa1be8c5191186f0f36c4d6be55ff2729f3dda data/succsessentials/worldgen/placed_feature/patch_tall_grass_placed.json
 865e0f5d935d8d08ac2b5cab58dfe0630f9a87da data/succsessentials/worldgen/placed_feature/patch_venomous_fen_flowers_placed.json
 94cfe23b3cca5ec305cbc33a2b4c235bf6dc21db data/succsessentials/worldgen/placed_feature/shatterbloom_placed.json
-81306ead8932f1667cb402da06ee52bc47f02b85 data/succsessentials/worldgen/placed_feature/solarblight_dune_patch.json
+dd157aabc22bcc04bae807acee98ecc6ea987f92 data/succsessentials/worldgen/placed_feature/solarblight_dune_patch.json

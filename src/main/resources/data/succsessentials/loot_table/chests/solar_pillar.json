@@ -14,8 +14,8 @@
         { "type": "minecraft:item", "name": "minecraft:stick", "weight": 8 },
         { "type": "minecraft:item", "name": "minecraft:flint", "weight": 6 },
 
-        { "type": "minecraft:item", "name": "succsessentials:swim_trunks", "weight": 5 },
-        { "type": "minecraft:item", "name": "succsessentials:bikini_top", "weight": 5 }
+        { "type": "minecraft:item", "name": "succsessentials:swim_trunks", "weight": 4 },
+        { "type": "minecraft:item", "name": "succsessentials:bikini_top", "weight": 4 }
       ]
     }
   ]

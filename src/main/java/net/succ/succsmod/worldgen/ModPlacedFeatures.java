@@ -130,12 +130,12 @@ public class ModPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);
 
         context.register(SOLARBLIGHT_DUNE_PATCH_PLACED, new PlacedFeature(duneCfg, List.of(
-                // Clusteriness/density across the biome:
-                NoiseThresholdCountPlacement.of(-0.08D, 1, 5), // lower threshold → more patches
+                RarityFilter.onAverageOnceEvery(8),   // try once every ~8 chunks on average
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                 BiomeFilter.biome()
         )));
+
 
     }
 
