@@ -142,13 +142,14 @@ public class ModOverworldBiomes {
 
     public static Biome solarBlightExpanse(HolderGetter<PlacedFeature> placed, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         // --- Spawns ---
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.desertSpawns(spawns);
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.desertSpawns(spawnBuilder);
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.SCORCHED_HUSK.get(), 100, 2, 4));
 
         // --- Generation ---
         BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placed, carvers);
 
-        // ⛏️ Carvers WITHOUT lakes (prefer this if available in your mappings)
+        // ⛏️ Carvers
         BiomeDefaultFeatures.addDefaultCarversAndLakes(gen);
 
         // Underground + ores + sand/gravel patches
@@ -159,27 +160,29 @@ public class ModOverworldBiomes {
         // Desert vegetation (cactus, dead bush). No trees/flowers by default.
         BiomeDefaultFeatures.addDesertVegetation(gen);
 
-        // Optional: your custom dunes / emberpine, enable when registered
         addFeature(gen, GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.SOLARBLIGHT_DUNE_PATCH_PLACED);
         addFeature(gen, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.EMBERPINE_PLACED_KEY);
 
         // --- Visuals / Ambience ---
         BiomeSpecialEffects.Builder fx = new BiomeSpecialEffects.Builder()
-                .waterColor(0xD6A06E) // has no effect if there’s no water source, harmless to keep
-                .waterFogColor(0x8E4A20)
-                .fogColor(0xFFC77A)
-                .skyColor(calculateSkyColor(2.0F))
+                // — atmosphere —
+                .fogColor(0xFFB65C)        // warm orange fog haze
+                .skyColor(0xFF9E4A)        // searing orange sky tint
+                .waterColor(0xD6A06E)      // heat-tinted water
+                .waterFogColor(0x8E4A20)   // water fog
+                // — particles —
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.ASH, 0.010F))
                 .ambientLoopSound(SoundEvents.AMBIENT_BASALT_DELTAS_LOOP)
                 .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_BASALT_DELTAS_MOOD, 6000, 8, 2.0D))
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.AMBIENT_BASALT_DELTAS_LOOP));
+
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false)
                 .temperature(2.0F)
                 .downfall(0.0F)
                 .specialEffects(fx.build())
-                .mobSpawnSettings(spawns.build())
+                .mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(gen.build())
                 .build();
     }

@@ -1,8 +1,11 @@
 package net.succ.succsmod;
 
+import net.minecraft.client.renderer.entity.HuskRenderer;
 import net.minecraft.client.renderer.entity.SlimeRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.monster.Slime;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -57,7 +60,7 @@ public class SuccsMod
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public SuccsMod(IEventBus modEventBus, ModContainer modContainer)
     {
-        // Register the commonSetup method for modloading
+        // Register the commonSetup method for modloading 20
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in.
@@ -145,6 +148,15 @@ public class SuccsMod
                         @Override
                         public ResourceLocation getTextureLocation(Slime entity) {
                             return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/toxic_slime/toxic_slime.png");
+                        }
+                    }
+            );
+
+            EntityRenderers.register(ModEntities.SCORCHED_HUSK.get(), ctx ->
+                    new HuskRenderer(ctx) {
+                        @Override
+                        public ResourceLocation getTextureLocation(Zombie entity) {
+                            return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/scorched_husk/scorched_husk.png");
                         }
                     }
             );

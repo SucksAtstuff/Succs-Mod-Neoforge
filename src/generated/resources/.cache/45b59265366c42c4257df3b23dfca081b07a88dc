@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-14T13:16:32.690398823	Item Models: succsessentials
+// 1.21.1	2025-09-15T18:13:52.849103881	Item Models: succsessentials
 7c979e35ce1fc459027cce882f037296cbfd9d35 assets/succsessentials/models/item/atherium.json
 51943ee2302d8defbef8f58f2c5310005a7a1a89 assets/succsessentials/models/item/atherium_axe.json
 7d2d515ffa04fecd2b39bcb6199bc0c0b13b0f9a assets/succsessentials/models/item/atherium_boots.json
@@ -310,6 +310,7 @@ b0805639787354162c8407d4f464f4be8938fe93 assets/succsessentials/models/item/sapp
 25eff47c40485c8cdb99dd45435a7f72a6490e7e assets/succsessentials/models/item/sapphire_pickaxe.json
 762407cd5a9b0acf10975b040ead6fff3eed8bdb assets/succsessentials/models/item/sapphire_shovel.json
 fdfdaaadf3c39afc6a5a91a2391f6d9525f2932c assets/succsessentials/models/item/sapphire_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/succsessentials/models/item/scorched_husk_spawn_egg.json
 e90ad76c0fb5aba2e480ccf7f5b78aa468085c7b assets/succsessentials/models/item/shatterbloom_button.json
 cf8b239f43cf4785d1aded2442c3add3c67a1f81 assets/succsessentials/models/item/shatterbloom_door.json
 c88a7ac2db413cdf6bdb533855614cdad3db2ce2 assets/succsessentials/models/item/shatterbloom_fence.json

@@ -9,7 +9,7 @@
   "downfall": 0.0,
   "effects": {
     "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
-    "fog_color": 16762746,
+    "fog_color": 16758364,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -28,7 +28,7 @@
       },
       "probability": 0.01
     },
-    "sky_color": 7254527,
+    "sky_color": 16752202,
     "water_color": 14065774,
     "water_fog_color": 9325088
   },
@@ -158,6 +158,12 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 80
+      },
+      {
+        "type": "succsessentials:scorched_husk",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 100
       }
     ],
     "underground_water_creature": [

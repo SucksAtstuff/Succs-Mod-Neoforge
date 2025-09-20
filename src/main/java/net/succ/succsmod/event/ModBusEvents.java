@@ -1,7 +1,9 @@
 package net.succ.succsmod.event;
 
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -19,6 +21,7 @@ import net.succ.succsmod.entity.client.ModModelLayers;
 import net.succ.succsmod.entity.client.PukekoModel;
 import net.succ.succsmod.entity.custom.HedgehogEntity;
 import net.succ.succsmod.entity.custom.PukekoEntity;
+import net.succ.succsmod.entity.custom.ScorchedHuskEntity;
 import net.succ.succsmod.entity.custom.ToxicSlimeEntity;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -41,6 +44,7 @@ public class ModBusEvents {
         event.put(ModEntities.PUKEKO.get(), PukekoEntity.createAttributes().build());
         event.put(ModEntities.HEDGEHOG.get(), HedgehogEntity.createAttributes().build());
         event.put(ModEntities.TOXIC_SLIME.get(), ToxicSlimeEntity.createAttributes().build());
+        event.put(ModEntities.SCORCHED_HUSK.get(), Husk.createAttributes().build());
 
     }
 
@@ -60,6 +64,11 @@ public class ModBusEvents {
                 ToxicSlimeEntity::checkToxicSlimeSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
+        event.register(ModEntities.SCORCHED_HUSK.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Mob::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
 }
