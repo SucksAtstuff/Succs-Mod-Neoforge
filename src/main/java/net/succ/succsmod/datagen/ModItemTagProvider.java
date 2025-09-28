@@ -27,14 +27,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.DIRTY_RUBY.get())
                 .add(ModItems.DIRTY_SAPPHIRE.get())
                 .add(ModItems.DIRTY_SUNSTONE.get())
-                .add(ModItems.DIRTY_MALACHITE.get());
+                .add(ModItems.DIRTY_MALACHITE.get())
+                .add(ModItems.DIRTY_JASPILITE.get());
 
         tag(ModTags.Items.POLISHED_GEMS)
                 .add(ModItems.ATHERIUM.get())
                 .add(ModItems.RUBY.get())
                 .add(ModItems.SAPPHIRE.get())
                 .add(ModItems.SUNSTONE.get())
-                .add(ModItems.MALACHITE.get());
+                .add(ModItems.MALACHITE.get())
+                .add(ModItems.JASPILITE.get());
 
         tag(ModTags.Items.SUNSTONE_SAPPHIRE_TOOLS)
                 .add(ModItems.SUNSTONE_PICKAXE.get())

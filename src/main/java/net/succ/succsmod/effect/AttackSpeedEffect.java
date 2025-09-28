@@ -16,7 +16,7 @@ public class AttackSpeedEffect extends MobEffect {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "attack_speed_modifier");
 
         this.addAttributeModifier(
-                Attributes.ATTACK_SPEED, // <== this was missing!
+                Attributes.ATTACK_SPEED,
                 id,
                 0.5, // 50% increase
                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL // or ADD_VALUE for flat increase
