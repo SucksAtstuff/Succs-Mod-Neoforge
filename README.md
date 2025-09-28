@@ -1,8 +1,6 @@
 # Succs-Essentials-Neoforge
 Source code for versions below 1.21.1 can be found here https://github.com/SucksAtstuff/Succs-Essentials
 
-# EVERYTHING IS CURRENTLY BEING PORTED FROM FORGE SO BASICALLY NONE OF THE FEATURES EXIST RIGHT NOW
-
 ### Requires [Curios API](https://modrinth.com/mod/curios) and [TerraBlender](https://modrinth.com/mod/terrablender) to run
 
 ### **Succ's Essentials**
