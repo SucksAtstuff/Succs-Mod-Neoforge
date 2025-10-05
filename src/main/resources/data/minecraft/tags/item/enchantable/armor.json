@@ -1,20 +1,6 @@
 {
   "replace": false,
   "values": [
-    "succsessentials:atherium_hammer",
-    "succsessentials:jaspilite_hammer",
-    "succsessentials:sapphire_hammer",
-    "succsessentials:sunstone_hammer",
-    "succsessentials:ruby_hammer",
-    "succsessentials:malachite_hammer",
-    "succsessentials:atherium_paxel",
-    "succsessentials:jaspilite_paxel",
-    "succsessentials:sapphire_paxel",
-    "succsessentials:sunstone_paxel",
-    "succsessentials:ruby_paxel",
-    "succsessentials:malachite_paxel",
-    "succsessentials:atherium_reinforced_hammer",
-
     "succsessentials:atherium_helmet",
     "succsessentials:atherium_chestplate",
     "succsessentials:atherium_leggings",

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "succsessentials:atherium_chestplate",
+    "succsessentials:malachite_chestplate",
+    "succsessentials:ruby_chestplate",
+    "succsessentials:sapphire_chestplate",
+    "succsessentials:sunstone_chestplate",
+    "succsessentials:jaspilite_chestplate"
+  ]
+}
