@@ -154,6 +154,14 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         }
     }
 
+    private void addClearMudDiscToPiglinBarter() {
+        this.add("clear_mud_disc_from_piglin_barter",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("gameplay/piglin_bartering")).build(),
+                        LootItemRandomChanceCondition.randomChance(0.02f).build() // 2% chance, adjust as you like
+                }, ModItems.CLEAR_MUD_DISC.get()));
+    }
+
     @Override
     protected void start() {
         this.add("garlic_to_short_grass",
@@ -171,6 +179,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
                         LootItemRandomChanceCondition.randomChance(0.1f).build()}, ModItems.ROCK.get()));
 
 
+
         // Add loot modifiers
         addAtheriumGemsToEndDungeonChests();
         addRubyGemsToNetherDungeonChests();
@@ -179,6 +188,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         addMalachiteGemsToOverworldDungeonChests();
         addCurioItemstoDungeonChests();
         addReinforcementTemplateToHighTierChests();
+        addClearMudDiscToPiglinBarter();
     }
 
 }

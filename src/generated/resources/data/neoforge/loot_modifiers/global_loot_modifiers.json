@@ -57,7 +57,8 @@
     "succsessentials:reinforcement_template_in_chests/end_city_treasure",
     "succsessentials:reinforcement_template_in_chests/stronghold_library",
     "succsessentials:reinforcement_template_in_chests/stronghold_corridor",
-    "succsessentials:reinforcement_template_in_chests/nether_bridge"
+    "succsessentials:reinforcement_template_in_chests/nether_bridge",
+    "succsessentials:clear_mud_disc_from_piglin_barter"
   ],
   "replace": false
 }
