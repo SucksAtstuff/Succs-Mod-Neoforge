@@ -1,4 +1,4 @@
-// 1.21.1	2025-09-11T01:08:06.432662709	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-10-05T21:35:05.022956695	Tags for minecraft:block mod id succsessentials
 e3790bdf5a75cd49b5bb1885b0df983048f4b53d data/minecraft/tags/block/climbable.json
 b191446245dca41e0353a76eb4da8fd763da977b data/minecraft/tags/block/fence_gates.json
 20463ae1d94f36a469873ec9292ac6f8bce7e283 data/minecraft/tags/block/fences.json
@@ -27,7 +27,7 @@ f1ae8c1b4493e0dd2adb4871d87d8fd67ba4323d data/minecraft/tags/block/wooden_trapdo
 57a1f0fc863eb2365cf29344c9ce255f4f9b21ac data/succsessentials/tags/block/incorrect_for_ruby_tool.json
 e3f8ec13c02e9e96d6f2f8e26e7c600674b214b6 data/succsessentials/tags/block/incorrect_for_sapphire_tool.json
 e3f8ec13c02e9e96d6f2f8e26e7c600674b214b6 data/succsessentials/tags/block/incorrect_for_sunstone_tool.json
-73d66f372d8c4d1b45f3aa477fbb0a97cfa88b10 data/succsessentials/tags/block/mineable/paxel.json
+82362cfbd1836db13c7e9d36c8712821e795ac55 data/succsessentials/tags/block/mineable/paxel.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/succsessentials/tags/block/needs_atherium_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/succsessentials/tags/block/needs_jaspilite_tool.json
 0e6575e2ad604cec649c436de19765813c5ff220 data/succsessentials/tags/block/needs_malachite_tool.json

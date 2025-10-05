@@ -54,9 +54,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
                 .add(ModBlocks.GEM_POLISHING_TABLE.get());
 
-        // Paxel mineable inherits pickaxe
         tag(ModTags.Blocks.PAXEL_MINEABLE)
-                .addTag(BlockTags.MINEABLE_WITH_PICKAXE);
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
+
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.JASPILITE_ORE.get())
