@@ -59,7 +59,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
 
-
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.JASPILITE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_JASPILITE_ORE.get())
@@ -201,8 +200,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRYOHEART_LOG.get())
                 .add(ModBlocks.CRYOHEART_WOOD.get())
                 .add(ModBlocks.STRIPPED_CRYOHEART_LOG.get())
-                .add(ModBlocks.STRIPPED_CRYOHEART_WOOD.get());
-        // (Intentionally NOT adding Emberpine here; say the word if you want it to burn.)
+                .add(ModBlocks.STRIPPED_CRYOHEART_WOOD.get())
+                .add(ModBlocks.EMBERPINE_LOG.get())
+                .add(ModBlocks.EMBERPINE_WOOD.get())
+                .add(ModBlocks.STRIPPED_EMBERPINE_LOG.get())
+                .add(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
 
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(ModBlocks.SHATTERBLOOM_BUTTON.get())

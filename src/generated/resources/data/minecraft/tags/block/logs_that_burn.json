@@ -11,6 +11,10 @@
     "succsessentials:cryoheart_log",
     "succsessentials:cryoheart_wood",
     "succsessentials:stripped_cryoheart_log",
-    "succsessentials:stripped_cryoheart_wood"
+    "succsessentials:stripped_cryoheart_wood",
+    "succsessentials:emberpine_log",
+    "succsessentials:emberpine_wood",
+    "succsessentials:stripped_emberpine_log",
+    "succsessentials:stripped_emberpine_wood"
   ]
 }

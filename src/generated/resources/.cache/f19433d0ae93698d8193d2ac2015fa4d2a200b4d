@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-05T21:35:05.022956695	Tags for minecraft:block mod id succsessentials
+// 1.21.1	2025-10-05T21:41:36.021674359	Tags for minecraft:block mod id succsessentials
 e3790bdf5a75cd49b5bb1885b0df983048f4b53d data/minecraft/tags/block/climbable.json
 b191446245dca41e0353a76eb4da8fd763da977b data/minecraft/tags/block/fence_gates.json
 20463ae1d94f36a469873ec9292ac6f8bce7e283 data/minecraft/tags/block/fences.json
@@ -8,7 +8,7 @@ c71f8a2e08c795e57881efec77f2935f940a5847 data/minecraft/tags/block/incorrect_for
 0a94bf97c162adc237c00887ae6751e0c3e49c16 data/minecraft/tags/block/incorrect_for_netherite_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_stone_tool.json
 3cd75af916fd57d79025b477e1e9280848db9364 data/minecraft/tags/block/incorrect_for_wooden_tool.json
-755a1869e4848966d08ab34c8ddff0cd6f1b3bf3 data/minecraft/tags/block/logs_that_burn.json
+aed4e9e90a9b4672b3fe55c06e7557574021fb89 data/minecraft/tags/block/logs_that_burn.json
 741866eb4bf7b5d32085cba36a8429c6704f7a87 data/minecraft/tags/block/mineable/pickaxe.json
 dcfb8c0c533cd996f9eb2371970d9f1efb9f2942 data/minecraft/tags/block/mineable/shovel.json
 8cd6db184cbf63a293cf7b9cf570865bec72c5a4 data/minecraft/tags/block/needs_diamond_tool.json

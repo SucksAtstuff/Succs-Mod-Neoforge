@@ -108,7 +108,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             this.add("reinforcement_template_in_" + lootTable.getPath(),
                     new AddItemModifier(new LootItemCondition[] {
                             LootTableIdCondition.builder(lootTable).build(),
-                            LootItemRandomChanceCondition.randomChance(0.08f).build()
+                            LootItemRandomChanceCondition.randomChance(0.25f).build()
                     }, ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()));
         }
     }
@@ -119,37 +119,37 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             // Add Ring of Ruby
             add("ring_of_ruby_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.RING_OF_RUBY.get()));
 
             // Add Ring of Sapphire
             add("ring_of_sapphire_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.RING_OF_SAPPHIRE.get()));
 
             // Add Ring of Sunstone
             add("ring_of_sunstone_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.RING_OF_SUNSTONE.get()));
 
             // Add Ring of Atherium
             add("ring_of_atherium_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.RING_OF_ATHERIUM.get()));
 
             // Add Bracelet of Malachite
             add("bracelet_of_malachite_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.BRACELET_OF_MALACHITE.get()));
 
             // Add Necklace of Amethyst
             add("necklace_of_jaspilite_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{
                     LootTableIdCondition.builder(lootTable).build(),
-                    LootItemRandomChanceCondition.randomChance(0.01f).build()
+                    LootItemRandomChanceCondition.randomChance(0.1f).build()
             }, ModItems.NECKLACE_OF_JASPILITE.get()));
         }
     }
@@ -158,7 +158,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         this.add("clear_mud_disc_from_piglin_barter",
                 new AddItemModifier(new LootItemCondition[]{
                         LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("gameplay/piglin_bartering")).build(),
-                        LootItemRandomChanceCondition.randomChance(0.02f).build() // 2% chance, adjust as you like
+                        LootItemRandomChanceCondition.randomChance(0.10f).build() // 2% chance, adjust as you like
                 }, ModItems.CLEAR_MUD_DISC.get()));
     }
 
