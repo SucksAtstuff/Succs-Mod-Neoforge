@@ -37,14 +37,15 @@ public class OverworldRegion extends Region {
             .build().forEach(point -> builder.add(point, ModBiomes.SHATTERGROVE));
 
         // Add the VENOMOUS_FEN biome with its own parameters.
+        // Venomous Fen - warm, humid, swamp-like biome
         new ParameterPointListBuilder()
-            .temperature(Temperature.span(Temperature.WARM, Temperature.HOT))
-            .humidity(Humidity.span(Humidity.HUMID, Humidity.WET))
-            .continentalness(Continentalness.COAST)
-            .erosion(Erosion.EROSION_2, Erosion.EROSION_3)
-            .depth(Depth.SURFACE, Depth.FLOOR)
-            .weirdness(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING)
-            .build().forEach(point -> builder.add(point, ModBiomes.VENOMOUS_FEN));
+                .temperature(Temperature.WARM) // Keep it warm
+                .humidity(Humidity.span(Humidity.NEUTRAL, Humidity.WET)) // Allow normal→wet
+                .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.NEAR_INLAND)) // Coastal and just inland
+                .erosion(Erosion.span(Erosion.EROSION_2, Erosion.EROSION_5)) // Allow flatter areas too
+                .depth(Depth.SURFACE, Depth.FLOOR)
+                .weirdness(Weirdness.span(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING))
+                .build().forEach(point -> builder.add(point, ModBiomes.VENOMOUS_FEN));
 
         // Add the CRYSTALFROST_VALE biome: cold, rare, high inland
         new ParameterPointListBuilder()
