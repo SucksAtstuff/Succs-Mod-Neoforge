@@ -2,7 +2,7 @@
   // More info on template pools: https://minecraft.gamepedia.com/Custom_world_generation#JSON_format_8
   // This pool is used for gem rocks that generate in the Shattergrove biome.
 
-  // The fallback pool to use if all elements fail to place.
+  // The fallback pool to use if all_hammers.json elements fail to place.
   "fallback": "minecraft:empty",
 
   // List of structure elements (.nbt files) to randomly pick from.

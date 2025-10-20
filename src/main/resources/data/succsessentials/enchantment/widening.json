@@ -1,8 +1,8 @@
 {
   "description": { "translate": "enchantment.succsessentials.widening" },
 
-  "supported_items": "#succsessentials:enchantable/hammer",
-  "primary_items":   "#succsessentials:enchantable/hammer",
+  "supported_items": "#succsessentials:enchantable/all_hammers",
+  "primary_items":   "#succsessentials:enchantable/all_hammers",
 
   "weight": 12,
   "max_level": 3,

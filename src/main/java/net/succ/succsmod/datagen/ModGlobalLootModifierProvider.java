@@ -20,7 +20,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         super(output, registries, SuccsMod.MOD_ID);
     }
 
-    // Define an array of all dungeon chest loot tables
+    // Define an array of all_hammers.json dungeon chest loot tables
     ResourceLocation[] dungeonChestLootTables = new ResourceLocation[] {
             ResourceLocation.withDefaultNamespace("chests/simple_dungeon"),
             ResourceLocation.withDefaultNamespace("chests/stronghold_corridor"),
@@ -30,19 +30,19 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             ResourceLocation.withDefaultNamespace( "chests/abandoned_mineshaft")
     };
 
-    // Define an array of all end dungeon chest loot tables
+    // Define an array of all_hammers.json end dungeon chest loot tables
     ResourceLocation[] endDungeonChestLootTables = new ResourceLocation[] {
             ResourceLocation.withDefaultNamespace("chests/end_city_treasure"),
             ResourceLocation.withDefaultNamespace("chests/stronghold_library")
     };
 
-    // Define an array of all nether dungeon chest loot tables
+    // Define an array of all_hammers.json nether dungeon chest loot tables
     ResourceLocation[] netherDungeonChestLootTables = new ResourceLocation[] {
             ResourceLocation.withDefaultNamespace("chests/nether_bridge"),
             ResourceLocation.withDefaultNamespace("chests/bastion_treasure")
     };
 
-    // Define an array of all overworld dungeon chest loot tables
+    // Define an array of all_hammers.json overworld dungeon chest loot tables
     ResourceLocation[] overworldDungeonChestLootTables = new ResourceLocation[] {
             ResourceLocation.withDefaultNamespace( "chests/simple_dungeon"),
             ResourceLocation.withDefaultNamespace("chests/stronghold_corridor"),
@@ -114,7 +114,7 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     }
 
     private void addCurioItemstoDungeonChests() {
-        // Loop over each dungeon chest loot table and add all rings and bracelet to each one
+        // Loop over each dungeon chest loot table and add all_hammers.json rings and bracelet to each one
         for (ResourceLocation lootTable : dungeonChestLootTables) {
             // Add Ring of Ruby
             add("ring_of_ruby_in_" + lootTable.getPath(), new AddItemModifier(new LootItemCondition[]{

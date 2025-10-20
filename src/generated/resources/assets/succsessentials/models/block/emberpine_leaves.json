@@ -2,6 +2,6 @@
   "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "succsessentials:block/emberpine_leaves"
+    "all_hammers.json": "succsessentials:block/emberpine_leaves"
   }
 }

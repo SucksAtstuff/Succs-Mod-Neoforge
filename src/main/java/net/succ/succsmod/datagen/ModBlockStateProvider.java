@@ -265,7 +265,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void leavesBlock(DeferredBlock<Block> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(),
                 models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
-                        "all", blockTexture(deferredBlock.get())).renderType("cutout"));
+                        "all_hammers.json", blockTexture(deferredBlock.get())).renderType("cutout"));
     }
 
     private void saplingBlock(DeferredBlock<Block> deferredBlock) {

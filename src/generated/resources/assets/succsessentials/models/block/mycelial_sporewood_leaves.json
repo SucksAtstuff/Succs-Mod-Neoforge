@@ -2,6 +2,6 @@
   "parent": "minecraft:block/leaves",
   "render_type": "minecraft:cutout",
   "textures": {
-    "all": "succsessentials:block/mycelial_sporewood_leaves"
+    "all_hammers.json": "succsessentials:block/mycelial_sporewood_leaves"
   }
 }
