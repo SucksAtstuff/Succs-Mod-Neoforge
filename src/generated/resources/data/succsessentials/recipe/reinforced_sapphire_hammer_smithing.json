@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "succsessentials:sapphire_block"
+  },
+  "base": {
+    "item": "succsessentials:sapphire_hammer"
+  },
+  "result": {
+    "count": 1,
+    "id": "succsessentials:sapphire_reinforced_hammer"
+  },
+  "template": {
+    "item": "succsessentials:reinforcement_smithing_template"
+  }
+}

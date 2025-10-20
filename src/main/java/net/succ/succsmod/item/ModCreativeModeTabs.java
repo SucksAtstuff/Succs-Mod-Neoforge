@@ -206,6 +206,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MALACHITE_HOE.get());
                         output.accept(ModItems.MALACHITE_HAMMER.get());
                         output.accept(ModItems.MALACHITE_PAXEL.get());
+                        output.accept(ModItems.MALACHITE_REINFORCED_HAMMER);
 
                         output.accept(ModItems.RUBY_SWORD.get());
                         output.accept(ModItems.RUBY_PICKAXE.get());
@@ -214,6 +215,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RUBY_HOE.get());
                         output.accept(ModItems.RUBY_HAMMER.get());
                         output.accept(ModItems.RUBY_PAXEL.get());
+                        output.accept(ModItems.RUBY_REINFORCED_HAMMER);
 
                         output.accept(ModItems.SAPPHIRE_SWORD.get());
                         output.accept(ModItems.SAPPHIRE_PICKAXE.get());
@@ -222,6 +224,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAPPHIRE_HOE.get());
                         output.accept(ModItems.SAPPHIRE_HAMMER.get());
                         output.accept(ModItems.SAPPHIRE_PAXEL.get());
+                        output.accept(ModItems.SAPPHIRE_REINFORCED_HAMMER);
 
                         output.accept(ModItems.SUNSTONE_SWORD.get());
                         output.accept(ModItems.SUNSTONE_PICKAXE.get());
@@ -230,6 +233,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNSTONE_HOE.get());
                         output.accept(ModItems.SUNSTONE_HAMMER.get());
                         output.accept(ModItems.SUNSTONE_PAXEL.get());
+                        output.accept(ModItems.SUNSTONE_REINFORCED_HAMMER);
 
                         output.accept(ModItems.JASPILITE_SWORD.get());
                         output.accept(ModItems.JASPILITE_PICKAXE.get());
@@ -238,6 +242,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.JASPILITE_HOE.get());
                         output.accept(ModItems.JASPILITE_HAMMER.get());
                         output.accept(ModItems.JASPILITE_PAXEL.get());
+                        output.accept(ModItems.JASPILITE_REINFORCED_HAMMER);
+
                     })
                     .build());
 

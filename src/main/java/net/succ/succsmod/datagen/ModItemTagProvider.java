@@ -122,7 +122,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SAPPHIRE_HAMMER.get())
                 .add(ModItems.ATHERIUM_HAMMER.get())
                 .add(ModItems.RUBY_HAMMER.get())
-                .add(ModItems.MALACHITE_HAMMER.get());
+                .add(ModItems.MALACHITE_HAMMER.get())
+                .add(ModItems.ATHERIUM_REINFORCED_HAMMER.get())
+                .add(ModItems.MALACHITE_REINFORCED_HAMMER.get());
 
         tag(ItemTags.LOGS_THAT_BURN)
                 .addTag(ModTags.Items.CRYOHEART_LOGS)

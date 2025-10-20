@@ -89,6 +89,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.MALACHITE_HOE.get());
         handheldItem(ModItems.MALACHITE_HAMMER.get());
         handheldItem(ModItems.MALACHITE_PAXEL.get());
+        handheldItem(ModItems.MALACHITE_REINFORCED_HAMMER.get());
 
         // Register models for ruby tools
         handheldItem(ModItems.RUBY_SWORD.get());
@@ -98,6 +99,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.RUBY_HOE.get());
         handheldItem(ModItems.RUBY_HAMMER.get());
         handheldItem(ModItems.RUBY_PAXEL.get());
+        handheldItem(ModItems.RUBY_REINFORCED_HAMMER.get());
 
         // Register models for sapphire tools
         handheldItem(ModItems.SAPPHIRE_SWORD.get());
@@ -107,6 +109,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SAPPHIRE_HOE.get());
         handheldItem(ModItems.SAPPHIRE_HAMMER.get());
         handheldItem(ModItems.SAPPHIRE_PAXEL.get());
+        handheldItem(ModItems.SAPPHIRE_REINFORCED_HAMMER.get());
 
         // Register models for sunstone tools
         handheldItem(ModItems.SUNSTONE_SWORD.get());
@@ -116,6 +119,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SUNSTONE_HOE.get());
         handheldItem(ModItems.SUNSTONE_HAMMER.get());
         handheldItem(ModItems.SUNSTONE_PAXEL.get());
+        handheldItem(ModItems.SUNSTONE_REINFORCED_HAMMER.get());
 
         // Register models for jaspilite tools
         handheldItem(ModItems.JASPILITE_SWORD.get());
@@ -125,6 +129,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.JASPILITE_HOE.get());
         handheldItem(ModItems.JASPILITE_HAMMER.get());
         handheldItem(ModItems.JASPILITE_PAXEL.get());
+        handheldItem(ModItems.JASPILITE_REINFORCED_HAMMER.get());
 
         // Register models for atherium armor
         trimmedArmorItem(ModItems.ATHERIUM_HELMET);

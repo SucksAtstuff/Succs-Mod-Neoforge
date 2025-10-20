@@ -38,8 +38,13 @@
     "item.succsessentials.malachite_hammer": "Malachite Hammer",
     "item.succsessentials.malachite_paxel": "Malachite Paxel",
     "item.succsessentials.atherium_reinforced_hammer": "Atherium Reinforced Hammer",
+    "item.succsessentials.malachite_reinforced_hammer": "Malachite Reinforced Hammer",
+    "item.succsessentials.ruby_reinforced_hammer": "Ruby Reinforced Hammer",
+    "item.succsessentials.sapphire_reinforced_hammer": "Sapphire Reinforced Hammer",
+    "item.succsessentials.sunstone_reinforced_hammer": "Sunstone Reinforced Hammer",
+    "item.succsessentials.jaspilite_reinforced_hammer": "Jaspilite Reinforced Hammer",
 
-    "item.succsessentials.malachite_helmet": "Malachite Helmet",
+  "item.succsessentials.malachite_helmet": "Malachite Helmet",
     "item.succsessentials.malachite_chestplate": "Malachite Chestplate",
     "item.succsessentials.malachite_leggings": "Malachite Leggings",
     "item.succsessentials.malachite_boots": "Malachite Boots",
@@ -283,10 +288,10 @@
 
     "item.succsessentials.reinforcement_smithing_template": "Reinforcement Smithing Template",
 
-    "item.succsessentials.smithing_template.reinforcement.applies_to": "Applies to: Hammers",
-    "item.succsessentials.smithing_template.reinforcement.ingredients": "Ingredients: Atherium block",
+    "item.succsessentials.smithing_template.reinforcement.applies_to": "Applies to: All Hammers",
+    "item.succsessentials.smithing_template.reinforcement.ingredients": "Ingredients: Various reinforcement materials",
     "item.succsessentials.smithing_template.reinforcement.title": "Reinforcement Upgrade",
-    "item.succsessentials.smithing_template.reinforcement.base_slot_description": "Place Atherium Hammer here",
+    "item.succsessentials.smithing_template.reinforcement.base_slot_description": "Place any hammer here",
     "item.succsessentials.smithing_template.reinforcement.additions_slot_description": "Place the reinforcing material here",
 
     "block.succsessentials.scorched_sand": "Scorched sand",

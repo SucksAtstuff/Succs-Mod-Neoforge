@@ -3,10 +3,12 @@ package net.succ.succsmod.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.item.ModItems;
@@ -116,18 +118,68 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_atherium", has(ModItems.ATHERIUM.get()))
                 .save(recipeOutput);
 
-        // Reinforced Atherium Hammer — smithing upgrade using your custom template
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()), // template
-                        Ingredient.of(ModItems.ATHERIUM_HAMMER.get()),                 // base
-                        Ingredient.of(ModBlocks.ATHERIUM_BLOCK.get()),                 // addition (block instead of ingot)
-                        RecipeCategory.TOOLS,
-                        ModItems.ATHERIUM_REINFORCED_HAMMER.get()                      // result
+        // Helper record for readability
+        record ReinforcedHammerData(
+                DeferredItem<Item> base,
+                ItemLike addition,
+                DeferredItem<Item> result,
+                String name
+        ) {}
+
+        // Define hammer upgrade paths
+        List<ReinforcedHammerData> reinforcedHammers = List.of(
+                new ReinforcedHammerData(
+                        ModItems.ATHERIUM_HAMMER,
+                        ModBlocks.ATHERIUM_BLOCK.get(),
+                        ModItems.ATHERIUM_REINFORCED_HAMMER,
+                        "atherium"
+                ),
+                new ReinforcedHammerData(
+                        ModItems.MALACHITE_HAMMER,
+                        ModBlocks.MALACHITE_BLOCK.get(),
+                        ModItems.MALACHITE_REINFORCED_HAMMER,
+                        "malachite"
+                ),
+                new ReinforcedHammerData(
+                        ModItems.RUBY_HAMMER,
+                        ModBlocks.RUBY_BLOCK.get(),
+                        ModItems.RUBY_REINFORCED_HAMMER,
+                        "ruby"
+                ),
+                new ReinforcedHammerData(
+                        ModItems.SUNSTONE_HAMMER,
+                        ModBlocks.SUNSTONE_BLOCK.get(),
+                        ModItems.SUNSTONE_REINFORCED_HAMMER,
+                        "sunstone"
+                ),
+                new ReinforcedHammerData(
+                        ModItems.SAPPHIRE_HAMMER,
+                        ModBlocks.SAPPHIRE_BLOCK.get(),
+                        ModItems.SAPPHIRE_REINFORCED_HAMMER,
+                        "sapphire"
+                ),
+                new ReinforcedHammerData(
+                        ModItems.JASPILITE_HAMMER,
+                        ModBlocks.JASPILITE_BLOCK.get(),
+                        ModItems.JASPILITE_REINFORCED_HAMMER,
+                        "jaspilite"
                 )
-                .unlocks("has_template", has(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()))
-                .unlocks("has_hammer", has(ModItems.ATHERIUM_HAMMER.get()))
-                .unlocks("has_block", has(ModBlocks.ATHERIUM_BLOCK.get()))
-                .save(recipeOutput, SuccsMod.MOD_ID + ":atherium_reinforced_hammer_smithing");
+        );
+
+        // Generate smithing recipes
+        for (var hammer : reinforcedHammers) {
+            SmithingTransformRecipeBuilder.smithing(
+                            Ingredient.of(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()), // Template item
+                            Ingredient.of(hammer.base().get()),                             // Base hammer
+                            Ingredient.of(hammer.addition()),                               // Reinforcing block
+                            RecipeCategory.TOOLS,
+                            hammer.result().get()                                           // Reinforced result
+                    )
+                    .unlocks("has_template", has(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()))
+                    .unlocks("has_" + hammer.name() + "_hammer", has(hammer.base().get()))
+                    .unlocks("has_" + hammer.name() + "_block", has(hammer.addition()))
+                    .save(recipeOutput, SuccsMod.MOD_ID + ":reinforced_" + hammer.name() + "_hammer_smithing");
+        }
 
         // Copy/duplicate the Reinforcement Template (similar to vanilla smithing-template copies)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get(), 2)

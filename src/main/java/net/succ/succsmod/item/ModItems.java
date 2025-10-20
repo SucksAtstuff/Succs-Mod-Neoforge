@@ -165,7 +165,7 @@ public class ModItems {
             () -> new ReinforcedHammerItem(ModToolTiers.ATHERIUM,
                     new Item.Properties()
                             .attributes(HammerItem.createAttributes(ModToolTiers.ATHERIUM,
-                                    12,        // Tier-6 (reinforced)
+                                    13,        // +2 damage over base
                                     -3.5F))
                             .durability(ModToolTiers.ATHERIUM.getUses() + 300)));
 
@@ -213,6 +213,13 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.MALACHITE,
                                     3,        //  Tier-5
                                     -3F))));
+    public static final DeferredItem<Item> MALACHITE_REINFORCED_HAMMER = ITEMS.register("malachite_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.MALACHITE,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.MALACHITE,
+                                    12,        // +2 damage over base
+                                    -3.5F))
+                            .durability(ModToolTiers.MALACHITE.getUses() + 300)));
 
     /* ----------  ✦  TIER-4  RUBY  ✦  ---------------------------------- */
     public static final DeferredItem<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
@@ -257,6 +264,14 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.RUBY,
                                     2,        //  Tier-4
                                     -3F))));
+    public static final DeferredItem<Item> RUBY_REINFORCED_HAMMER = ITEMS.register("ruby_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.RUBY,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.RUBY,
+                                    11,        // +2 damage over base
+                                    -3.5F))
+                            .durability(ModToolTiers.RUBY.getUses() + 300)));
+
 
     /* ----------  ✦  TIER-3  SAPPHIRE  ✦  ------------------------------ */
     public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
@@ -301,6 +316,13 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.SAPPHIRE,
                                     1,        //  Tier-3
                                     -3F))));
+    public static final DeferredItem<Item> SAPPHIRE_REINFORCED_HAMMER = ITEMS.register("sapphire_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.SAPPHIRE,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.SAPPHIRE,
+                                    10,        // +2 damage over base
+                                    -3.5F))
+                            .durability(ModToolTiers.SAPPHIRE.getUses() + 300)));
 
     /* ----------  ✦  TIER-3  SUNSTONE  ✦ (identical numbers, extra fire effect) */
     public static final DeferredItem<MobEffectSwordItem> SUNSTONE_SWORD = ITEMS.register("sunstone_sword",
@@ -346,6 +368,13 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.SUNSTONE,
                                     1,        //  Tier-3
                                     -3F))));
+    public static final DeferredItem<Item> SUNSTONE_REINFORCED_HAMMER = ITEMS.register("sunstone_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.SUNSTONE,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE,
+                                    10,        // +2 damage over base
+                                    -3.5F))
+                            .durability(ModToolTiers.SUNSTONE.getUses() + 300)));
 
     /* ----------  ✦  TIER-1  JASPILITE  ✦  ----------------------------- */
     public static final DeferredItem<SwordItem> JASPILITE_SWORD = ITEMS.register("jaspilite_sword",
@@ -390,6 +419,13 @@ public class ModItems {
                             .attributes(PaxelItem.createAttributes(ModToolTiers.JASPILITE,
                                     0,        //  Tier-1
                                     -3F))));
+    public static final DeferredItem<Item> JASPILITE_REINFORCED_HAMMER = ITEMS.register("jaspilite_reinforced_hammer",
+            () -> new ReinforcedHammerItem(ModToolTiers.JASPILITE,
+                    new Item.Properties()
+                            .attributes(HammerItem.createAttributes(ModToolTiers.JASPILITE,
+                                    9,        // +2 damage over base
+                                    -3.5F))
+                            .durability(ModToolTiers.JASPILITE.getUses() + 300)));
 
     /* =====================================================================
      *                      ARMOUR ITEM REGISTRATION
