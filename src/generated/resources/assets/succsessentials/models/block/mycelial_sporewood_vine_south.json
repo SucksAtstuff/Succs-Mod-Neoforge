@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/vine",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "vine": "succsessentials:block/mycelial_sporewood_vine"
-  }
-}

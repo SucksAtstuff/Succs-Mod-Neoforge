@@ -6,10 +6,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
-import net.succ.succsmod.entity.custom.HedgehogEntity;
-import net.succ.succsmod.entity.custom.PukekoEntity;
-import net.succ.succsmod.entity.custom.ScorchedHuskEntity;
-import net.succ.succsmod.entity.custom.ToxicSlimeEntity;
+import net.succ.succsmod.entity.custom.*;
 
 import java.util.function.Supplier;
 
@@ -32,6 +29,10 @@ public class ModEntities {
     public static final Supplier<EntityType<ScorchedHuskEntity>> SCORCHED_HUSK =
             ENTITY_TYPES.register("scorched_husk", () -> EntityType.Builder.of(ScorchedHuskEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.95f).build("scorched_husk"));
+
+    public static final Supplier<EntityType<TjEntity>> TJ =
+            ENTITY_TYPES.register("tj", () -> EntityType.Builder.of(TjEntity::new, MobCategory.MONSTER)
+                    .sized(0.6f, 1.95f).build("tj"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

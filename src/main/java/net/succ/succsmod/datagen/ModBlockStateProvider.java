@@ -82,7 +82,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(((StairBlock) ModBlocks.SHATTERBLOOM_STAIRS.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.SHATTERBLOOM_SLAB.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()), blockTexture(ModBlocks.SHATTERBLOOM_PLANKS.get()));
 
-        blockItem(ModBlocks.SHATTERBLOOM_TRAPDOOR, "_bottom");
+        blockItemOther(ModBlocks.SHATTERBLOOM_TRAPDOOR, "_bottom");
         blockItem(ModBlocks.SHATTERBLOOM_SLAB);
         blockItem(ModBlocks.SHATTERBLOOM_STAIRS);
         
@@ -116,7 +116,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(((StairBlock) ModBlocks.MYCELIAL_SPOREWOOD_STAIRS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.MYCELIAL_SPOREWOOD_SLAB.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()), blockTexture(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get()));
 
-        blockItem(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR, "_bottom");
+        blockItemOther(ModBlocks.MYCELIAL_SPOREWOOD_TRAPDOOR, "_bottom");
         blockItem(ModBlocks.MYCELIAL_SPOREWOOD_SLAB);
         blockItem(ModBlocks.MYCELIAL_SPOREWOOD_STAIRS);
 
@@ -163,7 +163,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.CRYOHEART_TRAPDOOR.get()), modLoc("block/cryoheart_trapdoor"), true, "cutout");
         stairsBlock(((StairBlock) ModBlocks.CRYOHEART_STAIRS.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
         slabBlock(((SlabBlock) ModBlocks.CRYOHEART_SLAB.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
-        blockItem(ModBlocks.CRYOHEART_TRAPDOOR, "_bottom");
+        blockItemOther(ModBlocks.CRYOHEART_TRAPDOOR, "_bottom");
         blockItem(ModBlocks.CRYOHEART_SLAB);
         blockItem(ModBlocks.CRYOHEART_STAIRS);
         pressurePlateBlock(((PressurePlateBlock) ModBlocks.CRYOHEART_PRESSURE_PLATE.get()), blockTexture(ModBlocks.CRYOHEART_PLANKS.get()));
@@ -207,7 +207,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.EMBERPINE_PLANKS.get()),
                 blockTexture(ModBlocks.EMBERPINE_PLANKS.get()));
 
-        blockItem(ModBlocks.EMBERPINE_TRAPDOOR, "_bottom");
+        blockItemOther(ModBlocks.EMBERPINE_TRAPDOOR, "_bottom");
         blockItem(ModBlocks.EMBERPINE_SLAB);
         blockItem(ModBlocks.EMBERPINE_STAIRS);
 
@@ -264,9 +264,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void leavesBlock(DeferredBlock<Block> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(),
-                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
-                        "all_hammers.json", blockTexture(deferredBlock.get())).renderType("cutout"));
+                models().singleTexture(
+                        BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(),
+                        ResourceLocation.parse("minecraft:block/leaves"),
+                        "all",
+                        blockTexture(deferredBlock.get())
+                ).renderType("cutout"));
     }
+
 
     private void saplingBlock(DeferredBlock<Block> deferredBlock) {
         simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
@@ -280,7 +285,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath()));
     }
 
-    private void blockItem(DeferredBlock<Block> deferredBlock, String appendix){
+    private void blockItemOther(DeferredBlock<Block> deferredBlock, String appendix){
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("succsessentials:block/" + deferredBlock.getId().getPath() + appendix));
     }
 

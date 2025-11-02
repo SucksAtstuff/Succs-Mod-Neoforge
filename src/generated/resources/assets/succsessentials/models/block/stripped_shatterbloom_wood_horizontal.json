@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "succsessentials:block/stripped_shatterbloom_log",
-    "side": "succsessentials:block/stripped_shatterbloom_log"
-  }
-}

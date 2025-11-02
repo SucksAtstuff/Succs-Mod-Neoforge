@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "succsessentials:block/emberpine_log_top",
-    "side": "succsessentials:block/emberpine_log"
-  }
-}

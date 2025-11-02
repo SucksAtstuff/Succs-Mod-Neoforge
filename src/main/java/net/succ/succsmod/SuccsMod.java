@@ -161,6 +161,15 @@ public class SuccsMod
                     }
             );
 
+            EntityRenderers.register(ModEntities.TJ.get(), ctx ->
+                    new HuskRenderer(ctx) {
+                        @Override
+                        public ResourceLocation getTextureLocation(Zombie entity) {
+                            return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/tj/tj.png");
+                        }
+                    }
+            );
+
         }
 
         @SubscribeEvent

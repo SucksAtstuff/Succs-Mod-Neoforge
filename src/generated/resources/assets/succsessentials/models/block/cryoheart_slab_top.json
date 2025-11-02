@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "succsessentials:block/cryoheart_planks",
-    "side": "succsessentials:block/cryoheart_planks",
-    "top": "succsessentials:block/cryoheart_planks"
-  }
-}

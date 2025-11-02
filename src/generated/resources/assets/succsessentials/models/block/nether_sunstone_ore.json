@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "succsessentials:block/nether_sunstone_ore"
-  }
-}

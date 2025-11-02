@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "succsessentials:block/emberpine_planks",
-    "side": "succsessentials:block/emberpine_planks",
-    "top": "succsessentials:block/emberpine_planks"
-  }
-}

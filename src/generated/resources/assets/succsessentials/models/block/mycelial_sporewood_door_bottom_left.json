@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "bottom": "succsessentials:block/mycelial_sporewood_door_bottom",
-    "top": "succsessentials:block/mycelial_sporewood_door_top"
-  }
-}
