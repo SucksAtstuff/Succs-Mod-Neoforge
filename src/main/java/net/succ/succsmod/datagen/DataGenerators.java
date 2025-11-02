@@ -15,6 +15,7 @@ import net.succ.succsmod.SuccsMod;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
@@ -27,8 +28,15 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(event.includeServer(),
+                new LootTableProvider(packOutput, Set.of(),
+                        List.of(
+                                new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK),
+                                new LootTableProvider.SubProviderEntry(ModEntityLootTablesProvider.ModEntityLootTables::new, LootContextParamSets.ENTITY)
+                        ),
+                        lookupProvider)
+        );
+
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
 
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);

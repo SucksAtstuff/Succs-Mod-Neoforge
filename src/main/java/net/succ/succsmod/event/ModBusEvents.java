@@ -19,10 +19,7 @@ import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.entity.client.HedgehogModel;
 import net.succ.succsmod.entity.client.ModModelLayers;
 import net.succ.succsmod.entity.client.PukekoModel;
-import net.succ.succsmod.entity.custom.HedgehogEntity;
-import net.succ.succsmod.entity.custom.PukekoEntity;
-import net.succ.succsmod.entity.custom.ScorchedHuskEntity;
-import net.succ.succsmod.entity.custom.ToxicSlimeEntity;
+import net.succ.succsmod.entity.custom.*;
 
 @EventBusSubscriber(modid = SuccsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModBusEvents {
@@ -45,6 +42,8 @@ public class ModBusEvents {
         event.put(ModEntities.HEDGEHOG.get(), HedgehogEntity.createAttributes().build());
         event.put(ModEntities.TOXIC_SLIME.get(), ToxicSlimeEntity.createAttributes().build());
         event.put(ModEntities.SCORCHED_HUSK.get(), Husk.createAttributes().build());
+        event.put(ModEntities.TJ.get(), TjEntity.createAttributes().build());
+
 
     }
 

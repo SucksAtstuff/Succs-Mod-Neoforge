@@ -163,6 +163,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_EMBERPINE_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_EMBERPINE_WOOD.get().asItem());
 
+        tag(ModTags.Items.JEWELRY)
+                .add(ModItems.RING_OF_ATHERIUM.get())
+                .add(ModItems.RING_OF_RUBY.get())
+                .add(ModItems.RING_OF_SAPPHIRE.get())
+                .add(ModItems.RING_OF_SUNSTONE.get())
+                .add(ModItems.NECKLACE_OF_JASPILITE.get())
+                .add(ModItems.BRACELET_OF_MALACHITE.get());
+
+
 
 
 

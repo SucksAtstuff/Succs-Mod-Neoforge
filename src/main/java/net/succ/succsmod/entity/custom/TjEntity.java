@@ -7,13 +7,12 @@ import net.minecraft.world.BossEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 
 public class TjEntity extends Zombie {
     private final ServerBossEvent bossEvent = new ServerBossEvent(
-            Component.translatable("entity.succsessentials.tj_entity"), // Boss name
+            Component.translatable("entity.succsessentials.tj"), // Boss name
             BossEvent.BossBarColor.BLUE,           // Bar color
             BossEvent.BossBarOverlay.NOTCHED_10   // Bar style
     );
@@ -21,6 +20,7 @@ public class TjEntity extends Zombie {
     public TjEntity(EntityType<? extends Zombie> entityType, Level level) {
         super(entityType, level);
         this.bossEvent.setVisible(true); // Make sure it shows up for nearby players
+        this.xpReward = 500; // <-- Give 500 XP on death
     }
 
     @Override
@@ -48,10 +48,23 @@ public class TjEntity extends Zombie {
         return false; // doesn’t burn in sunlight
     }
 
+    // Always adult
+    @Override
+    public void setBaby(boolean baby) {
+        // TJ never becomes a baby, ignore vanilla logic
+    }
+
+    // Just in case (to prevent rendering bugs), make sure the game always sees it as an adult:
+    @Override
+    public boolean isBaby() {
+        return false;
+    }
+
     @Override
     protected void registerGoals() {
         super.registerGoals(); // keeps normal zombie AI
     }
+
 
 
     // The boss overall has high stats because of the armour and tools included in the mod.
