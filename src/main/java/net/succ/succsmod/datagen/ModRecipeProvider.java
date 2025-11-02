@@ -797,6 +797,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bread", has(Items.BREAD))
                 .save(recipeOutput, "garlic_bread");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ORB_OF_SUMMONING.get())
+                .pattern("RMR")
+                .pattern("M#M")
+                .pattern("JSN")
+                .define('S', ModItems.SAPPHIRE.get())
+                .define('M', ModItems.MALACHITE.get())
+                .define('R', ModItems.RUBY.get())
+                .define('J', ModItems.JASPILITE.get())
+                .define('N', ModItems.SUNSTONE.get())
+                .define('#', Items.NETHER_STAR)
+                .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
+                .save(recipeOutput);
 
         // Register recipes for turning logs to planks
         planksFromLog(recipeOutput, ModBlocks.SHATTERBLOOM_PLANKS.get(), ModTags.Items.SHATTERBLOOM_LOGS, 4);

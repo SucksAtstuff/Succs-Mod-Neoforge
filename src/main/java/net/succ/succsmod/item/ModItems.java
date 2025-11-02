@@ -77,6 +77,14 @@ public class ModItems {
     public static final DeferredItem<Item> SCORCHED_HUSK_SPAWN_EGG = ITEMS.register("scorched_husk_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SCORCHED_HUSK, 0x1E1B1A, 0xFF6A00, new Item.Properties()));
 
+    public static final DeferredItem<Item> ORB_OF_SUMMONING = ITEMS.register("orb_of_summoning",
+            () -> new OrbOfSummoningItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .fireResistant()
+            ));
+
+
 
 
     public static final DeferredItem<Item> REINFORCEMENT_SMITHING_TEMPLATE =

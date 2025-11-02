@@ -25,6 +25,8 @@ public class ModSounds {
     public static final Supplier<SoundEvent> CLEAR_MUD = registerSoundEvent("clear_mud");
     public static final ResourceKey<JukeboxSong> CLEAR_MUD_KEY = createSong("clear_mud");
 
+    public static final Supplier<SoundEvent> ORB_SUMMON = registerSoundEvent("orb_summon");
+
     private static ResourceKey<JukeboxSong> createSong(String name){
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
     }

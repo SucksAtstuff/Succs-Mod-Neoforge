@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:nether_star"
+    },
+    "J": {
+      "item": "succsessentials:jaspilite"
+    },
+    "M": {
+      "item": "succsessentials:malachite"
+    },
+    "N": {
+      "item": "succsessentials:sunstone"
+    },
+    "R": {
+      "item": "succsessentials:ruby"
+    },
+    "S": {
+      "item": "succsessentials:sapphire"
+    }
+  },
+  "pattern": [
+    "RMR",
+    "M#M",
+    "JSN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:orb_of_summoning"
+  }
+}

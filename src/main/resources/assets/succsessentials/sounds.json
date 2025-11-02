@@ -22,5 +22,16 @@
         "stream": true
       }
     ]
+  },
+  "orb_summon": {
+    "sounds": [
+      {
+        "name": "succsessentials:orb_summon",
+        "stream": false,
+        "volume": 10.0,
+        "attenuation_distance": 0,
+        "pitch": 0.7
+      }
+    ]
   }
 }

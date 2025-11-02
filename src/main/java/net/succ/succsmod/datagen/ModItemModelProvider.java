@@ -215,6 +215,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         withExistingParent(ModItems.HEDGEHOG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCORCHED_HUSK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        basicItem(ModItems.ORB_OF_SUMMONING.get());
     }
 
     // Shoutout to El_Redstoniano for making this

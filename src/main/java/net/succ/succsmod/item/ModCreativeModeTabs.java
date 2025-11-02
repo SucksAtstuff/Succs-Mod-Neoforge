@@ -69,6 +69,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.REINFORCEMENT_SMITHING_TEMPLATE);
 
+                        output.accept(ModItems.ORB_OF_SUMMONING);
+
                     })
                     .build());
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",

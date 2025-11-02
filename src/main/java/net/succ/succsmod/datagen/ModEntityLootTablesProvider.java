@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCon
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.entity.EntityType;
 import net.succ.succsmod.entity.ModEntities;
+import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.util.ModTags;
 
 import java.util.List;
@@ -43,6 +44,12 @@ public class ModEntityLootTablesProvider extends LootTableProvider {
                             .withPool(LootPool.lootPool()
                                     .setRolls(ConstantValue.exactly(1))
                                     .add(TagEntry.expandTag(ModTags.Items.JEWELRY))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.25f)) // 25% total chance
+                            )
+
+                            .withPool(LootPool.lootPool()
+                                    .setRolls(ConstantValue.exactly(1))
+                                    .add(LootItem.lootTableItem(ModItems.REINFORCEMENT_SMITHING_TEMPLATE.get()))
                                     .when(LootItemRandomChanceCondition.randomChance(0.25f)) // 25% total chance
                             )
 
