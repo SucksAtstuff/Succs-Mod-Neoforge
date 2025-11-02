@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "succsessentials:sunstone_block"
+  },
+  "base": {
+    "item": "succsessentials:sunstone_hammer"
+  },
+  "result": {
+    "count": 1,
+    "id": "succsessentials:sunstone_reinforced_hammer"
+  },
+  "template": {
+    "item": "succsessentials:reinforcement_smithing_template"
+  }
+}

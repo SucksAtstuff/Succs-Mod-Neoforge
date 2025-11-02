@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "succsessentials:atherium_axe"
+    },
+    "G": {
+      "item": "succsessentials:gold_handle"
+    },
+    "P": {
+      "item": "succsessentials:atherium_pickaxe"
+    },
+    "S": {
+      "item": "succsessentials:atherium_shovel"
+    }
+  },
+  "pattern": [
+    "APS",
+    " G ",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:atherium_paxel"
+  }
+}

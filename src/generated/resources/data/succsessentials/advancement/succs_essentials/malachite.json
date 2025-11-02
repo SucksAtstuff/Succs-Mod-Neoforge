@@ -1,0 +1,29 @@
+{
+  "parent": "succsessentials:succs_essentials/ruby",
+  "criteria": {
+    "has_malachite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:malachite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Obtain a polished Malachite.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:malachite"
+    },
+    "title": "Green Malachite"
+  },
+  "requirements": [
+    [
+      "has_malachite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

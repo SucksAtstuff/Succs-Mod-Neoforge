@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/sunstone",
+  "criteria": {
+    "has_sunstone_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sunstone_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.sunstone_shovel.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sunstone_shovel"
+    },
+    "title": {
+      "translate": "item.succsessentials.sunstone_shovel"
+    }
+  },
+  "requirements": [
+    [
+      "has_sunstone_shovel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

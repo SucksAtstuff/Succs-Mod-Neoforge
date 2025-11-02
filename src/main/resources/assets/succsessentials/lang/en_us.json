@@ -310,5 +310,6 @@
     "block.succsessentials.emberpine_pressure_plate": "Emberpine Pressure Plate",
     "block.succsessentials.emberpine_button": "Emberpine Button",
     "block.succsessentials.emberpine_fence": "Emberpine Fence",
-    "block.succsessentials.emberpine_fence_gate": "Emberpine Fence Gate"
+    "block.succsessentials.emberpine_fence_gate": "Emberpine Fence Gate",
+    "entity.succsessentials.tj": "TJ the Stinker"
 }

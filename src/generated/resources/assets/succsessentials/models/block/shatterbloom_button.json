@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "succsessentials:block/shatterbloom_planks"
+  }
+}

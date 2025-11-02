@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "succsessentials:block/shatterbloom_slab"
+    },
+    "type=double": {
+      "model": "succsessentials:block/shatterbloom_planks"
+    },
+    "type=top": {
+      "model": "succsessentials:block/shatterbloom_slab_top"
+    }
+  }
+}

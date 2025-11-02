@@ -1,0 +1,29 @@
+{
+  "parent": "succsessentials:succs_essentials/root",
+  "criteria": {
+    "has_jaspilite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:jaspilite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Obtain a polished Jaspilite.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:jaspilite"
+    },
+    "title": "Earthy Jaspilite"
+  },
+  "requirements": [
+    [
+      "has_jaspilite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "succsessentials:item/sapphire_reinforced_hammer"
+  }
+}

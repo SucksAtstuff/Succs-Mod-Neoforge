@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "J": {
+      "item": "succsessentials:jaspilite"
+    }
+  },
+  "pattern": [
+    "JJJ",
+    "J J"
+  ],
+  "result": {
+    "count": 1,
+    "id": "succsessentials:jaspilite_helmet"
+  }
+}

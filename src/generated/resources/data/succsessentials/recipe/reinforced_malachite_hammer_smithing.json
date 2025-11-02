@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "succsessentials:malachite_block"
+  },
+  "base": {
+    "item": "succsessentials:malachite_hammer"
+  },
+  "result": {
+    "count": 1,
+    "id": "succsessentials:malachite_reinforced_hammer"
+  },
+  "template": {
+    "item": "succsessentials:reinforcement_smithing_template"
+  }
+}

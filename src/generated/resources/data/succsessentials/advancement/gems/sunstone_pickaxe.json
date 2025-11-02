@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/sunstone",
+  "criteria": {
+    "has_sunstone_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sunstone_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.sunstone_pickaxe.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sunstone_pickaxe"
+    },
+    "title": {
+      "translate": "item.succsessentials.sunstone_pickaxe"
+    }
+  },
+  "requirements": [
+    [
+      "has_sunstone_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

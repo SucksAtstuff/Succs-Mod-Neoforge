@@ -1,0 +1,31 @@
+{
+  "parent": "succsessentials:succs_essentials/atherium",
+  "criteria": {
+    "has_atherium_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:atherium_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Craft a item.succsessentials.atherium_pickaxe.",
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:atherium_pickaxe"
+    },
+    "title": {
+      "translate": "item.succsessentials.atherium_pickaxe"
+    }
+  },
+  "requirements": [
+    [
+      "has_atherium_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

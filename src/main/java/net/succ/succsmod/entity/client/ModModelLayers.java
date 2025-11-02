@@ -17,4 +17,7 @@ public class ModModelLayers {
     public static final ModelLayerLocation SCORCHED_HUSK = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "scorched_husk"), "main");
 
+    public static final ModelLayerLocation TJ = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "tj"), "main");
+
 }
