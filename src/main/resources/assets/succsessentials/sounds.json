@@ -33,5 +33,21 @@
         "pitch": 0.7
       }
     ]
+  },
+  "tj_hurt": {
+    "sounds": [
+      {
+        "name": "succsessentials:tj_hurt",
+        "volume": 1.0
+      }
+    ]
+  },
+  "tj_death": {
+    "sounds": [
+      {
+        "name": "succsessentials:tj_death",
+        "volume": 1.5
+      }
+    ]
   }
 }

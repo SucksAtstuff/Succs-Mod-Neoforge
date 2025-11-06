@@ -26,15 +26,19 @@ public class ModSounds {
     public static final ResourceKey<JukeboxSong> CLEAR_MUD_KEY = createSong("clear_mud");
 
     public static final Supplier<SoundEvent> ORB_SUMMON = registerSoundEvent("orb_summon");
+    public static final Supplier<SoundEvent> TJ_HURT = registerSoundEvent("tj_hurt");
+    public static final Supplier<SoundEvent> TJ_DEATH = registerSoundEvent("tj_death");
+
 
     private static ResourceKey<JukeboxSong> createSong(String name){
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
     }
 
-    public static Supplier<SoundEvent> registerSoundEvent(String name){
+    public static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
     }
+
 
     public static void register(IEventBus eventBus){
         SOUND_EVENTS.register(eventBus);

@@ -3,12 +3,15 @@ package net.succ.succsmod.entity.custom;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.BossEvent;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
+import net.succ.succsmod.sound.ModSounds;
 
 public class TjEntity extends Zombie {
     private final ServerBossEvent bossEvent = new ServerBossEvent(
@@ -41,6 +44,16 @@ public class TjEntity extends Zombie {
         if (!level().isClientSide) {
             bossEvent.setProgress(this.getHealth() / this.getMaxHealth()); // Update boss bar progress
         }
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return ModSounds.TJ_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.TJ_DEATH.get();
     }
 
     @Override
