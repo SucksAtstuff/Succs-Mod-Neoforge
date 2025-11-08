@@ -542,7 +542,7 @@ public class ModItems {
 
     // Register the Ring of Ruby item with health effect for the ring slot
     public static final DeferredItem<Item> RING_OF_RUBY = ITEMS.register("ring_of_ruby",
-            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.HEALTH_BOOST, Integer.MAX_VALUE, 0, true, false, false), "ring"));
+            () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.HEALTH_BOOST, Integer.MAX_VALUE, 4, true, false, false), "ring"));
 
     // Register the Ring of Sapphire item with luck effect for the ring slot
     public static final DeferredItem<Item> RING_OF_SAPPHIRE = ITEMS.register("ring_of_sapphire",

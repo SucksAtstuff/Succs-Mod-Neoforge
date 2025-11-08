@@ -84,7 +84,7 @@ public class TjEntity extends Zombie {
     public static AttributeSupplier.Builder createAttributes() {
         return Zombie.createAttributes()
                 .add(Attributes.MAX_HEALTH, 400.0D)    // very tanky
-                .add(Attributes.ATTACK_DAMAGE, 25.0D)  // strong hits
+                .add(Attributes.ATTACK_DAMAGE, 45.0D)  // strong hits
                 .add(Attributes.ARMOR, 20.0D)          //  big armour
                 .add(Attributes.MOVEMENT_SPEED, 0.28D); // a bit faster
     }
