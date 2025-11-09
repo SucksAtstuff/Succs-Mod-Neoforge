@@ -183,6 +183,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.EMBERPINE_FENCE.get());
                         output.accept(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
+                        output.accept(ModBlocks.CRIMSON_MYCELIUM.get());
+
                     })
                     .build());
 

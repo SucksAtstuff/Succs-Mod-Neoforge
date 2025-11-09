@@ -244,6 +244,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
 
         simpleBlockWithItem(ModBlocks.SCORCHED_SAND.get(), cubeAll(ModBlocks.SCORCHED_SAND.get()));
+        simpleBlockWithItem(ModBlocks.CRIMSON_MYCELIUM.get(),
+                models().cubeBottomTop(
+                        BuiltInRegistries.BLOCK.getKey(ModBlocks.CRIMSON_MYCELIUM.get()).getPath(),
+                        modLoc("block/crimson_mycelium_side"),   // side texture
+                        modLoc("block/crimson_mycelium_bottom"), // bottom texture
+                        modLoc("block/crimson_mycelium_top")     // top texture
+                )
+        );
+
 
 
     }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "succsessentials:block/crimson_mycelium_bottom",
+    "side": "succsessentials:block/crimson_mycelium_side",
+    "top": "succsessentials:block/crimson_mycelium_top"
+  }
+}

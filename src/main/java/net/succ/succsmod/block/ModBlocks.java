@@ -467,6 +467,9 @@ public class ModBlocks {
                             .sound(SoundType.SAND)
             ));
 
+    public static final DeferredBlock<Block> CRIMSON_MYCELIUM = registerBlock("crimson_mycelium",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHERRACK).requiresCorrectToolForDrops()));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
