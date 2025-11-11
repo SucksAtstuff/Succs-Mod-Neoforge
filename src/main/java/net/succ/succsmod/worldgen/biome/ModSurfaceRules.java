@@ -3,6 +3,7 @@ package net.succ.succsmod.worldgen.biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.succ.succsmod.block.ModBlocks;
 
 
@@ -75,17 +76,16 @@ public class ModSurfaceRules {
     }
 
 
-
     public static SurfaceRules.RuleSource makeCrimsonDepthsRules() {
         return SurfaceRules.sequence(
-                // Apply only inside your Crimson Depths biome
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRIMSON_DEPTHS),
-                        SurfaceRules.sequence(
-                                // The topmost visible block (surface)
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, CRIMSON_MYCELIUM),
-
-                                // Blocks directly below the surface
-                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, NETHERRACK)
+                SurfaceRules.ifTrue(
+                        SurfaceRules.isBiome(ModBiomes.CRIMSON_DEPTHS),
+                        SurfaceRules.ifTrue(
+                                SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(100), 0)), // BELOW Y=100
+                                SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, CRIMSON_MYCELIUM),
+                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, NETHERRACK)
+                                )
                         )
                 )
         );

@@ -1,9 +1,6 @@
 package net.succ.succsmod.worldgen;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
-import net.minecraft.core.Vec3i;
+import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -12,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
@@ -44,6 +42,9 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> SOLARBLIGHT_DUNE_PATCH_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_dune_patch"));
+
+    public static final ResourceKey<PlacedFeature> CRIMSON_SPIRE_PLACED_KEY =
+            registerKey("crimson_spire_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -136,7 +137,27 @@ public class ModPlacedFeatures {
                 BiomeFilter.biome()
         )));
 
+        // --- Crimson Spire Placement ---
+        Holder<ConfiguredFeature<?, ?>> crimsonSpireCfg = configs.getOrThrow(ModConfiguredFeatures.CRIMSON_SPIRE_KEY);
 
+        context.register(CRIMSON_SPIRE_PLACED_KEY, new PlacedFeature(crimsonSpireCfg, List.of(
+                RarityFilter.onAverageOnceEvery(5),
+                InSquarePlacement.spread(),
+
+                // Try placing spires anywhere between Y=10 and Y=90 (Nether ground range)
+                HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(90)),
+
+                // Scan downwards until we find solid ground (prevents floating in air or roof)
+                EnvironmentScanPlacement.scanningFor(
+                        Direction.DOWN,
+                        BlockPredicate.solid(),
+                        BlockPredicate.ONLY_IN_AIR_PREDICATE,
+                        32 // max downward scan distance
+                ),
+
+                // Make sure it only runs in the correct biome
+                BiomeFilter.biome()
+        )));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

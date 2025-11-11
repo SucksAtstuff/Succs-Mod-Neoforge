@@ -39,7 +39,9 @@
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
-    [],
+    [
+      "succsessentials:crimson_spire_placed"
+    ],
     [],
     [],
     [],

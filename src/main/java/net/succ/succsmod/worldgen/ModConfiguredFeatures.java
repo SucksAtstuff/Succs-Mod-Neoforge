@@ -26,6 +26,7 @@ import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.worldgen.feature.ModFeatures;
 import net.succ.succsmod.worldgen.feature.config.DunePatchConfig;
+import net.succ.succsmod.worldgen.feature.config.GemSpireConfig;
 import net.succ.succsmod.worldgen.tree.custom.ModTreeDecorator;
 
 import java.util.List;
@@ -60,6 +61,9 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SOLARBLIGHT_DUNE_PATCH =
             ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_dune_patch"));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CRIMSON_SPIRE_KEY =
+            registerKey("crimson_spire");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
         // Define RuleTests for blocks that can be replaced by ores
@@ -262,6 +266,20 @@ public class ModConfiguredFeatures {
         );
 
         context.register(SOLARBLIGHT_DUNE_PATCH, new ConfiguredFeature<>(ModFeatures.DUNE_PATCH.get(), cfg));
+
+        // --- Crimson Spire Feature (for Crimson Depths) ---
+        var spireConfig = new GemSpireConfig(
+                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(), // main block
+                ModBlocks.NETHER_RUBY_ORE.get().defaultBlockState(),          // ore block
+                10, 35,                                                // min & max height
+                3,                                                     // radius
+                0.05f                                                  // 5% ore chance
+        );
+
+        context.register(
+                CRIMSON_SPIRE_KEY,
+                new ConfiguredFeature<>(ModFeatures.GEM_SPIRE.get(), spireConfig)
+        );
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){

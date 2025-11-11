@@ -1,0 +1,15 @@
+{
+  "type": "succsessentials:gem_spire",
+  "config": {
+    "main_block": {
+      "Name": "succsessentials:crimson_mycelium"
+    },
+    "max_height": 35,
+    "min_height": 10,
+    "ore_block": {
+      "Name": "succsessentials:nether_ruby_ore"
+    },
+    "ore_chance": 0.05,
+    "radius": 3
+  }
+}

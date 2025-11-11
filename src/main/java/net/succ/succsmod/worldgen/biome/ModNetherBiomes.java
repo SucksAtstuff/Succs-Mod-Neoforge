@@ -34,14 +34,17 @@ public class ModNetherBiomes {
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ModEntities.TOXIC_SLIME.get(), 20, 1, 2));
 
         // --- WORLD GENERATION ---
-        BiomeGenerationSettings.Builder gen = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
 
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(gen);     // handles caves + small lava lakes
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(gen);  // handles netherrack/blackstone layers
-        BiomeDefaultFeatures.addDefaultSprings(gen);             // lava spring placement
+        addFeature(biomeBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.CRIMSON_SPIRE_PLACED_KEY);
 
-        BiomeDefaultFeatures.addNetherDefaultOres(gen);          // quartz, gold, etc.
-        BiomeDefaultFeatures.addDefaultMushrooms(gen);           // mushrooms & fungus patches
+
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);     // handles caves + small lava lakes
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeBuilder);  // handles netherrack/blackstone layers
+        BiomeDefaultFeatures.addDefaultSprings(biomeBuilder);             // lava spring placement
+
+        BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);          // quartz, gold, etc.
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);           // mushrooms & fungus patches
 
         // Custom placed features
         //addFeature(gen, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.CRIMSON_SPORE_PATCH_PLACED_KEY);
@@ -65,7 +68,7 @@ public class ModNetherBiomes {
                 .downfall(0.0F)
                 .specialEffects(fx.build())
                 .mobSpawnSettings(spawnBuilder.build())
-                .generationSettings(gen.build())
+                .generationSettings(biomeBuilder.build())
                 .build();
     }
 

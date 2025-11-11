@@ -6,6 +6,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.worldgen.feature.config.DunePatchConfig;
+import net.succ.succsmod.worldgen.feature.config.GemSpireConfig;
 
 public class ModFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES =
@@ -13,4 +14,8 @@ public class ModFeatures {
 
     public static final DeferredHolder<Feature<?>, Feature<DunePatchConfig>> DUNE_PATCH =
             FEATURES.register("dune_patch", () -> new DunePatchFeature(DunePatchConfig.CODEC));
+
+    public static final DeferredHolder<Feature<?>, Feature<GemSpireConfig>> GEM_SPIRE =
+            FEATURES.register("gem_spire", () -> new GemSpireFeature(GemSpireConfig.CODEC));
+
 }
