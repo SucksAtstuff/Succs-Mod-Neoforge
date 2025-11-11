@@ -2,6 +2,7 @@ package net.succ.succsmod.datagen;
 
 
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -57,6 +58,5 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(),
                 new ModStructureTagProvider(packOutput, lookupProvider, existingFileHelper));
-
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.succ.succsmod.block.ModBlocks;
 
+
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
@@ -24,6 +25,9 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource GLOWSTONE = makeStateRule(Blocks.GLOWSTONE);
     private static final SurfaceRules.RuleSource NETHERRACK = makeStateRule(Blocks.NETHERRACK);
     private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
+
+    private static final SurfaceRules.RuleSource CRIMSON_MYCELIUM = makeStateRule(ModBlocks.CRIMSON_MYCELIUM.get());
+
 
 
     public static SurfaceRules.RuleSource makeShatterGroveRules() {
@@ -70,6 +74,22 @@ public class ModSurfaceRules {
         );
     }
 
+
+
+    public static SurfaceRules.RuleSource makeCrimsonDepthsRules() {
+        return SurfaceRules.sequence(
+                // Apply only inside your Crimson Depths biome
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.CRIMSON_DEPTHS),
+                        SurfaceRules.sequence(
+                                // The topmost visible block (surface)
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, CRIMSON_MYCELIUM),
+
+                                // Blocks directly below the surface
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, NETHERRACK)
+                        )
+                )
+        );
+    }
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());

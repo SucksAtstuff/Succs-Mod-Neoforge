@@ -252,9 +252,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         modLoc("block/crimson_mycelium_top")     // top texture
                 )
         );
-
-
-
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {
