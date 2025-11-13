@@ -80,6 +80,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
         dropSelf(ModBlocks.EMBERPINE_PLANKS.get());
         dropSelf(ModBlocks.EMBERPINE_SAPLING.get());
+        dropSelf(ModBlocks.GLOWCAP_STEM.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));

@@ -22,6 +22,7 @@ public class ModTags {
         public static final TagKey<Item> MYCELIAL_SPOREWOOD_LOGS = createTag("mycelial_sporewood_logs");
         public static final TagKey<Item> CRYOHEART_LOGS = createTag("cryoheart_logs");
         public static final TagKey<Item> EMBERPINE_LOGS = createTag("emberpine_logs");
+        public static final TagKey<Item> GLOWCAP_STEMS = createTag("glowcap_stems");
         public static final TagKey<Item> JEWELRY = createTag("jewelry");
 
         private static TagKey<Item> createTag (String name) {

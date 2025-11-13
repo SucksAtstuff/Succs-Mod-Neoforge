@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "succsessentials:block/glowcap_stem_top",
+    "side": "succsessentials:block/glowcap_stem"
+  }
+}

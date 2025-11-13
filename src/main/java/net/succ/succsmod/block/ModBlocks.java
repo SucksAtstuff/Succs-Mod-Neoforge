@@ -358,6 +358,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> EMBERPINE_LOG = registerBlock("emberpine_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
+
     public static final DeferredBlock<Block> EMBERPINE_WOOD = registerBlock("emberpine_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE)));
     public static final DeferredBlock<Block> STRIPPED_EMBERPINE_LOG = registerBlock("stripped_emberpine_log",
@@ -438,7 +439,11 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
 
-
+    public static final DeferredBlock<Block> GLOWCAP_STEM = BLOCKS.register("glowcap_stem",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                    .strength(2.0F)
+                    .sound(SoundType.STEM)
+            ));
 
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(

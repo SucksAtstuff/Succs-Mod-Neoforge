@@ -64,13 +64,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.SHATTERBLOOM_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_SHATTERBLOOM_WOOD.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()), blockTexture(ModBlocks.STRIPPED_SHATTERBLOOM_LOG.get()));
 
-
         // Registering shatterbloom blocks with their respective item models
         blockItem(ModBlocks.SHATTERBLOOM_LOG);
         blockItem(ModBlocks.SHATTERBLOOM_WOOD);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_LOG);
         blockItem(ModBlocks.STRIPPED_SHATTERBLOOM_WOOD);
-
 
         blockWithItem(ModBlocks.SHATTERBLOOM_PLANKS);
 
@@ -227,6 +225,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.EMBERPINE_FENCE_GATE);
 
 
+        simpleBlockWithItem(ModBlocks.CRIMSON_MYCELIUM.get(),
+                models().cubeBottomTop(
+                        BuiltInRegistries.BLOCK.getKey(ModBlocks.CRIMSON_MYCELIUM.get()).getPath(),
+                        modLoc("block/crimson_mycelium_side"),   // side texture
+                        modLoc("block/crimson_mycelium_bottom"), // bottom texture
+                        modLoc("block/crimson_mycelium_top")     // top texture
+                )
+        );
+
+        // Registering Emberpine blocks with their respective item models
+        logBlock(((RotatedPillarBlock)ModBlocks.GLOWCAP_STEM.get()));
+        //logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_GLOWCAP_STEM.get()));
+        //axisBlock(((RotatedPillarBlock)ModBlocks.GLOWCAP_HYPHAE.get()), blockTexture(ModBlocks.GLOWCAP_STEM.get()), blockTexture(ModBlocks.GLOWCAP_STEM.get()));
+        //axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get()), blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get()), blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get()));
+
+        // Registering Emberpine blocks with their respective item models
+        blockItem(ModBlocks.GLOWCAP_STEM);
+        //blockItem(ModBlocks.GLOWCAP_HYPHAE);
+        //blockItem(ModBlocks.STRIPPED_GLOWCAP_STEM);
+        //blockItem(ModBlocks.STRIPPED_GLOWCAP_HYPHAE);
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");
@@ -244,14 +262,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
 
         simpleBlockWithItem(ModBlocks.SCORCHED_SAND.get(), cubeAll(ModBlocks.SCORCHED_SAND.get()));
-        simpleBlockWithItem(ModBlocks.CRIMSON_MYCELIUM.get(),
-                models().cubeBottomTop(
-                        BuiltInRegistries.BLOCK.getKey(ModBlocks.CRIMSON_MYCELIUM.get()).getPath(),
-                        modLoc("block/crimson_mycelium_side"),   // side texture
-                        modLoc("block/crimson_mycelium_bottom"), // bottom texture
-                        modLoc("block/crimson_mycelium_top")     // top texture
-                )
-        );
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

@@ -206,6 +206,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_EMBERPINE_LOG.get())
                 .add(ModBlocks.STRIPPED_EMBERPINE_WOOD.get());
 
+        this.tag(BlockTags.LOGS)
+                .add(ModBlocks.GLOWCAP_STEM.get());
+
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(ModBlocks.SHATTERBLOOM_BUTTON.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_BUTTON.get())
