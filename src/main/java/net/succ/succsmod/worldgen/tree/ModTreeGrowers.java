@@ -19,6 +19,4 @@ public class ModTreeGrowers {
     public static final TreeGrower EMBERPINE = new TreeGrower(SuccsMod.MOD_ID + ":emberpine",
             Optional.empty(), Optional.of(ModConfiguredFeatures.EMBERPINE_KEY), Optional.empty());
 
-    public static final TreeGrower GLOWCAP = new TreeGrower(SuccsMod.MOD_ID + ":emberpine",
-            Optional.empty(), Optional.of(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY), Optional.empty());
 }

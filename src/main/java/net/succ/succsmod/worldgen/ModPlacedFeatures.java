@@ -42,9 +42,6 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SOLARBLIGHT_DUNE_PATCH_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_dune_patch"));
 
-    public static final ResourceKey<PlacedFeature> GLOWCAP_FUNGUS_PLACED_KEY =
-            registerKey("glowcap_fungus_placed");
-
     public static final ResourceKey<PlacedFeature> CRIMSON_SPIRE_PLACED_KEY =
             registerKey("crimson_spire_placed");
 
@@ -128,38 +125,6 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_VENOMOUS_FEN_FLOWERS_KEY),
                 VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
-
-        // --- Glowcap Fungus Placement (Huge Fungus Generation) ---
-        register(
-                context,
-                GLOWCAP_FUNGUS_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY),
-                List.of(
-                        // Average frequency: 1 per 8 chunks (tweak as needed)
-                        RarityFilter.onAverageOnceEvery(8),
-
-                        // Spread like trees
-                        InSquarePlacement.spread(),
-
-                        // Only place on Glowcap-required block
-                        PlacementUtils.filteredByBlockSurvival(ModBlocks.GLOWCAP_FUNGUS.get()),
-
-                        // Ensure fungus starts at ground level
-                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-
-                        // Scan down to find solid ground (prevents floating fungi)
-                        EnvironmentScanPlacement.scanningFor(
-                                Direction.DOWN,
-                                BlockPredicate.solid(),
-                                BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                                12
-                        ),
-
-                        // Respect biome rules
-                        BiomeFilter.biome()
-                )
-        );
-
 
         HolderGetter<ConfiguredFeature<?, ?>> configs = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);

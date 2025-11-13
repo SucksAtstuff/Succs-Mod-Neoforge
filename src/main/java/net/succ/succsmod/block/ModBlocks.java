@@ -489,17 +489,6 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
 
-    public static final DeferredBlock<Block> GLOWCAP_FUNGUS =
-            registerBlock("glowcap_fungus",
-                    () -> new ModFungusBlock(
-                            ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY,
-                            ModBlocks.CRIMSON_MYCELIUM,   // ✔ Supplier, not get()
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS)
-                                    .lightLevel(s -> 6)
-                    ));
-
-
-
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(
                     MobEffects.POISON,
