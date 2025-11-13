@@ -1,11 +1,10 @@
 {
-  "replace": false,
   "values": [
     "succsessentials:atherium_boots",
-    "succsessentials:malachite_boots",
     "succsessentials:ruby_boots",
     "succsessentials:sapphire_boots",
     "succsessentials:sunstone_boots",
+    "succsessentials:malachite_boots",
     "succsessentials:jaspilite_boots"
   ]
 }

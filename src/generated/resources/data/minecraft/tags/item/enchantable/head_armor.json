@@ -1,11 +1,10 @@
 {
-  "replace": false,
   "values": [
     "succsessentials:atherium_helmet",
-    "succsessentials:malachite_helmet",
     "succsessentials:ruby_helmet",
     "succsessentials:sapphire_helmet",
     "succsessentials:sunstone_helmet",
+    "succsessentials:malachite_helmet",
     "succsessentials:jaspilite_helmet"
   ]
 }

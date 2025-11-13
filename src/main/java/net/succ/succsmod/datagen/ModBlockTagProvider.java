@@ -287,6 +287,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.EMBERPINE_SAPLING.get());
                 //.add(ModBlocks.GLOWCAP_SAPLING.get());
 
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get())
+                .add(ModBlocks.CRYOHEART_LEAVES.get())
+                .add(ModBlocks.EMBERPINE_LEAVES.get());
+
+
         tag(BlockTags.CLIMBABLE)
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get());
 
@@ -308,5 +315,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_GLOWCAP_STEM.get())
                 .add(ModBlocks.GLOWCAP_STEM.get());
 
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get())
+                .add(ModBlocks.CRYOHEART_LEAVES.get())
+                .add(ModBlocks.EMBERPINE_LEAVES.get());
+
+        tag(BlockTags.REPLACEABLE_BY_TREES)
+                .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get())
+                .add(ModBlocks.CRYOHEART_LEAVES.get())
+                .add(ModBlocks.EMBERPINE_LEAVES.get());
     }
 }

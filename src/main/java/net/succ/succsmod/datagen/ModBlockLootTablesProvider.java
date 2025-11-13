@@ -186,9 +186,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         add(ModBlocks.EMBERPINE_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EMBERPINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-        // Glowcap leaves (normal sapling + stick behavior)
-        //add(ModBlocks.GLOWCAP_LEAVES.get(),
-             //   block -> createLeavesDrops(block, ModBlocks.GLOWCAP_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        // Glowcap cap behaves like Nether wart blocks (drops nothing unless Silk Touch)
+        add(ModBlocks.GLOWCAP_WART_BLOCK.get(),
+                block -> createSilkTouchOnlyTable(ModBlocks.GLOWCAP_WART_BLOCK.get()));
+
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));
@@ -245,9 +246,6 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.NETHER_JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
         add(ModBlocks.END_JASPILITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.END_JASPILITE_ORE.get(), ModItems.DIRTY_JASPILITE.get()));
-
-
-
     }
 
     protected LootTable.Builder createFrostLeavesDrop(Block leavesBlock, Block saplingBlock, ItemLike fruitItem, float... saplingChances) {
@@ -294,11 +292,6 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         return builder;
     }
-
-
-
-
-
 
     protected LootTable.Builder createMultipleOreDrops (Block pBlock, Item item, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);

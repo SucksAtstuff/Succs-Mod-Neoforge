@@ -462,6 +462,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GLOWCAP_SLAB = registerBlock("glowcap_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
 
+    public static DeferredBlock<Block> GLOWCAP_WART_BLOCK = registerBlock("glowcap_wart_block",
+            ()-> new NetherWartBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_WART_BLOCK)));
+
     public static final DeferredBlock<Block> GLOWCAP_PRESSURE_PLATE = registerBlock("glowcap_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PRESSURE_PLATE)));
