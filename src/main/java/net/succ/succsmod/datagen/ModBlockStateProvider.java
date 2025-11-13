@@ -224,7 +224,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.EMBERPINE_PRESSURE_PLATE);
         blockItem(ModBlocks.EMBERPINE_FENCE_GATE);
 
-
         simpleBlockWithItem(ModBlocks.CRIMSON_MYCELIUM.get(),
                 models().cubeBottomTop(
                         BuiltInRegistries.BLOCK.getKey(ModBlocks.CRIMSON_MYCELIUM.get()).getPath(),
@@ -234,17 +233,88 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 )
         );
 
-        // Registering Emberpine blocks with their respective item models
-        logBlock(((RotatedPillarBlock)ModBlocks.GLOWCAP_STEM.get()));
-        //logBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_GLOWCAP_STEM.get()));
-        //axisBlock(((RotatedPillarBlock)ModBlocks.GLOWCAP_HYPHAE.get()), blockTexture(ModBlocks.GLOWCAP_STEM.get()), blockTexture(ModBlocks.GLOWCAP_STEM.get()));
-        //axisBlock(((RotatedPillarBlock)ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get()), blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get()), blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get()));
 
-        // Registering Emberpine blocks with their respective item models
+
+        // Registering Glowcap blocks with their respective item models
+        logBlock(((RotatedPillarBlock) ModBlocks.GLOWCAP_STEM.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_GLOWCAP_STEM.get()));
+
+        axisBlock(
+                ((RotatedPillarBlock) ModBlocks.GLOWCAP_HYPHAE.get()),
+                blockTexture(ModBlocks.GLOWCAP_STEM.get()),
+                blockTexture(ModBlocks.GLOWCAP_STEM.get())
+        );
+
+        axisBlock(
+                ((RotatedPillarBlock) ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get()),
+                blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get()),
+                blockTexture(ModBlocks.STRIPPED_GLOWCAP_STEM.get())
+        );
+
+        // Registering Glowcap blocks with their respective item models
         blockItem(ModBlocks.GLOWCAP_STEM);
-        //blockItem(ModBlocks.GLOWCAP_HYPHAE);
-        //blockItem(ModBlocks.STRIPPED_GLOWCAP_STEM);
-        //blockItem(ModBlocks.STRIPPED_GLOWCAP_HYPHAE);
+        blockItem(ModBlocks.GLOWCAP_HYPHAE);
+        blockItem(ModBlocks.STRIPPED_GLOWCAP_STEM);
+        blockItem(ModBlocks.STRIPPED_GLOWCAP_HYPHAE);
+
+        // Planks, Leaves, Sapling
+        blockWithItem(ModBlocks.GLOWCAP_PLANKS);
+        //leavesBlock(ModBlocks.GLOWCAP_LEAVES);
+        //saplingBlock(ModBlocks.GLOWCAP_SAPLING);
+
+        // GLOWCAP woodset
+        doorBlockWithRenderType(
+                ((DoorBlock) ModBlocks.GLOWCAP_DOOR.get()),
+                modLoc("block/glowcap_door_bottom"),
+                modLoc("block/glowcap_door_top"),
+                "cutout"
+        );
+
+        trapdoorBlockWithRenderType(
+                ((TrapDoorBlock) ModBlocks.GLOWCAP_TRAPDOOR.get()),
+                modLoc("block/glowcap_trapdoor"),
+                true,
+                "cutout"
+        );
+
+        stairsBlock(
+                ((StairBlock) ModBlocks.GLOWCAP_STAIRS.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        slabBlock(
+                ((SlabBlock) ModBlocks.GLOWCAP_SLAB.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        blockItemOther(ModBlocks.GLOWCAP_TRAPDOOR, "_bottom");
+        blockItem(ModBlocks.GLOWCAP_SLAB);
+        blockItem(ModBlocks.GLOWCAP_STAIRS);
+
+        pressurePlateBlock(
+                ((PressurePlateBlock) ModBlocks.GLOWCAP_PRESSURE_PLATE.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        buttonBlock(
+                ((ButtonBlock) ModBlocks.GLOWCAP_BUTTON.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        fenceBlock(
+                ((FenceBlock) ModBlocks.GLOWCAP_FENCE.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        fenceGateBlock(
+                ((FenceGateBlock) ModBlocks.GLOWCAP_FENCE_GATE.get()),
+                blockTexture(ModBlocks.GLOWCAP_PLANKS.get())
+        );
+
+        blockItem(ModBlocks.GLOWCAP_PRESSURE_PLATE);
+        blockItem(ModBlocks.GLOWCAP_FENCE_GATE);
+
 
         // Registering crop blocks with their respective item models
         makeCrop(((GarlicCropBlock) ModBlocks.GARLIC_CROP.get()), "garlic_stage", "garlic_stage");

@@ -81,6 +81,11 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.EMBERPINE_PLANKS.get());
         dropSelf(ModBlocks.EMBERPINE_SAPLING.get());
         dropSelf(ModBlocks.GLOWCAP_STEM.get());
+        dropSelf(ModBlocks.STRIPPED_GLOWCAP_STEM.get());
+        dropSelf(ModBlocks.GLOWCAP_HYPHAE.get());
+        dropSelf(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get());
+        dropSelf(ModBlocks.GLOWCAP_PLANKS.get());
+        //dropSelf(ModBlocks.GLOWCAP_SAPLING.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));
@@ -129,6 +134,33 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.EMBERPINE_FENCE.get());
         dropSelf(ModBlocks.EMBERPINE_FENCE_GATE.get());
 
+
+        // Glowcap door
+        this.add(ModBlocks.GLOWCAP_DOOR.get(),
+                block -> createDoorTable(ModBlocks.GLOWCAP_DOOR.get())
+        );
+
+        // Glowcap trapdoor
+        dropSelf(ModBlocks.GLOWCAP_TRAPDOOR.get());
+
+        // Glowcap stairs
+        dropSelf(ModBlocks.GLOWCAP_STAIRS.get());
+
+        // Glowcap slab
+        this.add(ModBlocks.GLOWCAP_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GLOWCAP_SLAB.get())
+        );
+
+        // Glowcap button
+        dropSelf(ModBlocks.GLOWCAP_BUTTON.get());
+
+        // Glowcap pressure plate
+        dropSelf(ModBlocks.GLOWCAP_PRESSURE_PLATE.get());
+
+        // Glowcap fence + fence gate
+        dropSelf(ModBlocks.GLOWCAP_FENCE.get());
+        dropSelf(ModBlocks.GLOWCAP_FENCE_GATE.get());
+
         add(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get(),
                 block -> createSilkTouchOnlyTable(ModBlocks.MYCELIAL_SPOREWOOD_VINE.get()));
 
@@ -153,6 +185,10 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         add(ModBlocks.EMBERPINE_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EMBERPINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        // Glowcap leaves (normal sapling + stick behavior)
+        //add(ModBlocks.GLOWCAP_LEAVES.get(),
+             //   block -> createLeavesDrops(block, ModBlocks.GLOWCAP_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GARLIC_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 3));

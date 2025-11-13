@@ -1,5 +1,8 @@
 {
   "values": [
-    "minecraft:air"
+    "succsessentials:glowcap_stem",
+    "succsessentials:stripped_glowcap_stem",
+    "succsessentials:glowcap_hyphae",
+    "succsessentials:stripped_glowcap_hyphae"
   ]
 }

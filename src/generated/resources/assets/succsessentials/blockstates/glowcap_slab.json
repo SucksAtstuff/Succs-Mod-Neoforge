@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "succsessentials:block/glowcap_slab"
+    },
+    "type=double": {
+      "model": "succsessentials:block/glowcap_planks"
+    },
+    "type=top": {
+      "model": "succsessentials:block/glowcap_slab_top"
+    }
+  }
+}

@@ -85,8 +85,6 @@ public class ModItems {
             ));
 
 
-
-
     public static final DeferredItem<Item> REINFORCEMENT_SMITHING_TEMPLATE =
             ITEMS.register("reinforcement_smithing_template", () ->
                     new SmithingTemplateItem(

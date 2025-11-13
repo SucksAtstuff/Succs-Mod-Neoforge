@@ -135,12 +135,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.LOGS)
                 .addTag(ModTags.Items.GLOWCAP_STEMS);
 
-
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.SHATTERBLOOM_PLANKS.get().asItem())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_PLANKS.get().asItem())
                 .add(ModBlocks.CRYOHEART_PLANKS.get().asItem())
-                .add(ModBlocks.EMBERPINE_PLANKS.get().asItem());
+                .add(ModBlocks.EMBERPINE_PLANKS.get().asItem())
+                .add(ModBlocks.GLOWCAP_PLANKS.get().asItem());
 
 
         tag(ModTags.Items.SHATTERBLOOM_LOGS)
@@ -168,7 +168,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_EMBERPINE_WOOD.get().asItem());
 
         tag(ModTags.Items.GLOWCAP_STEMS)
-                .add(ModBlocks.GLOWCAP_STEM.get().asItem());
+                .add(ModBlocks.GLOWCAP_STEM.get().asItem())
+                .add(ModBlocks.STRIPPED_GLOWCAP_STEM.get().asItem())
+                .add(ModBlocks.GLOWCAP_HYPHAE.get().asItem())
+                .add(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get().asItem());
+
 
         tag(ModTags.Items.JEWELRY)
                 .add(ModItems.RING_OF_ATHERIUM.get())

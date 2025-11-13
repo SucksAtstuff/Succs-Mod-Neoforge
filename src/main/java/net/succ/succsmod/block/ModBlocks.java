@@ -439,11 +439,54 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
 
-    public static final DeferredBlock<Block> GLOWCAP_STEM = BLOCKS.register("glowcap_stem",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
-                    .strength(2.0F)
-                    .sound(SoundType.STEM)
-            ));
+    // Glowcap woodset
+    public static final DeferredBlock<Block> GLOWCAP_STEM = registerBlock("glowcap_stem",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_STEM).sound(SoundType.STEM)));
+
+    public static final DeferredBlock<Block> GLOWCAP_HYPHAE = registerBlock("glowcap_hyphae",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_HYPHAE).sound(SoundType.STEM)));
+
+    public static final DeferredBlock<Block> STRIPPED_GLOWCAP_STEM = registerBlock("stripped_glowcap_stem",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_CRIMSON_STEM).sound(SoundType.STEM)));
+
+    public static final DeferredBlock<Block> STRIPPED_GLOWCAP_HYPHAE = registerBlock("stripped_glowcap_hyphae",
+            () -> new ModRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_CRIMSON_HYPHAE).sound(SoundType.STEM)));
+
+    public static final DeferredBlock<Block> GLOWCAP_PLANKS = registerBlock("glowcap_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> GLOWCAP_STAIRS = registerBlock("glowcap_stairs",
+            () -> new StairBlock(ModBlocks.GLOWCAP_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_STAIRS)));
+
+    public static final DeferredBlock<Block> GLOWCAP_SLAB = registerBlock("glowcap_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_SLAB)));
+
+    public static final DeferredBlock<Block> GLOWCAP_PRESSURE_PLATE = registerBlock("glowcap_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PRESSURE_PLATE)));
+
+    public static final DeferredBlock<Block> GLOWCAP_BUTTON = registerBlock("glowcap_button",
+            () -> new ButtonBlock(BlockSetType.CRIMSON, 10,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_BUTTON).noCollission()));
+
+    public static final DeferredBlock<Block> GLOWCAP_FENCE = registerBlock("glowcap_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE)));
+
+    public static final DeferredBlock<Block> GLOWCAP_FENCE_GATE = registerBlock("glowcap_fence_gate",
+            () -> new FenceGateBlock(WoodType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FENCE_GATE)));
+
+    public static final DeferredBlock<Block> GLOWCAP_DOOR = registerBlock("glowcap_door",
+            () -> new DoorBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_DOOR).strength(3f).noOcclusion()));
+
+    public static final DeferredBlock<Block> GLOWCAP_TRAPDOOR = registerBlock("glowcap_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.CRIMSON,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
+
+
+
 
     public static final DeferredBlock<Block> POISON_LILY = registerBlock("poison_lily",
             () -> new PoisonLilyBlock(
