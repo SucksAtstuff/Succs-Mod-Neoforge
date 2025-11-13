@@ -261,6 +261,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.GLOWCAP_PLANKS);
         blockWithItem(ModBlocks.GLOWCAP_WART_BLOCK);
 
+        fungusBlock(ModBlocks.GLOWCAP_FUNGUS);
+
         // GLOWCAP woodset
         doorBlockWithRenderType(
                 ((DoorBlock) ModBlocks.GLOWCAP_DOOR.get()),
@@ -379,5 +381,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .withExistingParent("mycelial_sporewood_vine_" + face, mcLoc("block/vine"))
                 .texture("vine", modLoc("block/mycelial_sporewood_vine"))
                 .renderType("cutout");
+    }
+
+    private void fungusBlock(DeferredBlock<Block> block) {
+        simpleBlock(
+                block.get(),
+                models().cross(
+                        BuiltInRegistries.BLOCK.getKey(block.get()).getPath(),
+                        blockTexture(block.get())
+                ).renderType("cutout")
+        );
+
+        simpleBlockItem(
+                block.get(),
+                new ModelFile.UncheckedModelFile("succsessentials:block/" + block.getId().getPath())
+        );
     }
 }

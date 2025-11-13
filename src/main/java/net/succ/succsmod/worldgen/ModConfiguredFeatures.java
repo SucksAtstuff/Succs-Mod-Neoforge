@@ -5,10 +5,12 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -51,6 +53,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOHEART_KEY = registerKey("cryoheart");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMBERPINE_KEY = registerKey("emberpine");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWCAP_FUNGUS_KEY = registerKey("glowcap_fungus");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWCAP_FUNGUS_PLANTED_KEY = registerKey("glowcap_fungus_planted");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS_KEY = registerKey("patch_tall_grass");
@@ -72,6 +76,12 @@ public class ModConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplacables = new BlockMatchTest(Blocks.END_STONE);
         RuleTest packedIceReplaceables = new BlockMatchTest(Blocks.PACKED_ICE);
+
+        BlockPredicate predicate = BlockPredicate.matchesBlocks(
+                ModBlocks.CRIMSON_MYCELIUM.get(),
+                Blocks.AIR,
+                Blocks.SHROOMLIGHT
+        );
 
         // Define target block states for Atherium ores
         List<OreConfiguration.TargetBlockState> endAtheriumOres = List.of(
@@ -185,6 +195,37 @@ public class ModConfiguredFeatures {
                 // Use scorched sand as the “dirt” patch under the trunk
                 .dirt(BlockStateProvider.simple(ModBlocks.SCORCHED_SAND.get()))
                 .build());
+
+
+        HugeFungusConfiguration glowcapConfig = new HugeFungusConfiguration(
+                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(), // required base
+                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),      // stem
+                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(), // cap
+                Blocks.SHROOMLIGHT.defaultBlockState(),                // light block
+                predicate,                                             // replaceable
+                false                                                  // planted
+        );
+
+        HugeFungusConfiguration glowcapPlanted = new HugeFungusConfiguration(
+                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),
+                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),
+                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),
+                Blocks.SHROOMLIGHT.defaultBlockState(),
+                predicate,
+                true
+        );
+
+
+        context.register(
+                GLOWCAP_FUNGUS_KEY,
+                new ConfiguredFeature<>(Feature.HUGE_FUNGUS, glowcapConfig)
+        );
+
+        context.register(
+                GLOWCAP_FUNGUS_PLANTED_KEY,
+                new ConfiguredFeature<>(Feature.HUGE_FUNGUS, glowcapPlanted)
+        );
+
 
 
 

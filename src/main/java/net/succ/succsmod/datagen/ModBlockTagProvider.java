@@ -285,7 +285,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.get())
                 .add(ModBlocks.CRYOHEART_SAPLING.get())
                 .add(ModBlocks.EMBERPINE_SAPLING.get());
-                //.add(ModBlocks.GLOWCAP_SAPLING.get());
 
         tag(BlockTags.LEAVES)
                 .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
@@ -319,12 +318,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get())
                 .add(ModBlocks.CRYOHEART_LEAVES.get())
-                .add(ModBlocks.EMBERPINE_LEAVES.get());
+                .add(ModBlocks.EMBERPINE_LEAVES.get())
+                .add(ModBlocks.GLOWCAP_WART_BLOCK.get());
+
 
         tag(BlockTags.REPLACEABLE_BY_TREES)
                 .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
                 .add(ModBlocks.MYCELIAL_SPOREWOOD_LEAVES.get())
                 .add(ModBlocks.CRYOHEART_LEAVES.get())
-                .add(ModBlocks.EMBERPINE_LEAVES.get());
+                .add(ModBlocks.EMBERPINE_LEAVES.get())
+                .add(ModBlocks.GLOWCAP_WART_BLOCK.get());
+
+
     }
 }

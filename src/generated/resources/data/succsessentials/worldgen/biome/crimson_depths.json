@@ -71,7 +71,8 @@
     [
       "minecraft:glow_lichen",
       "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal"
+      "minecraft:red_mushroom_normal",
+      "succsessentials:glowcap_placed"
     ]
   ],
   "has_precipitation": false,

@@ -35,6 +35,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> CRYOHEART_PLACED_KEY = registerKey("cryoheart_placed");
     public static final ResourceKey<PlacedFeature> EMBERPINE_PLACED_KEY = registerKey("emberpine_placed");
+    public static final ResourceKey<PlacedFeature> GLOWCAP_PLACED_KEY = registerKey("glowcap_placed");
+
 
     public static final ResourceKey<PlacedFeature> PATCH_GRASS_PLACED_KEY = registerKey("patch_grass_placed");
     public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_PLACED_KEY = registerKey("patch_tall_grass_placed");
@@ -125,6 +127,19 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_VENOMOUS_FEN_FLOWERS_KEY),
                 VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
+
+        register(
+                context,
+                GLOWCAP_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY),
+                List.of(
+                        CountPlacement.of(1),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.FULL_RANGE,
+                        BiomeFilter.biome()
+                )
+        );
+
 
         HolderGetter<ConfiguredFeature<?, ?>> configs = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);

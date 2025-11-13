@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:huge_fungus",
+  "config": {
+    "decor_state": {
+      "Name": "minecraft:shroomlight"
+    },
+    "hat_state": {
+      "Name": "succsessentials:glowcap_wart_block"
+    },
+    "planted": true,
+    "replaceable_blocks": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "succsessentials:crimson_mycelium",
+        "minecraft:air",
+        "minecraft:shroomlight"
+      ]
+    },
+    "stem_state": {
+      "Name": "succsessentials:glowcap_stem",
+      "Properties": {
+        "axis": "y"
+      }
+    },
+    "valid_base_block": {
+      "Name": "succsessentials:crimson_mycelium"
+    }
+  }
+}
