@@ -259,8 +259,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Planks, Leaves, Sapling
         blockWithItem(ModBlocks.GLOWCAP_PLANKS);
-        //leavesBlock(ModBlocks.GLOWCAP_LEAVES);
-        //saplingBlock(ModBlocks.GLOWCAP_SAPLING);
+        blockWithItem(ModBlocks.GLOWCAP_WART_BLOCK);
+        simpleBlock(ModBlocks.GLOWCAP_FUNGUS.get(),
+                models().cross("glowcap_fungus", modLoc("block/glowcap_fungus")));
+
 
         // GLOWCAP woodset
         doorBlockWithRenderType(

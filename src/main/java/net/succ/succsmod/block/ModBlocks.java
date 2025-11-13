@@ -20,6 +20,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.custom.*;
 import net.succ.succsmod.item.ModItems;
+import net.succ.succsmod.worldgen.ModConfiguredFeatures;
 import net.succ.succsmod.worldgen.tree.ModTreeGrowers;
 
 
@@ -488,6 +489,14 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockSetType.CRIMSON,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_TRAPDOOR).strength(3f).noOcclusion()));
 
+    public static final DeferredBlock<Block> GLOWCAP_FUNGUS =
+            registerBlock("glowcap_fungus",
+                    () -> new ModFungusBlock(
+                            ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY,
+                            ModBlocks.CRIMSON_MYCELIUM,   // ✔ Supplier, not get()
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS)
+                                    .lightLevel(s -> 6)
+                    ));
 
 
 

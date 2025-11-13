@@ -217,6 +217,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.GLOWCAP_BUTTON, ModBlocks.GLOWCAP_PLANKS);
         fenceItem(ModBlocks.GLOWCAP_FENCE, ModBlocks.GLOWCAP_PLANKS);
 
+        basicItem(ModBlocks.GLOWCAP_FUNGUS.asItem());
 
         basicItem(ModItems.FROST_FRUIT.get());
 

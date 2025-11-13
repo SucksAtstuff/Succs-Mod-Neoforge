@@ -189,8 +189,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.GLOWCAP_HYPHAE.get());
                         output.accept(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get());
                         output.accept(ModBlocks.GLOWCAP_PLANKS.get());
-                        //output.accept(ModBlocks.GLOWCAP_LEAVES.get());
-                        //output.accept(ModBlocks.GLOWCAP_SAPLING.get());
+                        output.accept(ModBlocks.GLOWCAP_WART_BLOCK.get());
+                        output.accept(ModBlocks.GLOWCAP_FUNGUS.get());
                         output.accept(ModBlocks.GLOWCAP_DOOR.get());
                         output.accept(ModBlocks.GLOWCAP_TRAPDOOR.get());
                         output.accept(ModBlocks.GLOWCAP_STAIRS.get());
@@ -199,7 +199,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.GLOWCAP_BUTTON.get());
                         output.accept(ModBlocks.GLOWCAP_FENCE.get());
                         output.accept(ModBlocks.GLOWCAP_FENCE_GATE.get());
-
 
                     })
                     .build());

@@ -37,6 +37,7 @@ public class ModNetherBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatures, carvers);
 
         addFeature(biomeBuilder, GenerationStep.Decoration.LOCAL_MODIFICATIONS, ModPlacedFeatures.CRIMSON_SPIRE_PLACED_KEY);
+        addFeature(biomeBuilder, GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.GLOWCAP_FUNGUS_PLACED_KEY);
 
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);     // handles caves + small lava lakes

@@ -11,8 +11,10 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
@@ -49,6 +51,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOHEART_KEY = registerKey("cryoheart");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMBERPINE_KEY = registerKey("emberpine");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWCAP_FUNGUS_KEY = registerKey("glowcap_fungus");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS_KEY = registerKey("patch_tall_grass");
@@ -184,6 +187,22 @@ public class ModConfiguredFeatures {
                 .dirt(BlockStateProvider.simple(ModBlocks.SCORCHED_SAND.get()))
                 .build());
 
+        // --- Glowcap Huge Fungus (for Glowcap FungusBlock) ---
+        register(context, GLOWCAP_FUNGUS_KEY, Feature.HUGE_FUNGUS,
+                new HugeFungusConfiguration(
+                        ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),      // valid base block
+                        ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),          // stem
+                        ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),    // hat/cap
+                        ModBlocks.GLOWCAP_HYPHAE.get().defaultBlockState(),        // decor
+                        BlockPredicate.matchesBlocks(                               // replaceable blocks
+                                Blocks.AIR,
+                                Blocks.NETHERRACK,
+                                Blocks.WARPED_WART_BLOCK,
+                                Blocks.NETHER_WART_BLOCK,
+                                ModBlocks.GLOWCAP_WART_BLOCK.get()
+                        ),
+                        false                                                       // planted
+                ));
 
 
         context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(
