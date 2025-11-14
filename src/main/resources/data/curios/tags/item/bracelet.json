@@ -1,4 +1,6 @@
 {
   "replace": false,
-  "values": ["succsessentials:bracelet_of_malachite"]
+  "values": ["succsessentials:bracelet_of_malachite",
+    "succsessentials:bracelet_of_replacement",
+    "succsessentials:bracelet_of_displacement"]
 }

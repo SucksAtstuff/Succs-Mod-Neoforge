@@ -8,16 +8,21 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.block.entity.ModBlockEntities;
+import net.succ.succsmod.client.BraceletCooldownHud;
+import net.succ.succsmod.client.ModKeyBindings;
 import net.succ.succsmod.effect.ModEffects;
 import net.succ.succsmod.entity.ModEntities;
 import net.succ.succsmod.entity.client.HedgehogRenderer;
 import net.succ.succsmod.entity.client.PukekoRenderer;
 import net.succ.succsmod.item.ModCreativeModeTabs;
+import net.succ.succsmod.item.ModDataComponents;
 import net.succ.succsmod.item.ModItems;
 import net.succ.succsmod.loot.ModLootModifiers;
+import net.succ.succsmod.client.ModClientEvents;
 import net.succ.succsmod.potion.ModPotions;
 import net.succ.succsmod.recipe.ModRecipes;
 import net.succ.succsmod.screen.ModMenuTypes;
@@ -90,6 +95,9 @@ public class SuccsMod
         ModSounds.register(modEventBus);
 
         ModTreeDecoratorTypes.register(modEventBus);
+
+        ModDataComponents.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -168,11 +176,22 @@ public class SuccsMod
                     }
             );
 
+            NeoForge.EVENT_BUS.register(new ModClientEvents());
+            NeoForge.EVENT_BUS.register(new BraceletCooldownHud());
+
+
         }
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingTableBlockScreen::new);
         }
+
+        @SubscribeEvent
+        public static void registerKeyMappings(net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent event) {
+            ModKeyBindings.register(event);
+
+        }
+
     }
 }

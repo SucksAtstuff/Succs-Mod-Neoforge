@@ -556,6 +556,16 @@ public class ModItems {
     public static final DeferredItem<Item> NECKLACE_OF_JASPILITE = ITEMS.register("necklace_of_jaspilite",
             () -> new CustomCurioMobEffectItem(new MobEffectInstance(MobEffects.DIG_SPEED, Integer.MAX_VALUE, 1, true, false, false), "necklace"));
 
+    public static final DeferredItem<Item> BRACELET_OF_DISPLACEMENT =
+            ITEMS.register("bracelet_of_displacement",
+                    () -> new BraceletOfDisplacement(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> BRACELET_OF_REPLACEMENT =
+            ITEMS.register("bracelet_of_replacement",
+                    () -> new BraceletOfReplacement(new Item.Properties().stacksTo(1)));
+
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

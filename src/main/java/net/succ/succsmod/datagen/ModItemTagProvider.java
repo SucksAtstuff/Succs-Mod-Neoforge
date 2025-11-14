@@ -541,7 +541,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.RING_OF_SAPPHIRE.get())
                 .add(ModItems.RING_OF_SUNSTONE.get())
                 .add(ModItems.NECKLACE_OF_JASPILITE.get())
-                .add(ModItems.BRACELET_OF_MALACHITE.get());
+                .add(ModItems.BRACELET_OF_MALACHITE.get())
+                .add(ModItems.BRACELET_OF_DISPLACEMENT.get())
+                .add(ModItems.BRACELET_OF_REPLACEMENT.get());
+
+
 
         // --------------------------------------------------
         //  SUNSTONE + SAPPHIRE SPECIAL TOOLS

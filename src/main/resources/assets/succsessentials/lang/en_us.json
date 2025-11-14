@@ -150,9 +150,11 @@
   "item.succsessentials.ring_of_atherium": "Ring Of Atherium",
   "item.succsessentials.bracelet_of_malachite": "Bracelet Of Malachite",
   "item.succsessentials.necklace_of_jaspilite": "Necklace Of Jaspilite",
+  "item.succsessentials.bracelet_of_displacement": "Bracelet of Displacement",
+  "item.succsessentials.bracelet_of_replacement": "Bracelet of Replacement",
 
 
-  "//----- FOOD & MISC ITEMS -----": "",
+"//----- FOOD & MISC ITEMS -----": "",
   "item.succsessentials.gold_handle": "Gold Handle",
   "item.succsessentials.rock": "Rock",
   "item.succsessentials.rock_candy": "'Rock Candy'",
@@ -372,5 +374,11 @@
   "creativetab.succsessentials.gems.tab": "Succ's Essentials Gems",
   "creativetab.succsessentials.tools.tab": "Succ's Essentials Tools",
   "creativetab.succsessentials.armor.tab": "Succ's Essentials Armor",
-  "creativetab.succsessentials.blocks.tab": "Succ's Essentials Blocks"
+  "creativetab.succsessentials.blocks.tab": "Succ's Essentials Blocks",
+
+
+  "//===== KEYBINDINGS =====": "",
+  "key.categories.succsessentials": "Succ's Essentials",
+  "key.succsessentials.bracelet_replacement": "Bracelet of Replacement",
+  "key.succsessentials.bracelet_displacement": "Bracelet of Displacement"
 }

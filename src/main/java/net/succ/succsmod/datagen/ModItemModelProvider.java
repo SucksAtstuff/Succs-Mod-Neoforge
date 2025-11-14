@@ -178,6 +178,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RING_OF_SUNSTONE.get());
         basicItem(ModItems.RING_OF_ATHERIUM.get());
         basicItem(ModItems.RING_OF_SAPPHIRE.get());
+        basicItem(ModItems.BRACELET_OF_DISPLACEMENT.get());
+        basicItem(ModItems.BRACELET_OF_REPLACEMENT.get());
+
 
         complexBlock(ModBlocks.GEM_POLISHING_TABLE.get());
       

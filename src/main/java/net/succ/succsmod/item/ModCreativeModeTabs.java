@@ -59,7 +59,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RING_OF_ATHERIUM.get());
                         output.accept(ModItems.BRACELET_OF_MALACHITE.get());
                         output.accept(ModItems.NECKLACE_OF_JASPILITE.get());
-                      
+                        output.accept(ModItems.BRACELET_OF_DISPLACEMENT.get());
+                        output.accept(ModItems.BRACELET_OF_REPLACEMENT.get());
+
                         output.accept(ModBlocks.POISON_LILY.get());
 
                         output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
@@ -190,6 +192,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get());
                         output.accept(ModBlocks.GLOWCAP_PLANKS.get());
                         output.accept(ModBlocks.GLOWCAP_WART_BLOCK.get());
+                        output.accept(ModBlocks.GLOWCAP_FUNGUS.get());
                         output.accept(ModBlocks.GLOWCAP_DOOR.get());
                         output.accept(ModBlocks.GLOWCAP_TRAPDOOR.get());
                         output.accept(ModBlocks.GLOWCAP_STAIRS.get());
