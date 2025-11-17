@@ -29,6 +29,7 @@ import net.succ.succsmod.screen.ModMenuTypes;
 import net.succ.succsmod.screen.custom.GemPolishingTableBlockScreen;
 import net.succ.succsmod.sound.ModSounds;
 import net.succ.succsmod.villager.ModVillagers;
+import net.succ.succsmod.worldgen.ModPlacementModifierTypes;
 import net.succ.succsmod.worldgen.biome.ModBiomes;
 import net.succ.succsmod.worldgen.biome.ModSurfaceRules;
 import net.succ.succsmod.worldgen.feature.ModFeatures;
@@ -98,6 +99,8 @@ public class SuccsMod
 
         ModDataComponents.register(modEventBus);
 
+        ModPlacementModifierTypes.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -154,6 +157,15 @@ public class SuccsMod
                         @Override
                         public ResourceLocation getTextureLocation(Slime entity) {
                             return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/toxic_slime/toxic_slime.png");
+                        }
+                    }
+            );
+
+            EntityRenderers.register(ModEntities.FIERY_SLIME.get(), ctx ->
+                    new SlimeRenderer(ctx) {
+                        @Override
+                        public ResourceLocation getTextureLocation(Slime entity) {
+                            return ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "textures/entity/fiery_slime/fiery_slime.png");
                         }
                     }
             );

@@ -78,10 +78,9 @@ public class ModConfiguredFeatures {
         RuleTest packedIceReplaceables = new BlockMatchTest(Blocks.PACKED_ICE);
 
         BlockPredicate predicate = BlockPredicate.matchesBlocks(
-                ModBlocks.CRIMSON_MYCELIUM.get(),
-                Blocks.AIR,
-                Blocks.SHROOMLIGHT
+                ModBlocks.CRIMSON_MYCELIUM.get()
         );
+
 
         // Define target block states for Atherium ores
         List<OreConfiguration.TargetBlockState> endAtheriumOres = List.of(

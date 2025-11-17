@@ -40,6 +40,14 @@ public class ModEntityLootTablesProvider extends LootTableProvider {
             // === TJ ENTITY LOOT TABLE ===
             this.add(ModEntities.TJ.get(),
                     LootTable.lootTable()
+
+                            // Rare Jewelry
+                            .withPool(LootPool.lootPool()
+                                    .setRolls(ConstantValue.exactly(1))
+                                    .add(TagEntry.expandTag(ModTags.Items.RARE_JEWELRY))
+                                    .when(LootItemRandomChanceCondition.randomChance(0.05f)) // 5% total chance
+                            )
+
                             // Jewelry (rare)
                             .withPool(LootPool.lootPool()
                                     .setRolls(ConstantValue.exactly(1))

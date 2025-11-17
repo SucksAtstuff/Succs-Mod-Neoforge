@@ -102,13 +102,7 @@
         "weight": 15
       },
       {
-        "type": "minecraft:magma_cube",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 30
-      },
-      {
-        "type": "succsessentials:toxic_slime",
+        "type": "succsessentials:fiery_slime",
         "maxCount": 2,
         "minCount": 1,
         "weight": 20

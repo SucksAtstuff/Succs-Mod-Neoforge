@@ -67,6 +67,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PUKEKO_SPAWN_EGG.get());
                         output.accept(ModItems.HEDGEHOG_SPAWN_EGG.get());
                         output.accept(ModItems.TOXIC_SLIME_SPAWN_EGG.get());
+                        output.accept(ModItems.FIERY_SLIME_SPAWN_EGG.get());
                         output.accept(ModItems.SCORCHED_HUSK_SPAWN_EGG.get());
 
                         output.accept(ModItems.REINFORCEMENT_SMITHING_TEMPLATE);

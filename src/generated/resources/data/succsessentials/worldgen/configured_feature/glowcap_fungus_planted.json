@@ -10,11 +10,7 @@
     "planted": true,
     "replaceable_blocks": {
       "type": "minecraft:matching_blocks",
-      "blocks": [
-        "succsessentials:crimson_mycelium",
-        "minecraft:air",
-        "minecraft:shroomlight"
-      ]
+      "blocks": "succsessentials:crimson_mycelium"
     },
     "stem_state": {
       "Name": "succsessentials:glowcap_stem",

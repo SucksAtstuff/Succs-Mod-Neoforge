@@ -24,6 +24,7 @@ public class ModTags {
         public static final TagKey<Item> EMBERPINE_LOGS = createTag("emberpine_logs");
         public static final TagKey<Item> GLOWCAP_STEMS = createTag("glowcap_stems");
         public static final TagKey<Item> JEWELRY = createTag("jewelry");
+        public static final TagKey<Item> RARE_JEWELRY = createTag("rare_jewelry");
 
         private static TagKey<Item> createTag (String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));

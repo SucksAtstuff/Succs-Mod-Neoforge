@@ -41,6 +41,7 @@ public class ModBusEvents {
         event.put(ModEntities.PUKEKO.get(), PukekoEntity.createAttributes().build());
         event.put(ModEntities.HEDGEHOG.get(), HedgehogEntity.createAttributes().build());
         event.put(ModEntities.TOXIC_SLIME.get(), ToxicSlimeEntity.createAttributes().build());
+        event.put(ModEntities.FIERY_SLIME.get(), FierySlimeEntity.createAttributes().build());
         event.put(ModEntities.SCORCHED_HUSK.get(), Husk.createAttributes().build());
         event.put(ModEntities.TJ.get(), TjEntity.createAttributes().build());
 
@@ -61,6 +62,12 @@ public class ModBusEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING,
                 ToxicSlimeEntity::checkToxicSlimeSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIERY_SLIME.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING,
+                FierySlimeEntity::checkFierySlimeSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.REPLACE);
 
         event.register(ModEntities.SCORCHED_HUSK.get(),

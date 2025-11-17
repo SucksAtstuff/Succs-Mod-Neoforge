@@ -69,6 +69,9 @@ public class ModItems {
             () -> new DeferredSpawnEggItem(ModEntities.TOXIC_SLIME, 0xA8D8B9, 0x4C7A6D,
                     new Item.Properties()));
 
+    public static final DeferredItem<Item> FIERY_SLIME_SPAWN_EGG = ITEMS.register("fiery_slime_spawn_egg",
+                    () -> new DeferredSpawnEggItem(ModEntities.FIERY_SLIME, 0x6E1D12, 0xFF5124,
+                            new Item.Properties()));
 
     public static final DeferredItem<Item> HEDGEHOG_SPAWN_EGG = ITEMS.register("hedgehog_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.HEDGEHOG, 0xA0522D, 0x8B4513,

@@ -14,6 +14,9 @@ public class ModModelLayers {
     public static final ModelLayerLocation TOXIC_SLIME = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "toxic_slime"), "main");
 
+    public static final ModelLayerLocation FIERY_SLIME = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "fiery_slime"), "main");
+
     public static final ModelLayerLocation SCORCHED_HUSK = new ModelLayerLocation(
             ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "scorched_husk"), "main");
 

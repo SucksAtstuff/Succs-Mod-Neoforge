@@ -12,11 +12,10 @@ public class TrueFireEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        // Check if entity should burn: not wet and not fire resistant
+        // Check if entity should burn: not wet
         boolean isWet = entity.isInWaterRainOrBubble();
-        boolean isFireResistant = entity.hasEffect(MobEffects.FIRE_RESISTANCE) || entity.fireImmune();
 
-        if (!isWet && !isFireResistant) {
+        if (!isWet) {
             // Apply fire visual (optional)
             entity.setSharedFlagOnFire(true);
 

@@ -198,8 +198,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING);
         basicItem(ModBlocks.MYCELIAL_SPOREWOOD_DOOR.asItem());
         blockItemFromBlockTexture(ModBlocks.MYCELIAL_SPOREWOOD_VINE);
-        withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        withExistingParent(ModItems.TOXIC_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         saplingItem(ModBlocks.SHATTERBLOOM_SAPLING);
 
         saplingItem(ModBlocks.CRYOHEART_SAPLING);
@@ -224,6 +222,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         withExistingParent(ModItems.HEDGEHOG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SCORCHED_HUSK_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.PUKEKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.TOXIC_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.FIERY_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
 
         basicItem(ModItems.ORB_OF_SUMMONING.get());
     }

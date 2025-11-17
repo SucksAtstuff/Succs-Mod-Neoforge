@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -536,16 +537,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
         //  JEWELRY
         // --------------------------------------------------
         tag(ModTags.Items.JEWELRY)
-                .add(ModItems.RING_OF_ATHERIUM.get())
-                .add(ModItems.RING_OF_RUBY.get())
                 .add(ModItems.RING_OF_SAPPHIRE.get())
                 .add(ModItems.RING_OF_SUNSTONE.get())
                 .add(ModItems.NECKLACE_OF_JASPILITE.get())
-                .add(ModItems.BRACELET_OF_MALACHITE.get())
+                .add(ModItems.BRACELET_OF_MALACHITE.get());
+
+        tag(ModTags.Items.RARE_JEWELRY)
+                .add(ModItems.RING_OF_ATHERIUM.get())
+                .add(ModItems.RING_OF_RUBY.get())
                 .add(ModItems.BRACELET_OF_DISPLACEMENT.get())
                 .add(ModItems.BRACELET_OF_REPLACEMENT.get());
-
-
 
         // --------------------------------------------------
         //  SUNSTONE + SAPPHIRE SPECIAL TOOLS

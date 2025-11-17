@@ -312,7 +312,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GLOWCAP_HYPHAE.get())
                 .add(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get())
                 .add(ModBlocks.STRIPPED_GLOWCAP_STEM.get())
-                .add(ModBlocks.GLOWCAP_STEM.get());
+                .add(ModBlocks.GLOWCAP_STEM.get())
+                .add(ModBlocks.GLOWCAP_FUNGUS.get());
 
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.SHATTERBLOOM_LEAVES.get())
@@ -320,6 +321,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRYOHEART_LEAVES.get())
                 .add(ModBlocks.EMBERPINE_LEAVES.get())
                 .add(ModBlocks.GLOWCAP_WART_BLOCK.get());
+
+        tag(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlocks.GLOWCAP_FUNGUS.get())
+                .add(ModBlocks.POISON_LILY.get());
+
+        tag(BlockTags.ENDERMAN_HOLDABLE)
+                .add(ModBlocks.GLOWCAP_FUNGUS.get())
+                .add(ModBlocks.POISON_LILY.get());
 
 
         tag(BlockTags.REPLACEABLE_BY_TREES)

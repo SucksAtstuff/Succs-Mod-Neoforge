@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.succ.succsmod.worldgen.placement.ModEnvironmentScanPlacement;
 
 import java.util.List;
 
@@ -46,6 +47,18 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> CRIMSON_SPIRE_PLACED_KEY =
             registerKey("crimson_spire_placed");
+
+    public static PlacedFeature glowcapPlacedFeature(Holder<ConfiguredFeature<?, ?>> configuredFeature) {
+        return new PlacedFeature(
+                configuredFeature,
+                List.of(
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                )
+        );
+
+    }
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -128,18 +141,10 @@ public class ModPlacedFeatures {
                 VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
 
-        register(
-                context,
+        context.register(
                 GLOWCAP_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY),
-                List.of(
-                        CountPlacement.of(1),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.FULL_RANGE,
-                        BiomeFilter.biome()
-                )
+                glowcapPlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY))
         );
-
 
         HolderGetter<ConfiguredFeature<?, ?>> configs = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);
