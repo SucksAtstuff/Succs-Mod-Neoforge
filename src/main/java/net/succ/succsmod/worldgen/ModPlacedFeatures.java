@@ -48,17 +48,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CRIMSON_SPIRE_PLACED_KEY =
             registerKey("crimson_spire_placed");
 
-    public static PlacedFeature glowcapPlacedFeature(Holder<ConfiguredFeature<?, ?>> configuredFeature) {
-        return new PlacedFeature(
-                configuredFeature,
-                List.of(
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome()
-                )
-        );
 
-    }
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -141,10 +131,34 @@ public class ModPlacedFeatures {
                 VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
 
-        context.register(
-                GLOWCAP_PLACED_KEY,
-                glowcapPlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY))
+        Holder<ConfiguredFeature<?, ?>> glowcapConfigured = configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY);
+
+
+        PlacedFeature glowcapPlaced = new PlacedFeature(
+                glowcapConfigured,
+                List.of(
+                        InSquarePlacement.spread(),
+
+                        // Choose any height in the caverns
+                        HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(20),
+                                VerticalAnchor.absolute(90)
+                        ),
+
+                        // Scan downward until we hit ANY solid block,
+                        // then HugeFungus itself will check for correct base (Crimson Mycelium)
+                        EnvironmentScanPlacement.scanningFor(
+                                Direction.DOWN,
+                                BlockPredicate.solid(),                 // <-- FIXED
+                                BlockPredicate.ONLY_IN_AIR_PREDICATE,
+                                32
+                        ),
+
+                        BiomeFilter.biome()
+                )
         );
+
+        context.register(ModPlacedFeatures.GLOWCAP_PLACED_KEY, glowcapPlaced);
 
         HolderGetter<ConfiguredFeature<?, ?>> configs = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);

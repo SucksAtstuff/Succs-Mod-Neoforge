@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:ruby",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:ruby_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.ruby_pickaxe.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:ruby_pickaxe"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.ruby_pickaxe"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

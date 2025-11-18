@@ -1,0 +1,74 @@
+{
+  "parent": "succsessentials:sapphire",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "1": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "3": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.sapphire_armor.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sapphire_chestplate"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.sapphire_armor"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ],
+    [
+      "1"
+    ],
+    [
+      "2"
+    ],
+    [
+      "3"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

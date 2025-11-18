@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.entity.custom.*;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModEntities {
@@ -37,6 +38,15 @@ public class ModEntities {
     public static final Supplier<EntityType<TjEntity>> TJ =
             ENTITY_TYPES.register("tj", () -> EntityType.Builder.of(TjEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.95f).build("tj"));
+
+    public static final List<Supplier<? extends EntityType<?>>> ENTRIES = List.of(
+            PUKEKO,
+            HEDGEHOG,
+            TOXIC_SLIME,
+            FIERY_SLIME,
+            SCORCHED_HUSK
+    );
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

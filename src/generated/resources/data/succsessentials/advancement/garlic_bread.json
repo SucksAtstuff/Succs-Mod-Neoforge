@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:garlic",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:garlic_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.garlic_bread.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:garlic_bread"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.garlic_bread"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

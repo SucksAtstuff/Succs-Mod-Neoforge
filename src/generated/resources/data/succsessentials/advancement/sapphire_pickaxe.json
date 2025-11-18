@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:sapphire",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sapphire_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.sapphire_pickaxe.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sapphire_pickaxe"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.sapphire_pickaxe"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

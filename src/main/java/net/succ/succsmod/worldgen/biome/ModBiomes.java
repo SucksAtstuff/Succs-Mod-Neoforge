@@ -11,6 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import terrablender.api.Regions;
 
+import java.util.List;
+
 public class ModBiomes {
     public static final ResourceKey<Biome> SHATTERGROVE = registerBiomeKey("shattergrove");
     public static final ResourceKey<Biome> VENOMOUS_FEN = registerBiomeKey("venomous_fen");
@@ -34,7 +36,6 @@ public class ModBiomes {
 
         register(context, CRIMSON_DEPTHS, ModNetherBiomes.crimsonDepths(placedFeatures, carver));
     }
-
 
     private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
         context.register(key, biome);

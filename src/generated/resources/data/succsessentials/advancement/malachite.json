@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:ruby_pickaxe",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:malachite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.malachite.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:malachite"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.malachite"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

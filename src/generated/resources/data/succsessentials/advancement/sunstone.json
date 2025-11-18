@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:root",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:sunstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.sunstone.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:sunstone"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.sunstone"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

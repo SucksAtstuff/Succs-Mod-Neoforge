@@ -1,0 +1,35 @@
+{
+  "parent": "succsessentials:jaspilite",
+  "criteria": {
+    "0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "succsessentials:jaspilite_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.succsessentials.jaspilite_pickaxe.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "succsessentials:jaspilite_pickaxe"
+    },
+    "title": {
+      "translate": "advancement.succsessentials.jaspilite_pickaxe"
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

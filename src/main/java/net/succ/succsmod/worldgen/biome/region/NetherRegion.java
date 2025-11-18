@@ -5,6 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
@@ -16,45 +17,38 @@ import java.util.function.Consumer;
 
 import static terrablender.api.ParameterUtils.*;
 
+/**
+ * Custom Nether region for TerraBlender integration.
+ * This class injects the Crimson Depths biome into the Nether generation system
+ * in a way that mimics vanilla Crimson Forest behavior while allowing both to coexist.
+ */
 public class NetherRegion extends Region {
+
     public NetherRegion(ResourceLocation name, int weight) {
+        // Define this as a Nether-type TerraBlender region with a given priority weight
         super(name, RegionType.NETHER, weight);
     }
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        // Vanilla overlay builder for extending Nether generation
+        // Create an overlay builder to inject our custom biome without replacing others
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
         /*
-         * Crimson Depths — fiery, fungal surface biome.
-         * Hot, dry, low erosion, mostly surface-level.
-         * We use similar parameters to Crimson Forest / Nether Wastes,
-         * but shift them slightly so it mixes in unique slices.
-         */
-        new ParameterPointListBuilder()
-                .temperature(Temperature.HOT)                                        // Always hot
-                .humidity(Humidity.ARID)                                             // Dry, fiery
-                .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.MID_INLAND))
-                .erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_2))         // Rugged, low erosion
-                .depth(Depth.SURFACE, Depth.FLOOR)                                   // Surface to lower layers
-                .weirdness(Weirdness.span(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING))
-                .build().forEach(point -> builder.add(point, ModBiomes.CRIMSON_DEPTHS));
-
-        /*
-         * Optional: widen the range a bit so it blends naturally with existing Nether biomes.
-         * This extra slice lets it appear across multiple weirdness layers.
+         * Add Crimson Depths in the same parameter space used by vanilla Crimson Forest.
+         * This ensures it spawns under the same hot, humid, mid-elevation Nether cavern regions.
+         * Both biomes will now coexist and blend naturally.
          */
         new ParameterPointListBuilder()
                 .temperature(Temperature.HOT)
-                .humidity(Humidity.ARID)
-                .continentalness(Continentalness.INLAND)
-                .erosion(Erosion.span(Erosion.EROSION_1, Erosion.EROSION_3))
-                .depth(Depth.SURFACE)
-                .weirdness(Weirdness.span(Weirdness.MID_SLICE_VARIANT_ASCENDING, Weirdness.MID_SLICE_VARIANT_DESCENDING))
+                .humidity(Humidity.HUMID)
+                .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.MID_INLAND))
+                .erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_3))
+                .depth(Depth.SURFACE, Depth.FLOOR)
+                .weirdness(Weirdness.span(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING))
                 .build().forEach(point -> builder.add(point, ModBiomes.CRIMSON_DEPTHS));
 
-        // Register all points
+        // Register everything
         builder.build().forEach(mapper);
     }
 }
