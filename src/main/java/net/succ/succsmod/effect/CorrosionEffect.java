@@ -21,30 +21,27 @@ public class CorrosionEffect extends MobEffect {
             return false;
         }
 
-        System.out.println("Corrosion ticking on " + entity.getName().getString());
-
-        /**
-         * Durability damage scales with amplifier level:
-         * amplifier 0 → 2 damage
-         * amplifier 1 → 4 damage
-         * amplifier 2 → 6 damage
-         * amplifier 3 → 8 damage, etc.
-         *
-         * Formula ensures consistent scaling.
-         */
+        // Damage scales with effect strength
         int durabilityDamage = 2 + (amplifier * 2);
 
+        // Loop armor slots
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             if (slot.getType() == EquipmentSlot.Type.HUMANOID_ARMOR) {
+
                 ItemStack stack = entity.getItemBySlot(slot);
 
-                // Only damage non-empty armor stacks
                 if (!stack.isEmpty()) {
 
-                    // This damages item durability but does NOT kill the entity if the item breaks
-                    stack.hurtAndBreak(durabilityDamage, entity, null);
+                    /**
+                     * FIX:
+                     * NeoForge 1.21 requires the EquipmentSlot directly for hurtAndBreak.
+                     * Passing null crashes; passing a lambda is invalid.
+                     *
+                     * This safely damages the armor in the correct slot.
+                     */
+                    stack.hurtAndBreak(durabilityDamage, entity, slot);
 
-                    // Sends item break animation to nearby clients for this armor piece
+                    // Show break animation
                     if (!entity.level().isClientSide) {
                         entity.level().broadcastEntityEvent(entity, (byte) (0x1F + slot.getIndex()));
                     }
@@ -57,7 +54,6 @@ public class CorrosionEffect extends MobEffect {
 
     @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
-        // Effect triggers once every 20 ticks (1 second)
-        return duration % 20 == 0;
+        return duration % 20 == 0; // Tick once every second
     }
 }

@@ -28,6 +28,7 @@ public class ModSounds {
     public static final Supplier<SoundEvent> ORB_SUMMON = registerSoundEvent("orb_summon");
     public static final Supplier<SoundEvent> TJ_HURT = registerSoundEvent("tj_hurt");
     public static final Supplier<SoundEvent> TJ_DEATH = registerSoundEvent("tj_death");
+    public static final Supplier<SoundEvent> TJ_ROAR = registerSoundEvent("tj_roar");
 
 
     private static ResourceKey<JukeboxSong> createSong(String name){

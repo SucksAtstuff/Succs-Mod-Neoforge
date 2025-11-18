@@ -78,8 +78,10 @@ public class ModConfiguredFeatures {
         RuleTest packedIceReplaceables = new BlockMatchTest(Blocks.PACKED_ICE);
 
         BlockPredicate predicate = BlockPredicate.matchesBlocks(
-                ModBlocks.CRIMSON_MYCELIUM.get()
+                ModBlocks.CRIMSON_MYCELIUM.get(),
+                Blocks.NETHERRACK
         );
+
 
 
         // Define target block states for Atherium ores
@@ -196,29 +198,35 @@ public class ModConfiguredFeatures {
                 .build());
 
 
+        // Glowcap configuration for natural generation
         HugeFungusConfiguration glowcapConfig = new HugeFungusConfiguration(
-                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(), // required base
-                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),      // stem
-                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(), // cap
-                Blocks.SHROOMLIGHT.defaultBlockState(),                // light block
-                predicate,                                             // replaceable
-                false                                                  // planted
+                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),   // base block required
+                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),        // stem
+                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),  // hat
+                Blocks.SHROOMLIGHT.defaultBlockState(),                  // decor
+                BlockPredicate.replaceable(),
+                false                                                    // natural
         );
 
+
+
+        // Glowcap configuration for planted (bonemeal) generation
         HugeFungusConfiguration glowcapPlanted = new HugeFungusConfiguration(
                 ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),
                 ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),
                 ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),
                 Blocks.SHROOMLIGHT.defaultBlockState(),
-                predicate,
-                true
+                BlockPredicate.replaceable(),
+                true                                                     // planted
         );
+
 
 
         context.register(
                 GLOWCAP_FUNGUS_KEY,
                 new ConfiguredFeature<>(Feature.HUGE_FUNGUS, glowcapConfig)
         );
+
 
         context.register(
                 GLOWCAP_FUNGUS_PLANTED_KEY,

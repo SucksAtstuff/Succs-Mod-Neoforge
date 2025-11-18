@@ -49,5 +49,13 @@
         "volume": 1.5
       }
     ]
+  },
+  "tj_roar": {
+    "sounds": [
+      {
+        "name": "succsessentials:tj_roar",
+        "volume": 1.5
+      }
+    ]
   }
 }

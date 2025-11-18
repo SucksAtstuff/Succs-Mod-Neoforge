@@ -13,6 +13,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.succ.succsmod.SuccsMod;
+import net.succ.succsmod.advancement.AllSuccAdvancements;
 
 import java.util.Collections;
 import java.util.List;
@@ -52,7 +53,10 @@ public class DataGenerators {
         
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeServer(), new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(),
+                new AllSuccAdvancements(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeClient(), new ModLangProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
 
