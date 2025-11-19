@@ -85,7 +85,6 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.GLOWCAP_HYPHAE.get());
         dropSelf(ModBlocks.STRIPPED_GLOWCAP_HYPHAE.get());
         dropSelf(ModBlocks.GLOWCAP_PLANKS.get());
-        dropSelf(ModBlocks.GLOWCAP_FUNGUS.get());
 
         this.add(ModBlocks.SHATTERBLOOM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SHATTERBLOOM_DOOR.get()));

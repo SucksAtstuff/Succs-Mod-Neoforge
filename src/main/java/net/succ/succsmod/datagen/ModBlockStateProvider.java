@@ -261,8 +261,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.GLOWCAP_PLANKS);
         blockWithItem(ModBlocks.GLOWCAP_WART_BLOCK);
 
-        fungusBlock(ModBlocks.GLOWCAP_FUNGUS);
-
         // GLOWCAP woodset
         doorBlockWithRenderType(
                 ((DoorBlock) ModBlocks.GLOWCAP_DOOR.get()),

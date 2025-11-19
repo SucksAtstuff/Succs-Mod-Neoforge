@@ -36,19 +36,12 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> CRYOHEART_PLACED_KEY = registerKey("cryoheart_placed");
     public static final ResourceKey<PlacedFeature> EMBERPINE_PLACED_KEY = registerKey("emberpine_placed");
-    public static final ResourceKey<PlacedFeature> GLOWCAP_PLACED_KEY = registerKey("glowcap_placed");
-
 
     public static final ResourceKey<PlacedFeature> PATCH_GRASS_PLACED_KEY = registerKey("patch_grass_placed");
     public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_PLACED_KEY = registerKey("patch_tall_grass_placed");
 
     public static final ResourceKey<PlacedFeature> SOLARBLIGHT_DUNE_PATCH_PLACED =
             ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "solarblight_dune_patch"));
-
-    public static final ResourceKey<PlacedFeature> CRIMSON_SPIRE_PLACED_KEY =
-            registerKey("crimson_spire_placed");
-
-
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -131,35 +124,6 @@ public class ModPlacedFeatures {
                 VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
 
-        Holder<ConfiguredFeature<?, ?>> glowcapConfigured = configuredFeatures.getOrThrow(ModConfiguredFeatures.GLOWCAP_FUNGUS_KEY);
-
-
-        PlacedFeature glowcapPlaced = new PlacedFeature(
-                glowcapConfigured,
-                List.of(
-                        InSquarePlacement.spread(),
-
-                        // Choose any height in the caverns
-                        HeightRangePlacement.uniform(
-                                VerticalAnchor.absolute(20),
-                                VerticalAnchor.absolute(90)
-                        ),
-
-                        // Scan downward until we hit ANY solid block,
-                        // then HugeFungus itself will check for correct base (Crimson Mycelium)
-                        EnvironmentScanPlacement.scanningFor(
-                                Direction.DOWN,
-                                BlockPredicate.solid(),                 // <-- FIXED
-                                BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                                32
-                        ),
-
-                        BiomeFilter.biome()
-                )
-        );
-
-        context.register(ModPlacedFeatures.GLOWCAP_PLACED_KEY, glowcapPlaced);
-
         HolderGetter<ConfiguredFeature<?, ?>> configs = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> duneCfg = configs.getOrThrow(ModConfiguredFeatures.SOLARBLIGHT_DUNE_PATCH);
 
@@ -167,28 +131,6 @@ public class ModPlacedFeatures {
                 RarityFilter.onAverageOnceEvery(8),   // try once every ~8 chunks on average
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                BiomeFilter.biome()
-        )));
-
-        // --- Crimson Spire Placement ---
-        Holder<ConfiguredFeature<?, ?>> crimsonSpireCfg = configs.getOrThrow(ModConfiguredFeatures.CRIMSON_SPIRE_KEY);
-
-        context.register(CRIMSON_SPIRE_PLACED_KEY, new PlacedFeature(crimsonSpireCfg, List.of(
-                RarityFilter.onAverageOnceEvery(5),
-                InSquarePlacement.spread(),
-
-                // Try placing spires anywhere between Y=10 and Y=90 (Nether ground range)
-                HeightRangePlacement.uniform(VerticalAnchor.absolute(10), VerticalAnchor.absolute(90)),
-
-                // Scan downwards until we find solid ground (prevents floating in air or roof)
-                EnvironmentScanPlacement.scanningFor(
-                        Direction.DOWN,
-                        BlockPredicate.solid(),
-                        BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                        32 // max downward scan distance
-                ),
-
-                // Make sure it only runs in the correct biome
                 BiomeFilter.biome()
         )));
     }

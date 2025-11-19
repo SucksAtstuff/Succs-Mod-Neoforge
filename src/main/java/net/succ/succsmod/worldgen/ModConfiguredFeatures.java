@@ -53,8 +53,6 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYCELIAL_SPOREWOOD_KEY = registerKey("mycelical_sporewood");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CRYOHEART_KEY = registerKey("cryoheart");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMBERPINE_KEY = registerKey("emberpine");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWCAP_FUNGUS_KEY = registerKey("glowcap_fungus");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWCAP_FUNGUS_PLANTED_KEY = registerKey("glowcap_fungus_planted");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS_KEY = registerKey("patch_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS_KEY = registerKey("patch_tall_grass");
@@ -76,13 +74,6 @@ public class ModConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplacables = new BlockMatchTest(Blocks.END_STONE);
         RuleTest packedIceReplaceables = new BlockMatchTest(Blocks.PACKED_ICE);
-
-        BlockPredicate predicate = BlockPredicate.matchesBlocks(
-                ModBlocks.CRIMSON_MYCELIUM.get(),
-                Blocks.NETHERRACK
-        );
-
-
 
         // Define target block states for Atherium ores
         List<OreConfiguration.TargetBlockState> endAtheriumOres = List.of(
@@ -198,44 +189,6 @@ public class ModConfiguredFeatures {
                 .build());
 
 
-        // Glowcap configuration for natural generation
-        HugeFungusConfiguration glowcapConfig = new HugeFungusConfiguration(
-                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),   // base block required
-                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),        // stem
-                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),  // hat
-                Blocks.SHROOMLIGHT.defaultBlockState(),                  // decor
-                BlockPredicate.replaceable(),
-                false                                                    // natural
-        );
-
-
-
-        // Glowcap configuration for planted (bonemeal) generation
-        HugeFungusConfiguration glowcapPlanted = new HugeFungusConfiguration(
-                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(),
-                ModBlocks.GLOWCAP_STEM.get().defaultBlockState(),
-                ModBlocks.GLOWCAP_WART_BLOCK.get().defaultBlockState(),
-                Blocks.SHROOMLIGHT.defaultBlockState(),
-                BlockPredicate.replaceable(),
-                true                                                     // planted
-        );
-
-
-
-        context.register(
-                GLOWCAP_FUNGUS_KEY,
-                new ConfiguredFeature<>(Feature.HUGE_FUNGUS, glowcapConfig)
-        );
-
-
-        context.register(
-                GLOWCAP_FUNGUS_PLANTED_KEY,
-                new ConfiguredFeature<>(Feature.HUGE_FUNGUS, glowcapPlanted)
-        );
-
-
-
-
         context.register(PATCH_GRASS_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
                 new RandomPatchConfiguration(
@@ -314,20 +267,6 @@ public class ModConfiguredFeatures {
         );
 
         context.register(SOLARBLIGHT_DUNE_PATCH, new ConfiguredFeature<>(ModFeatures.DUNE_PATCH.get(), cfg));
-
-        // --- Crimson Spire Feature (for Crimson Depths) ---
-        var spireConfig = new GemSpireConfig(
-                ModBlocks.CRIMSON_MYCELIUM.get().defaultBlockState(), // main block
-                ModBlocks.NETHER_RUBY_ORE.get().defaultBlockState(),          // ore block
-                10, 35,                                                // min & max height
-                3,                                                     // radius
-                0.05f                                                  // 5% ore chance
-        );
-
-        context.register(
-                CRIMSON_SPIRE_KEY,
-                new ConfiguredFeature<>(ModFeatures.GEM_SPIRE.get(), spireConfig)
-        );
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){

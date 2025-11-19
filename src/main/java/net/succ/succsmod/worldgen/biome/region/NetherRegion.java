@@ -34,20 +34,6 @@ public class NetherRegion extends Region {
         // Create an overlay builder to inject our custom biome without replacing others
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
 
-        /*
-         * Add Crimson Depths in the same parameter space used by vanilla Crimson Forest.
-         * This ensures it spawns under the same hot, humid, mid-elevation Nether cavern regions.
-         * Both biomes will now coexist and blend naturally.
-         */
-        new ParameterPointListBuilder()
-                .temperature(Temperature.HOT)
-                .humidity(Humidity.HUMID)
-                .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.MID_INLAND))
-                .erosion(Erosion.span(Erosion.EROSION_0, Erosion.EROSION_3))
-                .depth(Depth.SURFACE, Depth.FLOOR)
-                .weirdness(Weirdness.span(Weirdness.MID_SLICE_NORMAL_ASCENDING, Weirdness.MID_SLICE_NORMAL_DESCENDING))
-                .build().forEach(point -> builder.add(point, ModBiomes.CRIMSON_DEPTHS));
-
         // Register everything
         builder.build().forEach(mapper);
     }
