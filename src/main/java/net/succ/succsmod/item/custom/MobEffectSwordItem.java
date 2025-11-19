@@ -54,14 +54,14 @@ public class MobEffectSwordItem extends SwordItem {
         if (Screen.hasShiftDown()) {
             // Add the translated tooltip with dynamic effect name, duration (in seconds), and level
             tooltipComponents.add(Component.translatable(
-                    "tooltip.succsmod.mob_effect_sword.tooltip",
+                    "tooltip.succsessentials.mob_effect_sword.tooltip",
                     effect.value().getDisplayName(),                    // Effect name (automatically localized)
                     duration / 20,                                      // Duration in seconds
                     amplifier + 1                                       // Amplifier level as player-friendly (I = 1)
             ));
         } else {
             // Add basic tooltip prompting to hold Shift
-            tooltipComponents.add(Component.translatable("tooltip.succsmod.mob_effect_sword.tooltip.shift"));
+            tooltipComponents.add(Component.translatable("tooltip.succsessentials.mob_effect_sword.tooltip.shift"));
         }
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);

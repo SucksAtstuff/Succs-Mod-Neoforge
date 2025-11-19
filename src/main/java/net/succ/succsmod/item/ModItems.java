@@ -361,7 +361,7 @@ public class ModItems {
                                     -2.4F)),
                     ModEffects.TRUE_FIRE_EFFECT, 25, 1));
     public static final DeferredItem<Item> SUNSTONE_PICKAXE = ITEMS.register("sunstone_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.SUNSTONE,
+            () -> new ModAutoSmeltPickaxe(ModToolTiers.SUNSTONE,
                     new Item.Properties()
                             .attributes(PickaxeItem.createAttributes(ModToolTiers.SUNSTONE,
                                     2,        //  Tier-3
@@ -385,7 +385,7 @@ public class ModItems {
                                     -2,       //  Tier-3
                                     1F))));
     public static final DeferredItem<Item> SUNSTONE_HAMMER = ITEMS.register("sunstone_hammer",
-            () -> new HammerItem(ModToolTiers.SUNSTONE,
+            () -> new ModAutoSmeltHammer(ModToolTiers.SUNSTONE,
                     new Item.Properties()
                             .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE,
                                     8,        //  Tier-3
@@ -397,7 +397,7 @@ public class ModItems {
                                     1,        //  Tier-3
                                     -3F))));
     public static final DeferredItem<Item> SUNSTONE_REINFORCED_HAMMER = ITEMS.register("sunstone_reinforced_hammer",
-            () -> new ReinforcedHammerItem(ModToolTiers.SUNSTONE,
+            () -> new ModReinforcedAutoSmeltHammer(ModToolTiers.SUNSTONE,
                     new Item.Properties()
                             .attributes(HammerItem.createAttributes(ModToolTiers.SUNSTONE,
                                     10,        // +2 damage over base

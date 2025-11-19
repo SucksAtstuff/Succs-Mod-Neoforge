@@ -327,12 +327,11 @@
   "succsessentials.tooltip.liquid.amount": "%s mB",
   "succsessentials.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "tooltip.succsessentials.area": "Area: %sx%sx%s",
+  "tooltip.succsessentials.auto_smelt": "Auto-smelts blocks",
   "tooltip.succsessentials.fortune_pickaxe.tooltip": "Press §eShift§r for more information",
   "tooltip.succsessentials.fortune_pickaxe.tooltip.shift": "Has a chance to drop more items when mining ores",
   "tooltip.succsessentials.looting_sword.tooltip": "Press §eShift§r for more information",
   "tooltip.succsessentials.looting_sword.tooltip.shift": "Mobs have a chance to drop more items when killed",
-  "tooltip.succsmod.mob_effect_armor.tooltip": "Press §eShift§r for more information",
-  "tooltip.succsmod.mob_effect_armor.tooltip.shift": "Full set bonus: %1$s (Level %3$d)",
-  "tooltip.succsmod.mob_effect_sword.tooltip": "On hit: Applies %1$s for %2$d seconds (Level %3$d)",
-  "tooltip.succsmod.mob_effect_sword.tooltip.shift": "Press §eShift§r for more information"
+  "tooltip.succsessentials.mob_effect_sword.tooltip": "On hit: Applies %1$s for %2$d seconds (Level %3$d)",
+  "tooltip.succsessentials.mob_effect_sword.tooltip.shift": "Press §eShift§r for more information"
 }

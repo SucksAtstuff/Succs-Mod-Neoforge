@@ -176,15 +176,12 @@ public class ModLangProvider extends LanguageProvider {
         add("tooltip.succsessentials.looting_sword.tooltip.shift",
                 "Mobs have a chance to drop more items when killed");
 
-        add("tooltip.succsmod.mob_effect_armor.tooltip",
-                "Press §eShift§r for more information");
-        add("tooltip.succsmod.mob_effect_armor.tooltip.shift",
-                "Full set bonus: %1$s (Level %3$d)");
-
-        add("tooltip.succsmod.mob_effect_sword.tooltip",
+        add("tooltip.succsessentials.mob_effect_sword.tooltip",
                 "On hit: Applies %1$s for %2$d seconds (Level %3$d)");
-        add("tooltip.succsmod.mob_effect_sword.tooltip.shift",
+        add("tooltip.succsessentials.mob_effect_sword.tooltip.shift",
                 "Press §eShift§r for more information");
+
+        add("tooltip.succsessentials.auto_smelt", "Auto-smelts blocks");
 
         // --- Keybinds ---
         add("key.categories.succsessentials", "Succ's Essentials");
