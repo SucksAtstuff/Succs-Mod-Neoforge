@@ -94,8 +94,7 @@ public class ModLangProvider extends LanguageProvider {
                 ModBiomes.SHATTERGROVE,
                 ModBiomes.VENOMOUS_FEN,
                 ModBiomes.CRYSTALFROST_VALE,
-                ModBiomes.SOLARBLIGHT_EXPANSE,
-                ModBiomes.CRIMSON_DEPTHS
+                ModBiomes.SOLARBLIGHT_EXPANSE
         );
 
         BIOME_KEYS.forEach(key ->

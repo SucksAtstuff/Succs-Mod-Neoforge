@@ -75,22 +75,6 @@ public class ModSurfaceRules {
         );
     }
 
-
-    public static SurfaceRules.RuleSource makeCrimsonDepthsRules() {
-        return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(
-                        SurfaceRules.isBiome(ModBiomes.CRIMSON_DEPTHS),
-                        SurfaceRules.ifTrue(
-                                SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(100), 0)), // BELOW Y=100
-                                SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, CRIMSON_MYCELIUM),
-                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, NETHERRACK)
-                                )
-                        )
-                )
-        );
-    }
-
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
     }
