@@ -72,7 +72,7 @@ public class AllSuccAdvancements implements DataProvider {
     //
     public static final SuccAdvancement SAPPHIRE_PICKAXE = SuccAdvancement.create("sapphire_pickaxe", b -> b
             .icon(ModItems.SAPPHIRE_PICKAXE.get())
-            .title("Sapphire Tools")
+            .title("Feeling fortunate?")
             .description("Craft a Sapphire Pickaxe.")
             .whenIconCollected()
             .after(SAPPHIRE)
@@ -94,7 +94,7 @@ public class AllSuccAdvancements implements DataProvider {
     //
     public static final SuccAdvancement SUNSTONE_PICKAXE = SuccAdvancement.create("sunstone_pickaxe", b -> b
             .icon(ModItems.SUNSTONE_PICKAXE.get())
-            .title("Sunstone Tools")
+            .title("Smeltery on the go.")
             .description("Craft a Sunstone Pickaxe.")
             .whenIconCollected()
             .after(SUNSTONE)
@@ -172,7 +172,7 @@ public class AllSuccAdvancements implements DataProvider {
 
     public static final SuccAdvancement JASPILITE_PICKAXE = SuccAdvancement.create("jaspilite_pickaxe", b -> b
             .icon(ModItems.JASPILITE_PICKAXE.get())
-            .title("Jaspilite Tools")
+            .title("Slightly better than diamond.")
             .description("Craft a Jaspilite Pickaxe.")
             .whenIconCollected()
             .after(JASPILITE)
