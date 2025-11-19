@@ -49,7 +49,6 @@ public class AllSuccAdvancements implements DataProvider {
             .title("The Gemstone Journey")
             .description("Begin discovering the elemental gemstones.")
             .awardedForFree()
-            .special(SuccAdvancement.TaskType.SILENT)
     );
 
     // ========================================================================

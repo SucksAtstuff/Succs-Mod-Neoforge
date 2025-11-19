@@ -21,7 +21,6 @@ public class ModBiomes {
 
     public static void registerBiomes() {
         Regions.register(new OverworldRegion(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succsessentials_overworld"), 8));
-        Regions.register(new NetherRegion(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "succsessentials_nether"), 3));
     }
 
     public static void bootstrap(BootstrapContext<Biome> context) {

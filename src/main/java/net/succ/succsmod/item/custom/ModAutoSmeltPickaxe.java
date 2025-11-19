@@ -6,6 +6,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -34,12 +35,24 @@ public class ModAutoSmeltPickaxe extends PickaxeItem implements AutoSmeltTool {
 
     @Override
     public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity user) {
-
         // let our smelting logic run first
         boolean didSmelt = tryAutoSmelt(stack, level, state, pos, user);
 
-        if (didSmelt) return true;
+        if (didSmelt) {
 
+            if (!level.isClientSide()) {
+                stack.hurtAndBreak(
+                        1,                                              // damage
+                        (ServerLevel) level,                            // server world
+                        user instanceof ServerPlayer
+                                ? (ServerPlayer) user
+                                : null,                                  // player or null
+                        item -> {}                                      // on-break callback (unused)
+                );
+            }
+
+            return true;
+        }
         return super.mineBlock(stack, level, state, pos, user);
     }
 

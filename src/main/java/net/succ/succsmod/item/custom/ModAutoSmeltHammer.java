@@ -2,6 +2,8 @@ package net.succ.succsmod.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
@@ -19,12 +21,24 @@ public class ModAutoSmeltHammer extends HammerItem implements AutoSmeltTool {
 
     @Override
     public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity user) {
-
+        // let our smelting logic run first
         boolean didSmelt = tryAutoSmelt(stack, level, state, pos, user);
 
-        if (didSmelt) return true;
+        if (didSmelt) {
 
-        // Let HammerItem’s normal mine behavior continue
+            if (!level.isClientSide()) {
+                stack.hurtAndBreak(
+                        1,                                              // damage
+                        (ServerLevel) level,                            // server world
+                        user instanceof ServerPlayer
+                                ? (ServerPlayer) user
+                                : null,                                  // player or null
+                        item -> {}                                      // on-break callback (unused)
+                );
+            }
+
+            return true;
+        }
         return super.mineBlock(stack, level, state, pos, user);
     }
 

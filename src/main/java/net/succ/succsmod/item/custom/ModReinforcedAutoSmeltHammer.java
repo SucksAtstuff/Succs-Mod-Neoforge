@@ -2,6 +2,8 @@ package net.succ.succsmod.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,18 +38,25 @@ public class ModReinforcedAutoSmeltHammer extends HammerItem implements AutoSmel
 
     // --- AUTO-SMELT INJECTION ---------------------------------------------------------------
     @Override
-    public boolean mineBlock(ItemStack stack,
-                             Level level,
-                             BlockState state,
-                             BlockPos pos,
-                             LivingEntity user) {
+    public boolean mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity user) {
+        // let our smelting logic run first
+        boolean didSmelt = tryAutoSmelt(stack, level, state, pos, user);
 
-        // Try auto-smelting (from AutoSmeltTool interface)
-        if (tryAutoSmelt(stack, level, state, pos, user)) {
-            return true; // We handled the block and removed it
+        if (didSmelt) {
+
+            if (!level.isClientSide()) {
+                stack.hurtAndBreak(
+                        1,                                              // damage
+                        (ServerLevel) level,                            // server world
+                        user instanceof ServerPlayer
+                                ? (ServerPlayer) user
+                                : null,                                  // player or null
+                        item -> {}                                      // on-break callback (unused)
+                );
+            }
+
+            return true;
         }
-
-        // Otherwise behave like normal reinforced hammer
         return super.mineBlock(stack, level, state, pos, user);
     }
 

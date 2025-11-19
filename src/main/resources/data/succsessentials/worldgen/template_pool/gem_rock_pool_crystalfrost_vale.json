@@ -1,17 +1,10 @@
 {
-  // More info on template pools: https://minecraft.gamepedia.com/Custom_world_generation#JSON_format_8
-  // This pool is used for gem rocks that generate in the Venomous Fen biome.
-
-  // The fallback pool to use if all_hammers.json elements fail to place.
   "fallback": "minecraft:empty",
 
-  // List of structure elements (.nbt files) to randomly pick from.
   "elements": [
     {
-      // gem_rock_4 is common in the Venomous Fen.
       "weight": 10,
       "element": {
-        // Location of the NBT structure file.
         "location": "succsessentials:gem_rock_7",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
@@ -20,7 +13,6 @@
       }
     },
     {
-      // gem_rock_5 is common in the Venomous Fen.
       "weight": 10,
       "element": {
         "location": "succsessentials:gem_rock_8",
@@ -31,7 +23,6 @@
       }
     },
     {
-      // gem_rock_6 is rare — weight of 1 vs the others' 2.
       "weight": 1,
       "element": {
         "location": "succsessentials:gem_rock_9",
