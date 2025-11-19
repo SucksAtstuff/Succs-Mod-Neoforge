@@ -4,11 +4,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.RegistryBuilder;
 import net.succ.succsmod.SuccsMod;
 import net.succ.succsmod.block.ModBlocks;
 import net.succ.succsmod.effect.ModEffects;
@@ -17,7 +17,7 @@ import net.succ.succsmod.item.custom.*;
 import net.succ.succsmod.sound.ModSounds;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Map;
 
 public class ModItems {
 
@@ -283,18 +283,37 @@ public class ModItems {
 
 
     /* ----------  ✦  TIER-3  SAPPHIRE  ✦  ------------------------------ */
-    public static final DeferredItem<SwordItem> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
-            () -> new SwordItem(ModToolTiers.SAPPHIRE,
-                    new Item.Properties()
-                            .attributes(SwordItem.createAttributes(ModToolTiers.SAPPHIRE,
+    public static final DeferredItem<Item> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
+            () -> new ModdableSwordItem(
+                    ModToolTiers.SAPPHIRE,
+                    new Item.Properties().attributes(
+                            SwordItem.createAttributes(
+                                    ModToolTiers.SAPPHIRE,
                                     3,        //  Tier-3
-                                    -2.4F))));
-    public static final DeferredItem<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.SAPPHIRE,
-                    new Item.Properties()
-                            .attributes(PickaxeItem.createAttributes(ModToolTiers.SAPPHIRE,
-                                    2,        //  Tier-3
-                                    -2.8F))));
+                                    -2.4F)
+
+                    ),
+                    Map.of(
+                            Enchantments.LOOTING, 3
+                    )
+            ));
+
+    public static final DeferredItem<Item> SAPPHIRE_PICKAXE =
+            ITEMS.register("sapphire_pickaxe",
+                    () -> new ModdablePickaxeItem(
+                            ModToolTiers.SAPPHIRE,
+                            new Item.Properties().attributes(
+                                    PickaxeItem.createAttributes(
+                                            ModToolTiers.SAPPHIRE,
+                                            2, -2.8F
+                                    )
+                            ),
+                            Map.of(
+                                    Enchantments.FORTUNE, 3
+                            )
+                    ));
+
+
     public static final DeferredItem<Item> SAPPHIRE_AXE = ITEMS.register("sapphire_axe",
             () -> new AxeItem(ModToolTiers.SAPPHIRE,
                     new Item.Properties()
