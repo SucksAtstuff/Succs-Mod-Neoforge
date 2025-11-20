@@ -207,6 +207,8 @@ public class ModLangProvider extends LanguageProvider {
 
         // --- Special Cases ---
         add("item.succsessentials.rock_candy", "'Rock Candy'");
+        add("item.succsessentials.garlic", "Garlic");
+
         add("entity.succsessentials.tj", "TJ the Stinker");
 
         // ======================================================================

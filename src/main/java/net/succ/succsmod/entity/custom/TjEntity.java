@@ -37,8 +37,12 @@ public class TjEntity extends Zombie {
             BossEvent.BossBarOverlay.NOTCHED_10
     );
 
-    private int gasCooldown = 200;     // 10 seconds between gas attacks
-    private int gasActiveTicks = 0;    // number of ticks the gas cloud remains visible
+    private int gasCooldown = 200;     // corrosive gas cooldown
+    private int gasActiveTicks = 0;    // corrosive gas linger ticks
+
+    // NEW — true fire gas timers
+    private int trueFireCooldown = 200;
+    private int trueFireActiveTicks = 0;
 
     public TjEntity(EntityType<? extends Zombie> entityType, Level level) {
         super(entityType, level);
@@ -61,18 +65,13 @@ public class TjEntity extends Zombie {
     // -------------------------------------------------------------
     //  PREVENT ZOMBIE → DROWNED CONVERSION
     // -------------------------------------------------------------
-
     @Override
     public boolean isUnderWaterConverting() {
-        // Always false → the zombie will *never* begin drowning conversion
         return false;
     }
 
     @Override
-    protected void doUnderWaterConversion() {
-        // Override and block the actual conversion process from executing
-        // This guarantees 100% immunity to becoming a drowned
-    }
+    protected void doUnderWaterConversion() {}
 
     // -------------------------------------------------------------
     //  ENTITY TICK LOGIC
@@ -85,19 +84,38 @@ public class TjEntity extends Zombie {
         if (!level().isClientSide) {
             bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
 
-            // Countdown to next gas attack
+            // ====================
+            // CORROSIVE GAS TIMER
+            // ====================
             gasCooldown--;
 
             if (gasCooldown <= 0) {
-                emitCorrosiveGas();   // apply effect
-                gasCooldown = 200;    // reset cooldown
-                gasActiveTicks = 60;  // gas lingers visually for 3 seconds
+                emitCorrosiveGas();
+                gasCooldown = 200;
+                gasActiveTicks = 60;
             }
 
-            // Linger the cloud
             if (gasActiveTicks > 0) {
                 spawnLingeringGasParticles();
                 gasActiveTicks--;
+            }
+
+            // ============================
+            // TRUE FIRE GAS (ONLY IF SURGING)
+            // ============================
+            if (powerSurging) {
+                trueFireCooldown--;
+
+                if (trueFireCooldown <= 0) {
+                    emitTrueFireGas();
+                    trueFireCooldown = 200;
+                    trueFireActiveTicks = 60;
+                }
+
+                if (trueFireActiveTicks > 0) {
+                    spawnTrueFireGasParticles();
+                    trueFireActiveTicks--;
+                }
             }
 
             powerSurge();
@@ -140,149 +158,101 @@ public class TjEntity extends Zombie {
                 .add(Attributes.MOVEMENT_SPEED, 0.28D);
     }
 
-    /**
-     * Applies the corrosion effect to all nearby entities.
-     */
+    // ============================================================
+    //  CORROSIVE GAS
+    // ============================================================
+
     private void emitCorrosiveGas() {
 
         if (!(this.level() instanceof ServerLevel serverLevel)) return;
 
         double radius = 6.0D;
 
-        // Apply corrosion to entities in radius
         AABB area = new AABB(this.blockPosition()).inflate(radius);
-        List<LivingEntity> targets = serverLevel.getEntitiesOfClass(
-                LivingEntity.class,
-                area,
-                e -> e != this && e.isAlive()
-        );
+        List<LivingEntity> targets =
+                serverLevel.getEntitiesOfClass(LivingEntity.class, area,
+                        e -> e != this && e.isAlive());
 
         for (LivingEntity entity : targets) {
             entity.addEffect(new MobEffectInstance(
-                    ModEffects.CORROSION_EFFECT, // custom effect
-                    600, // 30 seconds
-                    2    // strong version
+                    ModEffects.CORROSION_EFFECT, 600, 2
             ));
         }
     }
 
-    private void surgeEffects() {
-        // This plays a 3D sound at TJ's position. Because we're on the server,
-        // clients within range will automatically hear it.
-        this.level().playSound(
-                null, // null = broadcast to all nearby players
-                this.blockPosition(), // location of TJ
-                ModSounds.TJ_ROAR.get(),// custom roar sound
-                SoundSource.HOSTILE,
-                3.0f, // volume
-                1.0f // pitch
-        );
-        System.out.println("SURGE EFFECTS RAN");
-    }
+    // ============================================================
+    //  TRUE FIRE GAS (identical behaviour but different color/effect)
+    // ============================================================
 
+    private void emitTrueFireGas() {
 
-    // Tracks whether the TJ entity is currently empowered
-    boolean powerSurging = false;
-
-    // Fixed resource locations for attribute modifiers.
-    ResourceLocation SURGE_DAMAGE = ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "tj_damage_boost");
-    ResourceLocation SURGE_SPEED = ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "tj_speed_boost");
-
-    private void powerSurge(){
-        // If we are not on the server level, stop immediately
         if (!(this.level() instanceof ServerLevel serverLevel)) return;
 
-        // Current and max HP
-        float health = this.getHealth();
-        float maxHealth = this.getMaxHealth();
+        double radius = 6.0D;
 
-        // Attribute instances on THIS entity
-        AttributeInstance damageAttribute = this.getAttribute(Attributes.ATTACK_DAMAGE);
-        AttributeInstance speedAttribute  = this.getAttribute(Attributes.MOVEMENT_SPEED);
+        AABB area = new AABB(this.blockPosition()).inflate(radius);
+        List<LivingEntity> targets =
+                serverLevel.getEntitiesOfClass(LivingEntity.class, area,
+                        e -> e != this && e.isAlive());
 
-        // If somehow the attributes don't exist, return so the game doesn't crash
-        if (damageAttribute == null || speedAttribute == null) return;
+        for (LivingEntity entity : targets) {
 
-        // Fetch the worlds difficulty level
-        Difficulty difficulty = serverLevel.getDifficulty();
-
-        double damageBoostAmount = damageAttribute.getBaseValue(); // doubles damage
-        double speedBoostPercent = 0.5; // +50% speed
-        float regenPerSecond = 2.0f; // regen 2 HP/sec
-
-        if (difficulty == Difficulty.EASY) {
-            damageBoostAmount = damageAttribute.getBaseValue() * 0.5; // only +50% damage
-            speedBoostPercent = 0.25; // +25% speed
-            regenPerSecond    = 1.0f; // regen 1 HP/sec
-        }
-
-        if (difficulty == Difficulty.HARD) {
-            damageBoostAmount = damageAttribute.getBaseValue() * 2.0; // triple damage total
-            speedBoostPercent = 1.0; // +100% speed (double)
-            regenPerSecond    = 10.0f; // regen 10 HP/sec
-        }
-
-        // Activates power surge if HP is below 50%
-        if (health <= maxHealth * 0.5f) {
-            if (!powerSurging)
-            {
-                surgeEffects();
-
-                AttributeModifier damageBoost = new AttributeModifier(
-                        SURGE_DAMAGE, // Resource location
-                        damageBoostAmount,
-                        AttributeModifier.Operation.ADD_VALUE
-                );
-
-                AttributeModifier speedBoost = new AttributeModifier(
-                        SURGE_SPEED, // Resource location
-                        speedBoostPercent,
-                        AttributeModifier.Operation.ADD_VALUE
-                );
-
-                damageAttribute.addOrUpdateTransientModifier(damageBoost);
-                speedAttribute.addOrUpdateTransientModifier(speedBoost);
-
-                // Mark the entity as surging so we don't re-apply every tick
-                powerSurging = true;
-            }
-
-            // Heals the entity slowly while surging
-            // Heal every 20 ticks = once per second
-            if (this.tickCount % 20 == 0) {
-                this.heal(regenPerSecond);
-            }
-
-          return;
-        }
-
-        if (powerSurging) {
-            // Remove the modifiers
-            damageAttribute.removeModifier(SURGE_DAMAGE);
-            damageAttribute.removeModifier(SURGE_SPEED);
-
-            powerSurging = false; // reset state
+            entity.addEffect(new MobEffectInstance(
+                    ModEffects.TRUE_FIRE_EFFECT, 600, 2
+            ));
         }
     }
 
+    // ============================================================
+    //  TRUE FIRE GAS PARTICLES
+    // ============================================================
 
-    /**
-     * Creates the lingering visual fog particles around TJ.
-     */
+    private void spawnTrueFireGasParticles() {
+
+        if (!(this.level() instanceof ServerLevel serverLevel)) return;
+
+        double radius = 6.0D;
+        int particleCount = 120;
+
+        // 0xFF0059 → RGB = (1.0, 0.0, 0.349)
+        DustParticleOptions fireGas = new DustParticleOptions(
+                new Vector3f(1.0f, 0.0f, 0.349f), 1.2F
+        );
+
+        for (int i = 0; i < particleCount; i++) {
+
+            double dx = this.getX() + (random.nextDouble() - 0.5) * (radius * 2);
+            double dy = this.getY() + 0.1 + random.nextDouble() * 1.5;
+            double dz = this.getZ() + (random.nextDouble() - 0.5) * (radius * 2);
+
+            serverLevel.sendParticles(
+                    fireGas,
+                    dx, dy, dz,
+                    1,
+                    0.0D, 0.01D, 0.0D,
+                    0.0D
+            );
+        }
+    }
+
+    // ============================================================
+    //  CORROSION PARTICLE CLOUD
+    // ============================================================
+
     private void spawnLingeringGasParticles() {
 
         if (!(this.level() instanceof ServerLevel serverLevel)) return;
 
         double radius = 6.0D;
-        int particleCount = 120; // per tick
+        int particleCount = 120;
 
-        // Green toxic gas color
         DustParticleOptions gas = new DustParticleOptions(
                 new Vector3f(0.2F, 0.9F, 0.1F),
                 1.2F
         );
 
         for (int i = 0; i < particleCount; i++) {
+
             double dx = this.getX() + (random.nextDouble() - 0.5) * (radius * 2);
             double dy = this.getY() + 0.1 + random.nextDouble() * 1.5;
             double dz = this.getZ() + (random.nextDouble() - 0.5) * (radius * 2);
@@ -294,6 +264,144 @@ public class TjEntity extends Zombie {
                     0.0D, 0.01D, 0.0D,
                     0.0D
             );
+        }
+    }
+
+    // ============================================================
+    //  SURGE EFFECTS
+    // ============================================================
+
+    private void surgeEffects(boolean firstTick) {
+
+        this.level().playSound(
+                null, this.blockPosition(),
+                ModSounds.TJ_ROAR.get(),
+                SoundSource.HOSTILE, 3.0f, 1.0f
+        );
+
+        if (this.level() instanceof ServerLevel serverLevel) {
+
+            if (firstTick) {
+
+                DustParticleOptions burst = new DustParticleOptions(
+                        new Vector3f(1.0f, 0.3f, 0.2f),
+                        1.3f
+                );
+
+                for (int i = 0; i < 60; i++) {
+                    double dx = this.getX() + (this.random.nextDouble() - 0.5) * 2.5;
+                    double dy = this.getY() + 0.5 + this.random.nextDouble() * 1.5;
+                    double dz = this.getZ() + (this.random.nextDouble() - 0.5) * 2.5;
+
+                    serverLevel.sendParticles(burst, dx, dy, dz, 1, 0, 0, 0, 0);
+                }
+
+                bossEvent.setColor(BossEvent.BossBarColor.RED);
+            }
+
+            DustParticleOptions looping = new DustParticleOptions(
+                    new Vector3f(1.0f, 0.0f, 0.0f),
+                    1.0f
+            );
+
+            for (int i = 0; i < 10; i++) {
+                double dx = this.getX() + (this.random.nextDouble() - 0.5) * 2.0;
+                double dy = this.getY() + 0.3 + this.random.nextDouble() * 1.2;
+                double dz = this.getZ() + (this.random.nextDouble() - 0.5) * 2.0;
+
+                serverLevel.sendParticles(looping, dx, dy, dz, 1, 0, 0.01, 0, 0);
+            }
+        }
+    }
+
+    // ============================================================
+    //  POWER SURGE LOGIC
+    // ============================================================
+
+    boolean powerSurging = false;
+
+    ResourceLocation SURGE_DAMAGE =
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "tj_damage_boost");
+
+    ResourceLocation SURGE_SPEED =
+            ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, "tj_speed_boost");
+
+    private void powerSurge(){
+
+        if (!(this.level() instanceof ServerLevel serverLevel)) return;
+
+        float health = this.getHealth();
+        float maxHealth = this.getMaxHealth();
+
+        AttributeInstance dmg = this.getAttribute(Attributes.ATTACK_DAMAGE);
+        AttributeInstance spd = this.getAttribute(Attributes.MOVEMENT_SPEED);
+
+        if (dmg == null || spd == null) return;
+
+        Difficulty difficulty = serverLevel.getDifficulty();
+
+        double damageBoost = dmg.getBaseValue();
+        double speedBoost = 0.5;
+        float regen = 2.0f;
+
+        if (difficulty == Difficulty.EASY) {
+            damageBoost = dmg.getBaseValue() * 0.5;
+            speedBoost = 0.25;
+            regen = 1.0f;
+        }
+
+        if (difficulty == Difficulty.HARD) {
+            damageBoost = dmg.getBaseValue() * 2.0;
+            speedBoost = 1.0;
+            regen = 10.0f;
+        }
+
+        // ============================
+        // BELOW 50% HP → SURGE ACTIVE
+        // ============================
+        if (health <= maxHealth * 0.5f) {
+
+            if (!powerSurging) {
+
+                surgeEffects(true);
+
+                dmg.addOrUpdateTransientModifier(
+                        new AttributeModifier(SURGE_DAMAGE, damageBoost,
+                                AttributeModifier.Operation.ADD_VALUE));
+
+                spd.addOrUpdateTransientModifier(
+                        new AttributeModifier(SURGE_SPEED, speedBoost,
+                                AttributeModifier.Operation.ADD_VALUE));
+
+                // reset true fire timers at start of surge
+                trueFireCooldown = 200;
+                trueFireActiveTicks = 0;
+
+                powerSurging = true;
+            }
+
+            surgeEffects(false);
+
+            if (this.tickCount % 20 == 0)
+                this.heal(regen);
+
+            return;
+        }
+
+        // ============================
+        // SURGE ENDED — CLEANUP
+        // ============================
+        if (powerSurging) {
+
+            dmg.removeModifier(SURGE_DAMAGE);
+            spd.removeModifier(SURGE_SPEED);
+
+            bossEvent.setColor(BossEvent.BossBarColor.BLUE);
+
+            powerSurging = false;
+
+            trueFireCooldown = 200;
+            trueFireActiveTicks = 0;
         }
     }
 }
