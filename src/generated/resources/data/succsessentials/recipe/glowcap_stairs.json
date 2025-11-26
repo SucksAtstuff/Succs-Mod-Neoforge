@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "glowcap",
+  "key": {
+    "#": {
+      "item": "succsessentials:glowcap_planks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "succsessentials:glowcap_stairs"
+  }
+}

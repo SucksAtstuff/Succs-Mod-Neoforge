@@ -333,25 +333,25 @@ public class TjEntity extends Zombie {
         float health = this.getHealth();
         float maxHealth = this.getMaxHealth();
 
-        AttributeInstance dmg = this.getAttribute(Attributes.ATTACK_DAMAGE);
-        AttributeInstance spd = this.getAttribute(Attributes.MOVEMENT_SPEED);
+        AttributeInstance damage = this.getAttribute(Attributes.ATTACK_DAMAGE);
+        AttributeInstance speed = this.getAttribute(Attributes.MOVEMENT_SPEED);
 
-        if (dmg == null || spd == null) return;
+        if (damage == null || speed == null) return;
 
         Difficulty difficulty = serverLevel.getDifficulty();
 
-        double damageBoost = dmg.getBaseValue();
+        double damageBoost = damage.getBaseValue();
         double speedBoost = 0.5;
         float regen = 2.0f;
 
         if (difficulty == Difficulty.EASY) {
-            damageBoost = dmg.getBaseValue() * 0.5;
+            damageBoost = damage.getBaseValue() * 0.5;
             speedBoost = 0.25;
             regen = 1.0f;
         }
 
         if (difficulty == Difficulty.HARD) {
-            damageBoost = dmg.getBaseValue() * 2.0;
+            damageBoost = damage.getBaseValue() * 2.0;
             speedBoost = 1.0;
             regen = 10.0f;
         }
@@ -365,11 +365,11 @@ public class TjEntity extends Zombie {
 
                 surgeEffects(true);
 
-                dmg.addOrUpdateTransientModifier(
+                damage.addOrUpdateTransientModifier(
                         new AttributeModifier(SURGE_DAMAGE, damageBoost,
                                 AttributeModifier.Operation.ADD_VALUE));
 
-                spd.addOrUpdateTransientModifier(
+                speed.addOrUpdateTransientModifier(
                         new AttributeModifier(SURGE_SPEED, speedBoost,
                                 AttributeModifier.Operation.ADD_VALUE));
 
@@ -393,8 +393,8 @@ public class TjEntity extends Zombie {
         // ============================
         if (powerSurging) {
 
-            dmg.removeModifier(SURGE_DAMAGE);
-            spd.removeModifier(SURGE_SPEED);
+            damage.removeModifier(SURGE_DAMAGE);
+            speed.removeModifier(SURGE_SPEED);
 
             bossEvent.setColor(BossEvent.BossBarColor.BLUE);
 

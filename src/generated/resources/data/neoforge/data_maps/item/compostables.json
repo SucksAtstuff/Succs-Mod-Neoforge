@@ -2,6 +2,9 @@
   "values": {
     "succsessentials:garlic": {
       "chance": 0.45
+    },
+    "succsessentials:glowcap_wart_block": {
+      "chance": 0.85
     }
   }
 }
