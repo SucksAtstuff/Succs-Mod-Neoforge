@@ -25,6 +25,20 @@ public class ModDataMapProvider extends DataMapProvider
         this.builder(NeoForgeDataMaps.COMPOSTABLES)
                 .add(ModBlocks.GLOWCAP_WART_BLOCK.getId(), new Compostable(0.85f), false);
 
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.POISON_LILY.getId(), new Compostable(0.65f), false);
+
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.SHATTERBLOOM_SAPLING.getId(), new Compostable(0.30f), false);
+
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.MYCELIAL_SPOREWOOD_SAPLING.getId(), new Compostable(0.30f), false);
+
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.CRYOHEART_SAPLING.getId(), new Compostable(0.30f), false);
+
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.EMBERPINE_SAPLING.getId(), new Compostable(0.30f), false);
     }
 }
 
