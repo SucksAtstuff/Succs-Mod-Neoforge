@@ -26,6 +26,30 @@ public class ModTags {
         public static final TagKey<Item> JEWELRY = createTag("jewelry");
         public static final TagKey<Item> RARE_JEWELRY = createTag("rare_jewelry");
 
+        // Global Tags
+        public static final TagKey<Item> ORES =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ores"));
+        public static final TagKey<Item> GEMS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "gems"));
+        public static final TagKey<Item> TOOLS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools"));
+        public static final TagKey<Item> MINING_TOOLS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/mining_tool"));
+        public static final TagKey<Item> MELEE_WEAPONS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/melee_weapon"));
+        public static final TagKey<Item> PICKAXES =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/pickaxes"));
+        public static final TagKey<Item> SHOVELS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/shovels"));
+        public static final TagKey<Item> AXES =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/axes"));
+        public static final TagKey<Item> SWORDS =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "tools/swords"));
+        public static final TagKey<Item> ARMOR =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "armors"));
+        public static final TagKey<Item> ENCHANTABLES =
+                TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "enchantables"));
+
         private static TagKey<Item> createTag (String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(SuccsMod.MOD_ID, name));
         }
@@ -44,6 +68,11 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_SUNSTONE_TOOL = createTag("incorrect_for_sunstone_tool");
         public static final TagKey<Block> INCORRECT_FOR_JASPILITE_TOOL = createTag("incorrect_for_jaspilite_tool");
         public static final TagKey<Block> NEEDS_JASPILITE_TOOL = createTag("needs_jaspilite_tool");
+
+        // Global Tags
+        public static final TagKey<Block> ORES =
+                TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores"));
+
 
         public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
 

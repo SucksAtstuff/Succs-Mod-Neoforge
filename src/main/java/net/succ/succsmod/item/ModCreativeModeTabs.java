@@ -76,6 +76,7 @@ public class ModCreativeModeTabs {
 
                     })
                     .build());
+
     public static final Supplier<CreativeModeTab> SUCCS_ESSENTIALS_TAB_BLOCKS = CREATIVE_MODE_TAB.register("succs_essentials_tab_blocks",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModBlocks.ATHERIUM_ORE.get()))

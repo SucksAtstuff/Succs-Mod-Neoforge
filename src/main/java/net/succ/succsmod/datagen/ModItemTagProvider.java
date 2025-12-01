@@ -586,6 +586,322 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.MALACHITE_REINFORCED_HAMMER.get());
 
 
+        tag(ModTags.Items.ORES)
+                .add(ModBlocks.ATHERIUM_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get().asItem())
+                .add(ModBlocks.NETHER_ATHERIUM_ORE.get().asItem())
+                .add(ModBlocks.END_ATHERIUM_ORE.get().asItem())
+
+                .add(ModBlocks.MALACHITE_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get().asItem())
+                .add(ModBlocks.NETHER_MALACHITE_ORE.get().asItem())
+                .add(ModBlocks.END_MALACHITE_ORE.get().asItem())
+
+                .add(ModBlocks.RUBY_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_RUBY_ORE.get().asItem())
+                .add(ModBlocks.NETHER_RUBY_ORE.get().asItem())
+                .add(ModBlocks.END_RUBY_ORE.get().asItem())
+
+                .add(ModBlocks.SAPPHIRE_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().asItem())
+                .add(ModBlocks.NETHER_SAPPHIRE_ORE.get().asItem())
+                .add(ModBlocks.END_SAPPHIRE_ORE.get().asItem())
+
+                .add(ModBlocks.SUNSTONE_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get().asItem())
+                .add(ModBlocks.NETHER_SUNSTONE_ORE.get().asItem())
+                .add(ModBlocks.END_SUNSTONE_ORE.get().asItem())
+
+                .add(ModBlocks.JASPILITE_ORE.get().asItem())
+                .add(ModBlocks.DEEPSLATE_JASPILITE_ORE.get().asItem())
+                .add(ModBlocks.NETHER_JASPILITE_ORE.get().asItem())
+                .add(ModBlocks.END_JASPILITE_ORE.get().asItem());
+
+        // =====================================================================
+        //                       C: COMMON TAGS (INTER-MOD TAGS)
+        // =====================================================================
+
+        // --------------------------------------------------
+        // c:gems  (dirty + polished gem items)
+        // --------------------------------------------------
+        tag(ModTags.Items.GEMS)
+                .add(ModItems.DIRTY_ATHERIUM.get())
+                .add(ModItems.ATHERIUM.get())
+                .add(ModItems.DIRTY_MALACHITE.get())
+                .add(ModItems.MALACHITE.get())
+                .add(ModItems.DIRTY_RUBY.get())
+                .add(ModItems.RUBY.get())
+                .add(ModItems.DIRTY_SAPPHIRE.get())
+                .add(ModItems.SAPPHIRE.get())
+                .add(ModItems.DIRTY_SUNSTONE.get())
+                .add(ModItems.SUNSTONE.get())
+                .add(ModItems.DIRTY_JASPILITE.get())
+                .add(ModItems.JASPILITE.get());
+
+        // --------------------------------------------------
+        // c:tools  (ALL tools: swords, axes, pickaxes,
+        // shovels, hoes, hammers, reinforced hammers, paxels)
+        // --------------------------------------------------
+        tag(ModTags.Items.TOOLS)
+                // swords
+                .add(ModItems.ATHERIUM_SWORD.get())
+                .add(ModItems.RUBY_SWORD.get())
+                .add(ModItems.MALACHITE_SWORD.get())
+                .add(ModItems.SUNSTONE_SWORD.get())
+                .add(ModItems.SAPPHIRE_SWORD.get())
+                .add(ModItems.JASPILITE_SWORD.get())
+
+                // pickaxes
+                .add(ModItems.ATHERIUM_PICKAXE.get())
+                .add(ModItems.RUBY_PICKAXE.get())
+                .add(ModItems.MALACHITE_PICKAXE.get())
+                .add(ModItems.SUNSTONE_PICKAXE.get())
+                .add(ModItems.SAPPHIRE_PICKAXE.get())
+                .add(ModItems.JASPILITE_PICKAXE.get())
+
+                // axes
+                .add(ModItems.ATHERIUM_AXE.get())
+                .add(ModItems.RUBY_AXE.get())
+                .add(ModItems.MALACHITE_AXE.get())
+                .add(ModItems.SUNSTONE_AXE.get())
+                .add(ModItems.SAPPHIRE_AXE.get())
+                .add(ModItems.JASPILITE_AXE.get())
+
+                // shovels
+                .add(ModItems.ATHERIUM_SHOVEL.get())
+                .add(ModItems.RUBY_SHOVEL.get())
+                .add(ModItems.MALACHITE_SHOVEL.get())
+                .add(ModItems.SUNSTONE_SHOVEL.get())
+                .add(ModItems.SAPPHIRE_SHOVEL.get())
+                .add(ModItems.JASPILITE_SHOVEL.get())
+
+                // hoes
+                .add(ModItems.ATHERIUM_HOE.get())
+                .add(ModItems.RUBY_HOE.get())
+                .add(ModItems.MALACHITE_HOE.get())
+                .add(ModItems.SUNSTONE_HOE.get())
+                .add(ModItems.SAPPHIRE_HOE.get())
+                .add(ModItems.JASPILITE_HOE.get())
+
+                // hammers
+                .add(ModItems.ATHERIUM_HAMMER.get())
+                .add(ModItems.RUBY_HAMMER.get())
+                .add(ModItems.MALACHITE_HAMMER.get())
+                .add(ModItems.SUNSTONE_HAMMER.get())
+                .add(ModItems.SAPPHIRE_HAMMER.get())
+                .add(ModItems.JASPILITE_HAMMER.get())
+
+                // reinforced hammers
+                .add(ModItems.ATHERIUM_REINFORCED_HAMMER.get())
+                .add(ModItems.RUBY_REINFORCED_HAMMER.get())
+                .add(ModItems.MALACHITE_REINFORCED_HAMMER.get())
+                .add(ModItems.SUNSTONE_REINFORCED_HAMMER.get())
+                .add(ModItems.SAPPHIRE_REINFORCED_HAMMER.get())
+                .add(ModItems.JASPILITE_REINFORCED_HAMMER.get())
+
+                // paxels
+                .add(ModItems.ATHERIUM_PAXEL.get())
+                .add(ModItems.RUBY_PAXEL.get())
+                .add(ModItems.MALACHITE_PAXEL.get())
+                .add(ModItems.SUNSTONE_PAXEL.get())
+                .add(ModItems.SAPPHIRE_PAXEL.get())
+                .add(ModItems.JASPILITE_PAXEL.get());
+
+        // --------------------------------------------------
+        // c:tools/mining_tool
+        // (pickaxes, axes, shovels, hoes, hammers, paxels)
+        // --------------------------------------------------
+        tag(ModTags.Items.MINING_TOOLS)
+                // pickaxes
+                .add(ModItems.ATHERIUM_PICKAXE.get())
+                .add(ModItems.RUBY_PICKAXE.get())
+                .add(ModItems.MALACHITE_PICKAXE.get())
+                .add(ModItems.SUNSTONE_PICKAXE.get())
+                .add(ModItems.SAPPHIRE_PICKAXE.get())
+                .add(ModItems.JASPILITE_PICKAXE.get())
+
+                // axes
+                .add(ModItems.ATHERIUM_AXE.get())
+                .add(ModItems.RUBY_AXE.get())
+                .add(ModItems.MALACHITE_AXE.get())
+                .add(ModItems.SUNSTONE_AXE.get())
+                .add(ModItems.SAPPHIRE_AXE.get())
+                .add(ModItems.JASPILITE_AXE.get())
+
+                // shovels
+                .add(ModItems.ATHERIUM_SHOVEL.get())
+                .add(ModItems.RUBY_SHOVEL.get())
+                .add(ModItems.MALACHITE_SHOVEL.get())
+                .add(ModItems.SUNSTONE_SHOVEL.get())
+                .add(ModItems.SAPPHIRE_SHOVEL.get())
+                .add(ModItems.JASPILITE_SHOVEL.get())
+
+                // hoes
+                .add(ModItems.ATHERIUM_HOE.get())
+                .add(ModItems.RUBY_HOE.get())
+                .add(ModItems.MALACHITE_HOE.get())
+                .add(ModItems.SUNSTONE_HOE.get())
+                .add(ModItems.SAPPHIRE_HOE.get())
+                .add(ModItems.JASPILITE_HOE.get())
+
+                // hammers
+                .add(ModItems.ATHERIUM_HAMMER.get())
+                .add(ModItems.RUBY_HAMMER.get())
+                .add(ModItems.MALACHITE_HAMMER.get())
+                .add(ModItems.SUNSTONE_HAMMER.get())
+                .add(ModItems.SAPPHIRE_HAMMER.get())
+                .add(ModItems.JASPILITE_HAMMER.get())
+
+                // reinforced hammers
+                .add(ModItems.ATHERIUM_REINFORCED_HAMMER.get())
+                .add(ModItems.RUBY_REINFORCED_HAMMER.get())
+                .add(ModItems.MALACHITE_REINFORCED_HAMMER.get())
+                .add(ModItems.SUNSTONE_REINFORCED_HAMMER.get())
+                .add(ModItems.SAPPHIRE_REINFORCED_HAMMER.get())
+                .add(ModItems.JASPILITE_REINFORCED_HAMMER.get())
+
+                // paxels
+                .add(ModItems.ATHERIUM_PAXEL.get())
+                .add(ModItems.RUBY_PAXEL.get())
+                .add(ModItems.MALACHITE_PAXEL.get())
+                .add(ModItems.SUNSTONE_PAXEL.get())
+                .add(ModItems.SAPPHIRE_PAXEL.get())
+                .add(ModItems.JASPILITE_PAXEL.get());
+
+        // --------------------------------------------------
+        // c:tools/melee_weapon
+        // (swords + axes + hammers + reinforced hammers)
+        // --------------------------------------------------
+        tag(ModTags.Items.MELEE_WEAPONS)
+                .add(ModItems.ATHERIUM_SWORD.get())
+                .add(ModItems.RUBY_SWORD.get())
+                .add(ModItems.MALACHITE_SWORD.get())
+                .add(ModItems.SUNSTONE_SWORD.get())
+                .add(ModItems.SAPPHIRE_SWORD.get())
+                .add(ModItems.JASPILITE_SWORD.get())
+
+                // axes
+                .add(ModItems.ATHERIUM_AXE.get())
+                .add(ModItems.RUBY_AXE.get())
+                .add(ModItems.MALACHITE_AXE.get())
+                .add(ModItems.SUNSTONE_AXE.get())
+                .add(ModItems.SAPPHIRE_AXE.get())
+                .add(ModItems.JASPILITE_AXE.get())
+
+                // hammers
+                .add(ModItems.ATHERIUM_HAMMER.get())
+                .add(ModItems.RUBY_HAMMER.get())
+                .add(ModItems.MALACHITE_HAMMER.get())
+                .add(ModItems.SUNSTONE_HAMMER.get())
+                .add(ModItems.SAPPHIRE_HAMMER.get())
+                .add(ModItems.JASPILITE_HAMMER.get())
+
+                // reinforced hammers
+                .add(ModItems.ATHERIUM_REINFORCED_HAMMER.get())
+                .add(ModItems.RUBY_REINFORCED_HAMMER.get())
+                .add(ModItems.MALACHITE_REINFORCED_HAMMER.get())
+                .add(ModItems.SUNSTONE_REINFORCED_HAMMER.get())
+                .add(ModItems.SAPPHIRE_REINFORCED_HAMMER.get())
+                .add(ModItems.JASPILITE_REINFORCED_HAMMER.get());
+
+        // --------------------------------------------------
+        // c:tools/pickaxes  (pickaxes + paxels)
+        // --------------------------------------------------
+        tag(ModTags.Items.PICKAXES)
+                .add(ModItems.ATHERIUM_PICKAXE.get())
+                .add(ModItems.RUBY_PICKAXE.get())
+                .add(ModItems.MALACHITE_PICKAXE.get())
+                .add(ModItems.SUNSTONE_PICKAXE.get())
+                .add(ModItems.SAPPHIRE_PICKAXE.get())
+                .add(ModItems.JASPILITE_PICKAXE.get())
+
+                // paxels count as pickaxes
+                .add(ModItems.ATHERIUM_PAXEL.get())
+                .add(ModItems.RUBY_PAXEL.get())
+                .add(ModItems.MALACHITE_PAXEL.get())
+                .add(ModItems.SUNSTONE_PAXEL.get())
+                .add(ModItems.SAPPHIRE_PAXEL.get())
+                .add(ModItems.JASPILITE_PAXEL.get());
+
+        // --------------------------------------------------
+        // c:tools/axes
+        // --------------------------------------------------
+        tag(ModTags.Items.AXES)
+                .add(ModItems.ATHERIUM_AXE.get())
+                .add(ModItems.RUBY_AXE.get())
+                .add(ModItems.MALACHITE_AXE.get())
+                .add(ModItems.SUNSTONE_AXE.get())
+                .add(ModItems.SAPPHIRE_AXE.get())
+                .add(ModItems.JASPILITE_AXE.get());
+
+        // --------------------------------------------------
+        // c:tools/shovels
+        // --------------------------------------------------
+        tag(ModTags.Items.SHOVELS)
+                .add(ModItems.ATHERIUM_SHOVEL.get())
+                .add(ModItems.RUBY_SHOVEL.get())
+                .add(ModItems.MALACHITE_SHOVEL.get())
+                .add(ModItems.SUNSTONE_SHOVEL.get())
+                .add(ModItems.SAPPHIRE_SHOVEL.get())
+                .add(ModItems.JASPILITE_SHOVEL.get());
+
+        // --------------------------------------------------
+        // c:tools/swords
+        // --------------------------------------------------
+        tag(ModTags.Items.SWORDS)
+                .add(ModItems.ATHERIUM_SWORD.get())
+                .add(ModItems.RUBY_SWORD.get())
+                .add(ModItems.MALACHITE_SWORD.get())
+                .add(ModItems.SUNSTONE_SWORD.get())
+                .add(ModItems.SAPPHIRE_SWORD.get())
+                .add(ModItems.JASPILITE_SWORD.get());
+
+        // --------------------------------------------------
+        // c:armors
+        // --------------------------------------------------
+        tag(ModTags.Items.ARMOR)
+                .add(ModItems.ATHERIUM_HELMET.get())
+                .add(ModItems.ATHERIUM_CHESTPLATE.get())
+                .add(ModItems.ATHERIUM_LEGGINGS.get())
+                .add(ModItems.ATHERIUM_BOOTS.get())
+
+                .add(ModItems.RUBY_HELMET.get())
+                .add(ModItems.RUBY_CHESTPLATE.get())
+                .add(ModItems.RUBY_LEGGINGS.get())
+                .add(ModItems.RUBY_BOOTS.get())
+
+                .add(ModItems.MALACHITE_HELMET.get())
+                .add(ModItems.MALACHITE_CHESTPLATE.get())
+                .add(ModItems.MALACHITE_LEGGINGS.get())
+                .add(ModItems.MALACHITE_BOOTS.get())
+
+                .add(ModItems.SAPPHIRE_HELMET.get())
+                .add(ModItems.SAPPHIRE_CHESTPLATE.get())
+                .add(ModItems.SAPPHIRE_LEGGINGS.get())
+                .add(ModItems.SAPPHIRE_BOOTS.get())
+
+                .add(ModItems.SUNSTONE_HELMET.get())
+                .add(ModItems.SUNSTONE_CHESTPLATE.get())
+                .add(ModItems.SUNSTONE_LEGGINGS.get())
+                .add(ModItems.SUNSTONE_BOOTS.get())
+
+                .add(ModItems.JASPILITE_HELMET.get())
+                .add(ModItems.JASPILITE_CHESTPLATE.get())
+                .add(ModItems.JASPILITE_LEGGINGS.get())
+                .add(ModItems.JASPILITE_BOOTS.get());
+
+        // --------------------------------------------------
+        // c:enchantables (all tools + all armor)
+        // --------------------------------------------------
+                tag(ModTags.Items.ENCHANTABLES)
+                        // all swords, axes, pickaxes, shovels, hoes, hammers, reinforced hammers, paxels
+                        .addTag(ModTags.Items.TOOLS)
+
+                        // all armor
+                        .addTag(ModTags.Items.ARMOR);
+
+
+
     }
 
 

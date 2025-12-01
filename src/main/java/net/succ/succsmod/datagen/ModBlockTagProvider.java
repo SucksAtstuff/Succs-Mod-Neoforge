@@ -336,5 +336,39 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GLOWCAP_WART_BLOCK.get());
 
 
+        tag(ModTags.Blocks.ORES)
+                .add(ModBlocks.ATHERIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ATHERIUM_ORE.get())
+                .add(ModBlocks.NETHER_ATHERIUM_ORE.get())
+                .add(ModBlocks.END_ATHERIUM_ORE.get())
+
+                .add(ModBlocks.MALACHITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_MALACHITE_ORE.get())
+                .add(ModBlocks.NETHER_MALACHITE_ORE.get())
+                .add(ModBlocks.END_MALACHITE_ORE.get())
+
+                .add(ModBlocks.RUBY_ORE.get())
+                .add(ModBlocks.DEEPSLATE_RUBY_ORE.get())
+                .add(ModBlocks.NETHER_RUBY_ORE.get())
+                .add(ModBlocks.END_RUBY_ORE.get())
+
+                .add(ModBlocks.SAPPHIRE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get())
+                .add(ModBlocks.NETHER_SAPPHIRE_ORE.get())
+                .add(ModBlocks.END_SAPPHIRE_ORE.get())
+
+                .add(ModBlocks.SUNSTONE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SUNSTONE_ORE.get())
+                .add(ModBlocks.NETHER_SUNSTONE_ORE.get())
+                .add(ModBlocks.END_SUNSTONE_ORE.get())
+
+                .add(ModBlocks.JASPILITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_JASPILITE_ORE.get())
+                .add(ModBlocks.NETHER_JASPILITE_ORE.get())
+                .add(ModBlocks.END_JASPILITE_ORE.get());
+
+
+
+
     }
 }
